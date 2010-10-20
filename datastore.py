@@ -34,6 +34,26 @@ class paper(ratable):
     author = db.StringProperty()
 
 
+class place (ratable):
+    location = db.StringProperty(required=True)
+    semeseter = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
+
+class internship (place):
+    company = db.StringProperty(required=True)
+
+class placeLive (place):
+    pass
+
+class placeEat (ratable):
+    pass
+
+class placeFun (ratable):
+    pass
+
+class game (ratable):
+    platform = db.StringProperty(required=True)
+    title = db.StringProperty(required=True)
+
 class comment(db.model):
     text = db.Text()
 
