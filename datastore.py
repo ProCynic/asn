@@ -10,7 +10,7 @@ class comment(db.Model):
     """
     """
     text = db.TextProperty()
-    replyto = SelfReferenceProperty()
+    replyto = db.SelfReferenceProperty()
 
 class ratable(polymodel.PolyModel):
     """
@@ -33,14 +33,14 @@ class course (ratable):
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     instructor = db.StringProperty(required=True, validator=personNameValidator)
     grade = db.StringProperty(required=True, validator=gradeValidator)
-    year = db.StringProperty(requierd=True, validator=yearValidator)
+    year = db.StringProperty(required=True, validator=yearValidator)
 
 
 
 class book(ratable):
     """
     """
-    isbn = db.StringProperty(validator=isbnValidator)
+    isbn = db.StringProperty()
     title = db.StringProperty()
     author = db.StringProperty(validator=personNameValidator)
 

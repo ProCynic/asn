@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{{ application_name }}</title>
+		<link href="/www/css/style.css" type="text/css" rel="stylesheet"> 
+
+		{% block head-links %}{% endblock %}
+
+		<script type="text/javascript" src="/www/js/jquery.js"></script>
+		<script type="text/javascript" src="/www/js/asn.js"></script>
+		{% block head %}{% endblock %}
+
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				{% block header %} default header stuff {% endblock %}
+			</div>
+			<div id="main">
+				{% block main %} default main stuff {% endblock %}
+			</div>
+			<div id="footer">
+				{% block footer %} default header stuff {% endblock %}
+			</div>
+		</div>
+	</body>
+
+</html>
