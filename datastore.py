@@ -44,14 +44,14 @@ class course (ratable):
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     instructor = db.ReferenceProperty(person, required=True)
     grade = db.StringProperty(required=True, validator=gradeValidator)
-    year = db.StringProperty(requierd=True, validator=yearValidator)
+    year = db.StringProperty(required=True, validator=yearValidator)
 
 
 
 class book(ratable):
     """
     """
-    isbn = db.StringProperty(validator=isbnValidator)
+    isbn = db.StringProperty()
     title = db.StringProperty()
     author = db.ReferenceProperty(person)
 

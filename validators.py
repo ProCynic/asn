@@ -23,12 +23,6 @@ def courseNumValidator(value):
     if re.search(pattern,value) is None: raise ValueError
 
 
-def personNameValidator(value):
-    """
-    """
-    pattern = "^$"
-    if re.search(pattern,value) is None: raise ValueError
-
 def gradeValidator(value):
     """
     """
