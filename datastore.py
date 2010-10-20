@@ -22,12 +22,14 @@ class course (ratable):
     """
     """
     unique = db.StringProperty(required=True,validator=uniqueValidator)
-    courseNum = db.StringProperty(required=True)
+    courseNum = db.StringProperty(required=True, validator=courseNumValidator)
     name = db.StringProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     instructor = db.StringProperty(required=True)
     grade = db.StringProperty(required=True)
     year = db.StringProperty(requierd=True)
+
+
 
 class book(ratable):
     """
