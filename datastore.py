@@ -9,8 +9,18 @@ from validators import *
 class comment(db.Model):
     """
     """
-    text = db.TextProperty()
-    replyto = SelfReferenceProperty()
+    text = db.TextProperty(required=True)
+    replyto = db.SelfReferenceProperty()
+
+class person(db.model):
+    fname = db.StringProperty(required=True)
+    lname = db.StringProperty(required=True)
+    mname = db.StringProperty()
+
+class student(db.model):
+    info = db.ReferenceProperty(person, required=True)
+    idNum = db.IntegerProperty(required=True)
+    password = db.StringProperty(required=True)
 
 class ratable(polymodel.PolyModel):
     """
@@ -23,6 +33,7 @@ class rating(db.Model):
     rating = db.RatingProperty(required=True)
     comment = db.ReferenceProperty(comment)
     rated = db.ReferenceProperty(ratable)
+    rater = db.ReferenceProperty(student)
 
 class course (ratable):
     """
@@ -31,7 +42,7 @@ class course (ratable):
     courseNum = db.StringProperty(required=True, validator=courseNumValidator)
     name = db.StringProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
-    instructor = db.StringProperty(required=True, validator=personNameValidator)
+    instructor = db.ReferenceProperty(person, required=True)
     grade = db.StringProperty(required=True, validator=gradeValidator)
     year = db.StringProperty(requierd=True, validator=yearValidator)
 
@@ -42,15 +53,14 @@ class book(ratable):
     """
     isbn = db.StringProperty(validator=isbnValidator)
     title = db.StringProperty()
-    author = db.StringProperty(validator=personNameValidator)
+    author = db.ReferenceProperty(person)
 
 class paper(ratable):
     """
     """
     journal = db.StringProperty()
     title = db.StringProperty()
-    author = db.StringProperty(validator=personNameValidator)
-
+    author = db.ReferenceProperty(person)
 
 class place (ratable):
     """
@@ -83,7 +93,7 @@ class placeFun (ratable):
 class game (ratable):
     """
     """
-    platform = db.StringProperty(required=True)
+    platform = db.StringProperty(required=True,choices=gamePlatforms)
     title = db.StringProperty(required=True)
 
 gamePlatforms = [
@@ -97,6 +107,7 @@ gamePlatforms = [
     "NINTINDO 64",
     "GAMECUBE",
     "WII",
+    "SEGA GENISIS",
     "PC",
     "MAC",
     "LINUX",
