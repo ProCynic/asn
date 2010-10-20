@@ -1,0 +1,13 @@
+application: cs373-asn
+version: 3
+runtime: python
+api_version: 1
+
+handlers:
+- url: /test.*
+  script: gaeunit.py
+
+- url: /.*
+  script: asn.py
+
+
