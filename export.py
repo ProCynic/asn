@@ -34,7 +34,7 @@ nodetypes = {
 
 
 
-def export(self, students) :
+def export() :
         students = DS.Student.all()
         print nodetypes
         root = ElementTree.Element("students")
@@ -44,15 +44,15 @@ def export(self, students) :
                         obj = r.rated;
                         if isinstance(obj, DS.Course) :
                                 grade = DS.Grade.all().filter('course =', obj).filter('student =', s).get()
-                                self.exportCourse(student, r, obj, grade)
+                                exportCourse(student, r, obj, grade)
                         elif isinstance(obj, DS.Book) :
-                                self.exportBook(student, r, obj)
+                                exportBook(student, r, obj)
                         elif isinstance(obj, DS.Paper) :
-                                self.exportPaper(student, r, obj)
+                                exportPaper(student, r, obj)
                         elif isinstance(obj, DS.Game) :
-                                self.exportGame(student, r, obj)
+                                exportGame(student, r, obj)
                         elif issubclass(type(obj), DS.Place) :
-                                self.exportPlace(student, r, obj)
+                                exportPlace(student, r, obj)
                         else: assert False
                         
 
@@ -60,7 +60,7 @@ def export(self, students) :
         ElementTree.dump(root)
         
 
-def exportCourse(self, p, rating, course, grade) :
+def exportCourse(p, rating, course, grade) :
         c = addNode(p, "class")
         addText(c, "unique", course.unique)
         addText(c, "course_num", course.courseNum)
@@ -70,27 +70,27 @@ def exportCourse(self, p, rating, course, grade) :
         addText(c, "grade", grade.grade)
         addRating(c, rating)
 
-def exportBook(self, p, rating, book) :
+def exportBook(p, rating, book) :
         c = addNode(p, 'book')
         addText(c, 'isbn', book.isbn)
         addText(c, 'title', book.title)
         addText(c, 'author', personStr(book.author))
         addRating(c, rating)
 
-def exportPaper(self, p, rating, paper):
+def exportPaper(p, rating, paper):
         c = addNode(p, 'paper')
         #add journal
         addText(c, 'title', paper.title)
         addText(c, 'author', personStr(paper.author))
         addRating(c, rating)
 
-def exportGame(self, p, rating, game):
+def exportGame(p, rating, game):
         c = addNode(p, 'game')
         addText(c, 'title', game.title)
         addText(c, 'os', game.platform)
         addRating(c, rating)
 
-def exportPlace(self, p, rating, place):
+def exportPlace(p, rating, place):
         c = addNode(p, nodetypes[type(place)])
         addText(c, 'place_name', place.name)
         addText(c, 'location', str(place.location))
