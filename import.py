@@ -130,6 +130,7 @@ class StudentImporter :
 
 		for p in currentStudent.places :
 			f = getattr(DA, "addPlace" + p.typeID)
+			print(f)
 			place = f(p.place, p.location, p.semester, p.year)
 			DA.addRating(place, student, p.rating, p.comment)
 
