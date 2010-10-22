@@ -118,28 +118,37 @@ def addPlaceStudy(name, location, semester, year):
 def addInternship(company, location, semester, year):
     """
     """
-    i = Internship(company=company,
-                   location=location,
-                   semseter=semester,
-                   year=year)
-    i.put()
-    return i.key()
+    try:
+        return checkMembership(Internship,company=company, semester=semester, year=year)
+    except KeyError:
+        i = Internship(company=company,
+                       location=location,
+                       semseter=semester,
+                       year=year)
+        i.put()
+        return i.key()
 
 def addGame(platform, title):
     """
     """
-    g = Game(platform=platform,
-             title=title)
-    g.put()
-    return g.key()
+    try:
+        return checkMembership(Game,title=title, platform=platform)
+    except:
+        g = Game(platform=platform,
+                 title=title)
+        g.put()
+        return g.key()
 
 def addRating(ratable, student, rating, comment=None):
     """
     """
-    r = Rating(rated=ratable,
-               rater=student,
-               rating=rating,
-               comment=comment)
+    try:
+        r = checkMembership(Rating,ratable=ratable,student=student)
+    except KeyError:
+        r = Rating(rated=ratable,
+                   rater=student,
+                   rating=rating,
+                   comment=comment)
     r.put()
     return r.key()
     
