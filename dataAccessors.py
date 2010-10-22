@@ -7,14 +7,15 @@ from datastore import *
 def _addPerson(name):
     """
     """
-    name = name.strip().split();
-    mname=None
+
+    name = name.strip().split()
+    mname = None
     if len(name) == 2: fname, lname = name
     elif len(name) == 3: fname, mname, lname = name
     else: raise ValueError
 
     try:
-        return checkMempership(Person,fname=fname, mname=mname, lname=lname)
+        return checkMembership(Person,fname=fname, mname=mname, lname=lname)
     except KeyError:
         p = Person(fname=fname,
            lname=lname,
