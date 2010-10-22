@@ -1,7 +1,7 @@
 from xml.etree import ElementTree
 import sys;
 import dataAccessors as DA
-
+import datastore
 
 
 class StudentDescriptor :
@@ -108,7 +108,6 @@ class StudentImporter :
 		student = DA.addStudent(currentStudent.ID, currentStudent.password)
 
 		for c in currentStudent.classes :
-			print(c.instructor)
 			course = DA.addCourse(c.unique, c.courseNum, c.courseName, c.semester, c.year, c.instructor)
 			DA.addGrade(course, student, c.grade)
 			DA.addRating(course, student, c.rating, c.comment)
@@ -118,7 +117,7 @@ class StudentImporter :
 			DA.addRating(book, student, b.rating, b.comment)
 
 		for p in currentStudent.papers : 
-			paper = DA.addPaper(paper.category, paper.title, paper.author)
+			paper = DA.addPaper(p.category, p.title, p.author)
 			DA.addRating(paper, student, p.rating, p.comment)
 
 		for i in currentStudent.interns : 
@@ -131,8 +130,8 @@ class StudentImporter :
 
 		for p in currentStudent.places :
 			f = getattr(DA, "addPlace" + p.typeID)
-			place = f(p.name, p.location, p.semester, p.year)
-			DA.addRating(place, semester, p.rating, g.comment)
+			place = f(p.place, p.location, p.semester, p.year)
+			DA.addRating(place, student, p.rating, p.comment)
 
 	def parseStudentInternship(self, c, d) : 
 		newIntern = InternDescriptor();
@@ -195,9 +194,9 @@ class StudentImporter :
 		d.comment = c.text.strip()
 
 s = StudentImporter()
-s.parse("test.xml")
+#s.parse("test.xml")
 
-for x in DA.Rateable.all() :
+for x in datastore.Rating.all() :
 	print(x.rating)
 
 

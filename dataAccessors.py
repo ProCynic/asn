@@ -40,7 +40,7 @@ def addBook(title,isbn,author):
     try:
         return checkMembership(Book, isbn=isbn)
     except KeyError:
-        isbn = int(isbn.strip().replace('-',''))
+        isbn = isbn.strip().replace('-','')
         
         a = _addPerson(author)
         b = Book(title=title,
@@ -126,7 +126,7 @@ def addInternship(company, location, semester, year):
     except KeyError:
         i = Internship(company=company,
                        location=location,
-                       semseter=semester,
+                       semester=semester,
                        year=year)
         i.put()
         return i.key()
@@ -156,7 +156,7 @@ def addRating(ratable, student, rating, comment=None):
         c = _addComment(comment)
         r = Rating(rated=ratable,
                    rater=student,
-                   rating=rating,
+                   rating=int(rating),
                    comment=c)
     r.put()
     return r.key()

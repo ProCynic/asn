@@ -41,6 +41,7 @@
 		<study_place>
 			<place_name>UT Austin</place_name>
 			<location>Austin, TX</location>
+			<semester>Summer 2012</semester>
 			<rating>100</rating>
 			<comment>I went here for school</comment>
 		</study_place>
@@ -48,6 +49,7 @@
 		<live_place>
 			<place_name>UT Austin</place_name>
 			<location>Austin, TX</location>
+			<semester>Summer 2012</semester>
 			<rating>100</rating>
 			<comment>I went here for school</comment>
 		</live_place>
@@ -55,6 +57,7 @@
 		<eat_place>
 			<place_name>UT Austin</place_name>
 			<location>Austin, TX</location>
+			<semester>Summer 2012</semester>
 			<rating>100</rating>
 			<comment>I went here for school</comment>
 		</eat_place>
@@ -62,6 +65,7 @@
 		<fun_place>
 			<place_name>UT Austin</place_name>
 			<location>Austin, TX</location>
+			<semester>Summer 2012</semester>
 			<rating>100</rating>
 			<comment>I went here for school</comment>
 		</fun_place>
