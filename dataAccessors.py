@@ -4,9 +4,19 @@
 import re
 from datastore import *
 
-def _addPerson(fname,lname, mname=None):
+def _addPerson(name):
     """
     """
+    name = name.split();
+    if len(name) not in [2, 3] :
+    	raise ValueError
+    fname = name[0];
+    if len(name) > 2 :
+    	mname = name[1]
+    	lname = name[2]
+    else :
+    	mname = None
+    	lname = name[1]
     #if person in datastore:
         #return person.key()
     p = Person(fname=fname,
