@@ -9,8 +9,8 @@ def _addPerson(name):
     """
     name = name.strip.split();
     if len(name) == 2: fname, lname, mname = name, None
-    else if len(name) == 3: fname, mname, lname = name
-    else raise ValueError
+    elif len(name) == 3: fname, mname, lname = name
+    else: raise ValueError
 
     try:
         return checkMempership(Person,fname=fname, mname=mname, lname=lname)

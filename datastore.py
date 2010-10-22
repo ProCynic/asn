@@ -11,12 +11,12 @@ class Comment(db.Model):
     text = db.TextProperty(required=True)
     replyto = db.SelfReferenceProperty()
 
-class Person(db.model):
+class Person(db.Model):
     fname = db.StringProperty(required=True)
     lname = db.StringProperty(required=True)
     mname = db.StringProperty()
 
-class Student(db.model):
+class Student(db.Model):
     sid = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
 
@@ -29,42 +29,42 @@ class Rating(db.Model):
     """
     """
     rating = db.RatingProperty(required=True)
-    comment = db.ReferenceProperty(comment)
-    rated = db.ReferenceProperty(ratable)
-    rater = db.ReferenceProperty(student)
+    comment = db.ReferenceProperty(Comment)
+    rated = db.ReferenceProperty(Ratable)
+    rater = db.ReferenceProperty(Student)
 
-class Course (ratable):
+class Course (Ratable):
     """
     """
     unique = db.StringProperty(required=True,validator=uniqueValidator)
     courseNum = db.StringProperty(required=True, validator=courseNumValidator)
     name = db.StringProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
-    instructor = db.ReferenceProperty(person, required=True)
+    instructor = db.ReferenceProperty(Person, required=True)
     year = db.StringProperty(required=True, validator=yearValidator)
 
-class Grade(db.model):
+class Grade(db.Model):
     """
     """
-    course = db.ReferenceProperty(course)
-    student = db.ReferenceProperty(student)
+    course = db.ReferenceProperty(Course)
+    student = db.ReferenceProperty(Student)
     grade = db.StringProperty(required=True, validator=gradeValidator)
 
-class Book(ratable):
+class Book(Ratable):
     """
     """
     isbn = db.StringProperty()
     title = db.StringProperty()
-    author = db.ReferenceProperty(person)
+    author = db.ReferenceProperty(Person)
 
-class Paper(ratable):
+class Paper(Ratable):
     """
     """
     journal = db.StringProperty()
     title = db.StringProperty()
-    author = db.ReferenceProperty(person)
+    author = db.ReferenceProperty(Person)
 
-class Place (ratable):
+class Place (Ratable):
     """
     """
     name = db.StringProperty()
@@ -73,7 +73,7 @@ class Place (ratable):
     year = db.StringProperty(validator=yearValidator)
     latLong = db.GeoPtProperty()
 
-class Internship (ratable):
+class Internship (Ratable):
     """
     """
     company = db.StringProperty(required=True)
@@ -81,30 +81,30 @@ class Internship (ratable):
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(validator=yearValidator)
 
-class PlaceLive (place):
+class PlaceLive (Place):
     """
     """
     pass
 
-class PlaceEat (place):
+class PlaceEat (Place):
     """
     """
     pass
 
-class PlaceFun (place):
+class PlaceFun (Place):
     """
     """
     pass
 
-class PlaceStudy (place):
+class PlaceStudy (Place):
     """
     """
     pass
 
-class Game (ratable):
+class Game (Ratable):
     """
     """
-    platform = db.StringProperty(required=True,choices=gamePlatforms)
+    platform = db.StringProperty(required=True)
     title = db.StringProperty(required=True)
 
 gamePlatforms = [

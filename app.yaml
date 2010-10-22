@@ -8,7 +8,7 @@ handlers:
   script: gaeunit.py
 
 - url: /ds.*
-  script: test.py
+  script: import.py
 
 - url: /.*
   script: asn.py

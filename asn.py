@@ -93,7 +93,7 @@ def main():
     ('/', HomePage),
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
-    ('/admin', AdminPage)
+    ('/admin', AdminPage),
     ('/admin/reset', AdminResetPage)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)

@@ -44,7 +44,7 @@ def isbnValidator(value):
     s = value[-1]
     #For ISBN-10
     if len(value) == 10:
-        if s != sum(x[i]*(10-i) for i in range(len(x))]) % 11: raise ValueError
+        if s != sum(x[i]*(10-i) for i in range(len(x))) % 11: raise ValueError
     #For ISBN-13
     for i in range(1,len(x),2):
         x[i] *= 3
