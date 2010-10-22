@@ -108,6 +108,7 @@ class StudentImporter :
 		student = DA.addStudent(currentStudent.ID, currentStudent.password)
 
 		for c in currentStudent.classes :
+			print(c.instructor)
 			course = DA.addCourse(c.unique, c.courseNum, c.courseName, c.semester, c.year, c.instructor)
 			DA.addGrade(course, student, c.grade)
 			DA.addRating(course, student, c.rating, c.comment)
@@ -196,7 +197,7 @@ class StudentImporter :
 s = StudentImporter()
 s.parse("test.xml")
 
-for x in DA.Rateable.all().fetch() :
+for x in DA.Rateable.all() :
 	print(x.rating)
 
 
