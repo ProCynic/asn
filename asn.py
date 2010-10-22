@@ -1,4 +1,4 @@
-from datastore import *
+import dataStore as DS
 
 import datetime
 import os
@@ -32,7 +32,7 @@ class BaseRequestHandler(webapp.RequestHandler):
 
 class HomePage(BaseRequestHandler):
     def get(self):
-        # fn's
+        print isinstance(DS.PlaceLive, DS.Place) 
         self.generate('browser.html', {
             # variables
         })

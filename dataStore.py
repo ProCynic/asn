@@ -73,13 +73,10 @@ class Place (Ratable):
     year = db.StringProperty(validator=yearValidator)
     latLong = db.GeoPtProperty()
 
-class Internship (Ratable):
+class Internship (Place):
     """
     """
-    company = db.StringProperty(required=True)
-    location = db.PostalAddressProperty(required=True)
-    semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
-    year = db.StringProperty(validator=yearValidator)
+    pass
 
 class PlaceLive (Place):
     """

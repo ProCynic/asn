@@ -89,6 +89,7 @@ def addPaper(journal, title, author):
 def _addPlace(name, location, semester, year, placetype):
     """
     """
+    assert issubclass(placetype,Place)
     try:
         return checkMembership(placetype,name=name, location=location)
     except KeyError:
@@ -123,15 +124,7 @@ def addPlaceStudy(name, location, semester, year):
 def addInternship(company, location, semester, year):
     """
     """
-    try:
-        return checkMembership(Internship,company=company, semester=semester, year=year)
-    except KeyError:
-        i = Internship(company=company,
-                       location=location,
-                       semester=semester,
-                       year=year)
-        i.put()
-        return i.key()
+    return _addPlace(company,location,semester,year,Internship)
 
 def addGame(platform, title):
     """

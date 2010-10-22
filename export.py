@@ -1,7 +1,7 @@
 from xml.etree import ElementTree
 import sys
 import dataAccessors as DA
-import datatore
+import dataStore as DS
 
 
 def addText(node, name, text) :
@@ -23,30 +23,40 @@ def personStr(r) :
 	else :
 		return r.fname + " " + r.lname
 
+nodetypes = {
+	DS.PlaceLive : 'live_place',
+	DS.PlaceEat : 'eat_place',
+	DS.PlaceFun : 'fun_place',
+	DS.PlaceStudy : 'study_place',
+        DS.Internship : 'internship'
+	}
+
+
 class Exporter :
 	def export(self, students) :
+                print nodetypes
 		root = ElementTree.Element("students")
 		for s in students : 
 			student = addNode(root, "student")
-
-			for r in datastore.Rating.all().filter('rater =', s) :
+			for r in DS.Rating.all().filter('rater =', s) :
 				obj = r.rated;
-				if isinstance(obj, datastore.Course) :
-					grade = datastore.Grade.all().filter('course =', obj).filter('student =', s).get()
+				if isinstance(obj, DS.Course) :
+					grade = DS.Grade.all().filter('course =', obj).filter('student =', s).get()
 					self.exportCourse(student, r, obj, grade)
-				elif isinstance(obj, datastore.Book) :
+				elif isinstance(obj, DS.Book) :
 					self.exportBook(student, r, obj)
-				else :
-					print("")
+				elif isinstance(obj, DS.Paper) :
+					self.exportPaper(student, r, obj)
+				elif isinstance(obj, DS.Game) :
+					self.exportGame(student, r, obj)
+				elif issubclass(type(obj), DS.Place) :
+					self.exportPlace(student, r, obj)
+				else: assert False
+				
 
+                print ''
 		ElementTree.dump(root)
-
-	def exportBook(self, p, rating, book) :
-		c = addNode(p, 'book')
-		addText(c, 'isbn', book.isbn)
-		addText(c, 'title', book.title)
-		addText(c, 'author', personStr(book.author))
-		addRating(c, rating)
+                
 
 	def exportCourse(self, p, rating, course, grade) :
 		c = addNode(p, "class")
@@ -58,7 +68,34 @@ class Exporter :
 		addText(c, "grade", grade.grade)
 		addRating(c, rating)
 
+	def exportBook(self, p, rating, book) :
+		c = addNode(p, 'book')
+		addText(c, 'isbn', book.isbn)
+		addText(c, 'title', book.title)
+		addText(c, 'author', personStr(book.author))
+		addRating(c, rating)
+
+	def exportPaper(self, p, rating, paper):
+		c = addNode(p, 'paper')
+		#add journal
+		addText(c, 'title', paper.title)
+		addText(c, 'author', personStr(paper.author))
+		addRating(c, rating)
+
+	def exportGame(self, p, rating, game):
+		c = addNode(p, 'game')
+		addText(c, 'title', game.title)
+		addText(c, 'os', game.platform)
+		addRating(c, rating)
+
+	def exportPlace(self, p, rating, place):
+		c = addNode(p, nodetypes[type(place)])
+		addText(c, 'place_name', place.name)
+		addText(c, 'location', str(place.location))
+		addText(c, "semester", place.semester + " " + place.year)
+		addRating(c, rating)
+
 
 
 e = Exporter()
-e.export(datastore.Student.all())
+e.export(DS.Student.all())
