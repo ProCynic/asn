@@ -26,7 +26,7 @@ def _addPerson(name):
 def addStudent(sid, password):
     try:
         checkMembership(Student, sid=sid)
-    except KeyError as e:
+    except KeyError, e:
         pass
         #very bad
     s = Student(sid=sid,
