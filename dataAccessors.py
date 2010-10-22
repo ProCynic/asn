@@ -7,7 +7,10 @@ from datastore import *
 def _addPerson(name):
     """
     """
-    #parse name
+    name = name.strip.split();
+    if len(name) == 2: fname, lname, mname = name, None
+    else if len(name) == 3: fname, mname, lname = name
+    else raise ValueError
     #if person in datastore:
         #return person.key()
     p = Person(fname=fname,
