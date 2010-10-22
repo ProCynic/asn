@@ -5,28 +5,28 @@ from google.appengine.ext import db
 from google.appengine.ext.db import polymodel
 from validators import *
 
-class comment(db.Model):
+class Comment(db.Model):
     """
     """
     text = db.TextProperty(required=True)
     replyto = db.SelfReferenceProperty()
 
-class person(db.model):
+class Person(db.model):
     fname = db.StringProperty(required=True)
     lname = db.StringProperty(required=True)
     mname = db.StringProperty()
 
-class student(db.model):
+class Student(db.model):
     info = db.ReferenceProperty(person, required=True)
-    idNum = db.IntegerProperty(required=True)
+    sid = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
 
-class ratable(polymodel.PolyModel):
+class Ratable(polymodel.PolyModel):
     """
     """
     pass
 
-class rating(db.Model):
+class Rating(db.Model):
     """
     """
     rating = db.RatingProperty(required=True)
@@ -34,7 +34,7 @@ class rating(db.Model):
     rated = db.ReferenceProperty(ratable)
     rater = db.ReferenceProperty(student)
 
-class course (ratable):
+class Course (ratable):
     """
     """
     unique = db.StringProperty(required=True,validator=uniqueValidator)
@@ -47,21 +47,21 @@ class course (ratable):
 
 
 
-class book(ratable):
+class Book(ratable):
     """
     """
     isbn = db.StringProperty()
     title = db.StringProperty()
     author = db.ReferenceProperty(person)
 
-class paper(ratable):
+class Paper(ratable):
     """
     """
     journal = db.StringProperty()
     title = db.StringProperty()
     author = db.ReferenceProperty(person)
 
-class place (ratable):
+class Place (ratable):
     """
     """
     name = db.StringProperty()
@@ -70,7 +70,7 @@ class place (ratable):
     year = db.StringProperty(validator=yearValidator)
     latLong = db.GeoPtProperty()
 
-class internship (place):
+class Internship (place):
     """
     """
     company = db.StringProperty(required=True)
@@ -78,27 +78,27 @@ class internship (place):
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(validator=yearValidator)
 
-class placeLive (place):
+class PlaceLive (place):
     """
     """
     pass
 
-class placeEat (place):
+class PlaceEat (place):
     """
     """
     pass
 
-class placeFun (place):
+class PlaceFun (place):
     """
     """
     pass
 
-class placeStudy (place):
+class PlaceStudy (place):
     """
     """
     pass
 
-class game (ratable):
+class Game (ratable):
     """
     """
     platform = db.StringProperty(required=True,choices=gamePlatforms)

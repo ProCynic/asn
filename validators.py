@@ -12,8 +12,8 @@ def Validator(value):
 def uniqueValidator(value):
     """
     """
-    pat
-    if re.search("^\d{5}$",value) is None: raise ValueError
+    pattern = "^\d{5}$"
+    if re.search(pattern,value) is None: raise ValueError
 
 
 def courseNumValidator(value):
