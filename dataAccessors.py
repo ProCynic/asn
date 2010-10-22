@@ -2,7 +2,7 @@
 """
 
 import re
-from datastore import *
+from dataStore import *
 
 def _addPerson(name):
     """

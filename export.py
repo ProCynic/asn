@@ -1,7 +1,7 @@
 from xml.etree import ElementTree
 import sys
 import dataAccessors as DA
-import datastore
+import datatore
 
 
 def addText(node, name, text) :
