@@ -7,8 +7,9 @@ from datastore import *
 def _addPerson(name):
     """
     """
-    name = name.strip.split();
-    if len(name) == 2: fname, lname, mname = name, None
+    name = name.strip().split();
+    mname=None
+    if len(name) == 2: fname, lname = name
     elif len(name) == 3: fname, mname, lname = name
     else: raise ValueError
 
@@ -140,16 +141,22 @@ def addGame(platform, title):
         g.put()
         return g.key()
 
+def _addComment(text):
+    c = Comment(text=text)
+    c.put()
+    return c.key()
+
 def addRating(ratable, student, rating, comment=None):
     """
     """
     try:
         r = checkMembership(Rating,ratable=ratable,student=student)
     except KeyError:
+        c = _addComment(comment)
         r = Rating(rated=ratable,
                    rater=student,
                    rating=rating,
-                   comment=comment)
+                   comment=c)
     r.put()
     return r.key()
     
@@ -157,6 +164,6 @@ def checkMembership(classname, **kwargs):
     query = classname.all()
     for k in kwargs:
         query.filter(k + " =", kwargs[k])
-    if query.count() > 1: raise Exception
+    assert query.count() <= 1
     if query.count() == 1: return query.get().key()
     raise KeyError
