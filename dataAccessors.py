@@ -65,21 +65,29 @@ def addGrade(course,student,grade):
               grade=grade)
 
 def addPaper(journal, title, author):
-    fname,lname,mname = parseName(author)
     a = _addPerson(author)
-    p = Paper(journal=journal,
-              title=title,
-              author=a)
+    try:
+        return checkMembership(Paper, journal=journal,title=title,author=author)
+    except KeyError:
+        p = Paper(journal=journal,
+                  title=title,
+                  author=a)
+        p.put()
+        return p.key()
 
 def _addPlace(name, location, semester, year, placetype):
     """
     """
-    #might be cool to translate address into latlong
-    p = placetype(name=name,
-                  location=location,
-                  semester=semester,
-                  year=year)
-    return p.key()
+    try:
+        return checkMembership(placetype,name=name, location=location)
+    except KeyError:
+        #might be cool to translate address into latlong
+        p = placetype(name=name,
+                      location=location,
+                      semester=semester,
+                      year=year)
+        p.put()
+        return p.key()
 
 def addPlaceLive(name, location, semester, year):
     """
