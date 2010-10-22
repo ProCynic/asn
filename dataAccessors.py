@@ -49,20 +49,26 @@ def addBook(title,isbn,author):
 def addCourse(unique, courseNum, name, semester, year, instructor):
     """
     """
-    i = _addPerson(instructor)
-    c = Course(unique=unique,
-               courseNum=courseNum,
-               name=name,
-               semester=semester,
-               year=year,
-               instructor=i)
+    try:
+        return checkMembership(Course, unique=unique)
+    except KeyError:
+        i = _addPerson(instructor)
+        c = Course(unique=unique,
+        		courseNum=courseNum,
+        		name=name,
+        		semester=semester,
+        		year=year,
+        		instructor=i)
     c.put()
     return c.key()
 
 def addGrade(course,student,grade):
-    g = Grade(course=course,
-              student=student,
-              grade=grade)
+	try:
+        return checkMembership(Grade, course=course, student=student)
+    except KeyError:
+    	g = Grade(course=course,
+        		student=student,
+        		grade=grade)
 
 def addPaper(journal, title, author):
     a = _addPerson(author)
