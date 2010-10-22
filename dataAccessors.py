@@ -157,7 +157,6 @@ def checkMembership(classname, **kwargs):
     query = classname.all()
     for k in kwargs:
         query.filter(k + " =", kwargs[k])
-        results = query.fetch()
-        if len(results) > 1: raise Exception
-        if len(results) == 1: return results.get().key()
+    if query.count() > 1: raise Exception
+    if query.count() == 1: return query.get().key()
     raise KeyError
