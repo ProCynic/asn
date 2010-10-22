@@ -1,4 +1,5 @@
 import dataStore as DS
+from export import export
 
 import datetime
 import os
@@ -64,13 +65,19 @@ class StudentPasswordPage(BaseRequestHandler):
 class AdminPage(BaseRequestHandler):
     # login required
     def get(self):
-        # fn's
+        
         self.generate('admin.html', {
             # variables
         })
     def post(self):
         # fn's
         self.redirect('/admin')
+
+class AdminExportPage(BaseRequestHandler):
+    # login required
+    def get(self):
+        self.response.headers['Content-Type'] = "application/xml"
+        export()
 
 class AdminResetPage(BaseRequestHandler):
     # login required
@@ -94,6 +101,7 @@ def main():
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),
+    ('/admin/export', AdminExportPage),
     ('/admin/reset', AdminResetPage)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
