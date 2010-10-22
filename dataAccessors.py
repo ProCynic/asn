@@ -11,11 +11,17 @@ def _addPerson(name):
     if len(name) == 2: fname, lname, mname = name, None
     else if len(name) == 3: fname, mname, lname = name
     else raise ValueError
+
     #if person in datastore:
         #return person.key()
+    query = Person.all()
+   	query.filter('fname =', fname).filter('mname =', mname).filter('lname =', lname)
+    results = query.fetch()
+    if len(results) > 1: raise Exception
+    if len(results) == 1: return results.get().key()
     p = Person(fname=fname,
-               lname=lname,
-               mname=mname)
+       lname=lname,
+       mname=mname)
     p.put()
     return p.key()
 
