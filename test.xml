@@ -1,0 +1,76 @@
+<students>
+	<student>
+		<id>abcd1234</id>
+		<password>hunter2</password>
+		
+		<class>
+			<unique>12345</unique>
+			<course_num>CS 123</course_num>
+			<course_name>Introduction to Brainfuck</course_name>
+			<semester>Summer		2012</semester>
+			<instructor>Robert Jones</instructor>
+			<rating>99</rating>
+			<comment>I hunter2ed this class</comment>
+			<grade>A</grade>
+		</class>
+
+		<book>
+			<isbn>0123456789012</isbn>
+			<title>Brainfuck: An introduction</title>
+			<author>Robert Jones</author>
+			<rating>98</rating>
+			<comment>This book was really expensive</comment>
+		</book>
+
+		<paper>
+			<paper_category>journal</paper_category>
+			<title>Why I hate brainfuck</title>
+			<author>Joe Bob</author>
+			<rating>100</rating>
+			<comment>I wrote this paper, of course I love it.</comment>
+		</paper>
+
+		<internship>
+			<place_name>Brainfuckweb Inc.</place_name>
+			<location>Nowhere, USA.</location>
+			<semester>Summer 2012</semester>
+			<rating>5</rating>
+			<comment>Nothing got done, because we were coding in brainfuck</comment>
+		</internship>
+
+		<study_place>
+			<place_name>UT Austin</place_name>
+			<location>Austin, TX</location>
+			<rating>100</rating>
+			<comment>I went here for school</comment>
+		</study_place>
+
+		<live_place>
+			<place_name>UT Austin</place_name>
+			<location>Austin, TX</location>
+			<rating>100</rating>
+			<comment>I went here for school</comment>
+		</live_place>
+
+		<eat_place>
+			<place_name>UT Austin</place_name>
+			<location>Austin, TX</location>
+			<rating>100</rating>
+			<comment>I went here for school</comment>
+		</eat_place>
+
+		<fun_place>
+			<place_name>UT Austin</place_name>
+			<location>Austin, TX</location>
+			<rating>100</rating>
+			<comment>I went here for school</comment>
+		</fun_place>
+
+		<game>
+			<os>XBox 360</os>
+			<title>Halo 3</title>
+			<rating>99</rating>
+			<comment>I love this game bro</comment>
+		</game>
+	</student>
+</students>

@@ -4,8 +4,6 @@ import dataAccessors as DA
 
 
 
-tree = ElementTree.parse("test.xml")
-
 class StudentDescriptor :
 	classes = []
 	books = []
@@ -198,8 +196,8 @@ class StudentImporter :
 s = StudentImporter()
 s.parse("test.xml")
 
-
-
+for x in DA.Rateable.all().fetch() :
+	print(x.rating)
 
 
 
