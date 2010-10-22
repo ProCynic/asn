@@ -70,7 +70,7 @@ class Place (ratable):
     year = db.StringProperty(validator=yearValidator)
     latLong = db.GeoPtProperty()
 
-class Internship (place):
+class Internship (ratable):
     """
     """
     company = db.StringProperty(required=True)

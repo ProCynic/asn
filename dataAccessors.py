@@ -34,7 +34,7 @@ def _addPerson(name):
 def addBook(title,isbn,author):
     """
     """
-    isbn = isbn.strip().replace('-','')
+    isbn = int(isbn.strip().replace('-',''))
     
     a = _addPerson(author)
     b = Book(title=title,
@@ -62,7 +62,10 @@ def addPaper(journal, title, author):
               title=title,
               author=a)
 
-def addPlace(name, location, semester, year, placetype):
+def _addPlace(name, location, semester, year, placetype):
+    """
+    """
+    #might be cool to translate address into latlong
     p = placetype(name=name,
                   location=location,
                   semester=semester,
@@ -74,6 +77,38 @@ def addPlaceLive(name, location, semester, year):
     """
     return _addPlace(name,location,semester,year, PlaceLive)
 
+def addPlaceEat(name, location, semester, year):
+    """
+    """
+    return _addPlace(name,location,semester,year, PlaceLive)
+
+def addPlaceFun(name, location, semester, year):
+    """
+    """
+    return _addPlace(name,location,semester,year, PlaceLive)
+
+def addPlaceStudy(name, location, semester, year):
+    """
+    """
+    return _addPlace(name,location,semester,year, PlaceLive)
+
+def addInternship(company, location, semester, year):
+    """
+    """
+    i = Internship(company=company,
+                   location=location,
+                   semseter=semester,
+                   year=year)
+    i.put()
+    return i.key()
+
+def addGame(platform, title):
+    """
+    """
+    g = Game(platform=platform,
+             title=title)
+    g.put()
+    return g.key()
 
 def addRating(ratable, student, rating, comment=None):
     """
@@ -83,6 +118,5 @@ def addRating(ratable, student, rating, comment=None):
                rating=rating,
                comment=comment)
     r.put()
-
     return r.key()
-
+    
