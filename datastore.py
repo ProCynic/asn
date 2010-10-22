@@ -3,7 +3,6 @@
 
 from google.appengine.ext import db
 from google.appengine.ext.db import polymodel
-from google.appengine.api import users
 from validators import *
 
 class comment(db.Model):
@@ -66,7 +65,7 @@ class place (ratable):
     """
     """
     name = db.StringProperty()
-    location = db.StringProperty(required=True)
+    location = db.PostalAddressProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(validator=yearValidator)
     latLong = db.GeoPtProperty()
@@ -75,7 +74,7 @@ class internship (place):
     """
     """
     company = db.StringProperty(required=True)
-    location = db.StringProperty(required=True)
+    location = db.PostalAddressProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(validator=yearValidator)
 
