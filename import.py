@@ -184,8 +184,8 @@ class StudentImporter :
 		d.games.append(newGame)
 
 	def parseSemester(self, c, d) : 
-		semester, year = c.text.strip().split();
-		d.semester = semester;
+		semester, year = c.text.strip().split()
+		d.semester = semester.upper()
 		d.year = year;
 
 	def parseRating(self, c, d) :
