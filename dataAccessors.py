@@ -12,30 +12,41 @@ def _addPerson(name):
     else if len(name) == 3: fname, mname, lname = name
     else raise ValueError
 
-    #if person in datastore:
-        #return person.key()
-    query = Person.all()
-   	query.filter('fname =', fname).filter('mname =', mname).filter('lname =', lname)
-    results = query.fetch()
-    if len(results) > 1: raise Exception
-    if len(results) == 1: return results.get().key()
-    p = Person(fname=fname,
-       lname=lname,
-       mname=mname)
-    p.put()
-    return p.key()
+    try:
+        return checkMempership(Person,fname=fname, mname=mname, lname=lname)
+    except KeyError:
+        p = Person(fname=fname,
+           lname=lname,
+           mname=mname)
+        p.put()
+        return p.key()
+
+def addStudent(sid, password):
+    try:
+        checkMembership(Student, sid=sid)
+    except KeyError as e:
+        #very bad
+    s = Student(sid=sid,
+                password=password)
+    s.put()
+    return s.key()
 
 def addBook(title,isbn,author):
     """
     """
-    isbn = int(isbn.strip().replace('-',''))
-    
-    a = _addPerson(author)
-    b = Book(title=title,
-             isbn=isbn,
-             author=a)
+    try:
+        return checkMembership(Book, isbn=isbn)
+    except KeyError:
+        isbn = int(isbn.strip().replace('-',''))
+        
+        a = _addPerson(author)
+        b = Book(title=title,
+                 isbn=isbn,
+                 author=a)
+        b.put()
+        return b.key()
 
-def addCourse(unique, courseNum, name, semester, year, instructor, grade):
+def addCourse(unique, courseNum, name, semester, year, instructor):
     """
     """
     i = _addPerson(instructor)
@@ -44,10 +55,14 @@ def addCourse(unique, courseNum, name, semester, year, instructor, grade):
                name=name,
                semester=semester,
                year=year,
-               grade=grade,
                instructor=i)
     c.put()
     return c.key()
+
+def addGrade(course,student,grade):
+    g = Grade(course=course,
+              student=student,
+              grade=grade)
 
 def addPaper(journal, title, author):
     fname,lname,mname = parseName(author)
@@ -114,3 +129,11 @@ def addRating(ratable, student, rating, comment=None):
     r.put()
     return r.key()
     
+def checkMembership(classname, **kwargs):
+    query = classname.all()
+    for k in kwargs:
+    query.filter(k + " =", kwargs[k])
+    results = query.fetch()
+    if len(results) > 1: raise Exception
+    if len(results) == 1: return results.get().key()
+    raise KeyError

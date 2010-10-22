@@ -17,7 +17,6 @@ class Person(db.model):
     mname = db.StringProperty()
 
 class Student(db.model):
-    info = db.ReferenceProperty(person, required=True)
     sid = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
 
@@ -42,10 +41,14 @@ class Course (ratable):
     name = db.StringProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     instructor = db.ReferenceProperty(person, required=True)
-    grade = db.StringProperty(required=True, validator=gradeValidator)
     year = db.StringProperty(required=True, validator=yearValidator)
 
-
+class Grade(db.model):
+    """
+    """
+    course = db.ReferenceProperty(course)
+    student = db.ReferenceProperty(student)
+    grade = db.StringProperty(required=True, validator=gradeValidator)
 
 class Book(ratable):
     """
