@@ -32,7 +32,6 @@ class BaseRequestHandler(webapp.RequestHandler):
 
 class HomePage(BaseRequestHandler):
     def get(self):
-        print isinstance(DS.PlaceLive, DS.Place) 
         self.generate('browser.html', {
             # variables
         })
