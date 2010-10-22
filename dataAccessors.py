@@ -25,6 +25,7 @@ def addStudent(sid, password):
     try:
         checkMembership(Student, sid=sid)
     except KeyError as e:
+        pass
         #very bad
     s = Student(sid=sid,
                 password=password)
@@ -63,7 +64,7 @@ def addCourse(unique, courseNum, name, semester, year, instructor):
     return c.key()
 
 def addGrade(course,student,grade):
-	try:
+    try:
         return checkMembership(Grade, course=course, student=student)
     except KeyError:
     	g = Grade(course=course,
@@ -155,8 +156,8 @@ def addRating(ratable, student, rating, comment=None):
 def checkMembership(classname, **kwargs):
     query = classname.all()
     for k in kwargs:
-    query.filter(k + " =", kwargs[k])
-    results = query.fetch()
-    if len(results) > 1: raise Exception
-    if len(results) == 1: return results.get().key()
+        query.filter(k + " =", kwargs[k])
+        results = query.fetch()
+        if len(results) > 1: raise Exception
+        if len(results) == 1: return results.get().key()
     raise KeyError
