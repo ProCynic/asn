@@ -49,37 +49,51 @@ def addBook(title,isbn,author):
 def addCourse(unique, courseNum, name, semester, year, instructor):
     """
     """
-    i = _addPerson(instructor)
-    c = Course(unique=unique,
-               courseNum=courseNum,
-               name=name,
-               semester=semester,
-               year=year,
-               instructor=i)
+    try:
+        return checkMembership(Course, unique=unique)
+    except KeyError:
+        i = _addPerson(instructor)
+        c = Course(unique=unique,
+        		courseNum=courseNum,
+        		name=name,
+        		semester=semester,
+        		year=year,
+        		instructor=i)
     c.put()
     return c.key()
 
 def addGrade(course,student,grade):
-    g = Grade(course=course,
-              student=student,
-              grade=grade)
+	try:
+        return checkMembership(Grade, course=course, student=student)
+    except KeyError:
+    	g = Grade(course=course,
+        		student=student,
+        		grade=grade)
 
 def addPaper(journal, title, author):
-    fname,lname,mname = parseName(author)
     a = _addPerson(author)
-    p = Paper(journal=journal,
-              title=title,
-              author=a)
+    try:
+        return checkMembership(Paper, journal=journal,title=title,author=author)
+    except KeyError:
+        p = Paper(journal=journal,
+                  title=title,
+                  author=a)
+        p.put()
+        return p.key()
 
 def _addPlace(name, location, semester, year, placetype):
     """
     """
-    #might be cool to translate address into latlong
-    p = placetype(name=name,
-                  location=location,
-                  semester=semester,
-                  year=year)
-    return p.key()
+    try:
+        return checkMembership(placetype,name=name, location=location)
+    except KeyError:
+        #might be cool to translate address into latlong
+        p = placetype(name=name,
+                      location=location,
+                      semester=semester,
+                      year=year)
+        p.put()
+        return p.key()
 
 def addPlaceLive(name, location, semester, year):
     """
@@ -104,28 +118,37 @@ def addPlaceStudy(name, location, semester, year):
 def addInternship(company, location, semester, year):
     """
     """
-    i = Internship(company=company,
-                   location=location,
-                   semseter=semester,
-                   year=year)
-    i.put()
-    return i.key()
+    try:
+        return checkMembership(Internship,company=company, semester=semester, year=year)
+    except KeyError:
+        i = Internship(company=company,
+                       location=location,
+                       semseter=semester,
+                       year=year)
+        i.put()
+        return i.key()
 
 def addGame(platform, title):
     """
     """
-    g = Game(platform=platform,
-             title=title)
-    g.put()
-    return g.key()
+    try:
+        return checkMembership(Game,title=title, platform=platform)
+    except:
+        g = Game(platform=platform,
+                 title=title)
+        g.put()
+        return g.key()
 
 def addRating(ratable, student, rating, comment=None):
     """
     """
-    r = Rating(rated=ratable,
-               rater=student,
-               rating=rating,
-               comment=comment)
+    try:
+        r = checkMembership(Rating,ratable=ratable,student=student)
+    except KeyError:
+        r = Rating(rated=ratable,
+                   rater=student,
+                   rating=rating,
+                   comment=comment)
     r.put()
     return r.key()
     
