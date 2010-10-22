@@ -33,7 +33,9 @@ nodetypes = {
 
 
 
+
 def export(self, students) :
+        students = DS.Student.all()
         print nodetypes
         root = ElementTree.Element("students")
         for s in students : 
@@ -94,8 +96,3 @@ def exportPlace(self, p, rating, place):
         addText(c, 'location', str(place.location))
         addText(c, "semester", place.semester + " " + place.year)
         addRating(c, rating)
-
-
-
-e = Exporter()
-e.export(DS.Student.all())
