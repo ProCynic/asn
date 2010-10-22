@@ -72,6 +72,8 @@ def addGrade(course,student,grade):
     	g = Grade(course=course,
         		student=student,
         		grade=grade)
+    	g.put()
+    	return g.key()
 
 def addPaper(journal, title, author):
     a = _addPerson(author)
