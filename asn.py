@@ -64,7 +64,6 @@ class StudentPasswordPage(BaseRequestHandler):
 class AdminPage(BaseRequestHandler):
     # login required
     def get(self):
-        
         self.generate('admin.html', {
             # variables
         })
@@ -76,6 +75,7 @@ class AdminExportPage(BaseRequestHandler):
     # login required
     def get(self):
         self.response.headers['Content-Type'] = "application/xml"
+        self.response.headers['Content-Disposition'] = "inline; filename=\"datastore.xml\""
         export()
 
 class AdminResetPage(BaseRequestHandler):
