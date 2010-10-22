@@ -8,11 +8,11 @@ def _addPerson(name):
     """
     """
 
-    name = name.split();
-    if len(name) not in [2, 3] :
+    name = name.split()
+    if len(name) not in [2, 3]:
     	raise ValueError
-    fname = name[0];
-    if len(name) > 2 :
+    fname = name[0]
+    if len(name) > 2:
     	mname = name[1]
     	lname = name[2]
     else :
@@ -20,9 +20,14 @@ def _addPerson(name):
     	lname = name[1]
     #if person in datastore:
         #return person.key()
+    query = Person.all()
+   	query.filter('fname =', fname).filter('mname =', mname).filter('lname =', lname)
+    results = query.fetch()
+    if len(results) > 1: raise Exception
+    if len(results) == 1: return results.get().key()
     p = Person(fname=fname,
-               lname=lname,
-               mname=mname)
+       lname=lname,
+       mname=mname)
     p.put()
     return p.key()
 
