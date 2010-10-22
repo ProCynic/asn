@@ -106,17 +106,17 @@ def addPlaceLive(name, location, semester, year):
 def addPlaceEat(name, location, semester, year):
     """
     """
-    return _addPlace(name,location,semester,year, PlaceLive)
+    return _addPlace(name,location,semester,year, PlaceEat)
 
 def addPlaceFun(name, location, semester, year):
     """
     """
-    return _addPlace(name,location,semester,year, PlaceLive)
+    return _addPlace(name,location,semester,year, PlaceFun)
 
 def addPlaceStudy(name, location, semester, year):
     """
     """
-    return _addPlace(name,location,semester,year, PlaceLive)
+    return _addPlace(name,location,semester,year, PlaceStudy)
 
 def addInternship(company, location, semester, year):
     """
