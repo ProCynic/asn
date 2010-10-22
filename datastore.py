@@ -65,6 +65,7 @@ class paper(ratable):
 class place (ratable):
     """
     """
+    name = db.StringProperty()
     location = db.StringProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(validator=yearValidator)
@@ -74,18 +75,26 @@ class internship (place):
     """
     """
     company = db.StringProperty(required=True)
+    location = db.StringProperty(required=True)
+    semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
+    year = db.StringProperty(validator=yearValidator)
 
 class placeLive (place):
     """
     """
     pass
 
-class placeEat (ratable):
+class placeEat (place):
     """
     """
     pass
 
-class placeFun (ratable):
+class placeFun (place):
+    """
+    """
+    pass
+
+class placeStudy (place):
     """
     """
     pass
