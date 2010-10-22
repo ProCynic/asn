@@ -14,8 +14,14 @@ def addNode(node, name) :
 	return subnode
 
 def addRating(node, r) :
-	addText(node, "rating", r.rating)
+	addText(node, "rating", str(r.rating))
 	addText(node, "comment", r.comment.text)
+
+def personStr(r) :
+	if (r.mname) :
+		return r.fname + " " + r.mname + " " + r.lname
+	else :
+		return r.fname + " " + r.lname
 
 class Exporter :
 	def export(self, students) :
@@ -26,15 +32,21 @@ class Exporter :
 			for r in datastore.Rating.all().filter('rater =', s) :
 				obj = r.rated;
 				if isinstance(obj, datastore.Course) :
-					grade = datastore.Grade.all()
-					print(type(grade))
-					for g in grade :
-						print(g.grade)
+					grade = datastore.Grade.all().filter('course =', obj).filter('student =', s).get()
 					self.exportCourse(student, r, obj, grade)
+				elif isinstance(obj, datastore.Book) :
+					self.exportBook(student, r, obj)
+				else :
+					print("")
 
-		
+		ElementTree.dump(root)
 
-
+	def exportBook(self, p, rating, book) :
+		c = addNode(p, 'book')
+		addText(c, 'isbn', book.isbn)
+		addText(c, 'title', book.title)
+		addText(c, 'author', personStr(book.author))
+		addRating(c, rating)
 
 	def exportCourse(self, p, rating, course, grade) :
 		c = addNode(p, "class")
@@ -42,7 +54,8 @@ class Exporter :
 		addText(c, "course_num", course.courseNum)
 		addText(c, "course_name", course.name)
 		addText(c, "semester", course.semester + " " + course.year)
-		addText(c, "instructor", course.instructor)
+		addText(c, "instructor", personStr(course.instructor))
+		addText(c, "grade", grade.grade)
 		addRating(c, rating)
 
 
