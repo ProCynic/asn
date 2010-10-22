@@ -130,7 +130,6 @@ class StudentImporter :
 
 		for p in currentStudent.places :
 			f = getattr(DA, "addPlace" + p.typeID)
-			print(f)
 			place = f(p.place, p.location, p.semester, p.year)
 			DA.addRating(place, student, p.rating, p.comment)
 
@@ -195,10 +194,8 @@ class StudentImporter :
 		d.comment = c.text.strip()
 
 s = StudentImporter()
-#s.parse("test.xml")
+s.parse("test.xml")
 
-for x in datastore.Rating.all() :
-	print(x.rating)
 
 
 
