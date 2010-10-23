@@ -1,5 +1,6 @@
 import dataStore as DS
-from export import export
+from exporter import export
+from importer import StudentImporter
 
 import datetime
 import os
@@ -78,7 +79,14 @@ class AdminExportPage(BaseRequestHandler):
         self.response.headers['Content-Disposition'] = "attachment; filename=\"datastore.xml\""
         self.response.headers['Content-Description'] = "File Transfer"
         self.response.out.write(export())
-        
+
+class AdminExportPage(BaseRequestHandler):
+    # login required
+    def post(self):
+        si = StudentImporter()
+        newFile = self.request.get('ex1')
+        si.parse(newFile)
+        self.redirect('/admin')
 
 class AdminResetPage(BaseRequestHandler):
     # login required
@@ -103,6 +111,7 @@ def main():
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),
     ('/admin/export', AdminExportPage),
+    ('/admin/inport', AdminExportPage),
     ('/admin/reset', AdminResetPage)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)

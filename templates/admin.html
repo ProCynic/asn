@@ -10,7 +10,12 @@
 
 {% block main %}
 <form action="admin/export" method="get">
-<label>Export<button name="export" type="submit">Export</button></label>
+<button type="submit">Export</button>
+</form>
+<form action="admin/import" method="post">
+<label>Select file to import: <input name="newFile" type="file" /></label>
+<br />
+<button type="submit">Import</button>
 </form>
 {% endblock %}
 
