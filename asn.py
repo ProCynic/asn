@@ -70,9 +70,9 @@ class StudentPasswordPage(BaseRequestHandler):
 class AdminPage(BaseRequestHandler):
     # login required
     def get(self):
-        
+        m = self.request.get('m')
         self.generate('admin.html', {
-            # variables
+            'msg': m
         })
     def post(self):
         # fn's
@@ -90,9 +90,13 @@ class AdminImport(BaseRequestHandler):
     # login required
     def post(self):
         si = StudentImporter()
-        newFile = self.request.get('newFile')
-        si.parse(newFile)
-        self.redirect('/admin')
+        try:
+            newFile = self.request.get('newFile')
+            si.parse(newFile)
+            msg = "Import was successful."
+        except IOError:
+            msg = "ERROR: Please select a file to import."
+        self.redirect('/admin?m='+msg)
 
 class AdminReset(BaseRequestHandler):
     # login required
