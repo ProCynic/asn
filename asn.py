@@ -77,7 +77,8 @@ class AdminExportPage(BaseRequestHandler):
         self.response.headers['Content-Type'] = "application/force-download"
         self.response.headers['Content-Disposition'] = "attachment; filename=\"datastore.xml\""
         self.response.headers['Content-Description'] = "File Transfer"
-        export()
+        self.response.out.write(export())
+        
 
 class AdminResetPage(BaseRequestHandler):
     # login required

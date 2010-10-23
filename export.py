@@ -55,9 +55,7 @@ def export() :
                                 exportPlace(student, r, obj)
                         else: assert False
                         
-
-        print ''
-        ElementTree.dump(root)
+        return ElementTree.tostring(root)
         
 
 def exportCourse(p, rating, course, grade) :
