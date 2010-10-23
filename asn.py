@@ -1,5 +1,5 @@
 import dataStore as DS
-from export import export
+from exporter import export
 
 import datetime
 import os
@@ -64,6 +64,7 @@ class StudentPasswordPage(BaseRequestHandler):
 class AdminPage(BaseRequestHandler):
     # login required
     def get(self):
+        
         self.generate('admin.html', {
             # variables
         })
@@ -74,11 +75,8 @@ class AdminPage(BaseRequestHandler):
 class AdminExportPage(BaseRequestHandler):
     # login required
     def get(self):
-        self.response.headers['Content-Type'] = "application/force-download"
-        self.response.headers['Content-Disposition'] = "attachment; filename=\"datastore.xml\""
-        self.response.headers['Content-Description'] = "File Transfer"
-        self.response.out.write(export())
-        
+        self.response.headers['Content-Type'] = "application/xml"
+        export()
 
 class AdminResetPage(BaseRequestHandler):
     # login required
