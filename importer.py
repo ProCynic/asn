@@ -193,10 +193,6 @@ class StudentImporter :
 	def parseComment(self, c, d) :
 		d.comment = c.text.strip()
 
-s = StudentImporter()
-s.parse("test.xml")
-
-
 
 
 
