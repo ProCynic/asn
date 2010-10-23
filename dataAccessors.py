@@ -4,9 +4,9 @@
 import re
 from dataStore import *
 
-class SidClashError (Exception):
-    def __init__(self):
-        pass
+class Usage (Exception):
+    def __init__(self,msg):
+        self.msg = msg
 
 def _addPerson(name):
     """
@@ -30,7 +30,7 @@ def _addPerson(name):
 def addStudent(sid, password):
     try:
         checkMembership(Student, sid=sid)
-        raise SidClashError()
+        raise Usage("Duplicate Student IDs")
     except KeyError, e:
         s = Student(sid=sid,
                     password=password)
