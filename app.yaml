@@ -10,8 +10,5 @@ handlers:
 - url: /ds.*
   script: import.py
 
-- url: /datastore.xml
-  script: export.py
-
 - url: /.*
   script: asn.py
