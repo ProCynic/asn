@@ -1,6 +1,7 @@
 import dataStore as DS
 from exporter import export
 from importer import StudentImporter
+from dataAccessors import Usage
 
 import datetime
 import os
@@ -96,6 +97,8 @@ class AdminImport(BaseRequestHandler):
             msg = "Import was successful."
         except IOError:
             msg = "ERROR: Please select a file to import."
+        except Usage, err:
+            msg = "ERROR: "+err.msg
         self.redirect('/admin?m='+msg)
 
 class AdminReset(BaseRequestHandler):
