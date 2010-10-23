@@ -1,4 +1,5 @@
 from xml.etree import ElementTree
+from xml.dom import minidom
 import sys
 import dataAccessors as DA
 import dataStore as DS
@@ -55,7 +56,8 @@ def export() :
                                 exportPlace(student, r, obj)
                         else: assert False
                         
-        return ElementTree.tostring(root)
+        xml = ElementTree.tostring(root)
+        return minidom.parseString(xml).toprettyxml(indent="\t")
         
 
 def exportCourse(p, rating, course, grade) :
