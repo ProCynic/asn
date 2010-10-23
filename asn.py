@@ -73,27 +73,24 @@ class AdminPage(BaseRequestHandler):
         # fn's
         self.redirect('/admin')
 
-class AdminExportPage(BaseRequestHandler):
+class AdminExport(BaseRequestHandler):
     # login required
-    def get(self):
-        self.response.headers['Content-Type'] = "application/xml"
-        export()
+    def post(self):
+        self.response.headers['Content-Type'] = "application/force-download"
+        self.response.headers['Content-Disposition'] = "attachment; filename=\"datastore.xml\""
+        self.response.headers['Content-Description'] = "File Transfer"
+        self.response.out.write(export())
 
-class AdminExportPage(BaseRequestHandler):
+class AdminImport(BaseRequestHandler):
     # login required
     def post(self):
         si = StudentImporter()
-        newFile = self.request.get('ex1')
+        newFile = self.request.get('newFile')
         si.parse(newFile)
         self.redirect('/admin')
 
-class AdminResetPage(BaseRequestHandler):
+class AdminReset(BaseRequestHandler):
     # login required
-    def get(self):
-        # fn's
-        self.generate('admin.html', {
-            # variables
-        })
     def post(self):
         """
         a = comment.all()
@@ -109,9 +106,9 @@ def main():
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),
-    ('/admin/export', AdminExportPage),
-    ('/admin/inport', AdminExportPage),
-    ('/admin/reset', AdminResetPage)
+    ('/admin/export', AdminExport),
+    ('/admin/import', AdminImport),
+    ('/admin/reset', AdminReset)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 
