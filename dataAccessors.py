@@ -26,13 +26,12 @@ def _addPerson(name):
 def addStudent(sid, password):
     try:
         checkMembership(Student, sid=sid)
+        raise ValueError
     except KeyError, e:
-        pass
-        #very bad
-    s = Student(sid=sid,
-                password=password)
-    s.put()
-    return s.key()
+        s = Student(sid=sid,
+                    password=password)
+        s.put()
+        return s.key()
 
 def addBook(title,isbn,author):
     """
