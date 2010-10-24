@@ -76,7 +76,7 @@ def exportBook(p, rating, book) :
 
 def exportPaper(p, rating, paper):
         c = addNode(p, 'paper')
-        #add journal
+        addText(c, 'paper_category', paper.paperType)
         addText(c, 'title', paper.title)
         addText(c, 'author', personStr(paper.author))
         addRating(c, rating)
