@@ -25,10 +25,17 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 	margin:2em 0 0;
 }
 
+	#message {
+		background-color: #CCCCCC;
+		border: 1px solid #444444;
+		padding: 1em;
+		margin-bottom: 1em;
+	}
+
 	#export, #import {
 		background-color:#F2D9B1;
 		border:1px solid #444444;
-		margin-bottom:1em;
+		margin: 0 0 1em;
 		padding:1em;
 	}
 	
@@ -40,7 +47,7 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 		font-weight:bold;
 	}
 	
-	#export button, #import button {
+	#export button, #import button, #import input {
 		margin-left:1em;
 	}
 	

@@ -27,7 +27,7 @@ class BaseRequestHandler(webapp.RequestHandler):
     values = {
       'request': self.request,
       'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Part 1',
+      'application_name': 'Anonymous Social Network, Phase 1',
     }
     values.update(template_values)
     directory = os.path.dirname(__file__)
@@ -37,7 +37,7 @@ class BaseRequestHandler(webapp.RequestHandler):
 class HomePage(BaseRequestHandler):
     def get(self):
         self.generate('browser.html', {
-            # variables
+            'title': 'Home'
         })
 
 class DatastoreXML(BaseRequestHandler):
@@ -74,7 +74,8 @@ class AdminPage(BaseRequestHandler):
     def get(self):
         m = self.request.get('m')
         self.generate('admin.html', {
-            'msg': m
+            'msg': m,
+            'title': 'Admin'
         })
     def post(self):
         # fn's

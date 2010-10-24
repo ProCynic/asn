@@ -2,14 +2,14 @@
 
 {% block head %}{% endblock %}
 
-{% block header %}
-<div class="content">
-	<h1><a href="/">{{ application_name }}</a> - <a href="/admin">Admin</a></h1>
-</div>
-{% endblock %}
-
 {% block main %}
-{{ msg }}
+
+{% if msg %}
+<div id="message">
+    {{ msg }}
+</div>
+{% endif %}
+
 <fieldset id="export">
     <legend>Export</legend>
     <form action="admin/export" method="post">
@@ -20,8 +20,8 @@
     <legend>Import</legend>
     <form action="admin/import" method="post">
         <ol>
-            <li><label>Select file to import: <input name="newFile" type="file" /></label></li>
-            <li><label>Click to import from selected file<button type="submit">Import</button></li>
+            <li><label>Select file to import:<input name="newFile" type="file" /></label></li>
+            <li><label>Click to import from selected file:<button type="submit">Import</button></li>
         </ol>
     </form>
 </fieldset>
