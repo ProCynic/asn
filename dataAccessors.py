@@ -10,6 +10,11 @@ class Usage (Exception):
 
 def _addPerson(name):
     """
+		Adds a person to the database, after splitting the 
+		name into first, middle and last. 
+
+		Does not add a person if they already exist in the data store.
+		Returns the key of the person for further inserts concering this person.
     """
 
     name = name.strip().split()
@@ -28,6 +33,13 @@ def _addPerson(name):
         return p.key()
 
 def addStudent(sid, password):
+	"""
+		Adds a student to the database.
+		If they already exist, then we raise an error which will be displayed 
+		on the user UI.
+
+		Returns a key to the student for more inserts.
+	"""
     try:
         checkMembership(Student, sid=sid)
         raise Usage("Duplicate Student IDs")
@@ -39,6 +51,11 @@ def addStudent(sid, password):
 
 def addBook(title,isbn,author):
     """
+		Adds a book to the datastore. 
+		If the book already exists, then we do not add anything.
+		Otherwise, we add the person and book.
+
+		Returns the key to the book for further inserts concerning this book.
     """
     try:
         return checkMembership(Book, isbn=isbn)
@@ -54,6 +71,8 @@ def addBook(title,isbn,author):
 
 def addCourse(unique, courseNum, name, semester, year, instructor):
     """
+		Adds a course to the database if it does not already exists.
+		Returns the key to the course for more inserts concerning this course.
     """
     try:
         return checkMembership(Course, unique=unique)
@@ -69,6 +88,12 @@ def addCourse(unique, courseNum, name, semester, year, instructor):
     return c.key()
 
 def addGrade(course,student,grade):
+	"""
+		Adds a grade to the input course, for the input student, and the input grade.
+		The course and students should be keys from previous inserts into the datastore.
+
+		Returns a key to the grade in question.
+	"""
     try:
         return checkMembership(Grade, course=course, student=student)
     except KeyError:

@@ -10,11 +10,5 @@ handlers:
 - url: /test.*
   script: gaeunit.py
 
-- url: /ds.*
-  script: importer.py
-
-- url: /export.*
-  script: exporter.py
-
 - url: /.*
   script: ASN1.py

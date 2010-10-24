@@ -2,6 +2,7 @@ import dataStore as DS
 from exporter import export
 from importer import StudentImporter
 from dataAccessors import Usage
+from importds import DataAccessor
 
 import datetime
 import os
@@ -85,7 +86,7 @@ class AdminExport(BaseRequestHandler):
 class AdminImport(BaseRequestHandler):
     # login required
     def post(self):
-        si = StudentImporter()
+        si = StudentImporter(DataAccessor())
         try:
             newFile = self.request.get('newFile')
             si.parse(newFile)

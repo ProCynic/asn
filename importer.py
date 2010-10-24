@@ -267,7 +267,3 @@ class StudentImporter :
 		d.comment = c.text.strip()
 
 
-i = StudentImporter(DataAccessor())
-i.parse("test.xml")
-
-
