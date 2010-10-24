@@ -1,18 +1,10 @@
-#class ProxyAccessor :
-#	def addStudent( ... ) :
-#		assert(name == "as;ldfjkasdl;fkjas;dfkljasf")
+import unittest
+
+class TestASN(unittest.TestCase):
+    def test_addPerson(self):
+		self.assertTrue(True)
 
 
-
-
-
-
-
-
-
-
-
-#i = StudentImporter(ProxyAccessor())
-
-
+if __name__ == '__main__' :
+	unittest.main()
 

@@ -10,5 +10,9 @@ handlers:
 - url: /test.*
   script: gaeunit.py
 
+- url: /temp.*
+  script: dataAccessors.py
+
+
 - url: /.*
   script: ASN1.py
