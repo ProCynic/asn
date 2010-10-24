@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>{{ application_name }}</title>
-		<link href="/www/css/style.css" type="text/css" rel="stylesheet"> 
+		<link href="/www/css/asn.css" type="text/css" rel="stylesheet"> 
 
 		{% block head-links %}{% endblock %}
 
@@ -17,7 +17,9 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				{% block header %} default header stuff {% endblock %}
+				<div class="content">
+					<h1><a href="/">{{ application_name }}</a> - <a href="{{ request.path }}">{{ title }}</a></h1>
+				</div>
 			</div>
 			<div id="main">
 				{% block main %} default main stuff {% endblock %}

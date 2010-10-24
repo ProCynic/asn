@@ -26,7 +26,7 @@ class BaseRequestHandler(webapp.RequestHandler):
     values = {
       'request': self.request,
       'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Part 1',
+      'application_name': 'Anonymous Social Network, Phase 1',
     }
     values.update(template_values)
     directory = os.path.dirname(__file__)
@@ -36,10 +36,10 @@ class BaseRequestHandler(webapp.RequestHandler):
 class HomePage(BaseRequestHandler):
     def get(self):
         self.generate('browser.html', {
-            # variables
+            'title': 'Home'
         })
 
-class Datastore(BaseRequestHandler):
+class DatastoreXML(BaseRequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = "application/xml"
         self.response.out.write(export())
@@ -73,7 +73,8 @@ class AdminPage(BaseRequestHandler):
     def get(self):
         m = self.request.get('m')
         self.generate('admin.html', {
-            'msg': m
+            'msg': m,
+            'title': 'Admin'
         })
     def post(self):
         # fn's
@@ -118,7 +119,7 @@ class AdminReset(BaseRequestHandler):
 def main():
   application = webapp.WSGIApplication([
     ('/', HomePage),
-    ('/datastore\.xml', Datastore),
+    ('/datastore\.xml', DatastoreXML),
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),

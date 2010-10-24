@@ -33,7 +33,7 @@ def _addPerson(name):
 	    return p.key()
 
 def addStudent(sid, password):
-	"""
+    """
 		Adds a student to the database.
 		If they already exist, then we raise an error which will be displayed 
 		on the user UI.
@@ -88,7 +88,7 @@ def addCourse(unique, courseNum, name, semester, year, instructor):
 	return c.key()
 
 def addGrade(course,student,grade):
-	"""
+    """
 		Adds a grade to the input course, for the input student, and the input grade.
 		The course and students should be keys from previous inserts into the datastore.
 

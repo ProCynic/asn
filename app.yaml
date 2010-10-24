@@ -4,6 +4,9 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /www
+  static_dir: www
+
 - url: /test.*
   script: gaeunit.py
 
