@@ -40,6 +40,11 @@ class HomePage(BaseRequestHandler):
             # variables
         })
 
+class DatastoreXML(BaseRequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = "application/xml"
+        self.response.out.write(export())
+
 class StudentPage(BaseRequestHandler):
     # login required
     def get(self):
@@ -111,7 +116,7 @@ class AdminReset(BaseRequestHandler):
 def main():
   application = webapp.WSGIApplication([
     ('/', HomePage),
-    ('/datastore\.xml', Datastore),
+    ('/datastore\.xml', DatastoreXML),
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),

@@ -17,7 +17,7 @@ class Comment(db.Model):
     replyto = db.SelfReferenceProperty()
 
 class Person(db.Model):
-	"""
+    """
 		A model for Persons.
 
 		A person has a first, middle and last name.
@@ -28,7 +28,7 @@ class Person(db.Model):
     mname = db.StringProperty()
 
 class Student(db.Model):
-	"""
+    """
 		A model for Students
 
 		A student has a random student id (sid)
