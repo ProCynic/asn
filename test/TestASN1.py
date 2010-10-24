@@ -1,7 +1,12 @@
+#/usr/bin/python
+
 import unittest
 
 class TestASN(unittest.TestCase):
     """
     """
     def test_addPerson(self):
-        pass
+        self.assertTrue(True);
+
+if __name__ == '__main__' :
+	unittest.main()
