@@ -54,23 +54,23 @@ class Book(Ratable):
     """
     """
     isbn = db.StringProperty()
-    title = db.StringProperty()
-    author = db.ReferenceProperty(Person)
+    title = db.StringProperty(required=True)
+    author = db.ReferenceProperty(Person,required=True)
 
 class Paper(Ratable):
     """
     """
-    journal = db.StringProperty()
-    title = db.StringProperty()
-    author = db.ReferenceProperty(Person)
+    paperType = db.StringProperty(required=True,choices=['JOURNAL','CONFERENCE'])
+    title = db.StringProperty(required=True)
+    author = db.ReferenceProperty(Person,required=True)
 
 class Place (Ratable):
     """
     """
-    name = db.StringProperty()
+    name = db.StringProperty(required=True)
     location = db.PostalAddressProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
-    year = db.StringProperty(validator=yearValidator)
+    year = db.StringProperty(required=True,validator=yearValidator)
     latLong = db.GeoPtProperty()
 
 class Internship (Place):
