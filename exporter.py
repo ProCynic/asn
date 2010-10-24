@@ -29,32 +29,29 @@ nodetypes = {
 	DS.PlaceEat : 'eat_place',
 	DS.PlaceFun : 'fun_place',
 	DS.PlaceStudy : 'study_place',
-        DS.Internship : 'internship'
-	}
-
-
-
+    DS.Internship : 'internship'
+}
 
 def export() :
         students = DS.Student.all()
-        print nodetypes
         root = ElementTree.Element("students")
         for s in students : 
                 student = addNode(root, "student")
                 for r in DS.Rating.all().filter('rater =', s) :
                         obj = r.rated;
                         if isinstance(obj, DS.Course) :
-                                grade = DS.Grade.all().filter('course =', obj).filter('student =', s).get()
-                                exportCourse(student, r, obj, grade)
+                            grade = DS.Grade.all().filter('course =', obj).filter('student =', s).get()
+                            exportCourse(student, r, obj, grade)
                         elif isinstance(obj, DS.Book) :
-                                exportBook(student, r, obj)
+                            exportBook(student, r, obj)
                         elif isinstance(obj, DS.Paper) :
-                                exportPaper(student, r, obj)
+                            exportPaper(student, r, obj)
                         elif isinstance(obj, DS.Game) :
-                                exportGame(student, r, obj)
+                            exportGame(student, r, obj)
                         elif issubclass(type(obj), DS.Place) :
-                                exportPlace(student, r, obj)
-                        else: assert False
+                            exportPlace(student, r, obj)
+                        else: 
+							assert False
                         
         xml = ElementTree.tostring(root)
         return minidom.parseString(xml).toprettyxml(indent="\t")
@@ -96,3 +93,5 @@ def exportPlace(p, rating, place):
         addText(c, 'location', str(place.location))
         addText(c, "semester", place.semester + " " + place.year)
         addRating(c, rating)
+
+print export()

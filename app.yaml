@@ -8,7 +8,10 @@ handlers:
   script: gaeunit.py
 
 - url: /ds.*
-  script: import.py
+  script: importer.py
+
+- url: /export.*
+  script: exporter.py
 
 - url: /.*
-  script: asn.py
+  script: ASN1.py

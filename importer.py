@@ -1,10 +1,18 @@
 from xml.etree import ElementTree
 import sys;
-import dataAccessors as DA
+from importds import DataAccessor
 import dataStore
 
-
+"""
+	This class provides a student descriptor.
+	
+	Data Members: 
+		ID is the student ID
+		password is the student password.
+"""
 class StudentDescriptor :
+	ID = ""
+	password = ""
 	classes = []
 	books = []
 	papers = []
@@ -12,6 +20,9 @@ class StudentDescriptor :
 	places = []
 	games = []
 
+"""
+	The following descriptors act as simple data stores.
+"""
 class PaperDescriptor : 
 	pass 
 
@@ -32,7 +43,8 @@ class GameDescriptor :
 
 class StudentImporter :
 
-	def __init__(self) :
+	def __init__(self, data) :
+		self.DA = data
 		self.parsingMap = {
 			"StudentId" : (StudentDescriptor, "ID"),
 			"StudentPassword" : (StudentDescriptor, "password"),
@@ -105,6 +117,7 @@ class StudentImporter :
 		currentStudent = StudentDescriptor()
 		self.invokeChildren(e, 'Student', currentStudent)
 		
+		DA = self.DA
 		student = DA.addStudent(currentStudent.ID, currentStudent.password)
 
 		for c in currentStudent.classes :
@@ -129,8 +142,7 @@ class StudentImporter :
 			DA.addRating(game, student, g.rating, g.comment)
 
 		for p in currentStudent.places :
-			f = getattr(DA, "addPlace" + p.typeID)
-			place = f(p.place, p.location, p.semester, p.year)
+			place = DA.addPlace(p.typeID, p.place, p.location, p.semester, p.year)
 			DA.addRating(place, student, p.rating, p.comment)
 
 	def parseStudentInternship(self, c, d) : 
@@ -194,35 +206,7 @@ class StudentImporter :
 		d.comment = c.text.strip()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+i = StudentImporter(DataAccessor())
+i.parse("test.xml")
 
 
