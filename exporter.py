@@ -6,19 +6,33 @@ import dataStore as DS
 
 
 def addText(node, name, text) :
+	"""
+		Adds a text node to the input node element, with 
+		the name and text given.
+	"""
 	subnode = addNode(node, name)
 	subnode.text = text
 	return subnode
 
 def addNode(node, name) :
+	"""
+		Adds a node to the input node, with the given name.
+	"""
 	subnode = ElementTree.SubElement(node, name)
 	return subnode
 
 def addRating(node, r) :
+	"""
+		Adds a pair of rating text nodes to the input element.
+	"""
 	addText(node, "rating", str(r.rating))
 	addText(node, "comment", r.comment.text)
 
 def personStr(r) :
+	"""
+		Combines the first, middle and last name of the person 
+		into a single person name.
+	"""
 	if (r.mname) :
 		return r.fname + " " + r.mname + " " + r.lname
 	else :
@@ -33,6 +47,9 @@ nodetypes = {
 }
 
 def export() :
+	"""
+		Exports all the students in the datastore out to an XML file.
+	"""
         students = DS.Student.all()
         root = ElementTree.Element("students")
         for s in students : 
@@ -58,6 +75,9 @@ def export() :
         
 
 def exportCourse(p, rating, course, grade) :
+	"""
+		Exports a course instance to XML
+	"""
         c = addNode(p, "class")
         addText(c, "unique", course.unique)
         addText(c, "course_num", course.courseNum)
@@ -68,6 +88,9 @@ def exportCourse(p, rating, course, grade) :
         addRating(c, rating)
 
 def exportBook(p, rating, book) :
+	"""
+		Exports a book instance into XML
+	"""
         c = addNode(p, 'book')
         addText(c, 'isbn', book.isbn)
         addText(c, 'title', book.title)
@@ -75,6 +98,9 @@ def exportBook(p, rating, book) :
         addRating(c, rating)
 
 def exportPaper(p, rating, paper):
+	"""
+		Exports a paper to XML
+	"""
         c = addNode(p, 'paper')
         addText(c, 'paper_category', paper.paperType)
         addText(c, 'title', paper.title)
@@ -82,16 +108,21 @@ def exportPaper(p, rating, paper):
         addRating(c, rating)
 
 def exportGame(p, rating, game):
+	"""
+		Exports a game to XML
+	"""
         c = addNode(p, 'game')
         addText(c, 'title', game.title)
         addText(c, 'os', game.platform)
         addRating(c, rating)
 
 def exportPlace(p, rating, place):
+	"""
+		Exports a place to XML. This encompases all places.
+	"""
         c = addNode(p, nodetypes[type(place)])
         addText(c, 'place_name', place.name)
         addText(c, 'location', str(place.location))
         addText(c, "semester", place.semester + " " + place.year)
         addRating(c, rating)
 
-print export()
