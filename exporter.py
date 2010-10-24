@@ -54,7 +54,8 @@ def export() :
         root = ElementTree.Element("students")
         for s in students : 
                 student = addNode(root, "student")
-                for r in DS.Rating.all().filter('rater =', s) :
+                for r in DS.Course.all().filter('rater =', s) :
+                        print(type(obj))
                         obj = r.rated;
                         if isinstance(obj, DS.Course) :
                             grade = DS.Grade.all().filter('course =', obj).filter('student =', s).get()
