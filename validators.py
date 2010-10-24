@@ -26,7 +26,7 @@ def courseNumValidator(value):
 def gradeValidator(value):
     """
     """
-    pattern = "^([B-D][\+|\-]?)|A\-?|F$"
+    pattern = "^([B-D][\+|\-]?)|(A\-?)|F$"
     if re.search(pattern,value) is None: raise ValueError
 
 def yearValidator(value):
