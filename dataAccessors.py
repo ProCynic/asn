@@ -107,7 +107,7 @@ def addPaper(paperType, title, author):
     a = _addPerson(author)
     paperType = paperType.upper() #Make any insert conform to the xml schema inputs.
     try:
-        return checkMembership(Paper, journal=journal,title=title,author=author)
+        return checkMembership(Paper, paperType=paperType,title=title,author=author)
     except KeyError:
         p = Paper(paperType=paperType,
                   title=title,
