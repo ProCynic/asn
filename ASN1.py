@@ -39,11 +39,6 @@ class HomePage(BaseRequestHandler):
             # variables
         })
 
-class Datastore(BaseRequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = "application/xml"
-        self.response.out.write(export())
-
 class StudentPage(BaseRequestHandler):
     # login required
     def get(self):
