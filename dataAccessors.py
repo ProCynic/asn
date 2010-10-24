@@ -78,13 +78,13 @@ def addGrade(course,student,grade):
     	g.put()
     	return g.key()
 
-def addPaper(journal, title, author):
+def addPaper(paperType, title, author):
     a = _addPerson(author)
-	journal = jorunal.lower() #Make any insert conform to the xml schema inputs.
+    paperType = paperType.upper() #Make any insert conform to the xml schema inputs.
     try:
         return checkMembership(Paper, journal=journal,title=title,author=author)
     except KeyError:
-        p = Paper(journal=journal,
+        p = Paper(paperType=paperType,
                   title=title,
                   author=a)
         p.put()
