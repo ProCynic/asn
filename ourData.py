@@ -39,7 +39,21 @@ def gparker(DA):
 	DA.addRating(e, me, '85', "Decent food.  They've got a student discount: $2 off on $7 or more")
 
 	g = DA.addGame("PC","Minecraft")
-	DA.addRating(g, me, "100", 
+	DA.addRating(g, me, "100", "Excellent Robinson Crusoe simulator.  Start with nothing and build whatever you want.")
+
+	b = DA.addBook("Island in the Sea of Time", "978-0451456755", "S.M. Stirling")
+	DA.addRating(b, me, '90')
+
+	b = DA.addBook("On Basilisk Station", "978-0743435710", "David Weber")
+	DA.addRating(b, me, '97', "The Start of an excellent series")
+
+	c = DA.addCourse("52540", "CS 373", "Software Engineering", "Fall", "2010")
+	DA.addRating(c, me, '80', "Assignments are interesting")
+
+	
+	
+
+	
 	
 	
 
@@ -52,7 +66,7 @@ def aywang(DA):
 	b = DA.addBook("Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)", "0441013597", "Frank Herbert")
 	DA.addRating(b, me, '90', "Great book, but the sequels are kinda poor.")
 
-	b = DA.addCourse("52540", "C S 375", "Software Engineering", "Fall", "2010", "Glen Downing")
+	b = DA.addCourse("52540", "CS 373", "Software Engineering", "Fall", "2010", "Glen Downing")
 	DA.addRating(b, me, '75', "Fun assignments, but the class itself bores me.")
 	DA.addGrade(b, me, 'A')
 	
@@ -104,9 +118,9 @@ def ttb265(DA):
 	p = DA.addPlaceFun('Rain', 'Spring', '2010')
 	DA.addRating(p, me, '95', 'Bring yo dolla bills');
 	g = DA.addGame('Atari', 'Tetris')
-	DA.addRating(g, me, '100')
+	DA.addRating(p, me, '100')
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
-	DA.addRating(g, me, '90', 'A great game to loosen you up after a long day of classes.')
+	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def mrw(DA):
 	sid = sidgen()
