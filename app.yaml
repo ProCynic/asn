@@ -10,8 +10,8 @@ handlers:
 - url: /test.*
   script: gaeunit.py
 
-- url: /temp.*
-  script: dataAccessors.py
+- url: /selfdata.*
+  script: ourData.py
 
 
 - url: /.*
