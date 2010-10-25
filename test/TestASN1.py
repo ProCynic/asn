@@ -73,7 +73,8 @@ class TestASN1(unittest.TestCase):
         db_s = db.get(s)
         db_p = db.get(p)
         db_r = db.get(r)
-        self.assertTrue( db_r.rater is db_s )
+        self.assertTrue( db_r.rater.sid == db_s.sid == sid)
+        self.assertTrue( db_r.rater.password == db_s.password == pwd)
         
         # not complete
         
