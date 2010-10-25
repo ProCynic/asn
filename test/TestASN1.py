@@ -70,11 +70,13 @@ class TestASN1(unittest.TestCase):
         p = da.addPaper("conference", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
         r = da.addRating(p, s, '100', "Great paper that explains how Valve used the GPU to render text clearly.")
         
-        db_s = db.get(s).key()
+        db_s = db.get(s)
         db_p = db.get(p)
         db_r = db.get(r)
         self.assertTrue( db_r.rater.sid == db_s.sid == sid)
         self.assertTrue( db_r.rater.password == db_s.password == pwd)
+        self.assertTrue( db_r.rated.paperType == db_p.paperType == 'conference'.upper())
+        self.assertTrue( db_r.rated.title == db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects')
         
         # not complete
         
