@@ -94,12 +94,12 @@ class Book(Ratable):
 	title = db.StringProperty(required=True)
 	author = db.ReferenceProperty(Person,required=True)
 
-class Paper(Ratable):
+class Paper (Ratable):
 	"""
-		The model for papers.
+        The model for papers.
 
-		Papers must have type of either JOURNAL or CONFERENCE
-		It must also have a title, and an author.
+        Papers must have type of either JOURNAL or CONFERENCE
+        It must also have a title, and an author.
 	"""
 	paperType = db.StringProperty(required=True,choices=['JOURNAL','CONFERENCE'])
 	title = db.StringProperty(required=True)

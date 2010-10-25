@@ -95,6 +95,7 @@ class DataAccessor :
 
 	def addBook(self, title, isbn, author) :
 		p = self.addPerson(author)
+		isbn = isbn.strip().replace('-','')
 		return self.conditionalApply("Book", Book, self.primary(isbn=isbn), title = title, author = p)
 
 	def addGame(self, platform, title) :

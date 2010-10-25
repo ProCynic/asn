@@ -125,6 +125,6 @@ def exportPlace(p, rating, place):
         c = addNode(p, nodetypes[type(place)])
         addText(c, 'place_name', place.name)
         addText(c, 'location', str(place.location))
-        addText(c, "semester", place.semester + " " + place.year)
+        addText(c, "semester", place.semester.capitalize() + " " + place.year)
         addRating(c, rating)
 
