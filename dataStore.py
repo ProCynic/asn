@@ -8,20 +8,20 @@ from validators import *
 
 class Comment(db.Model):
 	"""
-		A model for Comments.
+        A model for Comments.
 
-		These are associated generally with ratings.
-		A comment is made of text, comment chains will require references to itself.
+        These are associated generally with ratings.
+        A comment is made of text, comment chains will require references to itself.
 	"""
 	text = db.TextProperty(required=True)
 	replyto = db.SelfReferenceProperty()
 
 class Person(db.Model):
 	"""
-		A model for Persons.
+        A model for Persons.
 
-		A person has a first, middle and last name.
-		However, the middle name is not required.
+        A person has a first, middle and last name.
+        However, the middle name is not required.
 	"""
 	fname = db.StringProperty(required=True)
 	lname = db.StringProperty(required=True)
@@ -29,29 +29,29 @@ class Person(db.Model):
 
 class Student(db.Model):
 	"""
-		A model for Students
+        A model for Students
 
-		A student has a random student id (sid)
-		and a password.
+        A student has a random student id (sid)
+        and a password.
 	"""
 	sid = db.StringProperty(required=True)
 	password = db.StringProperty(required=True)
 
 class Ratable(polymodel.PolyModel):
 	"""
-		Ratable is the base class for ratable objects, and has 
-		no inherent data.
+        Ratable is the base class for ratable objects, and has 
+        no inherent data.
 	"""
 	pass
 
 class Rating(db.Model):
 	"""
-		A model for Ratings.
+        A model for Ratings.
 
-		A rating has the rating itself, 
-		a comment which may have a comment chain,
-		the rated object
-		and the rater that did the rating.
+        A rating has the rating itself, 
+        a comment which may have a comment chain,
+        the rated object
+        and the rater that did the rating.
 	"""
 	rating = db.RatingProperty(required=True)
 	comment = db.ReferenceProperty(Comment)
@@ -60,10 +60,10 @@ class Rating(db.Model):
 
 class Course (Ratable):
 	"""
-		The model for Courses
+        The model for Courses
 
-		A course has unique number, course number, and name.
-		It also has a semseter, instructor and year.
+        A course has unique number, course number, and name.
+        It also has a semseter, instructor and year.
 
 	"""
 	unique = db.StringProperty(required=True,validator=uniqueValidator)
@@ -75,9 +75,9 @@ class Course (Ratable):
 
 class Grade(db.Model):
 	"""
-		The model for a Grade
+        The model for a Grade
 
-		A grade must be associated with a course, a student, and a grad.e
+        A grade must be associated with a course, a student, and a grad.e
 	"""
 	course = db.ReferenceProperty(Course)
 	student = db.ReferenceProperty(Student)
