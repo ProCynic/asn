@@ -21,6 +21,11 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 		text-decoration:underline;
 	}
 
+#xml {
+	width:960px;
+	height:400px;
+}
+
 #main {
 	margin:2em 0 0;
 }

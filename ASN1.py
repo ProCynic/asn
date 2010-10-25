@@ -99,11 +99,11 @@ class AdminPage(BaseRequestHandler):
 
 class AdminExport(BaseRequestHandler):
 	# login required
-	def post(self):
-		self.response.headers['Content-Type'] = "application/force-download"
-		self.response.headers['Content-Disposition'] = "attachment; filename=\"datastore.xml\""
-		self.response.headers['Content-Description'] = "File Transfer"
-		self.response.out.write(export())
+	def get(self):
+		self.generate('export.html', {
+		    'xml': export(),
+		    'title': 'Admin'
+		})
 
 class AdminImport(BaseRequestHandler):
 	

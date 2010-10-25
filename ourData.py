@@ -53,13 +53,6 @@ def gparker(DA):
 	c = DA.addCourse("52540", "CS 373", "Software Engineering", "FALL", "2010", "Glen Downing")
 	DA.addRating(c, me, '80', "Assignments are interesting")
 	DA.addGrade(c, me, 'A')
-	
-	
-
-	
-	
-	
-
 
 def aywang(DA):
 	sid = sidgen()
