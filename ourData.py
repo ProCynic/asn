@@ -27,7 +27,7 @@ def main():
 
 
 
-def gparker():
+def gparker(DA):
 	sid = sidgen()
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
@@ -44,7 +44,7 @@ def gparker():
 	
 
 
-def aywang():
+def aywang(DA):
 	sid = sidgen()
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
@@ -74,7 +74,7 @@ def aywang():
 	b = DA.addPlaceStudy('ENS Labs', 'ENS Basement', "Fall", "2010")
 	DA.addRating(b, me, '86', "No taylor basement, but its still filled with intelligent people to help.")
 
-def ttb265():
+def ttb265(DA):
 	sid = sidgen()
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
@@ -104,7 +104,7 @@ def ttb265():
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
 	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
-def matt():
+def matt(DA):
 	sid = sidgen()
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
