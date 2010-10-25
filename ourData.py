@@ -103,16 +103,21 @@ def ttb265(DA):
 	b = DA.addBook("Desperation", "978-0451188465", "Stephen King")
 	DA.addRating(b, me, '100', 'Definitely a rainy night page turner');
 
-	DA.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
-	DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
-	DA.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
-	DA.addPlaceEat('Big Bite', 'Spring', '2010')
-	DA.addPlaceFun('Rain', 'Spring', '2010')
+	i = DA.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
+	DA.addRating(i, me, '100', 'Great if you\'re preparing yourself for a career in web development');
+	p = DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
+	DA.addRating(p, me, '100', 'Quiet... Full of geeks!');
+	p = DA.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+	DA.addRating(p, me, '90', 'Great if you\'ve got great roommates');
+	p = DA.addPlaceEat('Big Bite', 'Spring', '2010')
+	DA.addRating(p, me, '95', 'ZOMG!');
+	p = DA.addPlaceFun('Rain', 'Spring', '2010')
+	DA.addRating(p, me, '95', 'Bring yo dolla bills');
 
 	g = DA.addGame('Atari', 'Tetris')
-	DA.addRating(p, me, '100')
+	DA.addRating(g, me, '100')
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
-	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
+	DA.addRating(g, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
 	sid = sidgen()
