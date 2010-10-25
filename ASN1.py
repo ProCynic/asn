@@ -111,7 +111,7 @@ class AdminImport(BaseRequestHandler):
 		"""
 			A callback to show messages.
 		"""
-		self.msg += msg
+		self.msg += msg + "<br/>"
 
 	# login required
 	def post(self):
@@ -128,6 +128,10 @@ class AdminImport(BaseRequestHandler):
 
 		if not self.msg :
 			self.msg = "Import succeeded."
+	
+		if len(self.msg) > 256 :
+			self.msg = self.msg[0:256] + "..."
+
 
 		self.redirect('/admin?m='+self.msg)
 
