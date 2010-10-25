@@ -167,7 +167,7 @@ class StudentImporter :
 
 		#Add places
 		for p in currentStudent.places :
-			place = DA.addPlace(p.typeID, p.place, p.location, p.semester, p.year)
+			place = DA._addPlace(p.place, p.location, p.semester, p.year, p.typeID)
 			DA.addRating(place, student, p.rating, p.comment)
 
 	def parseStudentInternship(self, c, d) : 
