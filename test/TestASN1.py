@@ -79,6 +79,8 @@ class TestASN1(unittest.TestCase):
         db_r = db.get(r)
         self.assertTrue( db_r.rater.sid == db_s.sid == sid)
         self.assertTrue( db_r.rater.password == db_s.password == pwd)
+        self.assertTrue( db_r.rated.paperType == db_p.paperType == 'conference'.upper())
+        self.assertTrue( db_r.rated.title == db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects')
         
         # not complete
 
