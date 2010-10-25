@@ -83,6 +83,8 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_r.rated.title == db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects')
         self.assertTrue( db_r.rated.author.fname == db_p.author.fname == 'Chris')
         self.assertTrue( db_r.rated.author.lname == db_p.author.lname == 'Green')
+        self.assertTrue( db_r.rating == 100)
+        self.assertTrue( db_r.comment.text == 'Great paper that explains how Valve used the GPU to render text clearly.')
 
 if __name__ == '__main__' :
 	unittest.main()
