@@ -88,10 +88,53 @@ class TestASN1(unittest.TestCase):
         
     def test_addPlaceLive(self):
         da = DataAccessor()
-        p = da.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+        p = da.addPlaceLive('Ballpark Apartments', 'Univ. of Texas', 'Fall'.upper(), '2009')
         
         db_p = db.get(p)
         self.assertTrue( db_p.name == 'Ballpark Apartments')
+        self.assertTrue( db_p.location == 'Univ. of Texas')
+        self.assertTrue( db_p.semester == 'FALL')
+        self.assertTrue( db_p.year == '2009')
+        
+    def test_addPlaceEat(self):
+        da = DataAccessor()
+        p = da.addPlaceEat('Ballpark Apartments', 'Univ. of Texas', 'Fall'.upper(), '2009')
+        
+        db_p = db.get(p)
+        self.assertTrue( db_p.name == 'Ballpark Apartments')
+        self.assertTrue( db_p.location == 'Univ. of Texas')
+        self.assertTrue( db_p.semester == 'FALL')
+        self.assertTrue( db_p.year == '2009')
+        
+    def test_addPlaceFun(self):
+        da = DataAccessor()
+        p = da.addPlaceFun('Ballpark Apartments', 'Univ. of Texas', 'Fall'.upper(), '2009')
+        
+        db_p = db.get(p)
+        self.assertTrue( db_p.name == 'Ballpark Apartments')
+        self.assertTrue( db_p.location == 'Univ. of Texas')
+        self.assertTrue( db_p.semester == 'FALL')
+        self.assertTrue( db_p.year == '2009')
+        
+    def test_addPlaceStudy(self):
+        da = DataAccessor()
+        p = da.addPlaceStudy('Ballpark Apartments', 'Univ. of Texas', 'Fall'.upper(), '2009')
+        
+        db_p = db.get(p)
+        self.assertTrue( db_p.name == 'Ballpark Apartments')
+        self.assertTrue( db_p.location == 'Univ. of Texas')
+        self.assertTrue( db_p.semester == 'FALL')
+        self.assertTrue( db_p.year == '2009')
+        
+    def test_addInternship(self):
+        da = DataAccessor()
+        p = da.addInternship('Ballpark Apartments', 'Univ. of Texas', 'Fall'.upper(), '2009')
+        
+        db_p = db.get(p)
+        self.assertTrue( db_p.name == 'Ballpark Apartments')
+        self.assertTrue( db_p.location == 'Univ. of Texas')
+        self.assertTrue( db_p.semester == 'FALL')
+        self.assertTrue( db_p.year == '2009')
 
 if __name__ == '__main__' :
 	unittest.main()
