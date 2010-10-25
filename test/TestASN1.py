@@ -85,6 +85,11 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_r.rated.author.lname == db_p.author.lname == 'Green')
         self.assertTrue( db_r.rating == 100)
         self.assertTrue( db_r.comment.text == 'Great paper that explains how Valve used the GPU to render text clearly.')
+        
+    def test_addPlaceLive(self):
+        da = DataAccessor()
+        p = da.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+        
 
 if __name__ == '__main__' :
 	unittest.main()
