@@ -88,7 +88,7 @@ class TestASN1(unittest.TestCase):
         
     def test_addPlaceLive(self):
         da = DataAccessor()
-        p = da.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+        p = da.addPlaceLive('Ballpark Apartments', "Austin", 'Fall'.upper(), '2009')
         
 
 if __name__ == '__main__' :
