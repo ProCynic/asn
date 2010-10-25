@@ -1,11 +1,28 @@
 import unittest
 from validators import *
+from dataAccessors import *
+from google.appengine.ext import db
 
 class TestASN1(unittest.TestCase):
-    """
-    """
-    def test_addPerson(self):
-        self.assertTrue(True)
+        
+    # dataAccessors Tests
+
+    def test_addGame(self):
+        g = addGame('Atari', 'Tetris')
+        
+        db_g = db.get(g)
+        self.assertTrue( db_g.platform == 'Atari' )
+        self.assertTrue( db_g.title == 'Tetris' )
+        self.assertFalse( db_g.title == 'Not Tetris' )
+        
+    def test_addInternship(self):
+        i = addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
+        
+        db_i = db.get(i)
+        self.assertTrue( db_i.name == 'Center for Teaching and Learning' )
+        self.assertTrue( db_i.location == 'Univ. of Texas' )
+        self.assertTrue( db_i.semester == 'SPRING' )
+        self.assertTrue( db_i.year == '2010' )
         
     # Validator Tests
    

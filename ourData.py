@@ -91,9 +91,9 @@ def ttb265():
 	addPlaceLive('Ballpark Apartments', 'Fall', '2009')
 	addPlaceEat('Big Bite', 'Spring', '2010')
 	addPlaceFun('Rain', 'Spring', '2010')
-	p = addGame('Atari', 'Tetris')
+	g = addGame('Atari', 'Tetris')
 	addRating(p, me, '100')
-	p = addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
+	g = addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
 	addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt():
