@@ -109,13 +109,13 @@ def ttb265(DA):
 	DA.addRating(b, me, '100', 'Definitely a rainy night page turner');
 	i = DA.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
 	DA.addRating(i, me, '100', 'Great if you\'re preparing yourself for a career in web development');
-	p = DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
+	p = DA.addPlaceStudy('ENS Basement', 'Univ. of Texas', 'Fall', '2010')
 	DA.addRating(p, me, '100', 'Quiet... Full of geeks!');
-	p = DA.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+	p = DA.addPlaceLive('Ballpark Apartments', 'Riverside' 'Fall', '2009')
 	DA.addRating(p, me, '90', 'Great if you\'ve got great roommates');
-	p = DA.addPlaceEat('Big Bite', 'Spring', '2010')
+	p = DA.addPlaceEat('Big Bite', 'Guadalupe', 'Spring', '2010')
 	DA.addRating(p, me, '95', 'ZOMG!');
-	p = DA.addPlaceFun('Rain', 'Spring', '2010')
+	p = DA.addPlaceFun('Rain', '4th Street', 'Spring', '2010')
 	DA.addRating(p, me, '95', 'Bring yo dolla bills');
 	g = DA.addGame('Atari', 'Tetris')
 	DA.addRating(p, me, '100')
@@ -127,7 +127,7 @@ def mrw(DA):
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
 	
-	p = DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
+	p = DA.addPlaceStudy('ENS Basement', 'Univ. of Texas', 'Fall', '2010')
 	DA.addRating(p, me, '80', 'Used to be quiet until more CS people came here; lots of help around though.')
 	g = DA.addGame('iPhone', 'Angry Birds')
 	DA.addRating(g, me, '100', 'Awesome physics game.')

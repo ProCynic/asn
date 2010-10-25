@@ -90,6 +90,8 @@ class TestASN1(unittest.TestCase):
         da = DataAccessor()
         p = da.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
         
+        db_p = db.get(p)
+        self.assertTrue( db_p.name == 'Ballpark Apartments')
 
 if __name__ == '__main__' :
 	unittest.main()
