@@ -104,9 +104,9 @@ def ttb265(DA):
 	p = DA.addPlaceFun('Rain', 'Spring', '2010')
 	DA.addRating(p, me, '95', 'Bring yo dolla bills');
 	g = DA.addGame('Atari', 'Tetris')
-	DA.addRating(p, me, '100')
+	DA.addRating(g, me, '100')
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
-	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
+	DA.addRating(g, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
 	sid = sidgen()
