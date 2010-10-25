@@ -128,6 +128,18 @@ class TestValidators(unittest.TestCase):
     	    isbnValidator("9781594202667")
     	except ValueError:
     		self.assertTrue(False)
+    		
+    def test_isbnValidator_3(self):
+        self.assertRaises(ValueError, isbnValidator, "1234567890")
+        
+    def test_isbnValidator_4(self):
+        self.assertRaises(ValueError, isbnValidator, "1231234567890")
+    
+    def test_isbnValidator_5(self):
+        self.assertRaises(ValueError, isbnValidator, "")
+        
+    def test_isbnValidator_6(self):
+        self.assertRaises(ValueError, isbnValidator, "11111111111111")
    
 
 if __name__ == '__main__' :
