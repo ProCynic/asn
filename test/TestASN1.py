@@ -8,7 +8,8 @@ class TestASN1(unittest.TestCase):
     # dataAccessors Tests
 
     def test_addGame(self):
-        g = addGame('Atari', 'Tetris')
+        da = DataAccessor()
+        g = da.addGame('Atari', 'Tetris')
         
         db_g = db.get(g)
         self.assertTrue( db_g.platform == 'Atari' )
@@ -16,12 +17,13 @@ class TestASN1(unittest.TestCase):
         self.assertFalse( db_g.title == 'Not Tetris' )
         
     def test_addInternship(self):
-        i = addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
+        da = DataAccessor()
+        i = da.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
         
         db_i = db.get(i)
         self.assertTrue( db_i.name == 'Center for Teaching and Learning' )
         self.assertTrue( db_i.location == 'Univ. of Texas' )
-        self.assertTrue( db_i.semester == 'SPRING' )
+        self.assertTrue( db_i.semester == 'Spring' )
         self.assertTrue( db_i.year == '2010' )
         
     # Validator Tests
