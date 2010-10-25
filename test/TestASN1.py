@@ -23,8 +23,39 @@ class TestASN1(unittest.TestCase):
         db_i = db.get(i)
         self.assertTrue( db_i.name == 'Center for Teaching and Learning' )
         self.assertTrue( db_i.location == 'Univ. of Texas' )
-        self.assertTrue( db_i.semester == 'Spring' )
+        self.assertTrue( db_i.semester == 'SPRING' )
         self.assertTrue( db_i.year == '2010' )
+        
+    def test_addStudent(self):
+        #da = DataAccessor()
+        #sid = sidgen()
+        #pwd = passgen()
+        #s = da.addStudent(sid,pwd)
+        
+        #db_s = db.get(s)
+        #self.assertTrue( False ) """ validate sid """
+        #self.assertTrue( False ) """ validate password """
+        pass
+        
+    def test_addPaper(self):
+        da = DataAccessor()
+        p = da.addPaper("conference", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
+        
+        db_p = db.get(p)
+        self.assertTrue( db_p.paperType == 'CONFERENCE' )
+        self.assertTrue( db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects' )
+        self.assertTrue( db_p.author.fname == 'Chris' )
+        self.assertTrue( db_p.author.lname == 'Green' )
+    
+    def test_addRating(self):
+        da = DataAccessor()
+        p = da.addPaper("conference", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
+        r = da.addRating(p, me, '100', "Great paper that explains how Valve used the GPU to render text clearly.")
+        
+        db_r = db.get(r)
+        
+        # not complete
+        
         
     # Validator Tests
    
