@@ -81,8 +81,8 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_r.rater.password == db_s.password == pwd)
         self.assertTrue( db_r.rated.paperType == db_p.paperType == 'conference'.upper())
         self.assertTrue( db_r.rated.title == db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects')
-        
-        # not complete
+        self.assertTrue( db_r.rated.author.fname == db_p.author.fname == 'Chris')
+        self.assertTrue( db_r.rated.author.lname == db_p.author.lname == 'Green')
 
 if __name__ == '__main__' :
 	unittest.main()
