@@ -1,0 +1,13 @@
+#input to yuml.me
+
+[User]^[Admin],[User]^[Student]
+[Student]<1-*>[Rating]
+[Rateable]<1..1-0..*>[Rating]
+[Rateable]^[Class], [Rateable]^[Book], [Rateable]^[Paper], [Rateable]^[Place], [Rateable]^[Game]
+[Place]^[PlaceEat], [Place]^[PlaceStudy], [Place]^[PlaceFun], [Place]^[Internship]
+[Rating]<1-1>[Comment]
+[Student]<1-*>[Grade]
+[Course]<1-*>[Grade]
+[Person]<1-Instructor 1>[Course]
+[Person]<1-Author 1>[Paper]
+[Person]<1-Author 1>[Book]
