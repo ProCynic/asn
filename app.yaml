@@ -3,6 +3,10 @@ version: 3
 runtime: python
 api_version: 1
 
+builtins:
+- datastore_admin: on
+
+
 handlers:
 - url: /www
   static_dir: www
