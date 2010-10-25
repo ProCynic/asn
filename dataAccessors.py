@@ -51,9 +51,10 @@ class DataAccessor :
 		return getattr(self, "addPlace" + ptype)(name,location, semester, year)
 
 	def addRating(self, ratable, student, rating, comment = None) :
-		c = None
-		if comment :
-			c = _addComment(comment)
+		if not comment :
+			comment = "None"
+	
+		c = _addComment(comment)
 		return self.conditionalApply("Rating", Rating, self.primary(rated = ratable, rater = student), rating = int(rating), comment = c)
 	
 	def addStudent(self, sid, password) :

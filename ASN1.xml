@@ -1,0 +1,548 @@
+<?xml version="1.0" ?>
+<students>
+	<student>
+		<id>
+			J#-2OZQk
+		</id>
+		<password>
+			@H05a!5e3Ct!
+		</password>
+		<book>
+			<isbn>
+				978-0765358547
+			</isbn>
+			<title>
+				The Good Fairies of New York
+			</title>
+			<author>
+				Martin Millar
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Excellent British humor by a lesser know author
+			</comment>
+		</book>
+		<eat_place>
+			<place_name>
+				EZ's
+			</place_name>
+			<location>
+				3918 N Lamar Blvd Austin, TX 78756-4017
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Decent food.  They've got a student discount: $2 off on $7 or more
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Minecraft
+			</title>
+			<os>
+				PC
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Excellent Robinson Crusoe simulator.  Start with nothing and build whatever you want.
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				978-0451456755
+			</isbn>
+			<title>
+				Island in the Sea of Time
+			</title>
+			<author>
+				S.M. Stirling
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<book>
+			<isbn>
+				978-0743435710
+			</isbn>
+			<title>
+				On Basilisk Station
+			</title>
+			<author>
+				David Weber
+			</author>
+			<rating>
+				97
+			</rating>
+			<comment>
+				The Start of an excellent series
+			</comment>
+		</book>
+		<class>
+			<unique>
+				52540
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Glen Downing
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Assignments are interesting
+			</comment>
+		</class>
+	</student>
+	<student>
+		<id>
+			;AG86s9=
+		</id>
+		<password>
+			pA~#w;Phdgs2
+		</password>
+		<book>
+			<isbn>
+				0441013597
+			</isbn>
+			<title>
+				Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)
+			</title>
+			<author>
+				Frank Herbert
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Great book, but the sequels are kinda poor.
+			</comment>
+		</book>
+		<class>
+			<unique>
+				52540
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Glen Downing
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Fun assignments, but the class itself bores me.
+			</comment>
+		</class>
+		<paper>
+			<paper_category>
+				CONFERENCE
+			</paper_category>
+			<title>
+				Improved Alpha-Tested Magnification for Vector Textures and Special Effects
+			</title>
+			<author>
+				Chris Green
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Great paper that explains how Valve used the GPU to render text clearly.
+			</comment>
+		</paper>
+		<game>
+			<title>
+				Blazblue: Continumn Shift
+			</title>
+			<os>
+				Xbox360
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Great fighter game, sometimes lags online.
+			</comment>
+		</game>
+		<live_place>
+			<place_name>
+				Duval Villas
+			</place_name>
+			<location>
+				4305 Duval St.
+			</location>
+			<semester>
+				FALL 2009
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				A bit expensive for what you get.
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				The Ironworks
+			</place_name>
+			<location>
+				100 Red River St.
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				I love eating here, the beef ribs are delicious.
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Arcade UFO
+			</place_name>
+			<location>
+				3101 Speedway
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Great arcade place in Austin, one of the few left.
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				ENS Labs
+			</place_name>
+			<location>
+				ENS Basement
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				86
+			</rating>
+			<comment>
+				No taylor basement, but its still filled with intelligent people to help.
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			@-miYwAk
+		</id>
+		<password>
+			@zJ;^rRaYSI~
+		</password>
+		<class>
+			<unique>
+				52550
+			</unique>
+			<course_num>
+				CS 378
+			</course_num>
+			<course_name>
+				Computational Intelligence in Game Design II
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Risto Miikkulainen
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Interesting research class
+			</comment>
+		</class>
+		<class>
+			<unique>
+				52540
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Glen Downing
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Essential.
+			</comment>
+		</class>
+		<class>
+			<unique>
+				55480
+			</unique>
+			<course_num>
+				M 346
+			</course_num>
+			<course_name>
+				Applied Linear Algebra
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Rodriguez Villegas
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Tough class to get a hang of. It really helps if you remember your M 340L material
+			</comment>
+		</class>
+		<class>
+			<unique>
+				52435
+			</unique>
+			<course_num>
+				CS 336
+			</course_num>
+			<course_name>
+				Analysis of Programs
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				Margaret Myers
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Lecturer is a bit crazy
+			</comment>
+		</class>
+		<book>
+			<isbn>
+				978-0451188465
+			</isbn>
+			<title>
+				Desperation
+			</title>
+			<author>
+				Stephen King
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Definitely a rainy night page turner
+			</comment>
+		</book>
+		<internship>
+			<place_name>
+				Center for Teaching and Learning
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				SPRING 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Great if you're preparing yourself for a career in web development
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Quiet... Full of geeks!
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Ballpark Apartments
+			</place_name>
+			<location>
+				Riverside
+			</location>
+			<semester>
+				FALL 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Great if you've got great roommates
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				Big Bite
+			</place_name>
+			<location>
+				Guadalupe
+			</location>
+			<semester>
+				SPRING 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				ZOMG!
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Rain
+			</place_name>
+			<location>
+				4th Street
+			</location>
+			<semester>
+				SPRING 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Bring yo dolla bills
+			</comment>
+		</fun_place>
+	</student>
+	<student>
+		<id>
+			r:$@ZW*)
+		</id>
+		<password>
+			Kd74K7DF$164
+		</password>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				FALL 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Used to be quiet until more CS people came here; lots of help around though.
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Angry Birds
+			</title>
+			<os>
+				iPhone
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Awesome physics game.
+			</comment>
+		</game>
+		<class>
+			<unique>
+				39105
+			</unique>
+			<course_num>
+				HIS 315L
+			</course_num>
+			<course_name>
+				United States Since 1865
+			</course_name>
+			<semester>
+				FALL 2010
+			</semester>
+			<instructor>
+				H. W. Brands
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Cool course; lecturing is really great but he gets off topic.
+			</comment>
+		</class>
+	</student>
+</students>
