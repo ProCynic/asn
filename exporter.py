@@ -84,7 +84,7 @@ def exportCourse(p, rating, course, grade) :
         addText(c, "unique", course.unique)
         addText(c, "course_num", course.courseNum)
         addText(c, "course_name", course.name)
-        addText(c, "semester", course.semester + " " + course.year)
+        addText(c, "semester", course.semester.capitalize() + " " + course.year)
         addText(c, "instructor", personStr(course.instructor))
         addText(c, "grade", grade.grade)
         addRating(c, rating)
