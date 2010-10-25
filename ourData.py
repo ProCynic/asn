@@ -1,4 +1,4 @@
-from dataAccessors import *
+from dataAccessors import DataAccessor
 
 import random
 
@@ -19,10 +19,11 @@ def passgen():
 	
 
 def main():
-	gparker()
-	aywang()
-	ttb265()
-	matt()
+        DA = DataAccessor()
+	gparker(DA)
+	aywang(DA)
+	ttb265(DA)
+	matt(DA)
 
 
 
@@ -31,8 +32,13 @@ def gparker():
 	pwd = passgen()
 	me = addStudent(sid,pwd)
 
-	b = addBook("The Good Fairies of New York", "978-0765358547", "Martin Millar")
-	addRating(b, me, '100', "Excellent British humor by a lesser know author")
+	b = DA.addBook("The Good Fairies of New York", "978-0765358547", "Martin Millar")
+	DA.addRating(b, me, '100', "Excellent British humor by a lesser know author")
+
+	e = DA.addPlaceEat("EZ's", "3918 N Lamar Blvd Austin, TX 78756-4017", "FALL", "2010")
+##	DA.addRating(e, me, '85'
+
+	
 	
 
 
@@ -100,3 +106,6 @@ def matt():
 	sid = sidgen()
 	pwd = passgen()
 	me = addStudent(sid,pwd)
+
+
+main()
