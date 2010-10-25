@@ -108,10 +108,17 @@ def ttb265(DA):
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
 	DA.addRating(g, me, '90', 'A great game to loosen you up after a long day of classes.')
 
-def matt(DA):
+def mrw(DA):
 	sid = sidgen()
 	pwd = passgen()
 	me = DA.addStudent(sid,pwd)
+	
+	p = DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
+	DA.addRating(p, me, '80', 'Used to be quiet until more CS people came here; lots of help around though.')
+	g = DA.addGame('iPhone', 'Angry Birds')
+	DA.addRating(g, me, '100', 'Awesome physics game.')
+	c = DA.addCourse('39105', 'HIS 315L', 'United States Since 1865', 'Fall', '2010', 'H. W. Brands')
+	DA.addRating(c, me, '90', 'Cool course; lecturing is really great but he gets off topic.')
 
 
 main()
