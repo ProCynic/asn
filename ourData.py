@@ -46,6 +46,11 @@ def gparker(DA):
 
 	b = DA.addBook("On Basilisk Station", "978-0743435710", "David Weber")
 	DA.addRating(b, me, '97', "The Start of an excellent series")
+
+	c = DA.addCourse("52540", "CS 373", "Software Engineering", "Fall", "2010")
+	DA.addRating(c, me, '80', "Assignments are interesting")
+
+	
 	
 
 	
@@ -61,7 +66,7 @@ def aywang(DA):
 	b = DA.addBook("Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)", "0441013597", "Frank Herbert")
 	DA.addRating(b, me, '90', "Great book, but the sequels are kinda poor.")
 
-	b = DA.addCourse("52540", "C S 373", "Software Engineering", "Fall", "2010", "Glen Downing")
+	b = DA.addCourse("52540", "CS 373", "Software Engineering", "Fall", "2010", "Glen Downing")
 	DA.addRating(b, me, '75', "Fun assignments, but the class itself bores me.")
 	DA.addGrade(b, me, 'A')
 	
@@ -103,21 +108,16 @@ def ttb265(DA):
 	b = DA.addBook("Desperation", "978-0451188465", "Stephen King")
 	DA.addRating(b, me, '100', 'Definitely a rainy night page turner');
 
-	i = DA.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
-	DA.addRating(i, me, '100', 'Great if you\'re preparing yourself for a career in web development');
-	p = DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
-	DA.addRating(p, me, '100', 'Quiet... Full of geeks!');
-	p = DA.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
-	DA.addRating(p, me, '90', 'Great if you\'ve got great roommates');
-	p = DA.addPlaceEat('Big Bite', 'Spring', '2010')
-	DA.addRating(p, me, '95', 'ZOMG!');
-	p = DA.addPlaceFun('Rain', 'Spring', '2010')
-	DA.addRating(p, me, '95', 'Bring yo dolla bills');
+	DA.addInternship('Center for Teaching and Learning', 'Univ. of Texas', 'Spring', '2010')
+	DA.addPlaceStudy('ENS Basement', 'Fall', '2010')
+	DA.addPlaceLive('Ballpark Apartments', 'Fall', '2009')
+	DA.addPlaceEat('Big Bite', 'Spring', '2010')
+	DA.addPlaceFun('Rain', 'Spring', '2010')
 
 	g = DA.addGame('Atari', 'Tetris')
-	DA.addRating(g, me, '100')
+	DA.addRating(p, me, '100')
 	g = DA.addGame( 'Nintento Wii', 'Super Smash Brothers: Brawl')
-	DA.addRating(g, me, '90', 'A great game to loosen you up after a long day of classes.')
+	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
 	sid = sidgen()
