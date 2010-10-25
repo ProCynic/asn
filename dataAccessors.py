@@ -104,3 +104,11 @@ class DataAccessor :
 	def addInternship(self, company, location, semester, year) :
 		return self.conditionalApply("Internship", Internship, self.primary(name = company, location = location), semester = semester, year = year)
 
+	def addRatable(self, pkey, **assocs):
+                pass
+
+        def pkeyCheck(self, pkey, obj):
+                query = obj.kind().all()
+                for x in pkey:
+                        query.filter(x + ' =', 
+
