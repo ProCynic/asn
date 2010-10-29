@@ -17,7 +17,7 @@ class DataAccessor :
 		if func: self._errHandler = func
 
 	def _errHandler(self, err) :
-		raise Usage("Duplicate entry: " + str(err).strip('<>'))
+		raise Usage("Duplicate entry: " + str(err))
 
 
 	def _addPerson(self, name) :

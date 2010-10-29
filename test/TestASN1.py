@@ -58,7 +58,7 @@ class TestASN1(unittest.TestCase):
         
     def test_addPaper(self):
         da = DataAccessor()
-        p = da.addPaper("conference", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
+        p = da.addPaper("CONFERENCE", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
         
         db_p = db.get(p)
         self.assertTrue( db_p.paperType == 'CONFERENCE' )
@@ -71,7 +71,7 @@ class TestASN1(unittest.TestCase):
         sid = sidgen()
         pwd = passgen()
         s = da.addStudent(sid,pwd)
-        p = da.addPaper("conference", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
+        p = da.addPaper("CONFERENCE", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
         r = da.addRating(p, s, '100', "Great paper that explains how Valve used the GPU to render text clearly.")
         
         db_s = db.get(s)

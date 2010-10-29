@@ -1,5 +1,5 @@
 """
-	Defines the data models for the ASN
+Defines the data models for the ASN
 """
 
 from google.appengine.ext import db
@@ -16,6 +16,12 @@ class Comment(db.Model):
 	text = db.TextProperty(required=True)
 	replyto = db.SelfReferenceProperty()
 
+	def __str__(self):
+                return str(text)
+
+        def __iter__(self):
+                yield ('text', self.text)
+
 class Person(db.Model):
 	"""
         A model for Persons.
@@ -27,11 +33,23 @@ class Person(db.Model):
 	lname = db.StringProperty(required=True)
 	mname = db.StringProperty()
 
-	def __eq__(self, other):
-                for x in Person.properties():
-                        if getattr(self, x) != getattr(other, x): return False
+	def __str__(self):
+                s  = ""
+                s += self.fname
+                if self.mname: s += ' ' + self.mname
+                s += ' ' + self.lname
+                return s
+
+        def __iter__(self):
+                d = self.__class__.properties()
+                for x in d: yield (x,getattr(self,x))
+
+        def __eq__(self, other):
+                for x,y in zip(self, other):
+                        if x != y: return False
                 return True
 
+        
 class Student(db.Model):
 	"""
         A model for Students
@@ -42,12 +60,48 @@ class Student(db.Model):
 	sid = db.StringProperty(required=True)
 	password = db.StringProperty(required=True)
 
+	def __str__(self):
+                s = ""
+                s += "sid: " + self.sid
+                s += "password: " + self.password
+                return s
+
+        def __iter__(self):
+                d = self.__class__.properties()
+                d.pop('_class')
+                for x in d: yield (x,getattr(self,x))
+                
+        def __eq__(self, other):
+                for x,y in zip(self, other):
+                        if x != y: return False
+                return True
+
+        
 class Ratable(polymodel.PolyModel):
 	"""
         Ratable is the base class for ratable objects, and has 
         no inherent data.
 	"""
-	pass
+
+	def __str__(self):
+                s = ""
+                for p in self.__class__.properties():
+                      if p[0] != '_': s += p + ": " + str(getattr(self, p)) + '\n'
+                return s
+
+        def __iter__(self):
+                d = self.__class__.properties()
+                try:
+                        d.pop('_class')
+                except KeyError:
+                        print ''
+                        print self.__class__.properties()
+                for x in d: yield (x, getattr(self, x))
+
+        def __eq__(self, other):
+                for x,y in zip(self, other):
+                        if x != y: return False
+                return True
 
 class Rating(db.Model):
 	"""
@@ -62,6 +116,11 @@ class Rating(db.Model):
 	comment = db.ReferenceProperty(Comment)
 	rated = db.ReferenceProperty(Ratable)
 	rater = db.ReferenceProperty(Student)
+
+        def __iter__(self):
+                d = self.__class__.properties()
+                d.pop('_class')
+                for x in d: (x,getattr(self,x))
 
 class Course (Ratable):
 	"""
@@ -87,6 +146,9 @@ class Grade(db.Model):
 	course = db.ReferenceProperty(Course)
 	student = db.ReferenceProperty(Student)
 	grade = db.StringProperty(required=True, validator=gradeValidator)
+
+	def __str__(self):
+                return str(self.grade)
 
 class Book(Ratable):
 	"""

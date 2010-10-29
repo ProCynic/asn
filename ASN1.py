@@ -111,17 +111,12 @@ class AdminImport(BaseRequestHandler):
 		"""
                 A callback to show messages.
 		"""
-		print ''
-		for x in obj.__class__.properties():
-                    print x
-                    print getattr(obj, x)
-                    self.msg += x + ": " + getattr(obj, x)
-		self.msg +=  + "<br/>"
+		self.msg += str(obj).replace('\n',"<br/>")
 
 	# login required
 	def post(self):
 		"""
-			Does the import and shows errors, if any.
+                Does the import and shows errors, if any.
 		"""
 		self.msg = ""
 		si = Importer(DataAccessor(self.addErrorMessage))
@@ -138,8 +133,8 @@ class AdminImport(BaseRequestHandler):
 		if not self.msg :
 			self.msg = "Import succeeded."
 	
-		if len(self.msg) > 256 :
-			self.msg = self.msg[0:256] + "..."
+		if len(self.msg) > 512 :
+			self.msg = self.msg[0:512] + "..."
 
 
 		self.redirect('/admin?m='+self.msg)
