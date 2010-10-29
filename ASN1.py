@@ -1,6 +1,6 @@
 import dataStore as DS
 from exporter import export
-from importer import StudentImporter
+from otherImport import Importer
 from dataAccessors import Usage, DataAccessor
 
 import datetime
@@ -107,11 +107,16 @@ class AdminExport(BaseRequestHandler):
 
 class AdminImport(BaseRequestHandler):
 	
-	def addErrorMessage(self, msg) :
+	def addErrorMessage(self, obj) :
 		"""
-			A callback to show messages.
+                A callback to show messages.
 		"""
-		self.msg += msg + "<br/>"
+		print ''
+		for x in obj.__class__.properties():
+                    print x
+                    print getattr(obj, x)
+                    self.msg += x + ": " + getattr(obj, x)
+		self.msg +=  + "<br/>"
 
 	# login required
 	def post(self):
@@ -119,12 +124,16 @@ class AdminImport(BaseRequestHandler):
 			Does the import and shows errors, if any.
 		"""
 		self.msg = ""
-		si = StudentImporter(DataAccessor(self.addErrorMessage))
+		si = Importer(DataAccessor(self.addErrorMessage))
+		#si = Importer()
 		try:
 		    newFile = self.request.get('newFile')
 		    si.parse(newFile)
 		except IOError:
 		    self.msg = "ERROR: Please select a file to import."
+
+		except Usage as err:
+                    self.msg = err.msg
 
 		if not self.msg :
 			self.msg = "Import succeeded."

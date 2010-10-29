@@ -27,6 +27,11 @@ class Person(db.Model):
 	lname = db.StringProperty(required=True)
 	mname = db.StringProperty()
 
+	def __eq__(self, other):
+                for x in Person.properties():
+                        if getattr(self, x) != getattr(other, x): return False
+                return True
+
 class Student(db.Model):
 	"""
         A model for Students

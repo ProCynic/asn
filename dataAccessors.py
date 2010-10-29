@@ -8,8 +8,8 @@ class Usage (Exception):
 	    self.msg = msg
 
 class DataStoreClash (Exception):
-        def __init__(self, entity):
-                self.entity = entity
+	def __init__(self, entity):
+		self.entity = entity
 
 
 class DataAccessor :
@@ -17,10 +17,10 @@ class DataAccessor :
 		if func: self._errHandler = func
 
 	def _errHandler(self, err) :
-		raise Usage(err)
+		raise Usage("Duplicate entry: " + str(err).strip('<>'))
 
 
-        def _addPerson(self, name) :
+	def _addPerson(self, name) :
 		name = name.strip().split()
 		mname = None
 		if len(name) == 2: fname,lname = name
@@ -28,69 +28,78 @@ class DataAccessor :
 		else: raise ValueError
 
 		p = Person(fname=fname,
-                           mname=mname,
-                           lname=lname)
+			   mname=mname,
+			   lname=lname)
 
-		pkeyMap = {'fname' : fname, 'mname' : mname, 'lname' : lname}
+		pkey = ['fname', 'mname', 'lname']
 
 		try:
-                        p = self._pkeyCheck(pkeyMap, p)
-                        return p
-                except DataStoreClash as data:
-                        return data.entity
+			self._pkeyCheck(pkey, p)
+			p.put()
+			return p.key()
+		except DataStoreClash as data:
+			return data.entity
 	
 	def addStudent(self, sid, password) :
-		return self.conditionalApply("Student", Student, self.primary(sid = sid), password = password)
+		s = Student(sid=sid,
+			    password=password)
+		pkey = ['sid', 'password']
+		try:
+			self._pkeyCheck(pkey, s)
+			s.put()
+			return s.key()
+		except DataStoreClash as data:
+			self._errHandler(data.entity)
 
 	def addPaper(self, ptype, title, author) :
 		author = self._addPerson(author)
 		pkey = ['paperType', 'title', 'author']
 		return self._addRatable(Paper, pkey,
-                                        paperType=ptype,
-                                        title=title,
-                                        author=author)
+					paperType=ptype,
+					title=title,
+					author=author)
 
 	def addGrade(self, course, student, grade ) :
-                pkey = ['course', 'student']
+		pkey = ['course', 'student']
 		return self._addRatable(Grade, pkey,
-                                        course=course,
-                                        student=student,
-                                        grade=grade)
+					course=course,
+					student=student,
+					grade=grade)
 	
 	def addCourse(self, unique, num, name, semester, year, instructor) :
 		i = self._addPerson(instructor)
 		pkey = ['unique']
 		return self._addRatable(Course, pkey,
-                                        unique=unique,
-                                        courseNum=num,
-                                        name=name,
-                                        semester=semester,
-                                        instructor=i,
-                                        year=year)
+					unique=unique,
+					courseNum=num,
+					name=name,
+					semester=semester,
+					instructor=i,
+					year=year)
 
 	def addBook(self, title, isbn, author) :
-		p = self._addPerson(author)
+		author = self._addPerson(author)
 		isbn = isbn.strip().replace('-','')
 		pkey = ['isbn']
 		return self._addRatable(Book, pkey,
-                                        title=title,
-                                        isbn=isbn,
-                                        author=author)
+					title=title,
+					isbn=isbn,
+					author=author)
 
 	def addGame(self, platform, title):
-                pkey = ['platform', 'title']
+		pkey = ['platform', 'title']
 		return self._addRatable(Game, pkey,
-                                        platform=platform,
-                                        title=title)
+					platform=platform,
+					title=title)
 
-        def _addPlace(self, name, location, semester, year, ptype) :
+	def _addPlace(self, name, location, semester, year, ptype) :
 		assert issubclass(ptype, Place)
 		pkey = ['name', 'location', 'semester', 'year']
 		return self._addRatable(ptype, pkey,
-                                        name=name,
-                                        location=location,
-                                        semester=semester,
-                                        year=year)
+					name=name,
+					location=location,
+					semester=semester,
+					year=year)
 
 	def addPlaceLive(self, name, location, semester, year) :
 		return self._addPlace(name, location, semester, year, PlaceLive)
@@ -104,52 +113,47 @@ class DataAccessor :
 	def addPlaceStudy(self, name, location, semester, year) :
 		return self._addPlace(name, location, semester, year, PlaceStudy)
 
-        def addInternship(self, company, location, semester, year) :
-		return self._addPlace(company, location, semester, year, Internship)
+	def addInternship(self, name, location, semester, year) :
+		return self._addPlace(name, location, semester, year, Internship)
 
 	def addRating(self, ratable, student, rating, comment=None) :
 		c = self.addComment(comment)
+		rating = int(rating)
 		r = Rating(rating=rating,
-                           rated=ratable,
-                           rater=student,
-                           comment=c)
-		pkeyMap= {'rated' : ratable, 'rater' : student}
+			   rated=ratable,
+			   rater=student,
+			   comment=c)
+		pkey = ['rated', 'rater']
 		try:
-                        r = self._pkeyCheck(pkeyMap, r)
-                except DataStoreClash as data:
-                        r = data.entity
-                finally:
-                        r.rating = rating
-                        r.comment = c
-                        r.put()
-                        return r.key()
+			self._pkeyCheck(pkey, r)
+		except DataStoreClash as data:
+			r = data.entity
+		finally:
+			r.rating = rating
+			r.comment = c
+			r.put()
+			return r.key()
 		
 	def addComment(self, text):
-                c = Comment(text=text)
-                c.put()
-                return c.key()
+		c = Comment(text=text)
+		c.put()
+		return c.key()
 
 	def _addRatable(self, objtype, pkey, **assocs):
-                r = objtype(assocs)
-                pkeyMap = dict([x for x in assocs.items() if x[0] in pkey])
-                try:
-                        r = self._pkeyCheck(pkeyMap, r)
-                        r.put()
-                        return r.key()
-                except DataStoreClash as data:
-                        self._errHandler(data.entity)
+		r = objtype(**assocs)
+		try:
+			self._pkeyCheck(pkey, r)
+			r.put()
+			return r.key()
+		except DataStoreClash as data:
+			if data.entity == r: return data.entity.key()
+			self._errHandler(data.entity)
 
-        def _pkeyCheck(self, pkeymap, obj):
-                objType = obj.kind()
-                query = objType.all()
-                for x in pkey:
-                        assert x in objType.properties()
-                        query.filter(x + ' =', getattr(obj, x))
-                assert query.count() <= 1
-                if query.count == 1: 
-                        old = query.get()
-                        for x in objType.properties():
-                                if getattr(old, x) != getattr*=(obj, x):
-                                        raise DataStoreClash(old)
-                        return old
-                return obj
+	def _pkeyCheck(self, pkey, obj):
+		objType = obj.__class__
+		query = objType.all()
+		for x in pkey:
+			assert x in objType.properties()
+			query.filter(x + ' =', getattr(obj, x))
+		assert query.count() <= 1
+		if query.count() == 1: raise DataStoreClash(query.get())
