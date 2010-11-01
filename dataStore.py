@@ -15,7 +15,7 @@ class Comment(db.Model):
     replyto = db.SelfReferenceProperty()
 
     def __str__(self):
-        return str(text)
+        return str(self.text)
 
     def __iter__(self):
         yield ('text', self.text)
