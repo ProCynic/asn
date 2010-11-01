@@ -54,7 +54,7 @@ def export() :
         root = ElementTree.Element("students")
         for s in students : 
                 student = addNode(root, "student")
-                addText(student, "id", s.sid)
+                addText(student, "id", s.uid)
                 addText(student, "password", s.password)
                 for r in DS.Rating.all().filter('rater =', s) :
                         obj = r.rated;

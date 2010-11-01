@@ -12,7 +12,7 @@ def randString(n):
 	for x in range(n):
 		string += alphanum[gen.randint(0,len(alphanum)-1)]
 	return string
-def sidgen():
+def uidgen():
 	return randString(8)
 def passgen():
 	return randString(12)
@@ -31,9 +31,9 @@ def main():
 
 
 def gparker(DA):
-	sid = sidgen()
+	uid = uidgen()
 	pwd = passgen()
-	me = DA.addStudent(sid,pwd)
+	me = DA.addStudent(uid,pwd)
 
 	b = DA.addBook("The Good Fairies of New York", "978-0765358547", "Martin Millar")
 	DA.addRating(b, me, '100', "Excellent British humor by a lesser know author")
@@ -55,9 +55,9 @@ def gparker(DA):
 	DA.addGrade(c, me, 'A')
 
 def aywang(DA):
-	sid = sidgen()
+	uid = uidgen()
 	pwd = passgen()
-	me = DA.addStudent(sid,pwd)
+	me = DA.addStudent(uid,pwd)
 
 	b = DA.addBook("Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)", "0441013597", "Frank Herbert")
 	DA.addRating(b, me, '90', "Great book, but the sequels are kinda poor.")
@@ -85,9 +85,9 @@ def aywang(DA):
 	DA.addRating(b, me, '86', "No taylor basement, but its still filled with intelligent people to help.")
 
 def ttb265(DA):
-	sid = sidgen()
+	uid = uidgen()
 	pwd = passgen()
-	me = DA.addStudent(sid,pwd)
+	me = DA.addStudent(uid,pwd)
 	c = DA.addCourse('52550', 'CS 378', 'Computational Intelligence in Game Design II', 'FALL', '2010', 'Risto Miikkulainen')
 	DA.addRating(c, me, '90', 'Interesting research class')
 	DA.addGrade(c, me, 'A')
@@ -107,7 +107,7 @@ def ttb265(DA):
 	DA.addRating(i, me, '100', 'Great if you\'re preparing yourself for a career in web development');
 	p = DA.addPlaceStudy('ENS Basement', 'Univ. of Texas', 'FALL', '2010')
 	DA.addRating(p, me, '100', 'Quiet... Full of geeks!');
-	p = DA.addPlaceLive('Ballpark Apartments', 'Riverside', 'FALL', '2009')
+	p = DA.addPlaceLive('Ballpark Apartments', 'Riveruide', 'FALL', '2009')
 	DA.addRating(p, me, '90', 'Great if you\'ve got great roommates');
 	p = DA.addPlaceEat('Big Bite', 'Guadalupe', 'SPRING', '2010')
 	DA.addRating(p, me, '95', 'ZOMG!');
@@ -119,9 +119,9 @@ def ttb265(DA):
 	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
-	sid = sidgen()
+	uid = uidgen()
 	pwd = passgen()
-	me = DA.addStudent(sid,pwd)
+	me = DA.addStudent(uid,pwd)
 	
 	p = DA.addPlaceStudy('ENS Basement', 'Univ. of Texas', 'FALL', '2010')
 	DA.addRating(p, me, '80', 'Used to be quiet until more CS people came here; lots of help around though.')

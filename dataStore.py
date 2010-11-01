@@ -27,15 +27,10 @@ class Person(db.Model):
 	lname = db.StringProperty(required=True)
 	mname = db.StringProperty()
 
-class Student(db.Model):
-	"""
-		A model for Students
-
-		A student has a random student id (sid)
-		and a password.
-	"""
-	sid = db.StringProperty(required=True)
-	password = db.StringProperty(required=True)
+class User(db.Model):
+    uid = db.StringProperty(required=True)
+    password = db.StringProperty(required=True)
+    userType = db.StringProperty(required=True, choices=['STUDENT','ADMIN'])
 
 class Ratable(polymodel.PolyModel):
 	"""
