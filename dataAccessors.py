@@ -150,6 +150,15 @@ class DataAccessor :
 			if data.entity == r: return data.entity.key()
 			self._errHandler(data.entity)
 
+	def getUser(self, uid, pw):
+		pkey = ['uid', 'password']
+		u = User(uid=uid, password=pw, userType='STUDENT') # userType is unnecessary
+		try:
+			self._pkeyCheck(pkey, u)
+			return None
+		except DataStoreClash, err:
+			return err.entity
+
 	def _pkeyCheck(self, pkey, obj):
 		objType = obj.__class__
 		query = objType.all()

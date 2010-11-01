@@ -45,7 +45,7 @@ class BaseRequestHandler(webapp.RequestHandler):
     values = {
       'request': self.request,
       'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Phase 1',
+      'application_name': 'Anonymous Social Network, Phase 2',
     }
     values.update(template_values)
     directory = os.path.dirname(__file__)
@@ -58,10 +58,21 @@ class Login(BaseRequestHandler):
             'title': 'Login'
         })
     def post(self):
-        id = self.request.get('id')
+        uid = self.request.get('id')
         pw = self.request.get('pw')
-        
-        self.redirect('/student')
+        if not uid or not pw:
+            self.redirect('/login')
+        else:
+            DA = DataAccessor()
+            u = DA.getUser(uid, pw)
+            if u is None:
+                self.redirect('/login')
+            elif u.userType == 'STUDENT':
+                self.redirect('/student')
+            elif u.userType == 'ADMIN':
+                self.redirect('/admin')
+        assert "Somebody screwed the datastore" and False
+        self.redirect('/login')
 
 class Browser(BaseRequestHandler):
     def get(self):
