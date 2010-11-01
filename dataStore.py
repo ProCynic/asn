@@ -1,6 +1,4 @@
-"""
-Defines the data models for the ASN
-"""
+""" Defines the data models for the ASN """
 
 from google.appengine.ext import db
 from google.appengine.ext.db import polymodel

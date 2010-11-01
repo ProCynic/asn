@@ -1,5 +1,7 @@
-import dataStore as DS from exporter import export from importer
-import Importer from dataAccessors import Usage, DataAccessor
+import dataStore as DS
+from exporter import export
+from importer import Importer
+from dataAccessors import Usage, DataAccessor
 
 import datetime
 import os
@@ -152,7 +154,7 @@ class AdminImport(BaseRequestHandler):
                 except IOError:
                     self.msg = "ERROR: Please select a file to import."
 
-                except Usage as err:
+                except Usage, err:
                     self.msg = err.msg
 
                 if not self.msg :

@@ -1,6 +1,5 @@
-#!/usr/bin/env python
-'''
-GAEUnit: Google App Engine Unit Test Framework
+#!/usr/bin/env python ''' GAEUnit: Google App Engine Unit Test
+Framework
 
 Usage:
 
