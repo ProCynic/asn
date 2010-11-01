@@ -48,9 +48,9 @@ nodetypes = {
 
 def export() :
 	"""
-		Exports all the students in the datastore out to an XML file.
+		Exports all the s in the datastore out to an XML file.
 	"""
-        students = DS.Student.all()
+        students = DS.User.all().filter('userType =','STUDENT')
         root = ElementTree.Element("students")
         for s in students : 
                 student = addNode(root, "student")
