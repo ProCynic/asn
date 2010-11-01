@@ -1,6 +1,6 @@
 import dataStore as DS
 from exporter import export
-from importer import StudentImporter
+from importer import Importer
 from dataAccessors import Usage, DataAccessor
 
 import datetime
@@ -132,34 +132,39 @@ class AdminExport(BaseRequestHandler):
         })
 
 class AdminImport(BaseRequestHandler):
-    
-    def addErrorMessage(self, msg) :
-        """
-            A callback to show messages.
-        """
-        self.msg += msg + "<br/>"
 
-    # login required
-    def post(self):
-        """
-            Does the import and shows errors, if any.
-        """
-        self.msg = ""
-        si = StudentImporter(DataAccessor(self.addErrorMessage))
-        try:
-            newFile = self.request.get('newFile')
-            si.parse(newFile)
-        except IOError:
-            self.msg = "ERROR: Please select a file to import."
+	
+	def addErrorMessage(self, obj) :
+		"""
+                A callback to show messages.
+		"""
+		self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
 
-        if not self.msg :
-            self.msg = "Import succeeded."
-    
-        if len(self.msg) > 256 :
-            self.msg = self.msg[0:256] + "..."
+	# login required
+	def post(self):
+		"""
+                Does the import and shows errors, if any.
+		"""
+		self.msg = ""
+		si = Importer(DataAccessor(self.addErrorMessage))
+		#si = Importer()
+		try:
+		    newFile = self.request.get('newFile')
+		    si.parse(newFile)
+		except IOError:
+		    self.msg = "ERROR: Please select a file to import."
+
+		except Usage as err:
+                    self.msg = err.msg
+
+		if not self.msg :
+			self.msg = "Import succeeded."
+	
+		if len(self.msg) > 512 :
+			self.msg = self.msg[0:512] + "..."
 
 
-        self.redirect('/admin?m='+self.msg)
+		self.redirect('/admin?m='+self.msg)
 
 class AdminReset(BaseRequestHandler):
     # login required

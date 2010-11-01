@@ -14,6 +14,8 @@ handlers:
 - url: /selfdata.*
   script: ourData.py
 
+- url: /tmp.*
+  script: tmp.py
 
 - url: /.*
   script: ASN1.py
