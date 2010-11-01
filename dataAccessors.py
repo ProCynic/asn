@@ -52,10 +52,10 @@ class DataAccessor :
 			return data.entity
 	
 	def addStudent(self, uid, password) :
-                addUser(uid, password, 'STUDENT')
+                self.addUser(uid, password, 'STUDENT')
 
 	def addAdmin(self, uid, password):
-                addUser(uid, password, 'ADMIN')
+                self.addUser(uid, password, 'ADMIN')
 
 	def addPaper(self, ptype, title, author) :
 		author = self._addPerson(author)
