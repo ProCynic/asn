@@ -49,7 +49,7 @@ class DataAccessor :
 			s.put()
 			return s.key()
 		except DataStoreClash as data:
-			self._errHandler(data.entity)
+			return data.entity
 
 	def addPaper(self, ptype, title, author) :
 		author = self._addPerson(author)
@@ -134,8 +134,9 @@ class DataAccessor :
 			r.put()
 			return r.key()
 		
-	def addComment(self, text):
-		c = Comment(text=text)
+	def addComment(self, text, replyto=None):
+		c = Comment(text=text,
+                            replyto=replyto)
 		c.put()
 		return c.key()
 

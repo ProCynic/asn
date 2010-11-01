@@ -1,269 +1,97 @@
+"""
+"""
+
+import operator
+import dataAccessors
+from dataAccessors import Usage
 from xml.etree import ElementTree
-import sys;
-from importds import DataAccessor
-import dataStore
 
-"""
-	This class provides a student descriptor.
-	
-	Data Members: 
-		ID is the student ID
-		password is the student password.
-"""
-class StudentDescriptor :
-	ID = ""
-	password = ""
-	classes = []
-	books = []
-	papers = []
-	interns = []
-	places = []
-	games = []
+class Importer:
+    def __init__(self, da=dataAccessors.DataAccessor()):
+        self.DA = da
 
-"""
-	The following descriptors act as simple data stores.
-"""
-class PaperDescriptor : 
-	pass 
+    def parse(self, filename):
+        root = ElementTree.parse(filename)
+        for student in root.getiterator('student'):
+            si = StudentImporter(self.DA)
+            si.parse(student)
 
-class CourseDescriptor :
-	pass
+class StudentImporter:
+    def __init__(self, DA):
+        self.DA = DA
+        self.tags = {'class'        : self.DA.addCourse,
+                     'book'         : self.DA.addBook,
+                     'paper'        : self.DA.addPaper,
+                     'game'         : self.DA.addGame,
+                     'live_place'   : self.DA.addPlaceLive,
+                     'eat_place'    : self.DA.addPlaceEat,
+                     'fun_place'    : self.DA.addPlaceFun,
+                     'study_place'  : self.DA.addPlaceStudy,
+                     'internship'   : self.DA.addInternship}
+        
+        self.ptags = {'title'           : lambda x, d: operator.setitem(d, 'title', x.strip()),
+                      'author'          : lambda x, d: operator.setitem(d, 'author', x.strip()),
+                      'isbn'            : lambda x, d: operator.setitem(d, 'isbn', x.strip().replace('-','')),
+                      'paper_category'  : lambda x, d: operator.setitem(d, 'ptype', x.strip()),
+                      'unique'          : lambda x, d: operator.setitem(d, 'unique', x.strip()),
+                      'course_num'      : lambda x, d: operator.setitem(d, 'num', x.strip()),
+                      'course_name'     : lambda x, d: operator.setitem(d, 'name', x.strip()),
+                      'instructor'      : lambda x, d: operator.setitem(d, 'instructor', x.strip()),
+                      'os'              : lambda x, d: operator.setitem(d, 'platform', x.strip()),
+                      'place_name'      : lambda x, d: operator.setitem(d, 'name', x.strip()),
+                      'location'        : lambda x, d: operator.setitem(d, 'location', x.strip()),
+                      'semester'        : lambda x, d: operator.setitem(d, 'semester', x.strip().split()[0].upper()) or operator.setitem(d, 'year', x.strip().split()[1]),
+                      'grade'           : lambda x, d: operator.setitem(d, 'grade', x.strip().upper()),
+                      'rating'          : lambda x, d: operator.setitem(d, 'rating', x.strip()),
+                      'comment'         : lambda x, d: operator.setitem(d, 'comment', x)}
+        
+    def parse(self, root):
+        assert isinstance(root, ElementTree._Element)
+        assert root.tag == 'student'
+        assert len(root.findall('id')) == 1
+        assert len(root.findall('password')) == 1
+        sid = root.find('id').text.strip()
+        password = root.find('password').text.strip()
+        self.student = self.DA.addStudent(sid, password)
 
-class BookDescriptor :
-	pass
+        #will ignore tags not in tag list
+        for tag in self.tags:
+            for node in root.getiterator(tag):
+                self.parseItem(node)
 
-class InternDescriptor : 
-	pass
+    def parseItem(self, node):
+        assert node.tag in self.tags
+        adder = self.tags[node.tag]
+        args = self._getArgs(node)
+        rating, comment = self._getRating(args)
+        grade = None
+        if node.tag == 'class':
+            try:
+                grade = args.pop('grade')
+            except KeyError:
+                pass
+        
+        x = adder(**args)
+        self.DA.addRating(x, self.student, rating, comment)
 
-class PlaceDescriptor : 
-	pass
+        if grade:
+            assert node.tag == 'class'
+            self.DA.addGrade(x, self.student, grade)
 
-class GameDescriptor :
-	pass
+    def _getArgs(self, node):
+        args = {}
+        for x in node.getchildren():
+            self.ptags[x.tag](x.text, args)
+        return args
 
-class StudentImporter :
-	def __init__(self, data) :
-		"""
-			Create a student importer using the given import facade.
-			The default DataAccessor will import into the datastore.
-		"""
-		self.DA = data
-		self.parsingMap = {
-			"StudentId" : (StudentDescriptor, "ID"),
-			"StudentPassword" : (StudentDescriptor, "password"),
+    def _getRating(self, args):
+        try:
+            rating = args.pop('rating')
+        except KeyError:
+            raise Usage("No rating for class")
+        try:
+            comment = args.pop('comment')
+        except KeyError:
+            comment = None
 
-			"ClassUnique" : (CourseDescriptor, "unique"), 
-			"ClassCourse_num" : (CourseDescriptor, "courseNum"),
-			"ClassCourse_name" : (CourseDescriptor, "courseName"), 
-			"ClassInstructor" : (CourseDescriptor, "instructor"),
-			"ClassGrade" : (CourseDescriptor, "grade"),
-
-			"BookIsbn" : (BookDescriptor, "isbn"),
-			"BookTitle" : (BookDescriptor, "title"),
-			"BookAuthor" : (BookDescriptor, "author"),
-
-			"PaperPaper_category" : (PaperDescriptor, "category"), 
-			"PaperTitle" : (PaperDescriptor, "title"),
-			"PaperAuthor" : (PaperDescriptor, "author"),
-		
-			"InternPlace_name" : (InternDescriptor, "company"),
-			"InternLocation" : (InternDescriptor, "location"),
-
-			"PlacePlace_name" : (PlaceDescriptor, "place"),
-			"PlaceLocation" : (PlaceDescriptor, "location"), 
-		
-			"GameOs" : (GameDescriptor, "OS"),
-			"GameTitle" : (GameDescriptor, "title")
-		}
-
-	def __nullCallback(self, l) :
-		return lambda x, y: sys.stdout.write("No such callback: " + l + "\n")
-
-	def getFunctor(self, name, prefix, data) :
-		"""
-			Returns a function that handles the parsing of the input element, with the given prefix.
-			Data is passed through to the function.
-		"""
-		invokeName = prefix.capitalize() + name.capitalize()
-
-		#If the name is in the parsing map, return a simple set function over looking 
-		if invokeName in self.parsingMap : 
-			parsingValue = self.parsingMap[invokeName]
-			if isinstance(data, parsingValue[0]) :
-				return lambda element, data : setattr(data, parsingValue[1], element.text.strip())
-
-		#Special case parsers.
-		if (name.capitalize() == "Semester") : 
-			return self.parseSemester
-
-		if (name.capitalize() == "Rating") :
-			return self.parseRating
-
-		if (name.capitalize() == "Comment") : 
-			return self.parseComment
-
-		#Otherwise, try to look up the attribute.
-		name = "parse" + invokeName
-		callback = self.__nullCallback(name)
-		try :
-			callback = getattr(self, name)
-		except AttributeError :
-			#If no such attribute was found, return the default one.
-			pass
-
-		return callback
-
-	def invokeChildren(self, p, prefix, data) :
-		"""
-			Recurse down the children of the element, invoking the parser at each element.
-		"""
-		for e in p :
-			callback = self.getFunctor(e.tag, prefix, data)
-			callback(e, data)
-
-	def parse(self, xmlname) :
-		"""
-			Parse the given xml file.
-		"""
-		f = ElementTree.parse(xmlname)
-		self.invokeChildren(f.getroot(), "", self)
-
-	def parseStudent(self, e, d) :
-		"""
-			The parser for students. This will also add the student to the datastore
-			through the stored DataAccessor, along with any other information provided.
-		"""
-		currentStudent = StudentDescriptor()
-		self.invokeChildren(e, 'Student', currentStudent)
-		
-		DA = self.DA
-		student = DA.addStudent(currentStudent.ID, currentStudent.password)
-
-		#Add classes
-		for c in currentStudent.classes :
-			course = DA.addCourse(c.unique, c.courseNum, c.courseName, c.semester, c.year, c.instructor)
-			DA.addGrade(course, student, c.grade)
-			DA.addRating(course, student, c.rating, c.comment)
-
-		#Add books
-		for b in currentStudent.books :
-			book = DA.addBook(b.title, b.isbn, b.author);
-			DA.addRating(book, student, b.rating, b.comment)
-
-		#Add papers
-		for p in currentStudent.papers : 
-			paper = DA.addPaper(p.category, p.title, p.author)
-			DA.addRating(paper, student, p.rating, p.comment)
-
-		#Add internships
-		for i in currentStudent.interns : 
-			internship = DA.addInternship(i.company, i.location, i.semester, i.year)
-			DA.addRating(internship, student, i.rating, i.comment)
-
-		#Add games
-		for g in currentStudent.games :
-			game = DA.addGame(g.OS, g.title)
-			DA.addRating(game, student, g.rating, g.comment)
-
-		#Add places
-		for p in currentStudent.places :
-			place = DA._addPlace(p.place, p.location, p.semester, p.year, p.typeID)
-			DA.addRating(place, student, p.rating, p.comment)
-
-	def parseStudentInternship(self, c, d) : 
-		"""
-			Parses an internship, and adds to the list. 
-		"""
-		newIntern = InternDescriptor();
-		self.invokeChildren(c, "Intern", newIntern)
-		d.interns.append(newIntern)
-
-	def parseStudentStudy_place(self, c, d) : 
-		"""
-			Parses an study place, and adds to the list. 
-		"""
-		newPlace = PlaceDescriptor();
-		newPlace.typeID = "Study"
-		self.invokeChildren(c, "Place", newPlace)
-		d.places.append(newPlace)
-
-	def parseStudentLive_place(self, c, d) :
-		"""
-			Parses an study place, and adds to the list. 
-		"""
-		newPlace = PlaceDescriptor();
-		newPlace.typeID = "Live"
-		self.invokeChildren(c, "Place", newPlace)
-		d.places.append(newPlace)
-
-	def parseStudentEat_place(self, c, d) :
-		"""
-			Parses an eat place, and adds to the list. 
-		"""
-		newPlace = PlaceDescriptor();
-		newPlace.typeID = "Eat"
-		self.invokeChildren(c, "Place", newPlace)
-		d.places.append(newPlace)
-
-	def parseStudentFun_place(self, c, d) :
-		"""
-			Parses an fun place, and adds to the list. 
-		"""
-		newPlace = PlaceDescriptor();
-		newPlace.typeID = "Fun"
-		self.invokeChildren(c, "Place", newPlace)
-		d.places.append(newPlace)
-	
-	def parseStudentClass(self, c, d) :
-		"""
-			Parses a class and adds to the list. 
-		"""
-		newClass = CourseDescriptor()
-		self.invokeChildren(c, "Class", newClass)
-		d.classes.append(newClass)
-
-	def parseStudentBook(self, c, d) :
-		"""
-			Parses a book, and adds to the list. 
-		"""
-		newBook = BookDescriptor() 
-		self.invokeChildren(c, "Book", newBook)
-		d.books.append(newBook)
-
-	def parseStudentPaper(self, c, d) : 
-		"""
-			Parses a paper, and adds to the list. 
-		"""
-		newPaper = PaperDescriptor()
-		self.invokeChildren(c, "Paper", newPaper)
-		d.papers.append(newPaper)
-
-	def parseStudentGame(self, c, d) :
-		"""
-			Parses a game, and adds to the list. 
-		"""
-		newGame = GameDescriptor()
-		self.invokeChildren(c, "Game", newGame)
-		d.games.append(newGame)
-
-	def parseSemester(self, c, d) : 
-		"""
-			Parses a semester, and adds to the list. 
-		"""
-		semester, year = c.text.strip().split()
-		d.semester = semester.upper()
-		d.year = year;
-
-	def parseRating(self, c, d) :
-		"""
-			Parses out a rating.
-		"""
-		d.rating = c.text.strip()
-
-	def parseComment(self, c, d) :
-		"""
-			Parses out a comment rating. 
-		"""
-		d.comment = c.text.strip()
-
-
+        return rating, comment

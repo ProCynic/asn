@@ -1,6 +1,6 @@
 import dataStore as DS
 from exporter import export
-from otherImport import Importer
+from importer import Importer
 from dataAccessors import Usage, DataAccessor
 
 import datetime
@@ -111,7 +111,7 @@ class AdminImport(BaseRequestHandler):
 		"""
                 A callback to show messages.
 		"""
-		self.msg += str(obj).replace('\n',"<br/>")
+		self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
 
 	# login required
 	def post(self):
