@@ -1,7 +1,5 @@
-import dataStore as DS
-from exporter import export
-from importer import Importer
-from dataAccessors import Usage, DataAccessor
+import dataStore as DS from exporter import export from importer
+import Importer from dataAccessors import Usage, DataAccessor
 
 import datetime
 import os
@@ -22,19 +20,19 @@ from google.appengine.ext.webapp.util import login_required
 _DEBUG = True
 
 def randString(n):
-	alphanum = "abcdefghijklmnopqrstuvwxyz"
-	alphanum += alphanum.upper()
-	alphanum += "0123456789"
-	alphanum += "~!@#$%^&*()-_=+:;/?"
-	string = ""
-	gen = random.Random()
-	for x in range(n):
-		string += alphanum[gen.randint(0,len(alphanum)-1)]
-	return string
+        alphanum = "abcdefghijklmnopqrstuvwxyz"
+        alphanum += alphanum.upper()
+        alphanum += "0123456789"
+        alphanum += "~!@#$%^&*()-_=+:;/?"
+        string = ""
+        gen = random.Random()
+        for x in range(n):
+                string += alphanum[gen.randint(0,len(alphanum)-1)]
+        return string
 def uidgen():
-	return randString(8)
+        return randString(8)
 def passgen():
-	return randString(12)
+        return randString(12)
 
 class BaseRequestHandler(webapp.RequestHandler):
   def generate(self, template_name, template_values={}):
@@ -133,38 +131,38 @@ class AdminExport(BaseRequestHandler):
 
 class AdminImport(BaseRequestHandler):
 
-	
-	def addErrorMessage(self, obj) :
-		"""
+        
+        def addErrorMessage(self, obj) :
+                """
                 A callback to show messages.
-		"""
-		self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
+                """
+                self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
 
-	# login required
-	def post(self):
-		"""
+        # login required
+        def post(self):
+                """
                 Does the import and shows errors, if any.
-		"""
-		self.msg = ""
-		si = Importer(DataAccessor(self.addErrorMessage))
-		#si = Importer()
-		try:
-		    newFile = self.request.get('newFile')
-		    si.parse(newFile)
-		except IOError:
-		    self.msg = "ERROR: Please select a file to import."
+                """
+                self.msg = ""
+                si = Importer(DataAccessor(self.addErrorMessage))
+                #si = Importer()
+                try:
+                    newFile = self.request.get('newFile')
+                    si.parse(newFile)
+                except IOError:
+                    self.msg = "ERROR: Please select a file to import."
 
-		except Usage as err:
+                except Usage as err:
                     self.msg = err.msg
 
-		if not self.msg :
-			self.msg = "Import succeeded."
-	
-		if len(self.msg) > 512 :
-			self.msg = self.msg[0:512] + "..."
+                if not self.msg :
+                        self.msg = "Import succeeded."
+        
+                if len(self.msg) > 512 :
+                        self.msg = self.msg[0:512] + "..."
 
 
-		self.redirect('/admin?m='+self.msg)
+                self.redirect('/admin?m='+self.msg)
 
 class AdminReset(BaseRequestHandler):
     # login required
