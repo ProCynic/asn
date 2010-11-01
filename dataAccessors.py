@@ -36,19 +36,19 @@ class DataAccessor :
 			self._pkeyCheck(pkey, p)
 			p.put()
 			return p.key()
-		except DataStoreClash as data:
+		except DataStoreClash, data:
 			return data.entity
 	
 	def addStudent(self, uid, password) :
 		s = User(uid=uid,
-			 password=password
-                         userType='STUDENT')
+			 password=password,
+			 userType='STUDENT')
 		pkey = ['uid', 'password']
 		try:
 			self._pkeyCheck(pkey, s)
 			s.put()
 			return s.key()
-		except DataStoreClash as data:
+		except DataStoreClash, data:
 			return data.entity
 
 	def addPaper(self, ptype, title, author) :
@@ -126,7 +126,7 @@ class DataAccessor :
 		pkey = ['rated', 'rater']
 		try:
 			self._pkeyCheck(pkey, r)
-		except DataStoreClash as data:
+		except DataStoreClash, data:
 			r = data.entity
 		finally:
 			r.rating = rating
@@ -146,7 +146,7 @@ class DataAccessor :
 			self._pkeyCheck(pkey, r)
 			r.put()
 			return r.key()
-		except DataStoreClash as data:
+		except DataStoreClash, data:
 			if data.entity == r: return data.entity.key()
 			self._errHandler(data.entity)
 
