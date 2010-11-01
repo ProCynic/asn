@@ -32,17 +32,38 @@ def randString(n):
                 string += alphanum[gen.randint(0,len(alphanum)-1)]
         return string
 def uidgen():
-        return randString(8)
+    return randString(8)
 def passgen():
-        return randString(12)
+    return randString(12)
 
-"""
-def loggedIn():
-    ukey = self.request.cookies.get('ukey', '')
-    if ukey is None:
-        return False
-    return db.get(db.Key(ukey))
-"""
+
+def user(func):
+    def redirectlogin(self):
+        return self.redirect('/login?msg=Login%20Required')
+    def checkauth(*args, **kwargs):
+        ukey = args[0].request.cookies.get('ukey', ''))
+        u = db.get(db.Key(ukey))
+        if u is None:
+            return redirectlogin
+        if u.userType == 'STUDENT':
+            return func(*args, **kwargs)
+        return redirectLogin
+    return checkauth
+
+def admin(func):
+    def redirectlogin(self):
+        return self.redirect('/login?msg=Login%20Required')
+    def checkauth(*args, **kwargs):
+        ukey = args[0].request.cookies.get('ukey', ''))
+        u = db.get(db.Key(ukey))
+        if u is None:
+            return redirectlogin
+        if u.userType == 'ADMIN':
+            return func(*args, **kwargs)
+        return redirectLogin
+    return checkauth
+
+
 
 class BaseRequestHandler(webapp.RequestHandler):
   def generate(self, template_name, template_values={}):
