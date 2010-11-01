@@ -38,11 +38,11 @@ class DataAccessor :
 			return p.key()
 		except DataStoreClash, data:
 			return data.entity
-	
-	def addStudent(self, uid, password) :
-		s = User(uid=uid,
+
+        def addUser(self, uid, password, userType):
+                s = User(uid=uid,
 			 password=password,
-			 userType='STUDENT')
+			 userType=userType)
 		pkey = ['uid', 'password']
 		try:
 			self._pkeyCheck(pkey, s)
@@ -50,6 +50,12 @@ class DataAccessor :
 			return s.key()
 		except DataStoreClash, data:
 			return data.entity
+	
+	def addStudent(self, uid, password) :
+                addUser(uid, password, 'STUDENT')
+
+	def addAdmin(self, uid, password):
+                addUser(uid, password, 'ADMIN')
 
 	def addPaper(self, ptype, title, author) :
 		author = self._addPerson(author)
