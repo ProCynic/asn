@@ -131,6 +131,13 @@ class Course (Ratable):
     instructor = db.ReferenceProperty(Person, required=True)
     year = db.StringProperty(required=True, validator=yearValidator)
 
+    def __str__(self):
+        s = """Unique: %s
+        Course #: %s
+        Name: %s
+        """ % (self.unique, self.courseNum, self.name)
+        return s.replace('\n','<br />')
+
 class Grade(db.Model):
     """
         The model for a Grade
@@ -154,6 +161,14 @@ class Book(Ratable):
     isbn = db.StringProperty()
     title = db.StringProperty(required=True)
     author = db.ReferenceProperty(Person,required=True)
+
+    def __str__(self):
+        s = """
+        Title: %s
+        Author: %s
+        ISBN: %s
+        """ % (self.isbn, self.title, str(self.author))
+        return s.replace('\n','<br />')
 
 class Paper (Ratable):
     """

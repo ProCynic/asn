@@ -36,6 +36,14 @@ def uidgen():
 def passgen():
         return randString(12)
 
+"""
+def loggedIn():
+    ukey = self.request.cookies.get('ukey', '')
+    if ukey is None:
+        return False
+    return db.get(db.Key(ukey))
+"""
+
 class BaseRequestHandler(webapp.RequestHandler):
   def generate(self, template_name, template_values={}):
     """
@@ -45,7 +53,7 @@ class BaseRequestHandler(webapp.RequestHandler):
     values = {
       'request': self.request,
       'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Phase 2',
+      'application_name': 'Anonymous Social Network, Phase 2'
     }
     values.update(template_values)
     directory = os.path.dirname(__file__)
@@ -54,6 +62,16 @@ class BaseRequestHandler(webapp.RequestHandler):
 
 class Login(BaseRequestHandler):
     def get(self):
+        """
+        u = loggedIn()
+        if u is not None:
+            if u.userType == 'STUDENT':
+                self.redirect('/student')
+                return
+            elif u.userType == 'ADMIN':
+                self.redirect('/admin')
+                return
+        """
         self.generate('login.html', {
             'title': 'Login'
         })
@@ -62,16 +80,27 @@ class Login(BaseRequestHandler):
         pw = self.request.get('pw')
         if not uid or not pw:
             self.redirect('/login')
+            return
         else:
             DA = DataAccessor()
             u = DA.getUser(uid, pw)
             if u is None:
                 self.redirect('/login')
-            elif u.userType == 'STUDENT':
-                self.redirect('/student')
-            elif u.userType == 'ADMIN':
-                self.redirect('/admin')
-        assert "Somebody screwed the datastore" and False
+                return
+            else:
+                self.response.headers.add_header(
+                                                'Set-Cookie', 
+                                                'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
+                                                  % str(u.key()))
+                if u.userType == 'STUDENT':
+                    self.redirect('/student')
+                    return
+                elif u.userType == 'ADMIN':
+                    self.redirect('/admin')
+                    return
+        #assert "Somebody screwed the datastore" and False
+        
+        print u
         self.redirect('/login')
 
 class CreateUser(BaseRequestHandler):
@@ -79,8 +108,11 @@ class CreateUser(BaseRequestHandler):
         DA = DataAccessor()
         uid = uidgen()
         pw = passgen()
-        DA.addStudent(uid, pw)
-        # set cookie here
+        skey = str(DA.addStudent(uid, pw))
+        self.response.headers.add_header(
+                                        'Set-Cookie', 
+                                        'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
+                                          % skey)
         self.redirect('/student')
         
 class CreateAdmin(BaseRequestHandler):
@@ -111,9 +143,13 @@ class Ratable(BaseRequestHandler):
             title = ratable.title
         else:
             assert False
+        ratableType = str(type(ratable))[18:-2]
+        ratings = DS.Rating.all().filter('rated =',ratable)
         self.generate('ratable.html', {
-            'title': title,
-            'ratable': ratable
+            'title': title + ' ('+ratableType+')',
+            'type' : ratableType,
+            'content': str(ratable),
+            'ratings': ratings
         })
 
 class DatastoreXML(BaseRequestHandler):
