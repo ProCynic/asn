@@ -74,6 +74,23 @@ class Login(BaseRequestHandler):
         assert "Somebody screwed the datastore" and False
         self.redirect('/login')
 
+class CreateUser(BaseRequestHandler):
+    def post(self):
+        DA = DataAccessor()
+        uid = uidgen()
+        pw = passgen()
+        DA.addStudent(uid, pw)
+        # set cookie here
+        self.redirect('/student')
+        
+class CreateAdmin(BaseRequestHandler):
+    def post(self):
+        DA = DataAccessor()
+        uid = uidgen()
+        pw = passgen()
+        DA.addAdmin(uid, pw)
+        self.redirect('/admin')
+
 class Browser(BaseRequestHandler):
     def get(self):
         """
@@ -81,6 +98,22 @@ class Browser(BaseRequestHandler):
         """
         self.generate('browser.html', {
             'title': 'Home'
+        })
+
+class Ratable(BaseRequestHandler):
+    def get(self,key=0):
+        """
+        """
+        ratable = db.get(db.Key(key))
+        if hasattr(ratable,'name'):
+            title = ratable.name
+        elif hasattr(ratable,'title'):
+            title = ratable.title
+        else:
+            assert False
+        self.generate('ratable.html', {
+            'title': title,
+            'ratable': ratable
         })
 
 class DatastoreXML(BaseRequestHandler):
@@ -192,8 +225,10 @@ def main():
   application = webapp.WSGIApplication([
     ('/', Browser),
     ('/browse', Browser),
+    ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),
     ('/login', Login),
+    ('/createUser', CreateUser),
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),
