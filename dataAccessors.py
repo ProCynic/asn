@@ -40,10 +40,11 @@ class DataAccessor :
 		except DataStoreClash as data:
 			return data.entity
 	
-	def addStudent(self, sid, password) :
-		s = Student(sid=sid,
-			    password=password)
-		pkey = ['sid', 'password']
+	def addStudent(self, uid, password) :
+		s = User(uid=uid,
+			 password=password
+                         userType='STUDENT')
+		pkey = ['uid', 'password']
 		try:
 			self._pkeyCheck(pkey, s)
 			s.put()

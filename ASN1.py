@@ -31,7 +31,7 @@ def randString(n):
 	for x in range(n):
 		string += alphanum[gen.randint(0,len(alphanum)-1)]
 	return string
-def sidgen():
+def uidgen():
 	return randString(8)
 def passgen():
 	return randString(12)
@@ -75,7 +75,7 @@ class Browser(BaseRequestHandler):
 class DatastoreXML(BaseRequestHandler):
     def get(self):
         """
-            Give the XML file up for download. This is exported from whatever was inside 
+            Give the XML file up for download. This is exported from whatever was inuide 
             the datastore.
         """
 
