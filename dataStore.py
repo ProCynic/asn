@@ -109,7 +109,7 @@ class Rating(db.Model):
     rating = db.RatingProperty(required=True)
     comment = db.ReferenceProperty(Comment)
     rated = db.ReferenceProperty(Ratable)
-    rater = db.ReferenceProperty(User)
+    rater = db.ReferenceProperty(User, validator=studentValidator)
 
     def __iter__(self):
         d = self.__class__.properties()
@@ -145,7 +145,7 @@ class Grade(db.Model):
         A grade must be associated with a course, a student, and a grad.e
     """
     course = db.ReferenceProperty(Course)
-    student = db.ReferenceProperty(User)
+    student = db.ReferenceProperty(User, validator=studentValidator)
     grade = db.StringProperty(required=True, validator=gradeValidator)
 
     def __str__(self):
@@ -163,11 +163,10 @@ class Book(Ratable):
     author = db.ReferenceProperty(Person,required=True)
 
     def __str__(self):
-        s = """
-        Title: %s
+        s = """Title: %s
         Author: %s
         ISBN: %s
-        """ % (self.isbn, self.title, str(self.author))
+        """ % (self.title, str(self.author), self.isbn)
         return s.replace('\n','<br />')
 
 class Paper (Ratable):
@@ -180,6 +179,13 @@ class Paper (Ratable):
     paperType = db.StringProperty(required=True,choices=['JOURNAL','CONFERENCE'])
     title = db.StringProperty(required=True)
     author = db.ReferenceProperty(Person,required=True)
+
+    def __str__(self):
+        s = """Title: %s
+        Author: %s
+        Paper Type: %s
+        """ % (self.title, str(self.author), self.paperType.capitalize())
+        return s.replace('\n','<br />')
 
 class Place (Ratable):
     """

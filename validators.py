@@ -49,3 +49,6 @@ def isbnValidator(value):
     	for i in range(1,len(x)+1,2):
         	x[i] *= 3
     	if s != 10 - (sum(x) % 10): raise ValueError
+
+def studentValidator(value):
+    if value.userType != 'STUDENT': raise ValueError

@@ -1,7 +1,8 @@
 import dataStore as DS
 from exporter import export
 from importer import Importer
-from dataAccessors import Usage, DataAccessor
+from dataAccessors import DataAccessor
+from exceptions import *
 
 import datetime
 import os
@@ -255,6 +256,7 @@ class AdminImport(BaseRequestHandler):
                 A callback to show messages.
                 """
                 self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
+                raise DataStoreClash(obj)
 
         @admin
         def post(self):

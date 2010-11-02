@@ -3,7 +3,7 @@
 
 import operator
 import dataAccessors
-from dataAccessors import Usage
+from exceptions import *
 from xml.etree import ElementTree
 
 class Importer:
@@ -64,19 +64,25 @@ class StudentImporter:
         adder = self.tags[node.tag]
         args = self._getArgs(node)
         rating, comment = self._getRating(args)
+        
         grade = None
         if node.tag == 'class':
             try:
                 grade = args.pop('grade')
             except KeyError:
                 pass
-        
-        x = adder(**args)
-        self.DA.addRating(x, self.student, rating, comment)
 
-        if grade:
-            assert node.tag == 'class'
-            self.DA.addGrade(x, self.student, grade)
+        try:
+            x = adder(**args)
+            self.DA.addRating(x, self.student, rating, comment)
+
+            if grade:
+                assert node.tag == 'class'
+                self.DA.addGrade(x, self.student, grade)
+        except DataStoreClash:
+            pass
+
+
 
     def _getArgs(self, node):
         args = {}

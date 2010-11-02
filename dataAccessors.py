@@ -1,175 +1,168 @@
+
 """ """
 
 from dataStore import *
-
-class Usage (Exception):
-	def __init__(self,msg):
-	    self.msg = msg
-
-class DataStoreClash (Exception):
-	def __init__(self, entity):
-		self.entity = entity
+from exceptions import *
 
 
 class DataAccessor :
-	def __init__(self, func=None) :
-		if func: self._errHandler = func
+    def __init__(self, func=None) :
+        if func: self._errHandler = func
 
-	def _errHandler(self, err) :
-		raise Usage("Duplicate entry: " + str(err))
+    def _errHandler(self, err) :
+        raise Usage("Duplicate entry: " + str(err))
 
 
-	def _addPerson(self, name) :
-		name = name.strip().split()
-		mname = None
-		if len(name) == 2: fname,lname = name
-		elif len(name) == 3: fname,mname,lname = name
-		else: raise ValueError
+    def _addPerson(self, name) :
+        name = name.strip().split()
+        mname = None
+        if len(name) == 2: fname,lname = name
+        elif len(name) == 3: fname,mname,lname = name
+        else: raise ValueError
 
-		p = Person(fname=fname,
-			   mname=mname,
-			   lname=lname)
+        pkey = ['fname', 'mname', 'lname']
+        return self._addItem(Person, pkey,
+                             fname=fname,
+                             mname=mname,
+                             lname=lname,
+                             behavior='ignore')
+            
 
-		pkey = ['fname', 'mname', 'lname']
+    def addUser(self, uid, password, userType):
+        pkey = ['uid', 'password']
+        return self._addItem(User, pkey,
+                                 uid=uid,
+                                 password=password,
+                                 userType=userType,
+                                 behavior='ignore')
+    
+    def addStudent(self, uid, password) :
+        self.addUser(uid, password, 'STUDENT')
 
-		try:
-			self._pkeyCheck(pkey, p)
-			p.put()
-			return p.key()
-		except DataStoreClash, data:
-			return data.entity
+    def addAdmin(self, uid, password):
+        self.addUser(uid, password, 'ADMIN')
 
-        def addUser(self, uid, password, userType):
-                s = User(uid=uid,
-			 password=password,
-			 userType=userType)
-		pkey = ['uid', 'password']
-		try:
-			self._pkeyCheck(pkey, s)
-			s.put()
-			return s.key()
-		except DataStoreClash, data:
-			return data.entity
-	
-	def addStudent(self, uid, password) :
-                self.addUser(uid, password, 'STUDENT')
+    def addPaper(self, ptype, title, author) :
+        author = self._addPerson(author)
+        pkey = ['paperType', 'title', 'author']
+        return self._addItem(Paper, pkey,
+                             paperType=ptype,
+                             title=title,
+                             author=author)
 
-	def addAdmin(self, uid, password):
-                self.addUser(uid, password, 'ADMIN')
+    def addGrade(self, course, student, grade ) :
+        pkey = ['course', 'student']
+        return self._addItem(Grade, pkey,
+                             course=course,
+                             student=student,
+                             grade=grade,
+                             behavior='overwrite')
+    
+    def addCourse(self, unique, num, name, semester, year, instructor) :
+        i = self._addPerson(instructor)
+        pkey = ['unique']
+        return self._addItem(Course, pkey,
+                                unique=unique,
+                                courseNum=num,
+                                name=name,
+                                semester=semester,
+                                instructor=i,
+                                year=year)
 
-	def addPaper(self, ptype, title, author) :
-		author = self._addPerson(author)
-		pkey = ['paperType', 'title', 'author']
-		return self._addRatable(Paper, pkey,
-					paperType=ptype,
-					title=title,
-					author=author)
+    def addBook(self, title, isbn, author) :
+        author = self._addPerson(author)
+        isbn = isbn.strip().replace('-','')
+        pkey = ['isbn']
+        return self._addItem(Book, pkey,
+                             title=title,
+                             isbn=isbn,
+                             author=author)
 
-	def addGrade(self, course, student, grade ) :
-		pkey = ['course', 'student']
-		return self._addRatable(Grade, pkey,
-					course=course,
-					student=student,
-					grade=grade)
-	
-	def addCourse(self, unique, num, name, semester, year, instructor) :
-		i = self._addPerson(instructor)
-		pkey = ['unique']
-		return self._addRatable(Course, pkey,
-					unique=unique,
-					courseNum=num,
-					name=name,
-					semester=semester,
-					instructor=i,
-					year=year)
+    def addGame(self, platform, title):
+        pkey = ['platform', 'title']
+        return self._addItem(Game, pkey,
+                             platform=platform,
+                             title=title)
 
-	def addBook(self, title, isbn, author) :
-		author = self._addPerson(author)
-		isbn = isbn.strip().replace('-','')
-		pkey = ['isbn']
-		return self._addRatable(Book, pkey,
-					title=title,
-					isbn=isbn,
-					author=author)
+    def _addPlace(self, name, location, semester, year, ptype) :
+        assert issubclass(ptype, Place)
+        pkey = ['name', 'location', 'semester', 'year']
+        return self._addItem(ptype, pkey,
+                             name=name,
+                             location=location,
+                             semester=semester,
+                             year=year)
 
-	def addGame(self, platform, title):
-		pkey = ['platform', 'title']
-		return self._addRatable(Game, pkey,
-					platform=platform,
-					title=title)
+    def addPlaceLive(self, name, location, semester, year) :
+        return self._addPlace(name, location, semester, year, PlaceLive)
 
-	def _addPlace(self, name, location, semester, year, ptype) :
-		assert issubclass(ptype, Place)
-		pkey = ['name', 'location', 'semester', 'year']
-		return self._addRatable(ptype, pkey,
-					name=name,
-					location=location,
-					semester=semester,
-					year=year)
+    def addPlaceEat(self, name, location, semester, year) :
+        return self._addPlace(name, location, semester, year, PlaceEat)
+     
+    def addPlaceFun(self, name, location, semester, year) :
+        return self._addPlace(name, location, semester, year, PlaceFun)
+    
+    def addPlaceStudy(self, name, location, semester, year) :
+        return self._addPlace(name, location, semester, year, PlaceStudy)
 
-	def addPlaceLive(self, name, location, semester, year) :
-		return self._addPlace(name, location, semester, year, PlaceLive)
+    def addInternship(self, name, location, semester, year) :
+        return self._addPlace(name, location, semester, year, Internship)
 
-	def addPlaceEat(self, name, location, semester, year) :
-		return self._addPlace(name, location, semester, year, PlaceEat)
-	 
-	def addPlaceFun(self, name, location, semester, year) :
-		return self._addPlace(name, location, semester, year, PlaceFun)
-	
-	def addPlaceStudy(self, name, location, semester, year) :
-		return self._addPlace(name, location, semester, year, PlaceStudy)
+    def addRating(self, ratable, student, rating, comment=None) :
+        c = self.addComment(comment)
+        rating = int(rating)
+        pkey = ['rated', 'rater']
+        return self._addItem(Rating, pkey,
+                             rating=rating,
+                             rated=ratable,
+                             rater=student,
+                             comment=c,
+                             behavior='overwrite')
+    
+    def addComment(self, text, replyto=None):
+        c = Comment(text=text,
+                    replyto=replyto)
+        c.put()
+        return c.key()
 
-	def addInternship(self, name, location, semester, year) :
-		return self._addPlace(name, location, semester, year, Internship)
+    def _addItem(self, objtype, pkey, behavior='default' **assocs):
+        behavior = behavior.lower()
+        assert behavior in ['default', 'overwrite', 'ignore']
+        r = objtype(**assocs)
+        try:
+            self._pkeyCheck(pkey, r)
+            r.put()
+            return r.key()
+        except DataStoreClash, data:
+            if data.entity == r: return data.entity.key()
+            if behavior == 'ignore': return data.entity.key()
+            if behavior == 'overwrite': return self._updateItem(data.entity, r)
+            self._errHandler(data.entity)
 
-	def addRating(self, ratable, student, rating, comment=None) :
-		c = self.addComment(comment)
-		rating = int(rating)
-		r = Rating(rating=rating,
-			   rated=ratable,
-			   rater=student,
-			   comment=c)
-		pkey = ['rated', 'rater']
-		try:
-			self._pkeyCheck(pkey, r)
-		except DataStoreClash, data:
-			r = data.entity
-		finally:
-			r.rating = rating
-			r.comment = c
-			r.put()
-			return r.key()
-		
-	def addComment(self, text, replyto=None):
-		c = Comment(text=text,
-                            replyto=replyto)
-		c.put()
-		return c.key()
 
-	def _addRatable(self, objtype, pkey, **assocs):
-		r = objtype(**assocs)
-		try:
-			self._pkeyCheck(pkey, r)
-			r.put()
-			return r.key()
-		except DataStoreClash, data:
-			if data.entity == r: return data.entity.key()
-			self._errHandler(data.entity)
+    def _updateItem(self, old, new):
+        """
+        Update the old item, in the datastore, to reflect the new item.
+        """
+        assert type(old) is type(new)
+        for x in type(old).properties():
+            setattr(old, x, getattr(new, x))
+        return old
 
-	def getUser(self, uid, pw):
-		pkey = ['uid', 'password']
-		u = User(uid=uid, password=pw, userType='STUDENT') # userType is unnecessary
-		try:
-			self._pkeyCheck(pkey, u)
-			return None
-		except DataStoreClash, err:
-			return err.entity
+    def getUser(self, uid, pw):
+        pkey = ['uid', 'password']
+        u = User(uid=uid, password=pw, userType='STUDENT') # userType is ignored.  This is a hack to let us use _pkeyCheck.
+        try:
+            self._pkeyCheck(pkey, u)
+            return None
+        except DataStoreClash, err:
+            return err.entity
 
-	def _pkeyCheck(self, pkey, obj):
-		objType = obj.__class__
-		query = objType.all()
-		for x in pkey:
-			assert x in objType.properties()
-			query.filter(x + ' =', getattr(obj, x))
-		assert query.count() <= 1
-		if query.count() == 1: raise DataStoreClash(query.get())
+    def _pkeyCheck(self, pkey, obj):
+        objType = obj.__class__
+        query = objType.all()
+        for x in pkey:
+            assert x in objType.properties()
+            query.filter(x + ' =', getattr(obj, x))
+        assert query.count() <= 1
+        if query.count() == 1: raise DataStoreClash(query.get())
