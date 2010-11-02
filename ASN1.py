@@ -21,6 +21,10 @@ from google.appengine.ext.webapp.util import login_required
 # Set to true if we want to have our webapp print stack traces, etc
 _DEBUG = True
 
+x = DataAccessor()
+x.addAdmin('admin','000000')
+del x
+
 def randString(n):
         alphanum = "abcdefghijklmnopqrstuvwxyz"
         alphanum += alphanum.upper()
