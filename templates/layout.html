@@ -19,6 +19,11 @@
 			<div id="header">
 				<div class="content">
 					<h1><a href="/">{{ application_name }}</a> - <a href="{{ request.path }}">{{ title }}</a></h1>
+					{% if user %}
+					<a class="login" href="logout">logout</a>
+					{% else %}
+					<a class="login" href="login">login</a>
+					{% endif %}
 				</div>
 			</div>
 			<div id="main">

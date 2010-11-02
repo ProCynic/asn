@@ -41,26 +41,26 @@ def user(func):
     def redirectlogin(self):
         return self.redirect('/login?msg=Login%20Required')
     def checkauth(*args, **kwargs):
-        ukey = args[0].request.cookies.get('ukey', ''))
+        ukey = args[0].request.cookies.get('ukey', '')
         u = db.get(db.Key(ukey))
         if u is None:
-            return redirectlogin
+            return redirectlogin(args[0])
         if u.userType == 'STUDENT':
             return func(*args, **kwargs)
-        return redirectLogin
+        return redirectlogin(args[0])
     return checkauth
 
 def admin(func):
     def redirectlogin(self):
         return self.redirect('/login?msg=Login%20Required')
     def checkauth(*args, **kwargs):
-        ukey = args[0].request.cookies.get('ukey', ''))
+        ukey = args[0].request.cookies.get('ukey', '')
         u = db.get(db.Key(ukey))
         if u is None:
-            return redirectlogin
+            return redirectlogin(args[0])
         if u.userType == 'ADMIN':
             return func(*args, **kwargs)
-        return redirectLogin
+        return redirectlogin(args[0])
     return checkauth
 
 
@@ -71,10 +71,16 @@ class BaseRequestHandler(webapp.RequestHandler):
     Generate a page with some default parameters. 
     Other parameters are received from the template_values.
     """
+    ukey = self.request.cookies.get('ukey', '')
+    if ukey == '':
+        user = None
+    else:
+        user = db.get(db.Key(ukey))
     values = {
       'request': self.request,
       'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Phase 2'
+      'application_name': 'Anonymous Social Network, Phase 2',
+      'user': user
     }
     values.update(template_values)
     directory = os.path.dirname(__file__)
@@ -124,6 +130,15 @@ class Login(BaseRequestHandler):
         print u
         self.redirect('/login')
 
+class Logout(BaseRequestHandler):
+    def get(self):
+        #del self.response.headers['Set-Cookie']        
+        self.response.headers.add_header(
+                                        'Set-Cookie', 
+                                        'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
+                                          % '')
+        self.redirect('/browse')
+
 class CreateUser(BaseRequestHandler):
     def post(self):
         DA = DataAccessor()
@@ -135,14 +150,6 @@ class CreateUser(BaseRequestHandler):
                                         'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
                                           % skey)
         self.redirect('/student')
-        
-class CreateAdmin(BaseRequestHandler):
-    def post(self):
-        DA = DataAccessor()
-        uid = uidgen()
-        pw = passgen()
-        DA.addAdmin(uid, pw)
-        self.redirect('/admin')
 
 class Browser(BaseRequestHandler):
     def get(self):
@@ -174,6 +181,7 @@ class Ratable(BaseRequestHandler):
         })
 
 class DatastoreXML(BaseRequestHandler):
+    @admin
     def get(self):
         """
             Give the XML file up for download. This is exported from whatever was inuide 
@@ -184,7 +192,7 @@ class DatastoreXML(BaseRequestHandler):
         self.response.out.write(export())
 
 class StudentPage(BaseRequestHandler):
-    # login required
+    @user
     def get(self):
         """
             Shows the student.html file, which 
@@ -193,13 +201,14 @@ class StudentPage(BaseRequestHandler):
         self.generate('student.html', {
             # variables
         })
+    @user
     def post(self):
         # ex1 = self.request.get('ex1')
         # fn's
         self.redirect('/edit')
 
 class StudentPasswordPage(BaseRequestHandler):
-    # login required
+    @user
     def get(self):
         """
             Shows the student password page.
@@ -207,25 +216,27 @@ class StudentPasswordPage(BaseRequestHandler):
         self.generate('student.html', {
             # variables
         })
+    @user
     def post(self):
         # ex1 = self.request.get('ex1')
         # fn's
         self.redirect('/edit')
 
 class AdminPage(BaseRequestHandler):
-    # login required
+    @admin
     def get(self):
         m = self.request.get('m')
         self.generate('admin.html', {
             'msg': m,
             'title': 'Admin'
         })
+    @admin
     def post(self):
         # fn's
         self.redirect('/admin')
 
 class AdminExport(BaseRequestHandler):
-    # login required
+    @admin
     def get(self):
         self.generate('export.html', {
             'xml': export(),
@@ -241,7 +252,7 @@ class AdminImport(BaseRequestHandler):
                 """
                 self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
 
-        # login required
+        @admin
         def post(self):
                 """
                 Does the import and shows errors, if any.
@@ -268,7 +279,7 @@ class AdminImport(BaseRequestHandler):
                 self.redirect('/admin?m='+self.msg)
 
 class AdminReset(BaseRequestHandler):
-    # login required
+    @admin
     def post(self):
         """
         a = comment.all()
@@ -276,6 +287,15 @@ class AdminReset(BaseRequestHandler):
             b.delete()
         # etc for all classes, except person?
         """
+        self.redirect('/admin')
+        
+class CreateAdmin(BaseRequestHandler):
+    @admin
+    def post(self):
+        DA = DataAccessor()
+        uid = uidgen()
+        pw = passgen()
+        DA.addAdmin(uid, pw)
         self.redirect('/admin')
 
 def main():
@@ -285,6 +305,7 @@ def main():
     ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),
     ('/login', Login),
+    ('/logout', Logout),
     ('/createUser', CreateUser),
     ('/student', StudentPage),
     ('/student/password', StudentPasswordPage),
