@@ -24,17 +24,15 @@ class DataAccessor :
         return self._addItem(Person, pkey,
                              fname=fname,
                              mname=mname,
-                             lname=lname,
-                             behavior='ignore')
+                             lname=lname)
             
 
     def addUser(self, uid, password, userType):
-        pkey = ['uid', 'password']
+        pkey = ['uid']
         return self._addItem(User, pkey,
                                  uid=uid,
                                  password=password,
-                                 userType=userType,
-                                 behavior='ignore')
+                                 userType=userType)
     
     def addStudent(self, uid, password) :
         self.addUser(uid, password, 'STUDENT')
@@ -56,7 +54,7 @@ class DataAccessor :
                              course=course,
                              student=student,
                              grade=grade,
-                             behavior='overwrite')
+                             overwrite=True)
     
     def addCourse(self, unique, num, name, semester, year, instructor) :
         i = self._addPerson(instructor)
@@ -117,7 +115,7 @@ class DataAccessor :
                              rated=ratable,
                              rater=student,
                              comment=c,
-                             behavior='overwrite')
+                             overwrite=True)
     
     def addComment(self, text, replyto=None):
         c = Comment(text=text,
@@ -125,9 +123,7 @@ class DataAccessor :
         c.put()
         return c.key()
 
-    def _addItem(self, objtype, pkey, behavior='default' **assocs):
-        behavior = behavior.lower()
-        assert behavior in ['default', 'overwrite', 'ignore']
+    def _addItem(self, objtype, pkey, overwrite=False **assocs):
         r = objtype(**assocs)
         try:
             self._pkeyCheck(pkey, r)
@@ -135,8 +131,7 @@ class DataAccessor :
             return r.key()
         except DataStoreClash, data:
             if data.entity == r: return data.entity.key()
-            if behavior == 'ignore': return data.entity.key()
-            if behavior == 'overwrite': return self._updateItem(data.entity, r)
+            if overwrite: return self._updateItem(data.entity, r)
             self._errHandler(data.entity)
 
 
