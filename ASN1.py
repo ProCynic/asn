@@ -2,7 +2,7 @@ import dataStore as DS
 from exporter import export
 from importer import Importer
 from dataAccessors import DataAccessor
-from exceptions import *
+from ourExceptions import *
 
 import datetime
 import os
@@ -47,6 +47,7 @@ def user(func):
         return self.redirect('/login?msg=Login%20Required')
     def checkauth(*args, **kwargs):
         ukey = args[0].request.cookies.get('ukey', '')
+        if not ukey: return redirectlogin(args[0])
         u = db.get(db.Key(ukey))
         if u is None:
             return redirectlogin(args[0])
@@ -60,6 +61,7 @@ def admin(func):
         return self.redirect('/login?msg=Login%20Required')
     def checkauth(*args, **kwargs):
         ukey = args[0].request.cookies.get('ukey', '')
+        if not ukey: return redirectlogin(args[0])
         u = db.get(db.Key(ukey))
         if u is None:
             return redirectlogin(args[0])

@@ -6,6 +6,7 @@ class TestASN1(unittest.TestCase):
 
 from dataAccessors import *
 from google.appengine.ext import db
+from ourExceptions import *
 import random
 
 def randString(n):
@@ -18,7 +19,7 @@ def randString(n):
 	for x in range(n):
 		string += alphanum[gen.randint(0,len(alphanum)-1)]
 	return string
-def sidgen():
+def uidgen():
 	return randString(8)
 def passgen():
 	return randString(12)
@@ -48,13 +49,13 @@ class TestASN1(unittest.TestCase):
         
     def test_addStudent(self):
         da = DataAccessor()
-        sid = sidgen()
+        uid = uidgen()
         pwd = passgen()
-        s = da.addStudent(sid,pwd)
+        s = da.addStudent(uid,pwd)
         
         db_s = db.get(s)
         self.assertTrue( len(db_s.password) == 12 )
-        self.assertTrue( len(db_s.sid) == 8 )
+        self.assertTrue( len(db_s.uid) == 8 )
         
     def test_addPaper(self):
         da = DataAccessor()
@@ -68,16 +69,16 @@ class TestASN1(unittest.TestCase):
     
     def test_addRating(self):
         da = DataAccessor()
-        sid = sidgen()
+        uid = uidgen()
         pwd = passgen()
-        s = da.addStudent(sid,pwd)
+        s = da.addStudent(uid,pwd)
         p = da.addPaper("CONFERENCE", "Improved Alpha-Tested Magnification for Vector Textures and Special Effects", "Chris Green")
         r = da.addRating(p, s, '100', "Great paper that explains how Valve used the GPU to render text clearly.")
         
         db_s = db.get(s)
         db_p = db.get(p)
         db_r = db.get(r)
-        self.assertTrue( db_r.rater.sid == db_s.sid == sid)
+        self.assertTrue( db_r.rater.uid == db_s.uid == uid)
         self.assertTrue( db_r.rater.password == db_s.password == pwd)
         self.assertTrue( db_r.rated.paperType == db_p.paperType == 'conference'.upper())
         self.assertTrue( db_r.rated.title == db_p.title == 'Improved Alpha-Tested Magnification for Vector Textures and Special Effects')
@@ -139,9 +140,9 @@ class TestASN1(unittest.TestCase):
     def test_addCourse(self):
         da = DataAccessor()
         da = DataAccessor()
-        sid = sidgen()
+        uid = uidgen()
         pwd = passgen()
-        s = da.addStudent(sid,pwd)
+        s = da.addStudent(uid,pwd)
         c = da.addCourse('52540', 'CS 373', 'Software Engineering', 'Fall'.upper(), '2010', 'Glenn Downing')
         
         db_s = db.get(s)
@@ -153,15 +154,15 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_c.instructor.fname == 'Glenn')
         self.assertTrue( db_c.instructor.lname == 'Downing')
         self.assertTrue( db_c.year == '2010')
-        self.assertTrue( db_s.sid == sid)
+        self.assertTrue( db_s.uid == uid)
         self.assertTrue( db_s.password == pwd)
         
     def test_addGrade(self):
         da = DataAccessor()
         da = DataAccessor()
-        sid = sidgen()
+        uid = uidgen()
         pwd = passgen()
-        s = da.addStudent(sid,pwd)
+        s = da.addStudent(uid,pwd)
         c = da.addCourse('52540', 'CS 373', 'Software Engineering', 'Fall'.upper(), '2010', 'Glenn Downing')
         g = da.addGrade(c, s, 'B')
         
@@ -175,7 +176,7 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_g.course.instructor.fname == db_c.instructor.fname == 'Glenn')
         self.assertTrue( db_g.course.instructor.lname == db_c.instructor.lname == 'Downing')
         self.assertTrue( db_g.course.year == db_c.year == '2010')
-        self.assertTrue( db_g.student.sid == db_s.sid == sid)
+        self.assertTrue( db_g.student.uid == db_s.uid == uid)
         self.assertTrue( db_g.student.password == db_s.password == pwd)
         self.assertTrue( db_g.grade == 'B')
 

@@ -3,7 +3,7 @@
 
 import operator
 import dataAccessors
-from exceptions import *
+from ourExceptions import *
 from xml.etree import ElementTree
 
 class Importer:
@@ -52,12 +52,15 @@ class StudentImporter:
         assert len(root.findall('password')) == 1
         sid = root.find('id').text.strip()
         password = root.find('password').text.strip()
-        self.student = self.DA.addStudent(sid, password)
+        try:
+            self.student = self.DA.addStudent(sid, password)
 
-        #will ignore tags not in tag list
-        for tag in self.tags:
-            for node in root.getiterator(tag):
-                self.parseItem(node)
+            #will ignore tags not in tag list
+            for tag in self.tags:
+                for node in root.getiterator(tag):
+                    self.parseItem(node)
+        except DataStoreClash:
+            pass
 
     def parseItem(self, node):
         assert node.tag in self.tags
@@ -74,6 +77,7 @@ class StudentImporter:
 
         try:
             x = adder(**args)
+            
             self.DA.addRating(x, self.student, rating, comment)
 
             if grade:

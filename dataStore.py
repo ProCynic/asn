@@ -62,7 +62,6 @@ class User(db.Model):
 
     def __iter__(self):
         d = self.__class__.properties()
-        d.pop('_class')
         for x in d: yield (x,getattr(self,x))
             
     def __eq__(self, other):
@@ -108,8 +107,8 @@ class Rating(db.Model):
     """
     rating = db.RatingProperty(required=True)
     comment = db.ReferenceProperty(Comment)
-    rated = db.ReferenceProperty(Ratable)
-    rater = db.ReferenceProperty(User, validator=studentValidator)
+    rated = db.ReferenceProperty(Ratable, required=True)
+    rater = db.ReferenceProperty(User, required=True, validator=studentValidator)
 
     def __iter__(self):
         d = self.__class__.properties()
@@ -144,8 +143,8 @@ class Grade(db.Model):
 
         A grade must be associated with a course, a student, and a grad.e
     """
-    course = db.ReferenceProperty(Course)
-    student = db.ReferenceProperty(User, validator=studentValidator)
+    course = db.ReferenceProperty(Course, required=True)
+    student = db.ReferenceProperty(User, required=True, validator=studentValidator)
     grade = db.StringProperty(required=True, validator=gradeValidator)
 
     def __str__(self):
@@ -198,6 +197,7 @@ class Place (Ratable):
     location = db.PostalAddressProperty(required=True)
     semester = db.StringProperty(required=True,choices=['FALL','SPRING','SUMMER'])
     year = db.StringProperty(required=True,validator=yearValidator)
+    #might be cool to do latlong
     latLong = db.GeoPtProperty()
 
 class Internship (Place):

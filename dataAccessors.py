@@ -2,7 +2,7 @@
 """ """
 
 from dataStore import *
-from exceptions import *
+from ourExceptions import *
 
 
 class DataAccessor :
@@ -35,10 +35,10 @@ class DataAccessor :
                                  userType=userType)
     
     def addStudent(self, uid, password) :
-        self.addUser(uid, password, 'STUDENT')
+        return self.addUser(uid, password, 'STUDENT')
 
     def addAdmin(self, uid, password):
-        self.addUser(uid, password, 'ADMIN')
+        return self.addUser(uid, password, 'ADMIN')
 
     def addPaper(self, ptype, title, author) :
         author = self._addPerson(author)
@@ -123,7 +123,7 @@ class DataAccessor :
         c.put()
         return c.key()
 
-    def _addItem(self, objtype, pkey, overwrite=False **assocs):
+    def _addItem(self, objtype, pkey, overwrite=False, **assocs):
         r = objtype(**assocs)
         try:
             self._pkeyCheck(pkey, r)
