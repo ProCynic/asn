@@ -45,7 +45,7 @@ def admin(func) :
         if user.userType == 'ADMIN' : 
             return func(*args, **kwargs)
 
-        return redirectlogin(session)
+        return redirectlogin(session, self)
     return checkauth
 
 def user(func) : 
