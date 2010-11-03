@@ -6,8 +6,10 @@ from ourExceptions import *
 
 from acls import *
 from baserequesthandler import BaseRequestHandler
-from admin import *
 
+from admin import *
+from student import *
+from browser import *
 
 import datetime
 import os
@@ -98,15 +100,6 @@ class CreateUser(BaseRequestHandler):
                                           % skey)
         self.redirect('/student')
 
-class Browser(BaseRequestHandler):
-    def get(self):
-        """
-           Create the home page with some default parameters. 
-        """
-        self.generate('browser.html', {
-            'title': 'Home'
-        })
-
 class Ratable(BaseRequestHandler):
     def get(self,key=0):
         """
@@ -137,101 +130,6 @@ class DatastoreXML(BaseRequestHandler):
 
         self.response.headers['Content-Type'] = "application/xml"
         self.response.out.write(export())
-
-class StudentPage(BaseRequestHandler):
-    @user
-    def get(self):
-        """
-            Shows the student.html file, which 
-            is supposed to be blank.
-        """
-        self.generate('student.html', {
-            # variables
-        })
-    @user
-    def post(self):
-        # ex1 = self.request.get('ex1')
-        # fn's
-        self.redirect('/edit')
-
-class StudentPasswordPage(BaseRequestHandler):
-    @user
-    def get(self):
-        """
-            Shows the student password page.
-        """
-        self.generate('student.html', {
-            # variables
-        })
-    @user
-    def post(self):
-        # ex1 = self.request.get('ex1')
-        # fn's
-        self.redirect('/edit')
-
-class AdminExport(BaseRequestHandler):
-    @admin
-    def get(self):
-        self.generate('export.html', {
-            'xml': export(),
-            'title': 'Admin'
-        })
-
-class AdminImport(BaseRequestHandler):
-
-        
-        def addErrorMessage(self, obj) :
-                """
-                A callback to show messages.
-                """
-                self.msg += "Duplicate " + str(obj.__class__).strip('<>') + ' ' + str(obj).replace('\n',"<br/>") + '<br/>'
-                raise DataStoreClash(obj)
-
-        @admin
-        def post(self):
-                """
-                Does the import and shows errors, if any.
-                """
-                self.msg = ""
-                si = Importer(DataAccessor(self.addErrorMessage))
-                #si = Importer()
-                try:
-                    newFile = self.request.get('newFile')
-                    si.parse(newFile)
-                except IOError:
-                    self.msg = "ERROR: Please select a file to import."
-
-                except Usage, err:
-                    self.msg = err.msg
-
-                if not self.msg :
-                        self.msg = "Import succeeded."
-        
-                if len(self.msg) > 512 :
-                        self.msg = self.msg[0:512] + "..."
-
-
-                self.redirect('/admin?m='+self.msg)
-
-class AdminReset(BaseRequestHandler):
-    @admin
-    def post(self):
-        """
-        a = comment.all()
-        for b in a:
-            b.delete()
-        # etc for all classes, except person?
-        """
-        self.redirect('/admin')
-        
-class CreateAdmin(BaseRequestHandler):
-    @admin
-    def post(self):
-        DA = DataAccessor()
-        uid = userIDGen()
-        pw = passwordGen()
-        DA.addAdmin(uid, pw)
-        self.redirect('/admin')
 
 def main():
   application = webapp.WSGIApplication([
