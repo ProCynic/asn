@@ -50,7 +50,7 @@ def admin(func) :
 
 def user(func) : 
     def redirectlogin(session, self) :
-        setSessionMessage(session, "Login required")
+        setSessionMessage(session, "Student Login required")
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
@@ -61,9 +61,9 @@ def user(func) :
         if not user :
             return redirectlogin(session, self)
 
-        if user.userType == 'ADMIN' : 
+        if user.userType == 'STUDENT' : 
             return func(*args, **kwargs)
 
-        return redirectlogin(session)
+        return redirectlogin(session, self)
     return checkauth
 

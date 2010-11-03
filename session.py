@@ -11,14 +11,32 @@ def __20MinutesFromNow() :
     return now + minutes
 
 def sweepSessions() :
-    pass
+    query = DS.Session.all()
+    now = datetime.now()
+    for x in query :
+        if x.expiration > now :
+            x.delete()
+    
 
-def invalidateSession(sid) :
-    pass
+def __invalidateSession(query) :
+    for x in query :
+        x.delete()
+    
 
 def getSessionByRequest(self) :
     session = getSession(self.request.cookies.get('sid', ''))
+    session.expiration = __20MinutesFromNow()
+    session.put()
+    self.response.headers.add_header(
+        'Set-Cookie',
+        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % str(session.sessionID))
     return session
+
+def getSessionMessage(session) :
+    message = session.message;
+    session.message = None;
+    session.put()
+    return message
 
 def getSession(sessionID) :
     query = DS.Session.all()
@@ -26,8 +44,10 @@ def getSession(sessionID) :
     query.filter('sessionID =', sessionID)
 
     if (query.count() > 1) :
-        invalidateSession(sessionID)
-        return generateSession(None)
+        __invalidateSessions(query)
+        s = generateSession(None)
+        setSessionMesage(s, "Duplicate Logins detected")
+        return s
 
     if (query.count() == 0) :
         return generateSession(None)

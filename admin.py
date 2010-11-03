@@ -11,7 +11,6 @@ class AdminPage(BaseRequestHandler) :
     @admin
     def get(self) :
         session = getSessionByRequest(self)
-        message = self.request.get('m')
         self.generate('admin.html', {
             'msg' :  session.message,
             'title' : 'Admin'

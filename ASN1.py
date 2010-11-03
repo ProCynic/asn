@@ -47,7 +47,7 @@ class Login(BaseRequestHandler):
                 self.redirect('/admin')
                 return
         """
-        message = self.request.get('m')
+        message = getSessionMessage(getSessionByRequest(self)) 
         self.generate('login.html', {
             'msg': message,
             'title': 'Login'
@@ -70,7 +70,7 @@ class Login(BaseRequestHandler):
 
                 self.response.headers.add_header(
                     'Set-Cookie',
-                    'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % session.sessionID)
+                    'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % str(session.sessionID))
 
                 if u.userType == 'STUDENT':
                     self.redirect('/student')
@@ -126,6 +126,11 @@ class Ratable(BaseRequestHandler):
             'ratings': ratings
         })
 
+class Sweep(BaseRequestHandler) :
+    def get(self) :
+        sweepSessions()
+        self.redirect('/')
+
 class Session(BaseRequestHandler) :
     def get(self) :
         sessions = DS.Session.all()
@@ -151,6 +156,7 @@ def main():
   application = webapp.WSGIApplication([
     ('/', Browser),
     ('/session', Session),
+    ('/sweep', Sweep),
     ('/browse', Browser),
     ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),
