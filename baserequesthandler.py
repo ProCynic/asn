@@ -22,7 +22,7 @@ class BaseRequestHandler(webapp.RequestHandler) :
           'request': self.request,
           'debug': self.request.get('deb'),
           'application_name': 'Anonymous Social Network, Phase 2',
-          'user': user
+          'user': user,
           'msg' : message
         }
         
