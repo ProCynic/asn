@@ -52,88 +52,94 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 	margin:2em 0 0;
 }
 
-	.aside {
-		margin:1em 1em;
-		font-size:1em;
+#footer {
+	position:fixed;
+	bottom:10px;
+	left:5px;
+}
+
+.aside {
+	margin:1em 1em;
+	font-size:1em;
+	clear:both;
+	display:block;
+}
+
+#message {
+	background-color: #CCCCCC;
+	border: 1px solid #444444;
+	padding: 1em;
+	margin-bottom: 1em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+}
+
+#login_form {
+	padding: 1em 0 0 0;
+}
+#login_form input {
+	border:0.1em solid #999999;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	color:#444444;
+}
+#login_form input[type=text], #login_form input[type=password] {
+	padding:0.3em;
+	margin-right:1em;
+}
+#login_form input[type=submit] {
+	background-color:#CCCCCC;
+	margin-right:1em;
+}
+#login_form form {
+	display:block;
+}
+	#login {
 		clear:both;
-		display:block;
 	}
-
-	#message {
-		background-color: #CCCCCC;
-		border: 1px solid #444444;
-		padding: 1em;
-		margin-bottom: 1em;
-		-moz-border-radius: 0.2em;
-		border-radius: 0.2em;
+	#other_actions {
+		margin-top:2em;
 	}
-
-	#login_form {
-		padding: 1em 0 0 0;
-	}
-	#login_form input {
-		border:0.1em solid #999999;
-		-moz-border-radius: 0.2em;
-		border-radius: 0.2em;
-		color:#444444;
-	}
-	#login_form input[type=text], #login_form input[type=password] {
-		padding:0.3em;
-		margin-right:1em;
-	}
-	#login_form input[type=submit] {
-		background-color:#CCCCCC;
-		margin-right:1em;
-	}
-	#login_form form {
-		display:block;
-	}
-		#login {
-			clear:both;
+		#create_user {
+			display:block;
+			float:left;
 		}
-		#other_actions {
-			margin-top:2em;
+		#browse {
+			display:block;
+			float:left;
 		}
-			#create_user {
-				display:block;
-				float:left;
-			}
-			#browse {
-				display:block;
-				float:left;
-			}
-	
-	#export, #import {
-		background-color:#F2D9B1;
-		border:1px solid #444444;
-		margin: 0 0 1em;
-		padding:1em;
-	}
-	
-	#main fieldset {
-		-moz-border-radius: 0.2em;
-		border-radius: 0.2em;
-	}
-	
-	#export input, #import input {
-		font-weight:bold;
-	}
-	#export input[type=submit], #import input[type=submit], #import input[type=file] {
-		border:0.1em solid #999999;
-		-moz-border-radius: 0.2em;
-		border-radius: 0.2em;
-		color:#444444;
-		background-color:#EEEEEE;
-	}
-	
-	#export legend, #import legend {
-		font-weight:bold;
-	}
-	
-	#export input[type=submit], #import input[type=submit], #import input {
-		margin-left:1em;
-	}
-	
-	#import li {
-		margin-bottom:1em;
-	}
+
+#export, #import {
+	background-color:#F2D9B1;
+	border:1px solid #444444;
+	margin: 0 0 1em;
+	padding:1em;
+}
+
+#main fieldset {
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+}
+
+#export input, #import input {
+	font-weight:bold;
+}
+#export input[type=submit], #import input[type=submit], #import input[type=file] {
+	border:0.1em solid #999999;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	color:#444444;
+	background-color:#EEEEEE;
+}
+
+#export legend, #import legend {
+	font-weight:bold;
+}
+
+#export input[type=submit], #import input[type=submit], #import input {
+	margin-left:1em;
+}
+
+#import li {
+	margin-bottom:1em;
+}

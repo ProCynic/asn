@@ -44,7 +44,13 @@
 				{% block main %} default main stuff {% endblock %}
 			</div>
 			<div id="footer">
-				{% block footer %} default header stuff {% endblock %}
+				<p> A footer </p>
+				{% if user %}
+				    {% ifequal user.userType 'STUDENT' %}
+				    <p> You're a Student! </p>
+				    {% endifequal %}
+				{% endif %}
+				{% block footer %}{% endblock %}
 			</div>
 		</div>
 	</body>
