@@ -1,6 +1,9 @@
 import random
 import string
 
+from session import *
+
+
 from google.appengine.ext import db
 
 
@@ -19,47 +22,48 @@ def __randomString(length) :
 
 
 def userIDGen() : 
-    return randomString(8)
+    return __randomString(8)
 
 def passwordGen() : 
-    return randomString(12)
-
+    return __randomString(12)
 
 def admin(func) : 
-    def redirectlogin(self) :
-        return self.redirect('/login?msg=Admin%20Login%20Required')
+    def redirectlogin(session, self) :
+        setSessionMessage(session, "Admin Login Required.")
+        return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
         self = args[0]
-        userkey = self.request.cookies.get('ukey', '')
 
-        if not userkey:
-            return redirectlogin(self)
+                   
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
 
-        user = db.get(db.Key(userkey))
-        
-        if user and user.userType == 'ADMIN' : 
+        if not user :
+            return redirectlogin(session, self)
+
+        if user.userType == 'ADMIN' : 
             return func(*args, **kwargs)
 
-        return redirectlogin(self)
+        return redirectlogin(session)
     return checkauth
 
 def user(func) : 
-    def redirectlogin(self) :
-        return self.redirect('/login?msg=Login%20Required')
+    def redirectlogin(session, self) :
+        setSessionMessage(session, "Login required")
+        return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
         self = args[0]
-        userkey = self.request.cookies.get('ukey', '')
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
 
-        if not userkey:
-            return redirectlogin(self)
+        if not user :
+            return redirectlogin(session, self)
 
-        user = db.get(db.Key(userkey))
-
-        if user and user.userType == 'STUDENT' : 
+        if user.userType == 'ADMIN' : 
             return func(*args, **kwargs)
 
-        return redirectlogin(self)
+        return redirectlogin(session)
     return checkauth
 

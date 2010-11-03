@@ -69,7 +69,12 @@ class User(db.Model):
             if x != y: return False
         return True
 
-        
+class Session(db.Model) :
+    sessionID = db.StringProperty(required=True)
+    user = db.ReferenceProperty(User)
+    message = db.StringProperty()
+    expiration = db.DateTimeProperty(required=True)
+ 
 class Ratable(polymodel.PolyModel):
     """
         Ratable is the base class for ratable objects, and has 

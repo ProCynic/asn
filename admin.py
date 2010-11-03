@@ -5,13 +5,15 @@ from exporter import export
 from ourExceptions import *
 from importer import Importer 
 from dataAccessors import DataAccessor
+from session import *
 
 class AdminPage(BaseRequestHandler) :
     @admin
     def get(self) :
+        session = getSessionByRequest(self)
         message = self.request.get('m')
         self.generate('admin.html', {
-            'msg' : message, 
+            'msg' :  session.message,
             'title' : 'Admin'
         })
 

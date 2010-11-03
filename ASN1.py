@@ -10,6 +10,7 @@ from baserequesthandler import BaseRequestHandler
 from admin import *
 from student import *
 from browser import *
+from session import *
 
 import datetime
 import os
@@ -62,10 +63,13 @@ class Login(BaseRequestHandler):
                 self.redirect('/login')
                 return
             else:
+                sweepSessions()                
+                session = generateSession(u.key())
+
                 self.response.headers.add_header(
-                                                'Set-Cookie', 
-                                                'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
-                                                  % str(u.key()))
+                    'Set-Cookie',
+                    'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % session.sessionID)
+
                 if u.userType == 'STUDENT':
                     self.redirect('/student')
                     return
@@ -78,11 +82,10 @@ class Login(BaseRequestHandler):
         self.redirect('/login')
 
 class Logout(BaseRequestHandler):
-    def get(self):
-        #del self.response.headers['Set-Cookie']        
+    def get(self):     
         self.response.headers.add_header(
                                         'Set-Cookie', 
-                                        'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
+                                        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
                                           % '')
         self.redirect('/browse')
 
@@ -91,11 +94,14 @@ class CreateUser(BaseRequestHandler):
         DA = DataAccessor()
         uid = userIDGen()
         pw = passwordGen()
-        skey = str(DA.addStudent(uid, pw))
+
+        user = DA.addStudent(uid, pw)
+        session = generateSession(user)
+       
         self.response.headers.add_header(
                                         'Set-Cookie', 
-                                        'ukey=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
-                                          % skey)
+                                        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
+                                          % session.sessionID)
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
@@ -118,6 +124,16 @@ class Ratable(BaseRequestHandler):
             'ratings': ratings
         })
 
+class Session(BaseRequestHandler) :
+    def get(self) :
+        sessions = DS.Session.all()
+        for s in sessions : 
+            if (s.user) :
+                print(s.sessionID + " " + str(s.user))
+            else :
+                print(s.sessionID)
+        print("!") 
+
 class DatastoreXML(BaseRequestHandler):
     @admin
     def get(self):
@@ -132,6 +148,7 @@ class DatastoreXML(BaseRequestHandler):
 def main():
   application = webapp.WSGIApplication([
     ('/', Browser),
+    ('/session', Session),
     ('/browse', Browser),
     ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),

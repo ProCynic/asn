@@ -3,6 +3,7 @@ import os
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
+from session import *
 
 _DEBUG = True
 class BaseRequestHandler(webapp.RequestHandler) :
@@ -12,13 +13,10 @@ class BaseRequestHandler(webapp.RequestHandler) :
         Other parameters are received from the template_values.
         """
 
-        ukey = self.request.cookies.get('ukey', '')
-        
-        if ukey == '':
-            user = None
-        else:
-            user = db.get(db.Key(ukey))
-        
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+
+
         values = {
           'request': self.request,
           'debug': self.request.get('deb'),
