@@ -152,6 +152,9 @@ class DataAccessor :
             return None
         except DataStoreClash, err:
             return err.entity
+    
+    def getAllRatings(self):
+        return Rating.all()
 
     def _pkeyCheck(self, pkey, obj):
         objType = obj.__class__

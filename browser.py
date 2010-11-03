@@ -12,7 +12,9 @@ class Browser(BaseRequestHandler) :
         """
             Create the browser home page.
         """
-
+        DA = DataAccessor()
+        ratings = DA.getAllRatings()
         self.generate('browser.html', {
-            'title' : "Home"
+            'title' : "Home",
+            'ratings' : ratings
         })
