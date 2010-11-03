@@ -10,9 +10,7 @@ from session import *
 class AdminPage(BaseRequestHandler) :
     @admin
     def get(self) :
-        session = getSessionByRequest(self)
         self.generate('admin.html', {
-            'msg' :  session.message,
             'title' : 'Admin'
         })
 
