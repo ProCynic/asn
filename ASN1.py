@@ -3,7 +3,11 @@ from exporter import export
 from importer import Importer
 from dataAccessors import DataAccessor
 from ourExceptions import *
+
 from acls import *
+from baserequesthandler import BaseRequestHandler
+from admin import *
+
 
 import datetime
 import os
@@ -27,27 +31,6 @@ x = DataAccessor()
 x.addAdmin('admin','000000')
 del x
 
-class BaseRequestHandler(webapp.RequestHandler):
-  def generate(self, template_name, template_values={}):
-    """
-    Generate a page with some default parameters. 
-    Other parameters are received from the template_values.
-    """
-    ukey = self.request.cookies.get('ukey', '')
-    if ukey == '':
-        user = None
-    else:
-        user = db.get(db.Key(ukey))
-    values = {
-      'request': self.request,
-      'debug': self.request.get('deb'),
-      'application_name': 'Anonymous Social Network, Phase 2',
-      'user': user
-    }
-    values.update(template_values)
-    directory = os.path.dirname(__file__)
-    path = os.path.join(directory, os.path.join('templates', template_name))
-    self.response.out.write(template.render(path, values, debug=_DEBUG))
 
 class Login(BaseRequestHandler):
     def get(self):
@@ -183,19 +166,6 @@ class StudentPasswordPage(BaseRequestHandler):
         # ex1 = self.request.get('ex1')
         # fn's
         self.redirect('/edit')
-
-class AdminPage(BaseRequestHandler):
-    @admin
-    def get(self):
-        m = self.request.get('m')
-        self.generate('admin.html', {
-            'msg': m,
-            'title': 'Admin'
-        })
-    @admin
-    def post(self):
-        # fn's
-        self.redirect('/admin')
 
 class AdminExport(BaseRequestHandler):
     @admin

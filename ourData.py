@@ -1,21 +1,6 @@
 from dataAccessors import DataAccessor
+from acls import *
 import random
-
-def randString(n):
-	alphanum = "abcdefghijklmnopqrstuvwxyz"
-	alphanum += alphanum.upper()
-	alphanum += "0123456789"
-	alphanum += "~!@#$%^&*()-_=+:;/?"
-	string = ""
-	gen = random.Random()
-	for x in range(n):
-		string += alphanum[gen.randint(0,len(alphanum)-1)]
-	return string
-def uidgen():
-	return randString(8)
-def passgen():
-	return randString(12)
-	
 
 def nullErrorHandler(x) :
 	print(x)	
@@ -30,8 +15,8 @@ def main():
 
 
 def gparker(DA):
-	uid = uidgen()
-	pwd = passgen()
+	uid = userIDGen()
+	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
 
 	b = DA.addBook("The Good Fairies of New York", "978-0765358547", "Martin Millar")
@@ -54,8 +39,8 @@ def gparker(DA):
 	DA.addGrade(c, me, 'A')
 
 def aywang(DA):
-	uid = uidgen()
-	pwd = passgen()
+	uid = userIDGen()
+	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
 
 	b = DA.addBook("Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)", "0441013597", "Frank Herbert")
@@ -84,8 +69,8 @@ def aywang(DA):
 	DA.addRating(b, me, '86', "No taylor basement, but its still filled with intelligent people to help.")
 
 def ttb265(DA):
-	uid = uidgen()
-	pwd = passgen()
+	uid = userIDGen()
+	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
 	c = DA.addCourse('52550', 'CS 378', 'Computational Intelligence in Game Design II', 'FALL', '2010', 'Risto Miikkulainen')
 	DA.addRating(c, me, '90', 'Interesting research class')
@@ -118,8 +103,8 @@ def ttb265(DA):
 	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
-	uid = uidgen()
-	pwd = passgen()
+	uid = userIDGen()
+	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
 	
 	p = DA.addPlaceStudy('ENS Basement', 'Univ. of Texas', 'FALL', '2010')
