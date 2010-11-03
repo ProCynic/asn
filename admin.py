@@ -21,5 +21,5 @@ class AdminExport(BaseRequestHandler) :
     @admin 
     def get(self) : 
         self.generate('export.html', {
-            'xml' : export()
+            'xml' : export(),
             'title' : "Admin Export"})
