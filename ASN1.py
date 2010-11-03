@@ -47,7 +47,9 @@ class Login(BaseRequestHandler):
                 self.redirect('/admin')
                 return
         """
+        message = self.request.get('m')
         self.generate('login.html', {
+            'msg': message,
             'title': 'Login'
         })
     def post(self):
@@ -60,7 +62,7 @@ class Login(BaseRequestHandler):
             DA = DataAccessor()
             u = DA.getUser(uid, pw)
             if u is None:
-                self.redirect('/login')
+                self.redirect('/login?m=User%20ID%2FPassword%20combination%20incorrect.')
                 return
             else:
                 sweepSessions()                

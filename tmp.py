@@ -4,6 +4,8 @@ import dataAccessors
 
 x = Ratable.all().get()
 
+print x.__class__.__name__
+
 def randString(n):
         alphanum = "abcdefghijklmnopqrstuvwxyz"
         alphanum += alphanum.upper()
@@ -23,5 +25,8 @@ DA = dataAccessors.DataAccessor()
 uid = uidgen()
 pw = passgen()
 DA.addAdmin(uid, pw)
+
+
+
 print uid
 print pw

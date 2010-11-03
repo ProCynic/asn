@@ -3,17 +3,28 @@
 {% block head %}{% endblock %}
 
 {% block main %}
-<form method="post" action="login">
-    <label>User ID: <input type="text" name="id" /></label>
-    <label>Password: <input type="password" name="pw" /></label>
-    <input type="submit" value="Login" />
-</form>
-<form method="post" action="createUser">
-    <input type="submit" value="Create Account" />
-</form>
-<form method="get" action="browse">
-    <input type="submit" value="Just Browse" />
-</form>
+
+{% if msg %}
+<div id="message">
+    {{ msg }}
+</div>
+{% endif %}
+<div id="login_form">
+	<form method="post" id="login" action="login">
+	    <label>User ID: <input type="text" name="id" /></label>
+	    <label>Password: <input type="password" name="pw" /></label>
+	    <input type="submit" value="Login" />
+	</form>
+	<div id="other_actions">
+		<span class="aside">Or you can...</span>
+		<form method="post" id="create_user" action="createUser">
+		    <input type="submit" value="Create Account" />
+		</form>
+		<form method="get" id="browse" action="browse">
+		    <input type="submit" value="Just Browse" />
+		</form>
+	</div>
+</div>
 {% endblock %}
 
 {% block footer %}

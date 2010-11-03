@@ -38,25 +38,71 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 				display:inline;
 				margin-left:0.75em;
 				padding-left:1em;
-				border-left:0.1em solid #000000;
+				border-left:0.1em solid #444444;
 			}
 
 #xml {
-	width:960px;
-	height:400px;
+	height: 38em;
+	margin: 0px;
+	padding: 1em;
+	width: 85em;
 }
 
 #main {
 	margin:2em 0 0;
 }
 
+	.aside {
+		margin:1em 1em;
+		font-size:1em;
+		clear:both;
+		display:block;
+	}
+
 	#message {
 		background-color: #CCCCCC;
 		border: 1px solid #444444;
 		padding: 1em;
 		margin-bottom: 1em;
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
 	}
 
+	#login_form {
+		padding: 1em 0 0 0;
+	}
+	#login_form input {
+		border:0.1em solid #999999;
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
+		color:#444444;
+	}
+	#login_form input[type=text], #login_form input[type=password] {
+		padding:0.3em;
+		margin-right:1em;
+	}
+	#login_form input[type=submit] {
+		background-color:#CCCCCC;
+		margin-right:1em;
+	}
+	#login_form form {
+		display:block;
+	}
+		#login {
+			clear:both;
+		}
+		#other_actions {
+			margin-top:2em;
+		}
+			#create_user {
+				display:block;
+				float:left;
+			}
+			#browse {
+				display:block;
+				float:left;
+			}
+	
 	#export, #import {
 		background-color:#F2D9B1;
 		border:1px solid #444444;
@@ -64,15 +110,27 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 		padding:1em;
 	}
 	
+	#main fieldset {
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
+	}
+	
 	#export input, #import input {
 		font-weight:bold;
+	}
+	#export input[type=submit], #import input[type=submit], #import input[type=file] {
+		border:0.1em solid #999999;
+		-moz-border-radius: 0.2em;
+		border-radius: 0.2em;
+		color:#444444;
+		background-color:#EEEEEE;
 	}
 	
 	#export legend, #import legend {
 		font-weight:bold;
 	}
 	
-	#export button, #import button, #import input {
+	#export input[type=submit], #import input[type=submit], #import input {
 		margin-left:1em;
 	}
 	
