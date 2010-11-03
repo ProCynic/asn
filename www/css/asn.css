@@ -21,11 +21,25 @@ body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; 
 	#header a:hover {
 		text-decoration:underline;
 	}
-	#header .login {
-		position: absolute;
-		right: 0px;
-		top: 1em;
-	}
+		#nav {
+			position: absolute;
+			right: 0px;
+			margin:0;
+			padding:0;
+			top: 1em;
+			list-style:none;
+		}
+			#nav li:first-child {
+				margin:0;
+				padding:0;
+				border-left:0;
+			}
+			#nav li {
+				display:inline;
+				margin-left:0.75em;
+				padding-left:1em;
+				border-left:0.1em solid #000000;
+			}
 
 #xml {
 	width:960px;

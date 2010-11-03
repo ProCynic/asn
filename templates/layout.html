@@ -19,11 +19,20 @@
 			<div id="header">
 				<div class="content">
 					<h1><a href="/">{{ application_name }}</a> - <a href="{{ request.path }}">{{ title }}</a></h1>
-					{% if user %}
-					<a class="login" href="logout">logout</a>
-					{% else %}
-					<a class="login" href="login">login</a>
-					{% endif %}
+					<ul id="nav">
+						<li><a href="/">home</a></li>
+						{% if user %}
+							{% ifequal user.userType 'ADMIN' %}
+							<li><a href="admin">admin tools</a></li>
+							{% endifequal %}
+							{% ifequal user.userType 'STUDENT' %}
+							<li><a href="student">student tools</a></li>
+							{% endifequal %}
+						<li><a href="logout">logout</a></li>
+						{% else %}
+						<li><a href="login">login</a></li>
+						{% endif %}
+					</ul>
 				</div>
 			</div>
 			<div id="main">
