@@ -27,7 +27,7 @@ def passwordGen() :
 
 def admin(func) : 
     def redirectlogin(self) :
-        return self.redirect('/login?msg=Admin%20Login%20Required')
+        return self.redirect('/login?m=Admin%20Login%20Required')
 
     def checkauth(*args, **kwargs) : 
         self = args[0]
@@ -46,7 +46,7 @@ def admin(func) :
 
 def user(func) : 
     def redirectlogin(self) :
-        return self.redirect('/login?msg=Login%20Required')
+        return self.redirect('/login?m=Login%20Required')
 
     def checkauth(*args, **kwargs) : 
         self = args[0]
