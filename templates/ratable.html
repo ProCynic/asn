@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}{% endblock %}
+
+{% block main %}
+
+    {{ content }}
+    
+    {% if ratings %}
+    <ul id="ratings">
+        {% for rating in ratings %}
+        <li class="rating">
+            <span class="score">{{ rating.rating }}</span>
+            <span class="comment">{{ rating.comment }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endblock %}
+
+{% block footer %}
+<!-- footer -->
+{% endblock %}
