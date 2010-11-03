@@ -30,6 +30,7 @@ from google.appengine.ext.webapp.util import login_required
 # Set to true if we want to have our webapp print stack traces, etc
 _DEBUG = True
 
+#default admin login
 x = DataAccessor()
 x.addAdmin('admin','000000')
 del x
@@ -104,6 +105,7 @@ class CreateUser(BaseRequestHandler):
                                         'Set-Cookie', 
                                         'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
                                           % session.sessionID)
+        setSessionMessage(session, str(user))
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
