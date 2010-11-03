@@ -48,7 +48,9 @@ class Login(BaseRequestHandler):
                 self.redirect('/admin')
                 return
         """
+        message = getSessionMessage(getSessionByRequest(self)) 
         self.generate('login.html', {
+            'msg': message,
             'title': 'Login'
         })
     def post(self):
@@ -103,7 +105,7 @@ class CreateUser(BaseRequestHandler):
                                         'Set-Cookie', 
                                         'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
                                           % session.sessionID)
-        setSessionMessage(session, str(user))
+        setSessionMessage(session, str(DS.User.get(user)).replace('\n','<br />'))
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
@@ -134,17 +136,12 @@ class Sweep(BaseRequestHandler) :
 class Session(BaseRequestHandler) :
     def get(self) :
         sessions = DS.Session.all()
-        
-        self.response.out.write("<html><body>")
         for s in sessions : 
-            self.response.out.write("<p>SID: " + s.sessionID);
-            self.response.out.write("<br/> Expiry: " + str(s.expiration))
             if (s.user) :
-                self.response.out.write("<br/> User: " + str(s.user))
-
-            self.response.out.write("</p>")
-
-        self.response.out.write("</body></html>")
+                print(s.sessionID + " " + str(s.user))
+            else :
+                print(s.sessionID)
+        print("!") 
 
 class DatastoreXML(BaseRequestHandler):
     @admin

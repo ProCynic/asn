@@ -56,8 +56,8 @@ class User(db.Model):
 
     def __str__(self):
         s = ""
-        s += "uid: " + self.uid
-        s += "password: " + self.password
+        s += "uid: " + self.uid + '\n'
+        s += "password: " + self.password + '\n'
         return s
 
     def __iter__(self):
