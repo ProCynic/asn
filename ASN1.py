@@ -3,6 +3,7 @@ from exporter import export
 from importer import Importer
 from dataAccessors import DataAccessor
 from ourExceptions import *
+from acls import *
 
 import datetime
 import os
@@ -25,52 +26,6 @@ _DEBUG = True
 x = DataAccessor()
 x.addAdmin('admin','000000')
 del x
-
-def randString(n):
-        alphanum = "abcdefghijklmnopqrstuvwxyz"
-        alphanum += alphanum.upper()
-        alphanum += "0123456789"
-        alphanum += "~!@#$%^&*()-_=+:;/?"
-        string = ""
-        gen = random.Random()
-        for x in range(n):
-                string += alphanum[gen.randint(0,len(alphanum)-1)]
-        return string
-def uidgen():
-    return randString(8)
-def passgen():
-    return randString(12)
-
-
-def user(func):
-    def redirectlogin(self):
-        return self.redirect('/login?msg=Login%20Required')
-    def checkauth(*args, **kwargs):
-        ukey = args[0].request.cookies.get('ukey', '')
-        if not ukey: return redirectlogin(args[0])
-        u = db.get(db.Key(ukey))
-        if u is None:
-            return redirectlogin(args[0])
-        if u.userType == 'STUDENT':
-            return func(*args, **kwargs)
-        return redirectlogin(args[0])
-    return checkauth
-
-def admin(func):
-    def redirectlogin(self):
-        return self.redirect('/login?msg=Login%20Required')
-    def checkauth(*args, **kwargs):
-        ukey = args[0].request.cookies.get('ukey', '')
-        if not ukey: return redirectlogin(args[0])
-        u = db.get(db.Key(ukey))
-        if u is None:
-            return redirectlogin(args[0])
-        if u.userType == 'ADMIN':
-            return func(*args, **kwargs)
-        return redirectlogin(args[0])
-    return checkauth
-
-
 
 class BaseRequestHandler(webapp.RequestHandler):
   def generate(self, template_name, template_values={}):
@@ -149,8 +104,8 @@ class Logout(BaseRequestHandler):
 class CreateUser(BaseRequestHandler):
     def post(self):
         DA = DataAccessor()
-        uid = uidgen()
-        pw = passgen()
+        uid = userIDGen()
+        pw = passwordGen()
         skey = str(DA.addStudent(uid, pw))
         self.response.headers.add_header(
                                         'Set-Cookie', 
@@ -301,8 +256,8 @@ class CreateAdmin(BaseRequestHandler):
     @admin
     def post(self):
         DA = DataAccessor()
-        uid = uidgen()
-        pw = passgen()
+        uid = userIDGen()
+        pw = passwordGen()
         DA.addAdmin(uid, pw)
         self.redirect('/admin')
 
