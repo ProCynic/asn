@@ -1,0 +1,4 @@
+cron:
+- description: sweep sessions from datastore
+  url: /sweep
+  schedule: every 20 minutes

@@ -35,6 +35,11 @@
 					</ul>
 				</div>
 			</div>
+			{% if msg %}
+				<div id="message">
+				    {{ msg }}
+				</div>
+			{% endif %}
 			<div id="main">
 				{% block main %} default main stuff {% endblock %}
 			</div>
