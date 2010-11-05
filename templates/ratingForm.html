@@ -1,24 +1,24 @@
 <form method="post" action="/student/update/{{ rating.key }}">
 	{% ifequal rating.rated.typename "Book" %}
-		<label>ISBN: <input type="text" name="isbn" {{rating.rated.isbn}} /></label>
-		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
-		<label>Author: <input type="text" name="author" value={{rating.rated.author}} /></label>
+		<label>ISBN: <input type="text" name="isbn" value="{{rating.rated.isbn}}" /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
+		<label>Author: <input type="text" name="author" value="{{rating.rated.author}}" /></label>
 	{% endifequal %}
 	{% ifequal rating.rated.typename "Paper" %}
 		<label>Type: <select name="paperType">
 		<option {% ifequal rating.rated.paperType "JOURNAL" %}selected="selected"{% endifequal %} value="Journal">Journal</option>
 		<option {% ifequal rating.rated.paperType "CONFERENCE" %}selected="selected"{% endifequal %} value="Conference">Conference</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
-		<label>Author: <input type="text" name="author" value={{rating.rated.author}} /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
+		<label>Author: <input type="text" name="author" value="{{rating.rated.author}}" /></label>
 	{% endifequal %}
 	{% ifequal rating.rated.typename "Course" %}
-		<label>Unique: <input type="text" name="unique" value={{rating.rated.unique}} /></label>
-		<label>Course Name: <input type="text" name="name" value={{rating.rated.name}} /></label>
-		<label>Course Number: <input type="text" name="num" value={{rating.rated.courseNum}} /></label>
-		<label>Semester: <input type="text" name="semester" value={{rating.rated.semester}} /></label>
-		<label>Instructor: <input type="text" name="instructor" value={{rating.rated.instructor}} /></label>
-		<label>Year: <input type="text" name="year" /></label>
+		<label>Unique: <input type="text" name="unique" value="{{rating.rated.unique}}" /></label>
+		<label>Course Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Course Number: <input type="text" name="courseNum" value="{{rating.rated.courseNum}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Instructor: <input type="text" name="instructor" value="{{rating.rated.instructor}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
 	{% endifequal %}
 	{% ifequal rating.rated.typename "Place" %}
 		<label>Type: <select name="ptype">
@@ -28,10 +28,10 @@
 		<option value="Study">Study</option>
 		<option value="Internship">Internship</option>
 		</select></label>
-		<label>Name: <input type="text" name="name" value={{rating.rated.name}} /></label>
-		<label>Location: <input type="text" name="location" value={{rating.rated.location}} /></label>
-		<label>Semester: <input type="text" name="semester" value={{rating.rated.semester}} /></label>
-		<label>Year: <input type="text" name="year" value={{rating.rated.year}} /></label>
+		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
 	{% endifequal %}
 	{% ifequal rating.rated.typename "Game" %}
 		<label>Platform: <select name="platform">
@@ -55,8 +55,8 @@
 		<option {% ifequal rating.rated.platform "ANDROID" %}selected="selected"{% endifequal %} value="Android">Android</option>
 		<option {% ifequal rating.rated.platform "CELLPHONE" %}selected="selected"{% endifequal %} value="Cellphone">Cellphone</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
 	{% endifequal %}
-	<label>Rating: <input type="text" name="rating" value={{rating.rating}} /></label>
+	<label>Rating: <input type="text" name="rating" value="{{rating.rating}}" /></label>
 	<input type="submit" value="Update/Save" />
 </form>
