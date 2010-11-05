@@ -19,6 +19,9 @@
 			<div id="header">
 				<div class="content">
 					<h1><a href="/">{{ application_name }}</a> - <a href="{{ request.path }}">{{ title }}</a></h1>
+					{% if subtitle %}
+						<h2><p>{{subtitle}}</p></h2>
+					{% endif %}
 					<ul id="nav">
 						<li><a href="/">browse</a></li>
 						{% if user %}
@@ -44,11 +47,20 @@
 				{% block main %} default main stuff {% endblock %}
 			</div>
 			<div id="footer">
-				<p> A footer </p>
 				{% if user %}
-					{{ user }}
 				    {% ifequal user.userType 'STUDENT' %}
-				    <p> You're a Student! </p>
+				    	<ul id="adders">
+				    		<li><a href="/new/Course">Add Course</li>
+				    		<li><a href="/new/Book">Add Book</li>
+				    		<li><a href="/new/Paper">Add Paper</li>
+				    		<li><a href="/new/Internship">Add Internship</li>
+				    		<li><a href="/new/PlaceStudy">Add Place to Study</li>
+				    		<li><a href="/new/PlaceLive">Add Place to Live</li>
+				    		<li><a href="/new/PlaceEat">Add Place to Eat</li>
+				    		<li><a href="/new/PlaceFun">Add Place to Have Fun</li>
+				    		<li><a href="/new/Game">Add Game</li>
+				    		
+				    	</ul>
 				    {% endifequal %}
 				{% endif %}
 				{% block footer %}{% endblock %}

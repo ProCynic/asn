@@ -31,9 +31,8 @@ from google.appengine.ext.webapp.util import login_required
 _DEBUG = True
 
 #default admin login
-x = DataAccessor()
-x.addAdmin('admin','000000')
-del x
+DA = DataAccessor()
+DA.addAdmin('admin','000000')
 
 
 class Login(BaseRequestHandler):
@@ -109,6 +108,7 @@ class CreateUser(BaseRequestHandler):
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
+    @user
     def get(self,key=0):
         """
         """
@@ -120,9 +120,9 @@ class Ratable(BaseRequestHandler):
         else:
             assert False
         ratableType = str(type(ratable))[18:-2]
-        ratings = DS.Rating.all().filter('rated =',ratable)
+        ratings = DA.getAllRatings().filter('rated =',ratable)
         self.generate('ratable.html', {
-            'title': title + ' ('+ratableType+')',
+            'subtitle': title + ' ('+ratableType+')',
             'type' : ratableType,
             'content': str(ratable),
             'ratings': ratings
@@ -134,6 +134,7 @@ class Sweep(BaseRequestHandler) :
         self.redirect('/')
 
 class Session(BaseRequestHandler) :
+    @admin
     def get(self) :
         sessions = DS.Session.all()
         for s in sessions : 

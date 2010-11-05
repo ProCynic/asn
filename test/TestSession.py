@@ -1,17 +1,32 @@
 import unittest
 from dataAccessors import *
 from session import *
+from datetime import *
+from dataStore import *
 
 class TestSession(unittest.TestCase) :
     
     def setUp(self) :
         da = DataAccessor()
 
-        da.addStudent("HIHIHI", "abcdefg")
-        self.session = generateSession(42)
+        self.user = da.addStudent("HIHIHI", "abcdefg")
+        self.user2 = da.addStudent("BYEBYE", "asdfjkl;")
+        self.session = generateSession(self.user)
+        self.session2 = generateSession(self.user2)
 
 
     def test_generate(self) :
-        other = generateSession(42)
+        self.assertTrue(self.session.sessionID != self.session2.sessionID)
 
-        self.assertTrue(other.sessionID != self.session.sessionID)
+    def test_message(self) :
+        setSessionMessage(self.session, "Test")
+        self.assertEqual(getSessionMessage(self.session), "Test")
+        self.assertEqual(getSessionMessage(self.session), None)
+
+    def test_expire(self) :
+        sid = self.session2.sessionID
+        self.session2.expiration = datetime.now()
+        sweepSessions()
+
+        count = Session.all().filter('sessionID = ', sid).count()
+        self.assertEqual(count, 0)
