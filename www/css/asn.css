@@ -158,7 +158,7 @@ ul#ratings {
 #ratings li.rating {
     list-style: none;
     margin: 0px 0 10px 0px;
-    padding: 0px 0px 10px 5px;
+    padding: 0px 0px 10px 0px;
     border: 1px gray solid;
 }
 
@@ -176,7 +176,7 @@ ul#ratings {
 
 #ratings .ratingbar 
 {
-    margin: 0px 0px -10px -5px;
+    margin: 0px 0px -10px 0px;
     padding: 0px;
     height: 5px;
 }
@@ -208,17 +208,20 @@ ul#ratings {
 
 #ratings .title 
 {
+    padding-left: 5px;
     font-size: large;
 }
 
 #ratings .detail
 {
+    padding-left: 5px;
     font-size: small;
     color: gray;
 }
 
 #ratings .summary 
 {
+    padding-left: 5px;
 }
 
 #ratings .avg
