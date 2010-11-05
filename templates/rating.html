@@ -10,7 +10,7 @@
     {% endifequal %}
     </span> 
     </p>
-    <span class='title'>{{ rating.title }}</span> <br/>
+    <span class='title'><a href='/ratable/{{ rating.dbkey }}' class='rated'>{{ rating.title }}</A></span> <br/>
     <span class='detail'>by {{ rating.author }}</span>
     <span class='detail'>| ISBN: {{ rating.isbn }}</span> <br/>
 {% endifequal %}

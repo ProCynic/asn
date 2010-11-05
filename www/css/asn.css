@@ -162,6 +162,16 @@ ul#ratings {
     border: 1px gray solid;
 }
 
+#ratings a.rated
+{
+    color: black;
+}
+
+#ratings a:hover.rated
+{
+    color: red;
+}
+
 #ratings .ratingbar 
 {
     margin: 0px 0px -10px 0px;
