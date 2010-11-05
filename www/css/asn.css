@@ -1,145 +1,216 @@
 
-body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; color:#444444 ;}
+body { 
+    font:13px sans-serif; 
+    *font-size:small; 
+    *font:x-small; 
+    line-height:1.22; 
+    color:#444444;
+}
 
 #container {
-	width:960px;
-	margin:0 auto;
+    width:960px;
+    margin:0 auto;
 }
 
 #header {
-	border-bottom: 2px solid #444444;
-	padding:1em 0;
-	position:relative;
+    border-bottom: 2px solid #444444;
+    padding:1em 0;
+    position:relative;
 }
-	#header h1 {
-		margin:0;
-	}
-	#header a {
-		color:#444444;
-		text-decoration:none;
-	}
-	#header a:hover {
-		text-decoration:underline;
-	}
-		#nav {
-			position: absolute;
-			right: 0px;
-			margin:0;
-			padding:0;
-			top: 1em;
-			list-style:none;
-		}
-			#nav li:first-child {
-				margin:0;
-				padding:0;
-				border-left:0;
-			}
-			#nav li {
-				display:inline;
-				margin-left:0.75em;
-				padding-left:1em;
-				border-left:0.1em solid #444444;
-			}
+    #header h1 {
+        margin:0;
+    }
+    #header a {
+        color:#444444;
+        text-decoration:none;
+    }
+    #header a:hover {
+        text-decoration:underline;
+    }
+        #nav {
+            position: absolute;
+            right: 0px;
+            margin:0;
+            padding:0;
+            top: 1em;
+            list-style:none;
+        }
+            #nav li:first-child {
+                margin:0;
+                padding:0;
+                border-left:0;
+            }
+            #nav li {
+                display:inline;
+                margin-left:0.75em;
+                padding-left:1em;
+                border-left:0.1em solid #444444;
+            }
 
 #xml {
-	height: 38em;
-	margin: 0px;
-	padding: 1em;
-	width: 85em;
+    height: 38em;
+    margin: 0px;
+    padding: 1em;
+    width: 85em;
 }
 
 #main {
-	margin:2em 0 0;
+    margin:2em 0 0;
 }
 
 #footer {
-	position:fixed;
-	bottom:10px;
-	left:5px;
+    position:fixed;
+    bottom:10px;
+    left:5px;
 }
 
 .aside {
-	margin:1em 1em;
-	font-size:1em;
-	clear:both;
-	display:block;
+    margin:1em 1em;
+    font-size:1em;
+    clear:both;
+    display:block;
 }
 
 #message {
-	background-color: #CCCCCC;
-	border: 1px solid #444444;
-	padding: 1em;
-	margin-bottom: 1em;
-	-moz-border-radius: 0.2em;
-	border-radius: 0.2em;
+    background-color: #CCCCCC;
+    border: 1px solid #444444;
+    padding: 1em;
+    margin-bottom: 1em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
 }
 
 #login_form {
-	padding: 1em 0 0 0;
+    padding: 1em 0 0 0;
 }
 #login_form input {
-	border:0.1em solid #999999;
-	-moz-border-radius: 0.2em;
-	border-radius: 0.2em;
-	color:#444444;
+    border:0.1em solid #999999;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    color:#444444;
 }
 #login_form input[type=text], #login_form input[type=password] {
-	padding:0.3em;
-	margin-right:1em;
+    padding:0.3em;
+    margin-right:1em;
 }
 #login_form input[type=submit] {
-	background-color:#CCCCCC;
-	margin-right:1em;
+    background-color:#CCCCCC;
+    margin-right:1em;
 }
 #login_form form {
-	display:block;
+    display:block;
 }
-	#login {
-		clear:both;
-	}
-	#other_actions {
-		margin-top:2em;
-	}
-		#create_user {
-			display:block;
-			float:left;
-		}
-		#browse {
-			display:block;
-			float:left;
-		}
+    #login {
+        clear:both;
+    }
+    #other_actions {
+        margin-top:2em;
+    }
+        #create_user {
+            display:block;
+            float:left;
+        }
+        #browse {
+            display:block;
+            float:left;
+        }
 
 #export, #import {
-	background-color:#F2D9B1;
-	border:1px solid #444444;
-	margin: 0 0 1em;
-	padding:1em;
+    background-color:#F2D9B1;
+    border:1px solid #444444;
+    margin: 0 0 1em;
+    padding:1em;
 }
 
 #main fieldset {
-	-moz-border-radius: 0.2em;
-	border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
 }
 
 #export input, #import input {
-	font-weight:bold;
+    font-weight:bold;
 }
 #export input[type=submit], #import input[type=submit], #import input[type=file] {
-	border:0.1em solid #999999;
-	-moz-border-radius: 0.2em;
-	border-radius: 0.2em;
-	color:#444444;
-	background-color:#EEEEEE;
+    border:0.1em solid #999999;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    color:#444444;
+    background-color:#EEEEEE;
 }
 
 #export legend, #import legend {
-	font-weight:bold;
+    font-weight:bold;
 }
 
 #export input[type=submit], #import input[type=submit], #import input {
-	margin-left:1em;
+    margin-left:1em;
 }
 
 #import li {
-	margin-bottom:1em;
+    margin-bottom:1em;
+}
+
+
+#ratings ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#ratings li.rating {
+    list-style: none;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
+    border: 1px gray solid;
+}
+
+#ratings .ratingbar 
+{
+    margin: 0px 0px -10px 0px;
+    padding: 0px;
+    height: 5px;
+}
+
+#ratings .average 
+{
+    background-color: #E8BA05;
+}
+
+#ratings .bad 
+{
+    background-color: red;
+}
+
+#ratings .good 
+{
+    background-color: green;
+}
+
+#ratings .name 
+{
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: large;
+    color: gray;
+}
+
+#ratings .title 
+{
+    font-size: large;
+}
+
+#ratings .detail
+{
+    font-size: small;
+    color: gray;
+}
+
+#ratings .summary 
+{
+}
+
+#ratings .avg
+{
+    float: right;
 }

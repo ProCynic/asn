@@ -25,8 +25,15 @@ DA = dataAccessors.DataAccessor()
 uid = uidgen()
 pw = passgen()
 DA.addAdmin(uid, pw)
+print "admin"
+print uid
+print pw
+
+uid = uidgen()
+pw = passgen()
+DA.addStudent(uid, pw)
 
 
-
+print "student"
 print uid
 print pw
