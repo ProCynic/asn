@@ -5,11 +5,35 @@
 {% block main %}
 
 {% if ratings %}
+<form style='float: right' method='POST' >
+   <label>Filter by:</label>
+    <select name='filter' onchange='this.form.submit()'>
+        <option value=''>All</option>
+        <option value='courses' {% ifequal arg "courses" %} selected='true' {% endifequal %} >Course</option>
+        <option value='books' {% ifequal arg "books" %} selected='true' {% endifequal %}> Book</option>
+        <option value='papers' {% ifequal arg "papers" %} selected='true' {% endifequal %} >Paper</option>
+        <option value='internships' {% ifequal arg "internships" %} selected='true' {% endifequal %} >Internships</option>
+        <option value='livingplaces' {% ifequal arg "livingplaces" %} selected='true' {% endifequal %} >Living Places</option>
+        <option value='eatingplaces' {% ifequal arg "eatingplaces" %} selected='true' {% endifequal %} >Eating Places</option>
+        <option value='funplaces' {% ifequal arg "funplaces" %} selected='true' {% endifequal %} >Fun Places</option>
+        <option value='studyingplaces' {% ifequal arg "studyingplaces" %} selected='true' {% endifequal %} >Studying Places</option>
+        <option value='games' {% ifequal arg "games" %} selected='true' {% endifequal %} >Game</option>
+    </select>
+
+    <label>Sort By</label>
+    <select name='sort' onchange='this.form.submit()'>
+        <option value='asc'>Ascending</option>
+        <option value='desc'>Descending</option>
+    </select>
+</form>
+<br/>
 <ul id="ratings">
     {% for rating in ratings %}
         {% include "rating.html" %}
     {% endfor %}
 </ul>
+{% else %}
+    <p> No ratings! </p>
 {% endif %}
 
 {% endblock %}

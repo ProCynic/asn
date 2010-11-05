@@ -160,6 +160,8 @@ def main():
     ('/session', Session),
     ('/sweep', Sweep),
     ('/browse', Browser),
+    ('/browse/([a-zA-Z]+)', Browser),
+    ('/browse/([a-zA-Z]+)/([a-zA-Z]+)', Browser),
     ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),
     ('/login', Login),
