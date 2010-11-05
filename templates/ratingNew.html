@@ -1,0 +1,80 @@
+<form method="post" action="/student/save">
+	{% ifequal typename "Book" %}
+		<label>ISBN: <input type="text" name="isbn" /></label>
+		<label>Title: <input type="text" name="title" /></label>
+		<label>Author: <input type="text" name="author" /></label>
+	{% endifequal %}
+	{% ifequal typename "Paper" %}
+		<label>Type: <select name="paperType">
+		<option value="Journal">Journal</option>
+		<option value="Conference">Conference</option>
+		</select></label>
+		<label>Title: <input type="text" name="title" /></label>
+		<label>Author: <input type="text" name="author" /></label>
+	{% endifequal %}
+	{% ifequal typename "Course" %}
+		<label>Unique: <input type="text" name="unique" /></label>
+		<label>Course Name: <input type="text" name="name" /></label>
+		<label>Course Number: <input type="text" name="courseNum" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Instructor: <input type="text" name="instructor" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "Internship" %}
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "PlaceLive" %}
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "PlaceEat" %}
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "PlaceStudy" %}
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "PlaceFun" %}
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal typename "Game" %}
+		<label>Platform: <select name="platform">
+		<option value="Playstation">Playstation</option>
+		<option value="Playstation 2">Playstation 2</option>
+		<option value="Playstation 3">Playstation 3</option>
+		<option value="Xbox">Xbox</option>
+		<option value="Xbox 360">Xbox 360</option>
+		<option value="Nintendo">Nintendo</option>
+		<option value="Super Nintendo">Super Nintendo</option>
+		<option value="Nintendo 64">Nintendo 64</option>
+		<option value="Wii">Wii</option>
+		<option value="Sega Genesis">Sega Genesis</option>
+		<option value="Gameboy">Gameboy</option>
+		<option value="Nintendo DS">Nintendo DS</option>
+		<option value="PSP">PSP</option>
+		<option value="PC">PC</option>
+		<option value="Mac">Mac</option>
+		<option value="Linux">Linux</option>
+		<option value="iPhone">iPhone</option>
+		<option value="Android">Android</option>
+		<option value="Cellphone">Cellphone</option>
+		</select></label>
+		<label>Title: <input type="text" name="title" /></label>
+	{% endifequal %}
+	<label>Rating: <input type="text" name="rating" /></label>
+	<label>Comment: <textarea name="comment"></textarea></label>
+	<input type="submit" value="Add New {{ typename }}" />
+</form>

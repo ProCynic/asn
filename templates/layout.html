@@ -47,16 +47,20 @@
 				{% block main %} default main stuff {% endblock %}
 			</div>
 			<div id="footer">
-				<p> A footer </p>
 				{% if user %}
-					{{ user }}
 				    {% ifequal user.userType 'STUDENT' %}
-				    <span>
-				    	<ul>
-				    		<li><p>Add Book</p></li>
-				    		<li><p>Add Course</p></li>
+				    	<ul id="adders">
+				    		<li><a href="/new/Course">Add Course</li>
+				    		<li><a href="/new/Book">Add Book</li>
+				    		<li><a href="/new/Paper">Add Paper</li>
+				    		<li><a href="/new/Internship">Add Internship</li>
+				    		<li><a href="/new/PlaceStudy">Add Place to Study</li>
+				    		<li><a href="/new/PlaceLive">Add Place to Live</li>
+				    		<li><a href="/new/PlaceEat">Add Place to Eat</li>
+				    		<li><a href="/new/PlaceFun">Add Place to Have Fun</li>
+				    		<li><a href="/new/Game">Add Game</li>
+				    		
 				    	</ul>
-				    </span>
 				    {% endifequal %}
 				{% endif %}
 				{% block footer %}{% endblock %}

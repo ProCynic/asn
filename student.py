@@ -26,6 +26,13 @@ class StudentPage(BaseRequestHandler) :
 
 class StudentNewRating(BaseRequestHandler) :
     @user
+    def get(self, typename=''):
+        self.generate('studentNew.html', {
+            'typename': typename
+        })
+
+class StudentSaveRating(BaseRequestHandler) :
+    @user
     def post(self):
         
         DA = DataAccessor()
