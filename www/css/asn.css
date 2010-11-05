@@ -152,6 +152,11 @@ body {
     margin-bottom:1em;
 }
 
+<<<<<<< HEAD
+
+ul#ratings {
+    margin: 1em 0px;
+=======
 #ratings {
 	padding: 0;
 	margin: 0 0 0 -2em;
@@ -159,16 +164,14 @@ body {
 }
 #ratings ul {
     margin: 0px;
+>>>>>>> 74587c7b93a8ef400237dab1d40c93457f75bcc7
     padding: 0px;
 }
 
 #ratings li.rating {
     list-style: none;
-    float: left;
-    height:7em;
-    margin: 0px 0px 10px 5%;
-    padding: 0px 0px 10px;
-    width: 44%;
+    margin: 0px 10px 10px 0px;
+    padding: 0px 0px 10px 0px;
     border: 1px gray solid;
 }
 

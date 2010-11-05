@@ -22,8 +22,9 @@
 
     <label>Sort By</label>
     <select name='sort' onchange='this.form.submit()'>
-        <option value='asc'>Ascending</option>
-        <option value='desc'>Descending</option>
+        <option value=''></option>
+        <option value='asc' {% ifequal sort "asc" %} selected='true' {% endifequal %}>Ascending</option>
+        <option value='desc' {% ifequal sort "desc" %} selected='true' {% endifequal %}> Descending</option>
     </select>
 </form>
 <br/>
