@@ -1,26 +1,26 @@
 <form method="post" action="/student/update/{{ rating.key }}">
-	{% ifequal rating.typename "Book" %}
-		<label>Title: <input type="text" name="title" /></label>
-		<label>ISBN: <input type="text" name="isbn" /></label>
-		<label>Author: <input type="text" name="author" /></label>
+	{% ifequal rating.rated.typename "Book" %}
+		<label>ISBN: <input type="text" name="isbn" {{rating.rated.isbn}} /></label>
+		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
+		<label>Author: <input type="text" name="author" value={{rating.rated.author}} /></label>
 	{% endifequal %}
-	{% ifequal rating.typename "Paper" %}
+	{% ifequal rating.rated.typename "Paper" %}
 		<label>Type: <select name="paperType">
-		<option value="Journal">Journal</option>
-		<option value="Conference">Conference</option>
+		<option {% ifequal rating.rated.paperType "JOURNAL" %}selected="selected"{% endifequal %} value="Journal">Journal</option>
+		<option {% ifequal rating.rated.paperType "CONFERENCE" %}selected="selected"{% endifequal %} value="Conference">Conference</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" /></label>
-		<label>Author: <input type="text" name="author" /></label>
+		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
+		<label>Author: <input type="text" name="author" value={{rating.rated.author}} /></label>
 	{% endifequal %}
-	{% ifequal rating.typename "Course" %}
-		<label>Unique: <input type="text" name="unique" /></label>
-		<label>Course Name: <input type="text" name="name" /></label>
-		<label>Course Number: <input type="text" name="num" /></label>
-		<label>Semester: <input type="text" name="semester" /></label>
-		<label>Instructor: <input type="text" name="instructor" /></label>
+	{% ifequal rating.rated.typename "Course" %}
+		<label>Unique: <input type="text" name="unique" value={{rating.rated.unique}} /></label>
+		<label>Course Name: <input type="text" name="name" value={{rating.rated.name}} /></label>
+		<label>Course Number: <input type="text" name="num" value={{rating.rated.courseNum}} /></label>
+		<label>Semester: <input type="text" name="semester" value={{rating.rated.semester}} /></label>
+		<label>Instructor: <input type="text" name="instructor" value={{rating.rated.instructor}} /></label>
 		<label>Year: <input type="text" name="year" /></label>
 	{% endifequal %}
-	{% ifequal rating.typename "Place" %}
+	{% ifequal rating.rated.typename "Place" %}
 		<label>Type: <select name="ptype">
 		<option value="Live">Live</option>
 		<option value="Eat">Eat</option>
@@ -28,35 +28,35 @@
 		<option value="Study">Study</option>
 		<option value="Internship">Internship</option>
 		</select></label>
-		<label>Name: <input type="text" name="name" /></label>
-		<label>Location: <input type="text" name="location" /></label>
-		<label>Semester: <input type="text" name="semester" /></label>
-		<label>Year: <input type="text" name="year" /></label>
+		<label>Name: <input type="text" name="name" value={{rating.rated.name}} /></label>
+		<label>Location: <input type="text" name="location" value={{rating.rated.location}} /></label>
+		<label>Semester: <input type="text" name="semester" value={{rating.rated.semester}} /></label>
+		<label>Year: <input type="text" name="year" value={{rating.rated.year}} /></label>
 	{% endifequal %}
-	{% ifequal rating.typename "Game" %}
+	{% ifequal rating.rated.typename "Game" %}
 		<label>Platform: <select name="platform">
-		<option value="Playstation">Playstation</option>
-		<option value="Playstation 2">Playstation 2</option>
-		<option value="Playstation 3">Playstation 3</option>
-		<option value="Xbox">Xbox</option>
-		<option value="Xbox 360">Xbox 360</option>
-		<option value="Nintendo">Nintendo</option>
-		<option value="Super Nintendo">Super Nintendo</option>
-		<option value="Nintendo 64">Nintendo 64</option>
-		<option value="Wii">Wii</option>
-		<option value="Sega Genesis">Sega Genesis</option>
-		<option value="Gameboy">Gameboy</option>
-		<option value="Nintendo DS">Nintendo DS</option>
-		<option value="PSP">PSP</option>
-		<option value="PC">PC</option>
-		<option value="Mac">Mac</option>
-		<option value="Linux">Linux</option>
-		<option value="iPhone">iPhone</option>
-		<option value="Android">Android</option>
-		<option value="Cellphone">Cellphone</option>
+		<option {% ifequal rating.rated.platform "PLAYSTATION" %}selected="selected"{% endifequal %} value="Playstation">Playstation</option>
+		<option {% ifequal rating.rated.platform "PLAYSTATION 2" %}selected="selected"{% endifequal %} value="Playstation 2">Playstation 2</option>
+		<option {% ifequal rating.rated.platform "PLAYSTATION 3" %}selected="selected"{% endifequal %} value="Playstation 3">Playstation 3</option>
+		<option {% ifequal rating.rated.platform "XBOX" %}selected="selected"{% endifequal %} value="Xbox">Xbox</option>
+		<option {% ifequal rating.rated.platform "XBOX360" %}selected="selected"{% endifequal %} value="Xbox 360">Xbox 360</option>
+		<option {% ifequal rating.rated.platform "NINTENDO" %}selected="selected"{% endifequal %} value="Nintendo">Nintendo</option>
+		<option {% ifequal rating.rated.platform "SUPER NINTENDO" %}selected="selected"{% endifequal %} value="Super Nintendo">Super Nintendo</option>
+		<option {% ifequal rating.rated.platform "NINTENDO 64" %}selected="selected"{% endifequal %} value="Nintendo 64">Nintendo 64</option>
+		<option {% ifequal rating.rated.platform "WII" %}selected="selected"{% endifequal %} value="Wii">Wii</option>
+		<option {% ifequal rating.rated.platform "SEGA GENESIS" %}selected="selected"{% endifequal %} value="Sega Genesis">Sega Genesis</option>
+		<option {% ifequal rating.rated.platform "GAMEBOY" %}selected="selected"{% endifequal %} value="Gameboy">Gameboy</option>
+		<option {% ifequal rating.rated.platform "NINTENDO DS" %}selected="selected"{% endifequal %} value="Nintendo DS">Nintendo DS</option>
+		<option {% ifequal rating.rated.platform "PSP" %}selected="selected"{% endifequal %} value="PSP">PSP</option>
+		<option {% ifequal rating.rated.platform "PC" %}selected="selected"{% endifequal %} value="PC">PC</option>
+		<option {% ifequal rating.rated.platform "MAC" %}selected="selected"{% endifequal %} value="Mac">Mac</option>
+		<option {% ifequal rating.rated.platform "LINUX" %}selected="selected"{% endifequal %} value="Linux">Linux</option>
+		<option {% ifequal rating.rated.platform "IPHONE" %}selected="selected"{% endifequal %} value="iPhone">iPhone</option>
+		<option {% ifequal rating.rated.platform "ANDROID" %}selected="selected"{% endifequal %} value="Android">Android</option>
+		<option {% ifequal rating.rated.platform "CELLPHONE" %}selected="selected"{% endifequal %} value="Cellphone">Cellphone</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" /></label>
+		<label>Title: <input type="text" name="title" value={{rating.rated.title}} /></label>
 	{% endifequal %}
-	<label>Rating: <input type="text" name="rating" /></label>
+	<label>Rating: <input type="text" name="rating" value={{rating.rating}} /></label>
 	<input type="submit" value="Update/Save" />
 </form>

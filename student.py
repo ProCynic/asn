@@ -25,8 +25,51 @@ class StudentPage(BaseRequestHandler) :
 class StudentNewRating(BaseRequestHandler) :
     @user
     def post(self):
-        # rating = Rating()
-        # assign attributes from form # self.request.get('name'), etc
+        
+        DA = DataAccessor()
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        
+        if typename == 'Book':
+            isbn = self.request.get('isbn')
+            title = self.request.get('title')
+            author = self.request.get('author')
+            b = DA.addBook( title, isbn, author )
+            rating = self.request.get('rating')
+            DA.addRating( b, user, rating, comment=None)
+        elif typename == 'Paper':
+            paperType = self.request.get('paperType').upper()
+            title = self.request.get('title')
+            author = self.request.get('author')
+            p = DA.addPaper( paperType, title, author )
+            rating = self.request.get('rating')
+            DA.addRating( p, user, rating, comment=None)
+        elif typename == 'Course':
+            unique = self.request.get('unique')
+            courseNum = self.request.get('courseNum')
+            name = self.request.get('name')
+            semester = self.request.get('semester').upper()
+            year = self.request.get('year')
+            instructor = self.request.get('instructor')
+            c = DA.addCourse( unique, courseNum, name, semester, year, instructor )
+            rating = self.request.get('rating')
+            DA.addRating( c, user, rating, comment=None)
+        elif typename == 'Game':
+            platform = self.request.get('platform')
+            title = self.request.get('title')
+            g = DA.addGame( platform, title )
+            rating = self.request.get('rating')
+            DA.addRating( g, user, rating, comment=None)
+        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
+            name = self.request.get('platform')
+            location = self.request.get('title')
+            semester = self.request.get('title')
+            year = self.request.get('title')
+            p = DA.addPlace( name, location, semester, year, typename )
+            rating = self.request.get('rating')
+            DA.addRating( p, user, rating, comment=None)
+        
+        setSessionMessage(session, 'Successfully added new rating!')
         self.redirect('/student')
 
 class StudentUpdateRating(BaseRequestHandler) :
@@ -41,14 +84,14 @@ class StudentUpdateRating(BaseRequestHandler) :
             rated.title = self.request.get('title')
             rated.author = self.request.get('author')
         elif typename == 'Paper':
-            rated.paperType = self.request.get('paperType')
+            rated.paperType = self.request.get('paperType').upper()
             rated.title = self.request.get('title')
             rated.author = self.request.get('author')
         elif typename == 'Course':
             rated.unique = self.request.get('unique')
             rated.courseNum = self.request.get('courseNum')
             rated.name = self.request.get('name')
-            rated.semester = self.request.get('semester')
+            rated.semester = self.request.get('semester').upper()
             rated.instructor = self.request.get('instructor')
             rated.year = self.request.get('year')
         elif typename == 'Game':
@@ -59,9 +102,13 @@ class StudentUpdateRating(BaseRequestHandler) :
             rated.location = self.request.get('title')
             rated.semester = self.request.get('title')
             rated.year = self.request.get('title')
-            
+        
+        rating.rating = self.request.get('rating')
         rating.rated = rated
         rating.put()
+        
+        session = getSessionByRequest(self)
+        setSessionMessage(session, 'Successfully updated rating!')
         self.redirect('/student')
 
 class StudentPasswordPage(BaseRequestHandler):
