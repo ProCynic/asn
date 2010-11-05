@@ -97,6 +97,7 @@ class Ratable(polymodel.PolyModel):
         for x in d: yield (x, getattr(self, x))
 
     def __eq__(self, other):
+        if not issubclass(type(other), Ratable): return False
         for x,y in zip(self, other):
             if x != y: return False
         return True
@@ -117,7 +118,6 @@ class Rating(db.Model):
 
     def __iter__(self):
         d = self.__class__.properties()
-        d.pop('_class')
         for x in d: yield (x,getattr(self,x))
 
 class Course (Ratable):
@@ -154,6 +154,10 @@ class Grade(db.Model):
 
     def __str__(self):
                 return str(self.grade)
+
+    def __iter__(self):
+        d = self.__class__.properties()
+        for x in d: yield (x, getattr(self, x))
 
 class Book(Ratable):
     """

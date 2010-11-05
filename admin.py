@@ -23,7 +23,7 @@ class AdminClear(BaseRequestHandler):
     def get(self) :
         DA = DataAccessor()
         DA.clear()
-        self.redirect('/admin')
+        self.redirect('/admin?m=DataStore%20Cleared')
 
 class AdminExport(BaseRequestHandler) :
     @admin 
