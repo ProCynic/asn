@@ -16,6 +16,13 @@ def addTypename(query) :
         temp.append(x)
     return temp
 
+def addRatedTypename(query) :
+    temp = []
+    for x in query :
+        x.rated.typename = x.rated.__class__.__name__
+        temp.append(x)
+    return temp
+
 
 
 class DataAccessor :
