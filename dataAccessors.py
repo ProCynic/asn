@@ -31,7 +31,8 @@ class DataAccessor :
         self.dependencies = {User : Rating,
                              Ratable : Rating,
                              Rating : Comment,
-                             User : Grade}
+                             User : Grade,
+                             User : Session}
 
     def _errHandler(self, err) :
         raise Usage("Duplicate entry: " + str(err))
@@ -198,10 +199,12 @@ class DataAccessor :
         assert issubclass(type(obj),db.Model)
         if type(obj) in self.dependencies:
             for x in self.dependencies[type(obj)].all():
-                self.delete(x)
+                for y in x:
+                    if y[1] == obj: self.delete(x)
         obj.delete()
-        
 
+    def clear(self):
+        pass
     
 
     def _pkeyCheck(self, pkey, obj):
