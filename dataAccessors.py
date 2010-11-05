@@ -133,14 +133,14 @@ class DataAccessor :
         return self._addPlace(name, location, semester, year, Internship)
 
     def addRating(self, ratable, student, rating, comment=None) :
-        c = self.addComment(comment)
+        if comment: comment = self.addComment(comment)
         rating = int(rating)
         pkey = ['rated', 'rater']
         return self._addItem(Rating, pkey,
                              rating=rating,
                              rated=ratable,
                              rater=student,
-                             comment=c,
+                             comment=comment,
                              overwrite=True)
     
     def addComment(self, text, replyto=None):

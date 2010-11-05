@@ -74,16 +74,3 @@ class AdminImport(BaseRequestHandler) :
                 self.msg = self.msg[0:512] + "..."
 
         self.redirect('/admin?m='+self.msg)
-
-
-class AdminReset(BaseRequestHandler) :
-    @admin 
-    def get(self) :
-        self.redirect('/admin?m=Invalid%20Request')
-
-    @admin
-    def post(self) :
-        """
-            TODO: Make this work.
-        """
-        self.redirect('/admin?m=Invalid%20Request:%20Not%20Implemented.')

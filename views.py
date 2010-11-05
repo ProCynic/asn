@@ -11,6 +11,9 @@ def getAverageRating(item) :
         total += x.rating
         items += 1
 
+    if items == 0 :
+        return (0, 0)
+
     return (total / items, items);
 
 
@@ -18,7 +21,7 @@ def getRatingClass(rating) :
     if rating > 70 :
         return 'good' 
     
-    if 70 >= rating > 40 :
+    if 70 >= rating and rating > 40 :
         return 'average'
 
     return 'bad'
@@ -76,6 +79,7 @@ def prepareDataForTemplate(query) :
     for x in query :
         x.rating, x.ratingCount = getAverageRating(x)
         x.ratingClass = getRatingClass(x.rating)
+        x.dbkey = str(x.key())
 
         if (isinstance(x, DS.Course)) :
             x.avgGrade = getAverageGrade(x)
