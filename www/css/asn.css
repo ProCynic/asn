@@ -61,8 +61,14 @@ body {
 #footer {
     position:fixed;
     bottom:10px;
-    center
+  	margin : 0 auto;
+  	border
 }
+    #footer adders {
+    }
+    	#adders li {
+    		display:inline;
+		}
 
 .aside {
     margin:1em 1em;
