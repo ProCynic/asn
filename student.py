@@ -102,7 +102,7 @@ class StudentUpdateRating(BaseRequestHandler) :
             platform = self.request.get('platform')
             title = self.request.get('title')
             DA.update( rated, platform=platform, title=title )
-        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
+        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceStudy':
             name = self.request.get('platform')
             location = self.request.get('title')
             semester = self.request.get('title')
