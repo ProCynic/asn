@@ -74,12 +74,3 @@ class AdminImport(BaseRequestHandler) :
                 self.msg = self.msg[0:512] + "..."
 
         self.redirect('/admin?m='+self.msg)
-
-class AdminManageUsers(BaseRequestHandler):
-    @admin
-    def get(self):
-        pass
-
-    @admin
-    def post(self):
-        pass
