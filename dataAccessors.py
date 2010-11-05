@@ -44,7 +44,7 @@ class DataAccessor :
         author = self._addPerson(author)
         pkey = ['paperType', 'title', 'author']
         return self._addItem(Paper, pkey,
-                             paperType=ptype,
+                             paperType=ptype.upper(),
                              title=title,
                              author=author)
 

@@ -9,11 +9,7 @@
 {% if ratings %}
 <ul id="ratings">
     {% for rating in ratings %}
-    <li class="rating">
-        <span class="info">{{ rating.rated.name }}</span>
-        <span class="score">{{ rating.rating }}</span>
-        <span class="comment">{{ rating.comment }}</span>
-    </li>
+        {% include "rating.html" %}
     {% endfor %}
 </ul>
 {% endif %}

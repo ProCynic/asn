@@ -5,6 +5,7 @@ from exporter import export
 from ourExceptions import *
 from importer import Importer 
 from dataAccessors import DataAccessor
+import dataStore as DS
 
 class Browser(BaseRequestHandler) :
     
@@ -13,8 +14,11 @@ class Browser(BaseRequestHandler) :
             Create the browser home page.
         """
         DA = DataAccessor()
+
+        query = DS.Rating.all()
+        
         ratings = DA.getAllRatings()
         self.generate('browser.html', {
             'title' : "Home",
-            'ratings' : ratings
+            'ratings' : query
         })
