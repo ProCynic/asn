@@ -3,11 +3,10 @@
 {% block head %}{% endblock %}
 
 {% block main %}
-<ul id="ratings">
-    {% for rating in ratings %}
-        {% include "studentRatings.html" %}
-    {% endfor %}
-</ul>
+
+{% if rating %}
+	{% include "ratingForm.html" %}
+{% endif %}
 
 <p>
 <img src='/images/addbook.png' alt='lol'/>

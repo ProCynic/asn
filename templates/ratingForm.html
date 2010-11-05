@@ -1,78 +1,78 @@
 <form method="post" action="/student/update/{{ rating.key }}">
-	{% ifequal rating.rated.typename "Book" %}
-		<label>ISBN: <input type="text" name="isbn" value="{{rating.rated.isbn}}" /></label>
-		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
-		<label>Author: <input type="text" name="author" value="{{rating.rated.author}}" /></label>
+	{% ifequal typename "Book" %}
+		<label>ISBN: <input type="text" name="isbn" value="{{rating.isbn}}" /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.title}}" /></label>
+		<label>Author: <input type="text" name="author" value="{{rating.author}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "Paper" %}
+	{% ifequal typename "Paper" %}
 		<label>Type: <select name="paperType">
-		<option {% ifequal rating.rated.paperType "JOURNAL" %}selected="selected"{% endifequal %} value="Journal">Journal</option>
-		<option {% ifequal rating.rated.paperType "CONFERENCE" %}selected="selected"{% endifequal %} value="Conference">Conference</option>
+		<option {% ifequal rating.paperType "JOURNAL" %}selected="selected"{% endifequal %} value="Journal">Journal</option>
+		<option {% ifequal rating.paperType "CONFERENCE" %}selected="selected"{% endifequal %} value="Conference">Conference</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
-		<label>Author: <input type="text" name="author" value="{{rating.rated.author}}" /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.title}}" /></label>
+		<label>Author: <input type="text" name="author" value="{{rating.author}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "Course" %}
-		<label>Unique: <input type="text" name="unique" value="{{rating.rated.unique}}" /></label>
-		<label>Course Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Course Number: <input type="text" name="courseNum" value="{{rating.rated.courseNum}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Instructor: <input type="text" name="instructor" value="{{rating.rated.instructor}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "Course" %}
+		<label>Unique: <input type="text" name="unique" value="{{rating.unique}}" /></label>
+		<label>Course Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Course Number: <input type="text" name="courseNum" value="{{rating.courseNum}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Instructor: <input type="text" name="instructor" value="{{rating.instructor}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "Internship" %}
-		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "Internship" %}
+		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "PlaceLive" %}
-		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "PlaceLive" %}
+		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "PlaceEat" %}
-		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "PlaceEat" %}
+		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "PlaceStudy" %}
-		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "PlaceStudy" %}
+		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "PlaceFun" %}
-		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
-		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
-		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% ifequal typename "PlaceFun" %}
+		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "Game" %}
+	{% ifequal typename "Game" %}
 		<label>Platform: <select name="platform">
-		<option {% ifequal rating.rated.platform "PLAYSTATION" %}selected="selected"{% endifequal %} value="Playstation">Playstation</option>
-		<option {% ifequal rating.rated.platform "PLAYSTATION 2" %}selected="selected"{% endifequal %} value="Playstation 2">Playstation 2</option>
-		<option {% ifequal rating.rated.platform "PLAYSTATION 3" %}selected="selected"{% endifequal %} value="Playstation 3">Playstation 3</option>
-		<option {% ifequal rating.rated.platform "XBOX" %}selected="selected"{% endifequal %} value="Xbox">Xbox</option>
-		<option {% ifequal rating.rated.platform "XBOX360" %}selected="selected"{% endifequal %} value="Xbox 360">Xbox 360</option>
-		<option {% ifequal rating.rated.platform "NINTENDO" %}selected="selected"{% endifequal %} value="Nintendo">Nintendo</option>
-		<option {% ifequal rating.rated.platform "SUPER NINTENDO" %}selected="selected"{% endifequal %} value="Super Nintendo">Super Nintendo</option>
-		<option {% ifequal rating.rated.platform "NINTENDO 64" %}selected="selected"{% endifequal %} value="Nintendo 64">Nintendo 64</option>
-		<option {% ifequal rating.rated.platform "WII" %}selected="selected"{% endifequal %} value="Wii">Wii</option>
-		<option {% ifequal rating.rated.platform "SEGA GENESIS" %}selected="selected"{% endifequal %} value="Sega Genesis">Sega Genesis</option>
-		<option {% ifequal rating.rated.platform "GAMEBOY" %}selected="selected"{% endifequal %} value="Gameboy">Gameboy</option>
-		<option {% ifequal rating.rated.platform "NINTENDO DS" %}selected="selected"{% endifequal %} value="Nintendo DS">Nintendo DS</option>
-		<option {% ifequal rating.rated.platform "PSP" %}selected="selected"{% endifequal %} value="PSP">PSP</option>
-		<option {% ifequal rating.rated.platform "PC" %}selected="selected"{% endifequal %} value="PC">PC</option>
-		<option {% ifequal rating.rated.platform "MAC" %}selected="selected"{% endifequal %} value="Mac">Mac</option>
-		<option {% ifequal rating.rated.platform "LINUX" %}selected="selected"{% endifequal %} value="Linux">Linux</option>
-		<option {% ifequal rating.rated.platform "IPHONE" %}selected="selected"{% endifequal %} value="iPhone">iPhone</option>
-		<option {% ifequal rating.rated.platform "ANDROID" %}selected="selected"{% endifequal %} value="Android">Android</option>
-		<option {% ifequal rating.rated.platform "CELLPHONE" %}selected="selected"{% endifequal %} value="Cellphone">Cellphone</option>
+		<option {% ifequal rating.platform "PLAYSTATION" %}selected="selected"{% endifequal %} value="Playstation">Playstation</option>
+		<option {% ifequal rating.platform "PLAYSTATION 2" %}selected="selected"{% endifequal %} value="Playstation 2">Playstation 2</option>
+		<option {% ifequal rating.platform "PLAYSTATION 3" %}selected="selected"{% endifequal %} value="Playstation 3">Playstation 3</option>
+		<option {% ifequal rating.platform "XBOX" %}selected="selected"{% endifequal %} value="Xbox">Xbox</option>
+		<option {% ifequal rating.platform "XBOX360" %}selected="selected"{% endifequal %} value="Xbox 360">Xbox 360</option>
+		<option {% ifequal rating.platform "NINTENDO" %}selected="selected"{% endifequal %} value="Nintendo">Nintendo</option>
+		<option {% ifequal rating.platform "SUPER NINTENDO" %}selected="selected"{% endifequal %} value="Super Nintendo">Super Nintendo</option>
+		<option {% ifequal rating.platform "NINTENDO 64" %}selected="selected"{% endifequal %} value="Nintendo 64">Nintendo 64</option>
+		<option {% ifequal rating.platform "WII" %}selected="selected"{% endifequal %} value="Wii">Wii</option>
+		<option {% ifequal rating.platform "SEGA GENESIS" %}selected="selected"{% endifequal %} value="Sega Genesis">Sega Genesis</option>
+		<option {% ifequal rating.platform "GAMEBOY" %}selected="selected"{% endifequal %} value="Gameboy">Gameboy</option>
+		<option {% ifequal rating.platform "NINTENDO DS" %}selected="selected"{% endifequal %} value="Nintendo DS">Nintendo DS</option>
+		<option {% ifequal rating.platform "PSP" %}selected="selected"{% endifequal %} value="PSP">PSP</option>
+		<option {% ifequal rating.platform "PC" %}selected="selected"{% endifequal %} value="PC">PC</option>
+		<option {% ifequal rating.platform "MAC" %}selected="selected"{% endifequal %} value="Mac">Mac</option>
+		<option {% ifequal rating.platform "LINUX" %}selected="selected"{% endifequal %} value="Linux">Linux</option>
+		<option {% ifequal rating.platform "IPHONE" %}selected="selected"{% endifequal %} value="iPhone">iPhone</option>
+		<option {% ifequal rating.platform "ANDROID" %}selected="selected"{% endifequal %} value="Android">Android</option>
+		<option {% ifequal rating.platform "CELLPHONE" %}selected="selected"{% endifequal %} value="Cellphone">Cellphone</option>
 		</select></label>
-		<label>Title: <input type="text" name="title" value="{{rating.rated.title}}" /></label>
+		<label>Title: <input type="text" name="title" value="{{rating.title}}" /></label>
 	{% endifequal %}
 	<label>Rating: <input type="text" name="rating" value="{{rating.rating}}" /></label>
 	<label>Comment: <textarea name="comment">{{rating.comment}}</textarea></label>
