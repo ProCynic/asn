@@ -11,9 +11,11 @@
 {% endif %}
 
 {% if ratings %}
+	<div id="student_forms" class="clearfix">
 	{% for rating in ratings %}
 		{% include "ratingForm.html" %}
 	{% endfor %}
+	</div>
 {% endif %}
 
 <p>
