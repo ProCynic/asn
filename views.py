@@ -11,6 +11,9 @@ def getAverageRating(item) :
         total += x.rating
         items += 1
 
+    if items == 0 :
+        return (0, 0)
+
     return (total / items, items);
 
 
