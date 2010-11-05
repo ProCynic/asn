@@ -1,6 +1,62 @@
 <form method="post" action="/student/update/{{ rating.key }}">
 	{% ifequal rating.typename "Book" %}
-		BOOK
+		<label>Title: <input type="text" name="title" /></label>
+		<label>ISBN: <input type="text" name="isbn" /></label>
+		<label>Author: <input type="text" name="author" /></label>
 	{% endifequal %}
+	{% ifequal rating.typename "Paper" %}
+		<label>Type: <select name="paperType">
+		<option value="Journal">Journal</option>
+		<option value="Conference">Conference</option>
+		</select></label>
+		<label>Title: <input type="text" name="title" /></label>
+		<label>Author: <input type="text" name="author" /></label>
+	{% endifequal %}
+	{% ifequal rating.typename "Course" %}
+		<label>Unique: <input type="text" name="unique" /></label>
+		<label>Course Name: <input type="text" name="name" /></label>
+		<label>Course Number: <input type="text" name="num" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Instructor: <input type="text" name="instructor" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal rating.typename "Place" %}
+		<label>Type: <select name="ptype">
+		<option value="Live">Live</option>
+		<option value="Eat">Eat</option>
+		<option value="Fun">Fun</option>
+		<option value="Study">Study</option>
+		<option value="Internship">Internship</option>
+		</select></label>
+		<label>Name: <input type="text" name="name" /></label>
+		<label>Location: <input type="text" name="location" /></label>
+		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Year: <input type="text" name="year" /></label>
+	{% endifequal %}
+	{% ifequal rating.typename "Game" %}
+		<label>Platform: <select name="platform">
+		<option value="Playstation">Playstation</option>
+		<option value="Playstation 2">Playstation 2</option>
+		<option value="Playstation 3">Playstation 3</option>
+		<option value="Xbox">Xbox</option>
+		<option value="Xbox 360">Xbox 360</option>
+		<option value="Nintendo">Nintendo</option>
+		<option value="Super Nintendo">Super Nintendo</option>
+		<option value="Nintendo 64">Nintendo 64</option>
+		<option value="Wii">Wii</option>
+		<option value="Sega Genesis">Sega Genesis</option>
+		<option value="Gameboy">Gameboy</option>
+		<option value="Nintendo DS">Nintendo DS</option>
+		<option value="PSP">PSP</option>
+		<option value="PC">PC</option>
+		<option value="Mac">Mac</option>
+		<option value="Linux">Linux</option>
+		<option value="iPhone">iPhone</option>
+		<option value="Android">Android</option>
+		<option value="Cellphone">Cellphone</option>
+		</select></label>
+		<label>Title: <input type="text" name="title" /></label>
+	{% endifequal %}
+	<label>Rating: <input type="text" name="rating" /></label>
 	<input type="submit" value="Update/Save" />
 </form>
