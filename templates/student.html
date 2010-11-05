@@ -4,13 +4,11 @@
 
 {% block main %}
 
-{% if ratings %}
-	<div id="student_forms" class="clearfix">
-	{% for rating in ratings %}
-		{% include "ratingForm.html" %}
-	{% endfor %}
-	</div>
-{% endif %}
+<ul id="ratings">
+    {% for rating in ratings %}
+        {% include "rating.html" %}
+    {% endfor %}
+</ul>
 
 <p>
 <img src='/images/addbook.png' alt='lol'/>

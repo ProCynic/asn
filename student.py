@@ -16,10 +16,10 @@ class StudentPage(BaseRequestHandler) :
         DA = DataAccessor()
         session = getSessionByRequest(self)
         user = getSessionUser(session)
-        ratings = DA.getRatingsByUser(user)
-        ratings = addRatedTypename(ratings)
+        ratables = DA.getRatablesByUser(user)
+        ratables = addTypename(ratables)
         self.generate('student.html', {
-            'ratings': ratings
+            'ratables': ratables
         })
 
 class StudentNewRating(BaseRequestHandler) :
