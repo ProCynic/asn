@@ -176,6 +176,7 @@ class DataAccessor :
         for x in kwargs:
             assert x in type(obj).properties()
             setattr(obj, x, kwargs[x])
+        obj.put()
         return obj
 
     def getUser(self, uid, pw):
@@ -205,7 +206,9 @@ class DataAccessor :
 
     def clear(self, students=False):
         for x in Ratable.all(): self.delete(x)
-        if students: for x in User.all(): if x.userType = 'STUDENT': self.delete(x)
+        if students:
+            for x in User.all():
+                if x.userType == 'STUDENT': self.delete(x)
     
 
     def _pkeyCheck(self, pkey, obj):
