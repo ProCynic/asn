@@ -63,4 +63,9 @@ class Browser(BaseRequestHandler) :
         if not filter :
             filter = 'all'
 
-        self.redirect('/browse/' + filter + "/" + self.request.get('sort'))
+        sort = self.request.get('sort')
+
+        if not sort :
+            sort = 'desc'
+
+        self.redirect('/browse/' + filter + "/" + sort)

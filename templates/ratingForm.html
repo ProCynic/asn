@@ -20,14 +20,31 @@
 		<label>Instructor: <input type="text" name="instructor" value="{{rating.rated.instructor}}" /></label>
 		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
 	{% endifequal %}
-	{% ifequal rating.rated.typename "Place" %}
-		<label>Type: <select name="ptype">
-		<option value="Live">Live</option>
-		<option value="Eat">Eat</option>
-		<option value="Fun">Fun</option>
-		<option value="Study">Study</option>
-		<option value="Internship">Internship</option>
-		</select></label>
+	{% ifequal rating.rated.typename "Internship" %}
+		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% endifequal %}
+	{% ifequal rating.rated.typename "PlaceLive" %}
+		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% endifequal %}
+	{% ifequal rating.rated.typename "PlaceEat" %}
+		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% endifequal %}
+	{% ifequal rating.rated.typename "PlaceStudy" %}
+		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
+		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
+		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>
+		<label>Year: <input type="text" name="year" value="{{rating.rated.year}}" /></label>
+	{% endifequal %}
+	{% ifequal rating.rated.typename "PlaceFun" %}
 		<label>Name: <input type="text" name="name" value="{{rating.rated.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.rated.location}}" /></label>
 		<label>Semester: <input type="text" name="semester" value="{{rating.rated.semester}}" /></label>

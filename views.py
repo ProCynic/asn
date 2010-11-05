@@ -11,9 +11,6 @@ def getAverageRating(item) :
         total += x.rating
         items += 1
 
-    if items == 0 :
-        return 100
-
     return (total / items, items);
 
 
@@ -44,9 +41,11 @@ def getAverageGrade(item) :
         'D-' :0.67,
         'F' : 0
     }
-
+    
+    #This is a map of gpa -> letter
     valuemap = dict([ (v, k) for (k, v) in grademap.iteritems()])
 
+    #Accumulate the grades, translated into GPA points.
     grade = 0
     count = 0
     for x in query : 
@@ -55,9 +54,15 @@ def getAverageGrade(item) :
             grade += grademap[g]
             count += 1
 
+    if count == 0 :
+        return 'None'
+
+    #Average the GPA and then find the letter that should be assigned to it.
     grade = grade / count
+
     prevgrade = 0
-    for x in sorted(grademap.values(),reverse=True) :
+    for x in sorted(grademap.values()) :
+        #Once we find a letter higher than our grade, return the previous letter.
         if (grade < x) :
             grade = prevgrade
             break
