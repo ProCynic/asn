@@ -32,7 +32,8 @@ class DataAccessor :
                              Ratable : Rating,
                              Rating : Comment,
                              User : Grade,
-                             User : Session}
+                             User : Session,
+                             Course : Grade}
 
     def _errHandler(self, err) :
         raise Usage("Duplicate entry: " + str(err))
@@ -198,10 +199,11 @@ class DataAccessor :
 
     def delete(self, obj):
         assert issubclass(type(obj),db.Model)
-        if type(obj) in self.dependencies:
-            for x in self.dependencies[type(obj)].all():
-                for y in x:
-                    if y[1] == obj: self.delete(x)
+        for x in self.dependencies:
+            if type(obj) is x or issubclass(type(obj), x):
+                for item in self.dependencies[x].all():
+                    for prop in item:
+                        if prop[1] == obj: self.delete(item)
         obj.delete()
 
     def clear(self, students=False):

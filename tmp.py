@@ -1,39 +1,9 @@
 from dataStore import *
 import random
-import dataAccessors
+from dataAccessors import DataAccessor
 
 x = Ratable.all().get()
 
-print x.__class__.__name__
+DA = DataAccessor()
 
-def randString(n):
-        alphanum = "abcdefghijklmnopqrstuvwxyz"
-        alphanum += alphanum.upper()
-        alphanum += "0123456789"
-        alphanum += "~!@#$%^&*()-_=+:;/?"
-        string = ""
-        gen = random.Random()
-        for x in range(n):
-                string += alphanum[gen.randint(0,len(alphanum)-1)]
-        return string
-def uidgen():
-    return randString(8)
-def passgen():
-    return randString(12)
-
-DA = dataAccessors.DataAccessor()
-uid = uidgen()
-pw = passgen()
-DA.addAdmin(uid, pw)
-print "admin"
-print uid
-print pw
-
-uid = uidgen()
-pw = passgen()
-DA.addStudent(uid, pw)
-
-
-print "student"
-print uid
-print pw
+DA.delete(x)
