@@ -5,6 +5,19 @@ from dataStore import *
 from ourExceptions import *
 
 
+"""
+    Utility functions for views.
+
+"""
+def addTypename(query) :
+    temp = []
+    for x in query :
+        x.typename = x.__class__.__name__
+        temp.append(x)
+    return temp
+
+
+
 class DataAccessor :
     def __init__(self, func=None) :
         if func: self._errHandler = func

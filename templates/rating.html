@@ -2,7 +2,17 @@
 <li class='rating'>
 
 {% ifequal rating.typename "Book" %}
-    <p class='name'>Book <span class='avg'> Average Rating: {{rating.rating}} </span> </p>
+    <p class='name'>Book <span class='avg'>
+    {% ifequal rating.ratingCount 0 %} 
+        No ratings
+    {% else %}
+        {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+    {% endifequal %}
+    </span> 
+    
+    
+    
+    </p>
     <span class='title'>{{ rating.title }}</span> <br/>
     <span class='author'>by {{ rating.author }}</span>
     <span class='isbn'>| ISBN: {{ rating.isbn }}</span> <br/>
@@ -10,8 +20,15 @@
 
 
 {% ifequal rating.typename "Course" %}
-    <p class='name'>Course<span class='avg'> Average Rating: {{rating.rating}} </span> </p>
-    <span class='title'>{{ rating.name }}</span> <br/>
+    <p class='name'>Course <span class='avg'>
+    {% ifequal rating.ratingCount 0 %} 
+        No ratings
+    {% else %}
+        {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+    {% endifequal %}
+    </span> 
+    </p>
+    <span class='title'>{{ rating.name }}</span> <br/>:
     <span class='author'>by {{ rating.instructor }}</span>
     <span class='isbn'>| Semester: {{ rating.semester }} {{ rating.year }} </span> <br/>
 {% endifequal %}

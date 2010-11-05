@@ -4,7 +4,7 @@ from acls import *
 from exporter import export
 from ourExceptions import *
 from importer import Importer 
-from dataAccessors import DataAccessor
+from dataAccessors import DataAccessor, addTypename
 import dataStore as DS
 
 
@@ -42,7 +42,7 @@ class Browser(BaseRequestHandler) :
         """
         DA = DataAccessor()
 
-        query = DS.Ratable.all()
+        query = addTypename(DS.Ratable.all())
 
         temp = []
         for x in query :
