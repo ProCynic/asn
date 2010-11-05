@@ -274,7 +274,7 @@ gamePlatforms = [
     "MAC",
     "LINUX",
     "GAMEBOY",
-    "NINTE`NDO DS",
+    "NINTENDO DS",
     "PSP",
     "IPHONE",
     "ANDROID",

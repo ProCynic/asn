@@ -73,11 +73,13 @@ body {
 
 #message {
     background-color: #CCCCCC;
-    border: 1px solid #444444;
+    border-width:0 1px 1px;
+    border-style: solid;
+    border-color: #444444;
     padding: 1em;
     margin-bottom: 1em;
-    -moz-border-radius: 0.2em;
-    border-radius: 0.2em;
+    border-bottom-left-radius: 0.2em 0.2em;
+    border-bottom-right-radius: 0.2em 0.2em;
 }
 
 #login_form {
@@ -115,16 +117,14 @@ body {
             float:left;
         }
 
-#export, #import {
-    background-color:#F2D9B1;
-    border:1px solid #444444;
-    margin: 0 0 1em;
-    padding:1em;
-}
 
 #main fieldset {
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
+    background-color:#F2D9B1;
+    border:1px solid #444444;
+    margin: 0 0 1em;
+    padding:1em;
 }
 
 #export input, #import input {
@@ -150,25 +150,14 @@ body {
     margin-bottom:1em;
 }
 
-<<<<<<< HEAD
-
 ul#ratings {
     margin: 1em 0px;
-=======
-#ratings {
-	padding: 0;
-	margin: 0 0 0 -2em;
-	width: 100%;
-}
-#ratings ul {
-    margin: 0px;
->>>>>>> 74587c7b93a8ef400237dab1d40c93457f75bcc7
     padding: 0px;
 }
 
 #ratings li.rating {
     list-style: none;
-    margin: 0px 10px 10px 0px;
+    margin: 0px 0 10px 0px;
     padding: 0px 0px 10px 0px;
     border: 1px gray solid;
 }
@@ -223,16 +212,28 @@ ul#ratings {
 #ratings .avg
 {
     float: right;
-}
-
-#student_forms {
-    
+    padding-right:5px;
 }
 #student_forms form {
     float:left;
+    display:block;
+    width: 36.923em;
+    margin-bottom:2em;
 }
 #student_forms form label {
     display:block;
+    text-align:right;
+    padding-right: 10em;
+}
+#student_forms form label input, #student_forms form label select {
+    width: 20em;
+    padding: 0em;
+}
+#student_forms form label select {
+    width:20.5em;
+}
+#student_forms form input[type=submit] {
+    margin-left: 11em;
 }
 
 

@@ -16,10 +16,10 @@ class StudentPage(BaseRequestHandler) :
         DA = DataAccessor()
         session = getSessionByRequest(self)
         user = getSessionUser(session)
-        ratings = DA.getRatingsByUser(user)
-        ratings = addRatedTypename(ratings)
+        ratables = DA.getRatablesByUser(user)
+        ratables = addTypename(ratables)
         self.generate('student.html', {
-            'ratings': ratings
+            'ratables': ratables
         })
 
 class StudentNewRating(BaseRequestHandler) :
@@ -36,14 +36,16 @@ class StudentNewRating(BaseRequestHandler) :
             author = self.request.get('author')
             b = DA.addBook( title, isbn, author )
             rating = self.request.get('rating')
-            DA.addRating( b, user, rating, comment=None)
+            comment = self.request.get('comment')
+            DA.addRating( b, user, rating, comment=comment)
         elif typename == 'Paper':
             paperType = self.request.get('paperType').upper()
             title = self.request.get('title')
             author = self.request.get('author')
             p = DA.addPaper( paperType, title, author )
             rating = self.request.get('rating')
-            DA.addRating( p, user, rating, comment=None)
+            comment = self.request.get('comment')
+            DA.addRating( p, user, rating, comment=comment)
         elif typename == 'Course':
             unique = self.request.get('unique')
             courseNum = self.request.get('courseNum')
@@ -53,13 +55,15 @@ class StudentNewRating(BaseRequestHandler) :
             instructor = self.request.get('instructor')
             c = DA.addCourse( unique, courseNum, name, semester, year, instructor )
             rating = self.request.get('rating')
-            DA.addRating( c, user, rating, comment=None)
+            comment = self.request.get('comment')
+            DA.addRating( c, user, rating, comment=comment)
         elif typename == 'Game':
             platform = self.request.get('platform')
             title = self.request.get('title')
             g = DA.addGame( platform, title )
             rating = self.request.get('rating')
-            DA.addRating( g, user, rating, comment=None)
+            comment = self.request.get('comment')
+            DA.addRating( g, user, rating, comment=comment)
         elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
             name = self.request.get('platform')
             location = self.request.get('title')
@@ -67,10 +71,19 @@ class StudentNewRating(BaseRequestHandler) :
             year = self.request.get('title')
             p = DA.addPlace( name, location, semester, year, typename )
             rating = self.request.get('rating')
-            DA.addRating( p, user, rating, comment=None)
+            comment = self.request.get('comment')
+            DA.addRating( p, user, rating, comment=comment)
         
         setSessionMessage(session, 'Successfully added new rating!')
         self.redirect('/student')
+
+class StudentEditRating(BaseRequestHandler) :
+    @user
+    def get(self, key=0):
+        rating = db.get(db.Key(key))
+        self.generate('studentEdit.html', {
+            'rating': rating
+        })
 
 class StudentUpdateRating(BaseRequestHandler) :
     @user
@@ -99,10 +112,10 @@ class StudentUpdateRating(BaseRequestHandler) :
             year = self.request.get('year')
             DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year ) # instructor=instructor
         elif typename == 'Game':
-            platform = self.request.get('platform')
+            platform = self.request.get('platform').upper()
             title = self.request.get('title')
             DA.update( rated, platform=platform, title=title )
-        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
+        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceStudy':
             name = self.request.get('platform')
             location = self.request.get('title')
             semester = self.request.get('title')
