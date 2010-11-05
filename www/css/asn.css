@@ -117,16 +117,14 @@ body {
             float:left;
         }
 
-#export, #import {
-    background-color:#F2D9B1;
-    border:1px solid #444444;
-    margin: 0 0 1em;
-    padding:1em;
-}
 
 #main fieldset {
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
+    background-color:#F2D9B1;
+    border:1px solid #444444;
+    margin: 0 0 1em;
+    padding:1em;
 }
 
 #export input, #import input {
