@@ -19,6 +19,9 @@
 			<div id="header">
 				<div class="content">
 					<h1><a href="/">{{ application_name }}</a> - <a href="{{ request.path }}">{{ title }}</a></h1>
+					{% if subtitle %}
+						<h2><p>{{subtitle}}</p></h2>
+					{% endif %}
 					<ul id="nav">
 						<li><a href="/">browse</a></li>
 						{% if user %}
@@ -48,7 +51,12 @@
 				{% if user %}
 					{{ user }}
 				    {% ifequal user.userType 'STUDENT' %}
-				    <p> You're a Student! </p>
+				    <span>
+				    	<ul>
+				    		<li><p>Add Book</p></li>
+				    		<li><p>Add Course</p></li>
+				    	</ul>
+				    </span>
 				    {% endifequal %}
 				{% endif %}
 				{% block footer %}{% endblock %}
