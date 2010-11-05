@@ -192,6 +192,7 @@ body {
     width: 100%;
     border-bottom: 1px solid gray;
     font-size: large;
+    color: gray;
 }
 
 #ratings .title 
@@ -199,16 +200,14 @@ body {
     font-size: large;
 }
 
-#ratings .author
+#ratings .detail
 {
     font-size: small;
     color: gray;
 }
 
-#ratings .isbn 
+#ratings .summary 
 {
-    font-size: small;
-    color: gray;
 }
 
 #ratings .avg

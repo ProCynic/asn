@@ -9,13 +9,10 @@
         {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
     {% endifequal %}
     </span> 
-    
-    
-    
     </p>
     <span class='title'>{{ rating.title }}</span> <br/>
-    <span class='author'>by {{ rating.author }}</span>
-    <span class='isbn'>| ISBN: {{ rating.isbn }}</span> <br/>
+    <span class='detail'>by {{ rating.author }}</span>
+    <span class='detail'>| ISBN: {{ rating.isbn }}</span> <br/>
 {% endifequal %}
 
 
@@ -28,10 +25,118 @@
     {% endifequal %}
     </span> 
     </p>
-    <span class='title'>{{ rating.name }}</span> <br/>:
-    <span class='author'>by {{ rating.instructor }}</span>
-    <span class='isbn'>| Semester: {{ rating.semester }} {{ rating.year }} </span> <br/>
+    <span class='title'>{{rating.courseNum}} : {{ rating.name }} ({{rating.unique}})</span> <br/>
+    <span class='summary'>Average Grade: {{rating.avgGrade}} </span><br/>
+    <span class='detail'>Instructor: {{ rating.instructor }}</span>
+    <span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> <br/>
 {% endifequal %}
+
+
+{% ifequal rating.typename "Paper" %}
+<p class='name'> {{rating.paperType|lower|capfirst}} <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.title}}</span> <br/>
+<span class='detail'>By: {{ rating.author }}</span>
+{% endifequal %}
+
+{% ifequal rating.typename "Internship" %}
+<p class='name'> Internship <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.name}}</span> <br/>
+<span class='detail'>At: {{ rating.location }}</span>
+<span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> 
+{% endifequal %}
+
+{% ifequal rating.typename "PlaceLive" %}
+<p class='name'> Living Place <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.name}}</span> <br/>
+<span class='detail'>At: {{ rating.location }}</span>
+<span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> 
+{% endifequal %}
+
+{% ifequal rating.typename "PlaceEat" %}
+<p class='name'> Eating Place <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.name}}</span> <br/>
+<span class='detail'>At: {{ rating.location }}</span>
+<span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> 
+{% endifequal %}
+
+{% ifequal rating.typename "PlaceFun" %}
+<p class='name'> Fun Place <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.name}}</span> <br/>
+<span class='detail'>At: {{ rating.location }}</span>
+<span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> 
+{% endifequal %}
+
+
+{% ifequal rating.typename "PlaceStudy" %}
+<p class='name'> Studying Place <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.name}}</span> <br/>
+<span class='detail'>At: {{ rating.location }}</span>
+<span class='detail'>| Semester: {{ rating.semester }} {{ rating.year }} </span> 
+{% endifequal %}
+
+
+{% ifequal rating.typename "Game" %}
+<p class='name'> Game <span class='avg'>
+{% ifequal rating.ratingCount 0 %} 
+    No ratings
+{% else %}
+    {{rating.rating}}% with {{rating.ratingCount}} rating {{rating.ratingCount|pluralize}}
+{% endifequal %}
+</span> 
+</p>
+<span class='title'>{{rating.title}}</span> <br/>
+<span class='detail'>{{rating.platform}} </span> 
+{% endifequal %}
+
+
+
+
+
+
+
+
 
 
 
