@@ -25,43 +25,94 @@ class StudentPage(BaseRequestHandler) :
 class StudentNewRating(BaseRequestHandler) :
     @user
     def post(self):
-        # rating = Rating()
-        # assign attributes from form # self.request.get('name'), etc
+        
+        DA = DataAccessor()
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        
+        if typename == 'Book':
+            isbn = self.request.get('isbn')
+            title = self.request.get('title')
+            author = self.request.get('author')
+            b = DA.addBook( title, isbn, author )
+            rating = self.request.get('rating')
+            DA.addRating( b, user, rating, comment=None)
+        elif typename == 'Paper':
+            paperType = self.request.get('paperType').upper()
+            title = self.request.get('title')
+            author = self.request.get('author')
+            p = DA.addPaper( paperType, title, author )
+            rating = self.request.get('rating')
+            DA.addRating( p, user, rating, comment=None)
+        elif typename == 'Course':
+            unique = self.request.get('unique')
+            courseNum = self.request.get('courseNum')
+            name = self.request.get('name')
+            semester = self.request.get('semester').upper()
+            year = self.request.get('year')
+            instructor = self.request.get('instructor')
+            c = DA.addCourse( unique, courseNum, name, semester, year, instructor )
+            rating = self.request.get('rating')
+            DA.addRating( c, user, rating, comment=None)
+        elif typename == 'Game':
+            platform = self.request.get('platform')
+            title = self.request.get('title')
+            g = DA.addGame( platform, title )
+            rating = self.request.get('rating')
+            DA.addRating( g, user, rating, comment=None)
+        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
+            name = self.request.get('platform')
+            location = self.request.get('title')
+            semester = self.request.get('title')
+            year = self.request.get('title')
+            p = DA.addPlace( name, location, semester, year, typename )
+            rating = self.request.get('rating')
+            DA.addRating( p, user, rating, comment=None)
+        
+        setSessionMessage(session, 'Successfully added new rating!')
         self.redirect('/student')
 
 class StudentUpdateRating(BaseRequestHandler) :
     @user
     def post(self, key=0):
+        DA = DataAccessor()
         rating = db.get(db.Key(key))
         rated = rating.rated
         typename = rated.__class__.__name__
         
         if typename == 'Book':
-            rated.isbn = self.request.get('isbn')
-            rated.title = self.request.get('title')
-            rated.author = self.request.get('author')
+            isbn = self.request.get('isbn')
+            title = self.request.get('title')
+            #author = self.request.get('author')
+            DA.update( rated, isbn=isbn, title=title )#, author=author )
         elif typename == 'Paper':
-            rated.paperType = self.request.get('paperType')
-            rated.title = self.request.get('title')
-            rated.author = self.request.get('author')
+            paperType = self.request.get('paperType').upper()
+            title = self.request.get('title')
+            #author = self.request.get('author')
+            DA.update( rated, paperType=paperType, title=title )#, author=author )
         elif typename == 'Course':
-            rated.unique = self.request.get('unique')
-            rated.courseNum = self.request.get('courseNum')
-            rated.name = self.request.get('name')
-            rated.semester = self.request.get('semester')
-            rated.instructor = self.request.get('instructor')
-            rated.year = self.request.get('year')
+            unique = self.request.get('unique')
+            courseNum = self.request.get('courseNum')
+            name = self.request.get('name')
+            semester = self.request.get('semester').upper()
+            instructor = self.request.get('instructor')
+            year = self.request.get('year')
+            DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year ) # instructor=instructor
         elif typename == 'Game':
-            rated.platform = self.request.get('platform')
-            rated.title = self.request.get('title')
+            platform = self.request.get('platform')
+            title = self.request.get('title')
+            DA.update( rated, platform=platform, title=title )
         elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
-            rated.name = self.request.get('platform')
-            rated.location = self.request.get('title')
-            rated.semester = self.request.get('title')
-            rated.year = self.request.get('title')
-            
-        rating.rated = rated
-        rating.put()
+            name = self.request.get('platform')
+            location = self.request.get('title')
+            semester = self.request.get('title')
+            year = self.request.get('title')
+            DA.update( rated, name=name, location=location, semester=semester, year=year )
+        
+        DA.update( rating, rating=int(self.request.get('rating')) )
+        
+        session = getSessionByRequest(self)
+        setSessionMessage(session, 'Successfully updated rating!')
         self.redirect('/student')
 
 class StudentPasswordPage(BaseRequestHandler):

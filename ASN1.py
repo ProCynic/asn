@@ -174,7 +174,7 @@ def main():
     ('/admin', AdminPage),
     ('/admin/export', AdminExport),
     ('/admin/import', AdminImport),
-    ('/admin/reset', AdminReset)
+    ('/admin/clear', AdminClear)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 

@@ -28,6 +28,11 @@ def addRatedTypename(query) :
 class DataAccessor :
     def __init__(self, func=None) :
         if func: self._errHandler = func
+        self.dependencies = {User : Rating,
+                             Ratable : Rating,
+                             Rating : Comment,
+                             User : Grade,
+                             User : Session}
 
     def _errHandler(self, err) :
         raise Usage("Duplicate entry: " + str(err))
@@ -164,6 +169,16 @@ class DataAccessor :
             setattr(old, x, getattr(new, x))
         return old
 
+
+    def update(self, obj, **kwargs):
+        assert obj.is_saved()
+        assert issubclass(type(obj), db.Model)
+        for x in kwargs:
+            assert x in type(obj).properties()
+            setattr(obj, x, kwargs[x])
+        obj.put()
+        return obj
+
     def getUser(self, uid, pw):
         pkey = ['uid', 'password']
         u = User(uid=uid, password=pw, userType='STUDENT') # userType is ignored.  This is a hack to let us use _pkeyCheck.
@@ -180,6 +195,21 @@ class DataAccessor :
         ratings = Rating.all()
         ratings.filter('rater =', user.key())
         return ratings
+
+    def delete(self, obj):
+        assert issubclass(type(obj),db.Model)
+        if type(obj) in self.dependencies:
+            for x in self.dependencies[type(obj)].all():
+                for y in x:
+                    if y[1] == obj: self.delete(x)
+        obj.delete()
+
+    def clear(self, students=False):
+        for x in Ratable.all(): self.delete(x)
+        if students:
+            for x in User.all():
+                if x.userType == 'STUDENT': self.delete(x)
+    
 
     def _pkeyCheck(self, pkey, obj):
         objType = obj.__class__

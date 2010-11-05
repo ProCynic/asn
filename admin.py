@@ -18,6 +18,12 @@ class AdminPage(BaseRequestHandler) :
     def post(self) : 
         self.redirect('/admin')
 
+class AdminClear(BaseRequestHandler):
+    @admin
+    def get(self) :
+        DA = DataAccessor()
+        DA.clear()
+        self.redirect('/admin')
 
 class AdminExport(BaseRequestHandler) :
     @admin 

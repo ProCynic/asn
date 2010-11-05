@@ -150,9 +150,19 @@ body {
     margin-bottom:1em;
 }
 
+<<<<<<< HEAD
 
 ul#ratings {
     margin: 1em 0px;
+=======
+#ratings {
+	padding: 0;
+	margin: 0 0 0 -2em;
+	width: 100%;
+}
+#ratings ul {
+    margin: 0px;
+>>>>>>> 74587c7b93a8ef400237dab1d40c93457f75bcc7
     padding: 0px;
 }
 
@@ -214,3 +224,22 @@ ul#ratings {
 {
     float: right;
 }
+
+#student_forms {
+    
+}
+#student_forms form {
+    float:left;
+}
+#student_forms form label {
+    display:block;
+}
+
+
+
+/* >> The Magnificent CLEARFIX << */
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }
+
