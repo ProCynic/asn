@@ -5,6 +5,7 @@ from exporter import export
 from ourExceptions import *
 from importer import Importer 
 from dataAccessors import DataAccessor, addRatedTypename
+from views import prepareDataForTemplate
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -16,10 +17,11 @@ class StudentPage(BaseRequestHandler) :
         DA = DataAccessor()
         session = getSessionByRequest(self)
         user = getSessionUser(session)
-        ratables = DA.getRatablesByUser(user)
-        ratables = addTypename(ratables)
+        ratings = DA.getRatingsByUser(user)
+        ratings = addRatedTypename(ratings)
+        #ratings = prepareDataForTemplate(ratings)
         self.generate('student.html', {
-            'ratables': ratables
+            'ratings': ratings
         })
 
 class StudentNewRating(BaseRequestHandler) :
@@ -81,9 +83,12 @@ class StudentEditRating(BaseRequestHandler) :
     @user
     def get(self, key=0):
         rating = db.get(db.Key(key))
+        typename = str(rating.__class__.__name__)
         self.generate('studentEdit.html', {
+            'typename': typename,
             'rating': rating
         })
+
 
 class StudentUpdateRating(BaseRequestHandler) :
     @user
