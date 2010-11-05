@@ -13,15 +13,28 @@ class StudentPage(BaseRequestHandler) :
             Shows the student.html file, which 
             is supposed to be blank.
         """
+        DA = DataAccessor()
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        ratings = DA.getRatingsByUser(user)
         self.generate('student.html', {
-            # variables
+            'ratings': ratings
         })
-    @user
 
+class StudentNewRating(BaseRequestHandler) :
+    @user
     def post(self):
-        # ex1 = self.request.get('ex1')
-        # fn's
-        self.redirect('/edit')
+        # rating = Rating()
+        # assign attributes from form # self.request.get('name'), etc
+        self.redirect('/student')
+
+class StudentUpdateRating(BaseRequestHandler) :
+    @user
+    def post(self, key=0):
+        rating = db.get(db.Key(key))
+        # assign new values
+        rating.put()
+        self.redirect('/student')
 
 class StudentPasswordPage(BaseRequestHandler):
     @user

@@ -166,6 +166,8 @@ def main():
     ('/logout', Logout),
     ('/createUser', CreateUser),
     ('/student', StudentPage),
+    ('/student/new', StudentNewRating),
+    ('/student/update/(.*)', StudentUpdateRating),
     ('/student/password', StudentPasswordPage),
     ('/admin', AdminPage),
     ('/admin/export', AdminExport),

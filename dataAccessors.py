@@ -155,6 +155,11 @@ class DataAccessor :
     
     def getAllRatings(self):
         return Rating.all()
+    
+    def getRatingsByUser(self, user):
+        ratings = Rating.all()
+        ratings.filter('rater =', user.key())
+        return ratings
 
     def _pkeyCheck(self, pkey, obj):
         objType = obj.__class__

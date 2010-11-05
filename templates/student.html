@@ -3,6 +3,13 @@
 {% block head %}{% endblock %}
 
 {% block main %}
+
+{% if ratings %}
+	{% for rating in ratings %}
+        {% include "ratingForm.html" %}
+	{% endfor %}
+{% endif %}
+
 <p>
 WHERE DOES THIS SHOW
 <img src='/images/addbook.png' alt='lol'/>

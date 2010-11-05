@@ -1,0 +1,7 @@
+
+<form method="post" action="/student/update/{{ rating.key }}">
+	{{ ifequal rating.typename "Book" }}
+		BOOK
+	{{ endifequal }}
+	<input type="submit" value="Update/Save" />
+</form>
