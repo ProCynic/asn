@@ -158,23 +158,25 @@ ul#ratings {
 #ratings li.rating {
     list-style: none;
     margin: 0px 0 10px 0px;
-    padding: 0px 0px 10px 0px;
+    padding: 0px 0px 10px 5px;
     border: 1px gray solid;
 }
 
 #ratings a.rated
 {
     color: black;
+    text-decoration: none;
 }
 
 #ratings a:hover.rated
 {
-    color: red;
+    color: black;
+    text-decoration: underline;
 }
 
 #ratings .ratingbar 
 {
-    margin: 0px 0px -10px 0px;
+    margin: 0px 0px -10px -5px;
     padding: 0px;
     height: 5px;
 }
