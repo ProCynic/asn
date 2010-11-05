@@ -203,8 +203,9 @@ class DataAccessor :
                     if y[1] == obj: self.delete(x)
         obj.delete()
 
-    def clear(self):
-        pass
+    def clear(self, students=False):
+        for x in Ratable.all(): self.delete(x)
+        if students: for x in User.all(): if x.userType = 'STUDENT': self.delete(x)
     
 
     def _pkeyCheck(self, pkey, obj):
