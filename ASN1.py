@@ -109,6 +109,7 @@ class CreateUser(BaseRequestHandler):
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
+    @user
     def get(self,key=0):
         """
         """
@@ -134,6 +135,7 @@ class Sweep(BaseRequestHandler) :
         self.redirect('/')
 
 class Session(BaseRequestHandler) :
+    @admin
     def get(self) :
         sessions = DS.Session.all()
         for s in sessions : 
