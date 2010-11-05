@@ -4,12 +4,6 @@
 
 {% block main %}
 
-{% if msg %}
-<div id="message">
-    {{ msg }}
-</div>
-{% endif %}
-
 {% if ratings %}
 	<div id="student_forms" class="clearfix">
 	{% for rating in ratings %}
