@@ -119,12 +119,13 @@ class Ratable(BaseRequestHandler):
             title = ratable.title
         else:
             assert False
+        
+        ratable.name = title
         ratableType = str(type(ratable))[18:-2]
         ratings = DA.getAllRatings().filter('rated =',ratable)
         self.generate('ratable.html', {
-            'subtitle': title + ' ('+ratableType+')',
+            'ratable' : ratable,
             'type' : ratableType,
-            'content': str(ratable),
             'ratings': ratings
         })
 

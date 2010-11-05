@@ -4,14 +4,22 @@
 
 {% block main %}
 
-    {{ content }}
-    
+    <h2>
+        {{ ratable.name }}        
+    </h2>
+
     {% if ratings %}
     <ul id="ratings">
         {% for rating in ratings %}
         <li class="rating">
-            <span class="score">{{ rating.rating }}</span>
-            <span class="comment">{{ rating.comment }}</span>
+            
+
+            <p>
+                {{rating.comment}}
+            </p>
+
+            <span class="score">{{ rating.rating }} / 100</span>
+            
         </li>
         {% endfor %}
     </ul>

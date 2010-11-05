@@ -20,6 +20,17 @@ body {
     #header h1 {
         margin:0;
     }
+
+    #header h2 
+    {
+        margin: 0;
+    }
+
+#header h2 p 
+{
+    margin: 0px;
+}
+
     #header a {
         color:#444444;
         text-decoration:none;
