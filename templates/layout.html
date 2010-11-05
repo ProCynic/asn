@@ -46,6 +46,7 @@
 			<div id="footer">
 				<p> A footer </p>
 				{% if user %}
+					{{ user }}
 				    {% ifequal user.userType 'STUDENT' %}
 				    <p> You're a Student! </p>
 				    {% endifequal %}

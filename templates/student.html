@@ -4,6 +4,12 @@
 
 {% block main %}
 
+{% if msg %}
+<div id="message">
+    {{ msg }}
+</div>
+{% endif %}
+
 {% if ratings %}
 	{% for rating in ratings %}
 		{% include "ratingForm.html" %}
@@ -11,7 +17,6 @@
 {% endif %}
 
 <p>
-WHERE DOES THIS SHOW
 <img src='/images/addbook.png' alt='lol'/>
 </p>
 

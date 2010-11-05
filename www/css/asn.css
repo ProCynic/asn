@@ -150,7 +150,11 @@ body {
     margin-bottom:1em;
 }
 
-
+#ratings {
+	padding: 0;
+	margin: 0 0 0 -2em;
+	width: 100%;
+}
 #ratings ul {
     margin: 0px;
     padding: 0px;
@@ -158,8 +162,11 @@ body {
 
 #ratings li.rating {
     list-style: none;
-    margin: 0px 0px 10px 0px;
-    padding: 0px 0px 10px 0px;
+    float: left;
+    height:7em;
+    margin: 0px 0px 10px 5%;
+    padding: 0px 0px 10px;
+    width: 44%;
     border: 1px gray solid;
 }
 
