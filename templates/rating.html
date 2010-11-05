@@ -1,7 +1,61 @@
 
 <li class='rating'>
-    <span class='name'> {{ rating.rated.name }} </span>
-    <span class='score'> {{ rating.rating }} </span>
+
+{% ifequal rating.typename "Book" %}
+    <p class='name'>Book <span class='avg'> Average Rating: {{rating.rating}} </span> </p>
+    <span class='title'>{{ rating.title }}</span> <br/>
+    <span class='author'>by {{ rating.author }}</span>
+    <span class='isbn'>| ISBN: {{ rating.isbn }}</span> <br/>
+{% endifequal %}
+
+
+{% ifequal rating.typename "Course" %}
+    <p class='name'>Course<span class='avg'> Average Rating: {{rating.rating}} </span> </p>
+    <span class='title'>{{ rating.name }}</span> <br/>
+    <span class='author'>by {{ rating.instructor }}</span>
+    <span class='isbn'>| Semester: {{ rating.semester }} {{ rating.year }} </span> <br/>
+{% endifequal %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='ratingbar {{rating.ratingClass}}' style="width: {{rating.rating}}%"></div>
 </li>
 
 
