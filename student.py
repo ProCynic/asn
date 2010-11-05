@@ -4,7 +4,7 @@ from acls import *
 from exporter import export
 from ourExceptions import *
 from importer import Importer 
-from dataAccessors import DataAccessor
+from dataAccessors import DataAccessor, addTypename
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -17,6 +17,7 @@ class StudentPage(BaseRequestHandler) :
         session = getSessionByRequest(self)
         user = getSessionUser(session)
         ratings = DA.getRatingsByUser(user)
+        ratings = addTypename(ratings)
         self.generate('student.html', {
             'ratings': ratings
         })

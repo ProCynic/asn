@@ -1,7 +1,6 @@
-
 <form method="post" action="/student/update/{{ rating.key }}">
-	{{ ifequal rating.typename "Book" }}
+	{% ifequal rating.typename "Book" %}
 		BOOK
-	{{ endifequal }}
+	{% endifequal %}
 	<input type="submit" value="Update/Save" />
 </form>
