@@ -104,7 +104,7 @@ class CreateUser(BaseRequestHandler):
         message  = "Your account has been created. Please store the following information in a secure location.<br/>"
         message += "<span class='credential'>UserID: %s</span><br/>" % user.uid
         message += "<span class='credential'>Password: %s</span><br/>" % user.password
-        message += "<a href='/student/password'>Change Password</a>"
+        message += "Change your password: <a href='/student/password'>Manage Account</a>"
 
 
         setSessionMessage(session, message)
@@ -117,20 +117,16 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        if hasattr(ratable,'name'):
-            title = ratable.name
-        elif hasattr(ratable,'title'):
-            title = ratable.title
-       
-        ratable.name = title
-        ratableType = getUndecoratedTypename(ratable)  
+        unified = unify(ratable)
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
-        
+       
+        user = getSessionUser(getSessionByRequest(self))
+
         self.generate('ratable.html', {
-            'ratable' : ratable,
-            'type' : ratableType,
-            'ratings': ratings
+            'ratable' : unified,
+            'ratings': ratings,
+            'user': user
         })
 
 class Sweep(BaseRequestHandler) :
@@ -164,6 +160,7 @@ def main():
     ('/logout/?', Logout),
     ('/createUser/?', CreateUser),
     ('/student/?', StudentPage),
+    ('/student/addrating/(.*)', StudentAddRating),
     ('/student/save/?', StudentSaveRating),
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentEditRating),

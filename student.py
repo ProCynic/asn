@@ -6,7 +6,7 @@ from ourExceptions import *
 from importer import Importer 
 import dataStore as DS
 from dataAccessors import DataAccessor, addRatedTypename
-from views import prepareRatingsForTemplate, unify, getUserRating, validRating
+from views import prepareRatingsForTemplate, unify, getUserRating, validRating, prepareItem
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -55,7 +55,7 @@ class StudentAddRating(BaseRequestHandler) :
 
         self.generate('studentAdd.html', {
             'surpressFooter': True,
-            'ratable': unify(target),
+            'ratable': prepareItem(target),
             'rating' : rating
         })
 
@@ -63,7 +63,6 @@ class StudentAddRating(BaseRequestHandler) :
     def post(self, unused) :
         session = getSessionByRequest(self)
     
-        print("!")
         key = self.request.get('key')
         rating = self.request.get('rating')
         if (not validRating(rating)) :
@@ -71,10 +70,12 @@ class StudentAddRating(BaseRequestHandler) :
             self.redirect("/student/addrating/%s" % key)
             return
 
-        print("!")
-            
+        target = db.get(db.Key(key))
         comment = self.request.get('comment')
-
+        da = DataAccessor()
+        da.addRating(target, getSessionUser(session), rating, comment = comment)
+        setSessionMessage(session, "Added Rating.")
+        self.redirect("/student/")
 
 
 class StudentSaveRating(BaseRequestHandler) :
@@ -126,7 +127,7 @@ class StudentSaveRating(BaseRequestHandler) :
         if ratable :
             rating = self.request.get('rating')
             if (not validRating(rating)) :
-                setSessionMessage("Invalid rating, defaulting to 50")
+                setSessionMessage(session, "Invalid rating, defaulting to 50")
                 rating = '50'
             
             comment = self.request.get('comment')
@@ -195,11 +196,14 @@ class StudentEditRating(BaseRequestHandler) :
             semester = self.request.get('semester').upper()
             year = self.request.get('year')
             DA.update( rated, name=name, location=location, semester=semester, year=year )
-        
-        DA.update(rating, rating=int(self.request.get('rating')))
-        
-        session = getSessionByRequest(self)
-        setSessionMessage(session, 'Successfully updated rating!')
+       
+        if (validRating(self.request.get('rating'))) :
+            DA.update(rating, rating=int(self.request.get('rating')))
+            setSessionMessageByRequest(self, "Successfully updated rating.")
+        else :
+            setSessionMessageByRequest(self, "Invalid rating input. Keeping original")
+
+       
         self.redirect('/student')
 
 class StudentDeleteRating(BaseRequestHandler) :

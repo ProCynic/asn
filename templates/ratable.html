@@ -17,12 +17,8 @@
     <ul id="ratings">
         {% for rating in ratings %}
         <li class="rating">
-            
-
 			<span class="score">{{ rating.rating }} / 100</span>
-			
             <p> {{rating.comment}} </p>
-            
         </li>
         {% endfor %}
     </ul>

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block head %}{% endblock %}
+
+{% block main %}
+
+{% include "studentnav.html" %}
+
+<br/>
+<div class='ratingtitle'>
+    <span class='title'>
+    Rating: {{ ratable.name }} ({{ratable.type}})
+
+    {% if rating %}
+    <a class='add' onclick='r = confirm("Are you sure you want to delete this entry?")
+    if (!r) { return false }' href='/student/delete'>Delete</a> 
+    {% endif %}
+    </span>
+</div>
+<br/>
+<form class='custom' method='POST' action='/student/addrating/'>
+<label>Rating:<input type='text' name='rating' value=
+{% if rating %}
+    '{{rating.rating}}'
+{% else %}
+    ''
+{% endif %}
+
+</input>
+</label>
+<br/>
+
+<label>Comment:<textarea name='comment'>
+{% if rating %}
+{{rating.comment}}
+{% endif %}
+</textarea>
+</label>
+<input type='hidden' name='key' value='{{ratable.dbkey}}'/>
+<input type='submit'/>
+</form>
+
+{% endblock %}
+{% block footer %}
+<!-- footer -->
+{% endblock %}
