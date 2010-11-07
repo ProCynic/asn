@@ -40,6 +40,15 @@ def getUserGrade(course, user) :
     else :
         return None
 
+def getUserRating(u, o) :
+    rating = DS.Rating.all()
+    rating.filter('rated =', o)
+    rating.filter('rater =', u)
+
+    if (rating.count() == 1) :
+        return rating.get()
+    else :
+        return None
 
 def getAverageGrade(item) :
     query = DS.Grade.all()
@@ -204,6 +213,7 @@ def unify(i) :
         result.addDetail("Semester:", "%s, %s" % (i.semester.capitalize(), i.year))
 
     elif isinstance(i, DS.Game) :
+        result.type = "Game"
         result.name = i.title 
         result.addDetail("Platform:", i.platform)
 

@@ -71,17 +71,18 @@ body {
 
 #footer {
     position:fixed;
-    bottom : 1px;
-  	center;
-  	border : 3px solid #999;
+    bottom: 1px;
+    width: 958px;
+  	border : 1px solid #999;
   	background-color : #CCCCCC;
 }
     #footer adders {
     }
-    	#adders li {
+    	#adders li 
+        {
+            margin: 0px 10px 0px 0px;
     		display:inline;
 		}
-
 .aside {
     margin:1em 1em;
     font-size:1em;
@@ -206,6 +207,19 @@ body {
 
 #import li {
     margin-bottom:1em;
+}
+
+
+.ratingtitle .title
+{
+    font-size: x-large;
+    font-weight: bold;
+}
+.ratingtitle a.add 
+{
+    font-size: medium;
+    font-weight: normal;
+    float: right;
 }
 
 ul#ratings {
