@@ -198,6 +198,12 @@ class DataAccessor :
     
     def getAllRatings(self):
         return Rating.all()
+
+    def getStudents(self):
+        return User.all().filter('userType =', 'STUDENT')
+
+    def getAdmins(self):
+        return User.all().filter('userType =', 'ADMIN')
     
     def getRatingsByUser(self, user):
         ratings = Rating.all()

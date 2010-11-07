@@ -7,6 +7,8 @@ from importer import Importer
 from dataAccessors import DataAccessor
 from session import *
 
+from google.appengine.ext import db
+
 class AdminPage(BaseRequestHandler) :
     @admin
     def get(self) :
@@ -79,3 +81,31 @@ class AdminImport(BaseRequestHandler) :
         
         setSessionMessageByRequest(self, self.msg)
         self.redirect('/admin')
+
+class ManageUsersPage(BaseRequestHandler) :
+    @admin
+    def get(self):
+        """
+        """
+        DA = DataAccessor()
+        students = DA.getStudents()
+        admins = DA.getAdmins()
+        self.generate('manageUsers.html', {
+            'admins' : admins,
+            'students' : students
+        })
+
+class UserDel(BaseRequestHandler) :
+    @admin
+    def get(self, key=None):
+        """
+        """
+        DA = DataAccessor()
+        if key == 'all':
+            for u in DA.getStudents():
+                DA.delete(u)
+        elif key:
+            user = db.get(db.Key(key))
+            DA.delete(user)
+        self.redirect('/admin/manageUsers')
+        

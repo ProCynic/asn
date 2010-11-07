@@ -5,7 +5,14 @@
 {% block main %}
 
 {% include "studentnav.html" %}
-
+<br/>
+<div class='ratingtitle'>
+    <span class='title'>
+    Editing: {{ rating.name }}
+    <a class='add' onclick='r = confirm("Are you sure you want to delete this entry?")
+    if (!r) { return false }' href='/student/delete'>Delete</a> 
+    </span>
+</div>
 {% if rating %}
 	{% include "ratingForm.html" %}
 {% endif %}
