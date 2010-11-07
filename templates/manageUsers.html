@@ -4,7 +4,35 @@
 
 {% block main %}
 
+	<fieldset id="students">
+		<legend>Students</legend>
+		<ul class="userlist">
+			{% for u in students %}
+			<li class="userdel">
+				<form action="userdel/{{ u.key }}" method="get">
+					<label>{{ u.uid }} <input type="submit" value="Delete" /></label>
+				</form>
+			</li>
+			{% endfor %}
+		</ul>
+		<form class="delall" action="userdel/all" method="get">
+			<label>Delete All<input type="submit" value="Delete" /></label>
+		</form>
+	</fieldset>
 	
+	
+	<fieldset>
+		<legend>Admins</legend>
+		<ul class="userlist">
+			{% for u in admins %}
+			<li class="userdel">
+				<form action="userdel/{{ u.key }}" method="get">
+					<label>{{ u.uid }} <input type="submit" value="Delete" /></label>
+				</form>
+			</li>
+			{% endfor %}
+		</ul>
+	</fieldset>
 {% endblock %}
 
 {% block footer %}

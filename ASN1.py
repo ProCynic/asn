@@ -140,13 +140,7 @@ class DatastoreXML(BaseRequestHandler):
         self.response.headers['Content-Type'] = "application/xml"
         self.response.out.write(export())
 
-class ManageUsersPage(BaseRequestHandler) :
-    @admin
-    def get(self):
-        """
-        """
-        self.generate('manageUsers.html', {
-        })
+
 
 def main():
   application = webapp.WSGIApplication([
@@ -172,7 +166,8 @@ def main():
     ('/admin/export/?', AdminExport),
     ('/admin/import/?', AdminImport),
     ('/admin/clear/?', AdminClear),
-    ('/admin/manageUsers/?', ManageUsersPage)
+    ('/admin/manageUsers/?', ManageUsersPage),
+    ('/admin/userdel/(.*)', UserDel)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 

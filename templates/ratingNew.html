@@ -1,4 +1,4 @@
-<form method="post" class="newRating" action="/student/save">
+<form method="post" class="custom" action="/student/save">
 	{% ifequal typename "Book" %}
 		<label>ISBN: <input type="text" name="isbn" /></label>
 		<label>Title: <input type="text" name="title" /></label>
@@ -16,7 +16,12 @@
 		<label>Unique: <input type="text" name="unique" /></label>
 		<label>Course Name: <input type="text" name="name" /></label>
 		<label>Course Number: <input type="text" name="courseNum" /></label>
-		<label>Semester: <input type="text" name="semester" /></label>
+		<label>Semester: <select name="semester">
+			<option value=""></option>
+			<option value="SPRING">Spring</option>
+			<option value="SUMMER">Summer</option>
+			<option value="FALL">Fall</option>
+		</select></label>
 		<label>Instructor: <input type="text" name="instructor" /></label>
 		<label>Year: <input type="text" name="year" /></label>
 	{% endifequal %}
