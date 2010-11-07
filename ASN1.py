@@ -102,7 +102,7 @@ class CreateUser(BaseRequestHandler):
         message  = "Your account has been created. Please store the following information in a secure location.<br/>"
         message += "<span class='credential'>UserID: %s</span><br/>" % user.uid
         message += "<span class='credential'>Password: %s</span><br/>" % user.password
-        message += "<a href='/student/password'>Change Password</a>"
+        message += "Change your password: <a href='/student/password'>Manage Account</a>"
 
 
         setSessionMessage(session, message)
@@ -118,10 +118,14 @@ class Ratable(BaseRequestHandler):
         unified = prepareItem(ratable) 
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
-        
+       
+        user = getSessionUser(getSessionByRequest(self))
+
         self.generate('ratable.html', {
             'ratable' : unified,
-            'ratings': ratings
+            'ratings': ratings,
+            'user': user
+
         })
 
 class Sweep(BaseRequestHandler) :
