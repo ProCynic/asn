@@ -90,6 +90,8 @@ class CreateUser(BaseRequestHandler):
 
         user = DA.addStudent(uid, pw)
         session = generateSession(user)
+        session.generated = True;
+        session.put()
        
         self.response.headers.add_header(
             'Set-Cookie', 
@@ -168,8 +170,9 @@ def main():
     ('/student/?', StudentPage),
     ('/student/save/?', StudentSaveRating),
     ('/student/new/(.*)', StudentNewRating),
-    ('/student/update/(.*)', StudentUpdateRating),
+    ('/student/update/(.*)', StudentEditRating),
     ('/student/password/?', StudentPasswordPage),
+    ('/student/delete/?', StudentDeleteRating),
     ('/admin/?', AdminPage),
     ('/admin/export/?', AdminExport),
     ('/admin/import/?', AdminImport),

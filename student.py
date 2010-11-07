@@ -4,8 +4,9 @@ from acls import *
 from exporter import export
 from ourExceptions import *
 from importer import Importer 
+import dataStore as DS
 from dataAccessors import DataAccessor, addRatedTypename
-from views import prepareRatingsForTemplate
+from views import prepareRatingsForTemplate, unify
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -89,23 +90,42 @@ class StudentSaveRating(BaseRequestHandler) :
         self.redirect('/student')
 
 class StudentEditRating(BaseRequestHandler) :
+
+    def getUserRating(self, u, o) :
+        rating = DS.Rating.all()
+        rating.filter('rated =', o)
+        rating.filter('rater =', u)
+        return rating.get()
+
     @user
     def get(self, key=0):
-        rating = db.get(db.Key(key))
-        typename = str(rating.__class__.__name__)
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+
+        ratable = db.get(db.Key(key))
+        
+        session.deletionTarget = self.getUserRating(user, ratable);
+        session.put()
+
+
+        typename = str(ratable.__class__.__name__)
         self.generate('studentEdit.html', {
             'typename': typename,
-            'rating': rating,
+            'rating': ratable,
             'surpressFooter': True,
         })
 
-
-class StudentUpdateRating(BaseRequestHandler) :
     @user
     def post(self, key=0):
         DA = DataAccessor()
-        rating = db.get(db.Key(key))
-        rated = rating.rated
+        
+        rated = db.get(db.Key(key))
+
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        rating = self.getUserRating(user, rated)
+
+
         typename = rated.__class__.__name__
         
         if typename == 'Book':
@@ -142,6 +162,27 @@ class StudentUpdateRating(BaseRequestHandler) :
         session = getSessionByRequest(self)
         setSessionMessage(session, 'Successfully updated rating!')
         self.redirect('/student')
+
+class StudentDeleteRating(BaseRequestHandler) :
+    @user 
+    def get(self) :
+        session = getSessionByRequest(self)
+        if session.deletionTarget :
+            
+            da = DataAccessor()
+            da.delete(session.deletionTarget)
+
+            ratable = unify(session.deletionTarget.rated)
+            setSessionMessage(session, "You have deleted " + ratable.name + ".")
+            session.deletionTarget = None
+            session.put()
+
+        else :
+            setSessionMessage(session, "Invalid request.")
+
+        self.redirect('/student/')
+
+
 
 class StudentPasswordPage(BaseRequestHandler):
     @user

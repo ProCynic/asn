@@ -72,11 +72,7 @@ def generateSession(userkey) :
 
     sid = h.hexdigest()
 
-    generated = False
-    if userkey :
-        generated = True
-
-    session = DS.Session(sessionID = sid, user = userkey, expiration = __20MinutesFromNow(), generated=generated)
+    session = DS.Session(sessionID = sid, user = userkey, expiration = __20MinutesFromNow(), generated=False)
     
     session.message = None
 

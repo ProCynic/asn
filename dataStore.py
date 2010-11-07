@@ -72,13 +72,6 @@ class User(db.Model):
             if x != y: return False
         return True
 
-class Session(db.Model) :
-    sessionID = db.StringProperty(required=True)
-    user = db.ReferenceProperty(User)
-    message = db.StringProperty()
-    generated = db.BooleanProperty(required=True)
-    expiration = db.DateTimeProperty(required=True)
- 
 class Ratable(polymodel.PolyModel):
     """
         Ratable is the base class for ratable objects, and has 
@@ -262,24 +255,12 @@ class Game (Ratable):
     platform = db.StringProperty(required=True)
     title = db.StringProperty(required=True)
 
-gamePlatforms = [
-    "XBOX",
-    "XBOX 360",
-    "PLAYSTATION",
-    "PLAYSTATION 2",
-    "PLAYSTATION 3",
-    "NINTENDO",
-    "SUPER NINTENDO",
-    "NINTENDO 64",
-    "GAMECUBE",
-    "WII",
-    "SEGA GENISIS",
-    "PC",
-    "MAC",
-    "LINUX",
-    "GAMEBOY",
-    "NINTENDO DS",
-    "PSP",
-    "IPHONE",
-    "ANDROID",
-    "CELLPHONE"]
+class Session(db.Model) :
+    sessionID = db.StringProperty(required=True)
+    user = db.ReferenceProperty(User)
+    message = db.StringProperty()
+    generated = db.BooleanProperty(required=True)
+    expiration = db.DateTimeProperty(required=True)
+    deletionTarget = db.ReferenceProperty(Rating)
+ 
+

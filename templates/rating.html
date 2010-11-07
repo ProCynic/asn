@@ -1,6 +1,6 @@
 
 <li class='rating'>
-    <p class='name'>{{rating.type}} 
+    <p class='name'>{{rating.type}}
         <span class='avg'>
 
 {% if isStudentPage %} 
@@ -13,6 +13,13 @@
     {% endifequal %}
  {% endif %}
  
+{% if isStudentPage %}
+    <a href='/student/update/{{rating.dbkey}}'>(Edit)</a>
+{% endif %}
+
+
+
+
         </span>
     </p>
     

@@ -98,7 +98,7 @@ def prepareItem(x, user = None) :
     if (isinstance(x, DS.Course)) :
         u.avgGrade = getAverageGrade(x)
         
-        userGrade = getUserGrade(user)
+        userGrade = getUserGrade(x, user)
         if userGrade:
             u.studentGrade = userGrade
         else :
