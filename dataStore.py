@@ -76,6 +76,7 @@ class Session(db.Model) :
     sessionID = db.StringProperty(required=True)
     user = db.ReferenceProperty(User)
     message = db.StringProperty()
+    generated = db.BooleanProperty(required=True)
     expiration = db.DateTimeProperty(required=True)
  
 class Ratable(polymodel.PolyModel):

@@ -23,14 +23,15 @@ class StudentPage(BaseRequestHandler) :
         self.generate('student.html', {
             'ratings': ratings,
             'isStudentPage': True,
-
+            'surpressFooter': True
         })
 
 class StudentNewRating(BaseRequestHandler) :
     @user
     def get(self, typename=''):
         self.generate('studentNew.html', {
-            'typename': typename
+            'typename': typename,
+            'surpressFooter': True
         })
 
 class StudentSaveRating(BaseRequestHandler) :
@@ -94,7 +95,8 @@ class StudentEditRating(BaseRequestHandler) :
         typename = str(rating.__class__.__name__)
         self.generate('studentEdit.html', {
             'typename': typename,
-            'rating': rating
+            'rating': rating,
+            'surpressFooter': True,
         })
 
 
@@ -147,13 +149,45 @@ class StudentPasswordPage(BaseRequestHandler):
         """
             Shows the student password page.
         """
-        self.generate('student.html', {
+
+        session = getSessionByRequest(self)
+        self.generate('studentPassword.html', {
+            'surpressFooter': True,
+            'allowUnconditionalChange': session.generated,
             # variables
         })
+
     @user
     def post(self):
-        # ex1 = self.request.get('ex1')
-        # fn's
-        self.redirect('/edit')
 
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        
+        new = self.request.get('new')
+        new2 = self.request.get('new2')
+
+        if not session.generated :
+            old = self.request.get('old')
+            if (old != user.password) :
+                setSessionMessage(session, "Your password was invalid.")
+                self.redirect('/student/password/')
+                return
+    
+        #Now, we have validated and can change our password.
+        #Either we were generated, and get a change for free
+        #or we've validated our password above.
+        if (new != new2) :
+            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+        else :
+            setSessionMessage(session, "You have successfully changd your password.")
+               
+            #Reset the password
+            user.password = new;
+            user.put()
+
+            #Reset the session.
+            session.generated = False
+            session.put()
+            
+        self.redirect('/student/')
 

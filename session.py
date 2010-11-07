@@ -55,6 +55,7 @@ def getSession(sessionID) :
     if (query.count() == 0) :
         return generateSession(None)
 
+    session = query.get()
     return query.get()
 
 def setSessionMessage(session, msg) :
@@ -70,8 +71,12 @@ def generateSession(userkey) :
 
 
     sid = h.hexdigest()
-   
-    session = DS.Session(sessionID = sid, user = userkey, expiration = __20MinutesFromNow())
+
+    generated = False
+    if userkey :
+        generated = True
+
+    session = DS.Session(sessionID = sid, user = userkey, expiration = __20MinutesFromNow(), generated=generated)
     
     session.message = None
 

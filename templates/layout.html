@@ -47,7 +47,7 @@
 				{% block main %} default main stuff {% endblock %}
 			</div>
 			<div id="footer">
-				{% if user %}
+				{% if user and not surpressFooter %}
 				    {% ifequal user.userType 'STUDENT' %}
 				    	<ul id="adders">
 				    		<li><a href="/student/new/Course">Add Course</a></li>
@@ -59,7 +59,6 @@
 				    		<li><a href="/student/new/PlaceEat">Add Place to Eat</a></li>
 				    		<li><a href="/student/new/PlaceFun">Add Place to Have Fun</a></li>
 				    		<li><a href="/student/new/Game">Add Game</a></li>
-				    		
 				    	</ul>
 				    {% endifequal %}
 				{% endif %}

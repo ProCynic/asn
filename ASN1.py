@@ -96,8 +96,14 @@ class CreateUser(BaseRequestHandler):
             'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % session.sessionID)
 
         user = DS.User.get(user)
-        setSessionMessage(session,
-            "Your account has been created. Please store the following information in a secure location.<br/><span class='credential'>UserID: %s</span><br/><span class='credential'>Password: %s</span>" % (user.uid, user.password))
+
+        message  = "Your account has been created. Please store the following information in a secure location.<br/>"
+        message += "<span class='credential'>UserID: %s</span><br/>" % user.uid
+        message += "<span class='credential'>Password: %s</span><br/>" % user.password
+        message += "<a href='/student/password'>Change Password</a>"
+
+
+        setSessionMessage(session, message)
 
         self.redirect('/student')
 
@@ -150,25 +156,25 @@ class ManageUsersPage(BaseRequestHandler) :
 def main():
   application = webapp.WSGIApplication([
     ('/', Browser),
-    ('/sweep', Sweep),
+    ('/sweep/?', Sweep),
     ('/browse/?', Browser),
     ('/browse/([a-zA-Z]+)/?', Browser),
     ('/browse/([a-zA-Z]+)/([a-zA-Z]+)/?', Browser),
     ('/ratable/(.*)', Ratable),
     ('/datastore\.xml', DatastoreXML),
-    ('/login', Login),
-    ('/logout', Logout),
-    ('/createUser', CreateUser),
-    ('/student', StudentPage),
-    ('/student/save', StudentSaveRating),
+    ('/login/?', Login),
+    ('/logout/?', Logout),
+    ('/createUser/?', CreateUser),
+    ('/student/?', StudentPage),
+    ('/student/save/?', StudentSaveRating),
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentUpdateRating),
-    ('/student/password', StudentPasswordPage),
-    ('/admin', AdminPage),
-    ('/admin/export', AdminExport),
-    ('/admin/import', AdminImport),
-    ('/admin/clear', AdminClear),
-    ('/admin/manageUsers', ManageUsersPage)
+    ('/student/password/?', StudentPasswordPage),
+    ('/admin/?', AdminPage),
+    ('/admin/export/?', AdminExport),
+    ('/admin/import/?', AdminImport),
+    ('/admin/clear/?', AdminClear),
+    ('/admin/manageUsers/?', ManageUsersPage)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 
