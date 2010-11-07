@@ -173,7 +173,8 @@ def main():
     ('/admin/clear/?', AdminClear),
     ('/admin/manageUsers/?', ManageUsersPage),
     ('/admin/userdel/(.*)', UserDel),
-    ('/admin/password/?', AdminPassword)
+    ('/admin/password/?', AdminPassword),
+    ('/admin/newadmin/?', CreateAdmin)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 
