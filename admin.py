@@ -106,6 +106,33 @@ class UserDel(BaseRequestHandler) :
                 DA.delete(u)
         elif key:
             user = db.get(db.Key(key))
-            DA.delete(user)
+            DA.delete(user)  
         self.redirect('/admin/manageUsers')
+
+class AdminPassword(BaseRequestHandler) :
+    @admin
+    def post(self):
+        DA = DataAccessor()
+        session = getSessionByRequest(self)
+        user = getSessionUser(session)
         
+        old = self.request.get('old')
+        new = self.request.get('new')
+        new2 = self.request.get('new2')
+
+        if old != user.password:
+            setSessionMessage(session, "Invalid Password")
+            self.redirect('/admin')
+
+        if (new != new2) :
+            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+        else:
+            setSessionMessage(session, "You have successfully changed your password.")
+               
+            #Reset the password
+            DA.update(user, password=new)
+
+            #Reset the session.
+            session.generated = False
+            session.put()
+        self.redirect('/admin')
