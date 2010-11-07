@@ -160,6 +160,46 @@ body {
     font-weight:bold;
 }
 
+#main form.newRating {
+    width:60%;
+    margin:0 auto 20% auto;
+    text-align:left;
+    padding-right:30%;
+}
+    #main form.newRating label {
+        display:block;
+        text-align:right;
+        clear:both;
+        line-height:1.80em;
+        margin-bottom:10px;
+    }
+        #main form.newRating input[type=submit] {
+            float:right;
+            margin-right:70%;
+            clear:both;
+            margin-top:20px;
+        }
+        #main form.newRating label input, #main form.newRating label textarea {
+            width:50%;
+            float:right;
+            margin-left:10px;
+            line-height:1.5em;
+            border:0.1em solid #999999;
+            -moz-border-radius: 0.2em;
+            border-radius: 0.2em;
+            color:#444444;
+            background-color:#EEEEEE;
+        }
+        #main form.newRating label input {
+            padding:0.25em;
+        }
+        #main form.newRating label textarea {
+            margin-top:2px;
+            padding:0;
+            width:51%;
+            height:50px;
+        }
+
 #export input[type=submit], #import input[type=submit], #import input {
     margin-left:1em;
 }
