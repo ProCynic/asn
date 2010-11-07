@@ -115,19 +115,12 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        if hasattr(ratable,'name'):
-            title = ratable.name
-        elif hasattr(ratable,'title'):
-            title = ratable.title
-       
-        ratable.name = title
-        ratableType = getUndecoratedTypename(ratable)  
+        unified = prepareItem(ratable) 
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
         
         self.generate('ratable.html', {
-            'ratable' : ratable,
-            'type' : ratableType,
+            'ratable' : unified,
             'ratings': ratings
         })
 
@@ -163,6 +156,7 @@ def main():
     ('/createUser/?', CreateUser),
     ('/student/?', StudentPage),
     ('/student/save/?', StudentSaveRating),
+    ('/student/addrating/(.*)', StudentAddRating),
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentEditRating),
     ('/student/password/?', StudentPasswordPage),

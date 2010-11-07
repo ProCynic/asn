@@ -6,7 +6,7 @@ from ourExceptions import *
 from importer import Importer 
 import dataStore as DS
 from dataAccessors import DataAccessor, addRatedTypename
-from views import prepareRatingsForTemplate, unify
+from views import prepareRatingsForTemplate, unify, getUserRating
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -33,6 +33,27 @@ class StudentNewRating(BaseRequestHandler) :
         self.generate('studentNew.html', {
             'typename': typename,
             'surpressFooter': True
+        })
+
+class StudentAddRating(BaseRequestHandler) :
+    def get(self, key = None) :
+        session = getSessionByRequest(self)
+
+        if not key :
+            setSessionMessage(session, "Invalid Request.")
+            self.redirect('/student/')
+            return
+
+        target = db.get(db.Key(key))
+        user = getSessionUser(session)
+
+        rating = getUserRating(user, target)
+
+
+        self.generate('studentAdd.html', {
+            'surpressFooter': True,
+            'ratable': unify(target),
+            'rating' : rating
         })
 
 class StudentSaveRating(BaseRequestHandler) :
@@ -91,12 +112,6 @@ class StudentSaveRating(BaseRequestHandler) :
 
 class StudentEditRating(BaseRequestHandler) :
 
-    def getUserRating(self, u, o) :
-        rating = DS.Rating.all()
-        rating.filter('rated =', o)
-        rating.filter('rater =', u)
-        return rating.get()
-
     @user
     def get(self, key=0):
         session = getSessionByRequest(self)
@@ -104,7 +119,7 @@ class StudentEditRating(BaseRequestHandler) :
 
         ratable = db.get(db.Key(key))
         
-        session.deletionTarget = self.getUserRating(user, ratable);
+        session.deletionTarget = getUserRating(user, ratable);
         session.put()
 
 
@@ -123,7 +138,7 @@ class StudentEditRating(BaseRequestHandler) :
 
         session = getSessionByRequest(self)
         user = getSessionUser(session)
-        rating = self.getUserRating(user, rated)
+        rating = getUserRating(user, rated)
 
 
         typename = rated.__class__.__name__
@@ -131,13 +146,13 @@ class StudentEditRating(BaseRequestHandler) :
         if typename == 'Book':
             isbn = self.request.get('isbn')
             title = self.request.get('title')
-            #author = self.request.get('author')
-            DA.update( rated, isbn=isbn, title=title )#, author=author )
+            author = self.request.get('author')
+            DA.update( rated, isbn=isbn, title=title, author=author )
         elif typename == 'Paper':
             paperType = self.request.get('paperType').upper()
             title = self.request.get('title')
-            #author = self.request.get('author')
-            DA.update( rated, paperType=paperType, title=title )#, author=author )
+            author = self.request.get('author')
+            DA.update( rated, paperType=paperType, title=title, author=author )
         elif typename == 'Course':
             unique = self.request.get('unique')
             courseNum = self.request.get('courseNum')
@@ -145,7 +160,7 @@ class StudentEditRating(BaseRequestHandler) :
             semester = self.request.get('semester').upper()
             instructor = self.request.get('instructor')
             year = self.request.get('year')
-            DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year ) # instructor=instructor
+            DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year, instructor=instructor )
         elif typename == 'Game':
             platform = self.request.get('platform').upper()
             title = self.request.get('title')
@@ -190,7 +205,7 @@ class StudentDeleteAccount(BaseRequestHandler) :
         da = DataAccessor()
         da.delete(user)
         expireSession(session)
-        
+        self.redirect('/') 
 
 class StudentPasswordPage(BaseRequestHandler):
     @user

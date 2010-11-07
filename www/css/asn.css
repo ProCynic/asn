@@ -71,9 +71,11 @@ body {
 
 #footer {
     position:fixed;
-    bottom: 1px;
+    bottom: 0;
     width: 958px;
-  	border : 1px solid #999;
+  	border-width: 1px 1px 0;
+  	border-style: solid;
+  	border-color: #999;
   	background-color : #CCCCCC;
 }
     #footer adders {
@@ -149,7 +151,7 @@ body {
     font-weight:bold;
 }
 
-#main input[type=submit], #main input[type=file], #main select {
+#main input[type=text], #main textarea, #main input[type=password], #main input[type=submit], #main input[type=file], #main select {
     border:0.1em solid #999999;
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -161,45 +163,59 @@ body {
     font-weight:bold;
 }
 
-#main form.newRating {
-    width:60%;
-    margin:0 auto 20% auto;
+#main form.custom {
+    width:40em;
+    margin:0 auto 15em auto;
     text-align:left;
-    padding-right:30%;
+    padding-right:23em;
 }
-    #main form.newRating label {
+    #main form.custom label {
         display:block;
         text-align:right;
         clear:both;
         line-height:1.80em;
         margin-bottom:10px;
     }
-        #main form.newRating input[type=submit] {
-            float:right;
-            margin-right:70%;
+        #main form.custom input[type=submit] {
+            margin-left:23em;
             clear:both;
             margin-top:20px;
         }
-        #main form.newRating label input, #main form.newRating label textarea {
+        #main form.custom a.delete {
+            margin-left:2em;
+        }
+        #main form.custom label input, #main form.custom label textarea, #main form.custom label select {
             width:50%;
             float:right;
             margin-left:10px;
             line-height:1.5em;
-            border:0.1em solid #999999;
-            -moz-border-radius: 0.2em;
-            border-radius: 0.2em;
-            color:#444444;
-            background-color:#EEEEEE;
         }
-        #main form.newRating label input {
+        #main form.custom label select {
+            width:51%;
+        }
+        #main form.custom label input {
             padding:0.25em;
         }
-        #main form.newRating label textarea {
+        #main form.custom label textarea {
             margin-top:2px;
-            padding:0;
-            width:51%;
+            padding:0.25em;
+            width:50%;
             height:50px;
         }
+
+#main .studentcontrols {
+    margin:0;
+    padding:0;
+}
+    #main .studentcontrols li {
+        display:inline;
+        margin-right:0.25em;
+    }
+    #main .studentcontrols li.userdata {
+        float:right;
+        margin-right:0;
+        margin-left: 0.75em;
+    }
 
 #export input[type=submit], #import input[type=submit], #import input {
     margin-left:1em;
@@ -207,6 +223,19 @@ body {
 
 #import li {
     margin-bottom:1em;
+}
+
+
+.ratingtitle .title
+{
+    font-size: x-large;
+    font-weight: bold;
+}
+.ratingtitle a.add 
+{
+    font-size: medium;
+    font-weight: normal;
+    float: right;
 }
 
 ul#ratings {

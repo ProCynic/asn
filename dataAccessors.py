@@ -179,7 +179,11 @@ class DataAccessor :
         assert issubclass(type(obj), db.Model)
         for x in kwargs:
             assert x in type(obj).properties()
-            setattr(obj, x, kwargs[x])
+            if x in ['instructor','author']:
+                p = self._addPerson(kwargs[x])
+                setattr(obj, x, p)
+            else:
+                setattr(obj, x, kwargs[x])
         obj.put()
         return obj
 

@@ -1,4 +1,4 @@
-<form method="post" action="/student/update/{{ rating.key }}">
+<form method="post" class="custom" action="/student/update/{{ rating.key }}">
 	{% ifequal typename "Book" %}
 		<label>ISBN: <input type="text" name="isbn" value="{{rating.isbn}}" /></label>
 		<label>Title: <input type="text" name="title" value="{{rating.title}}" /></label>
@@ -16,38 +16,62 @@
 		<label>Unique: <input type="text" name="unique" value="{{rating.unique}}" /></label>
 		<label>Course Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Course Number: <input type="text" name="courseNum" value="{{rating.courseNum}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Instructor: <input type="text" name="instructor" value="{{rating.instructor}}" /></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "Internship" %}
 		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "PlaceLive" %}
 		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "PlaceEat" %}
 		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "PlaceStudy" %}
 		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "PlaceFun" %}
 		<label>Name: <input type="text" name="name" value="{{rating.name}}" /></label>
 		<label>Location: <input type="text" name="location" value="{{rating.location}}" /></label>
-		<label>Semester: <input type="text" name="semester" value="{{rating.semester}}" /></label>
+		<label>Semester: <select name="semester">
+			<option {% ifequal rating.semester "SPRING" %}selected="selected"{% endifequal %} value="SPRING">Spring</option>
+			<option {% ifequal rating.semester "SUMMER" %}selected="selected"{% endifequal %} value="SUMMER">Summer</option>
+			<option {% ifequal rating.semester "FALL" %}selected="selected"{% endifequal %} value="FALL">Fall</option>
+		</select></label>
 		<label>Year: <input type="text" name="year" value="{{rating.year}}" /></label>
 	{% endifequal %}
 	{% ifequal typename "Game" %}
@@ -76,6 +100,7 @@
 	{% endifequal %}
 	<label>Rating: <input type="text" name="rating" value="{{rating.rating}}" /></label>
 	<label>Comment: <textarea name="comment">{{rating.comment}}</textarea></label>
-	<input type="submit" value="Update/Save" /> <a onclick='r = confirm("Are you sure you want to delete this entry?")
+	<input type="submit" value="Update/Save" />
+	<a class="delete" onclick='r = confirm("Are you sure you want to delete this entry?")
     if (!r) { return false }' href='/student/delete'>Delete Rating</a> 
 </form>
