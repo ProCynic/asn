@@ -172,6 +172,7 @@ def main():
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentEditRating),
     ('/student/password/?', StudentPasswordPage),
+    ('/student/deleteaccount/?', StudentDeleteAccount),
     ('/student/delete/?', StudentDeleteRating),
     ('/admin/?', AdminPage),
     ('/admin/export/?', AdminExport),

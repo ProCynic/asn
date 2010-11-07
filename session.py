@@ -16,7 +16,9 @@ def sweepSessions() :
     for x in query :
         if x.expiration > now :
             x.delete()
-    
+   
+def expireSession(session) :
+    session.delete()
 
 def __invalidateSession(query) :
     for x in query :

@@ -45,6 +45,7 @@ class Person(db.Model):
             yield (x,getattr(self,x))
 
     def __eq__(self, other):
+        if not issubclass(type(other), Person): return False
         for x,y in zip(self, other):
             if x != y: 
                 return False
@@ -68,10 +69,11 @@ class User(db.Model):
         for x in d: yield (x,getattr(self,x))
             
     def __eq__(self, other):
+        if not issubclass(type(other), User): return False
         for x,y in zip(self, other):
             if x != y: return False
         return True
-
+    
 class Ratable(polymodel.PolyModel):
     """
         Ratable is the base class for ratable objects, and has 
@@ -264,5 +266,8 @@ class Session(db.Model) :
     
     deletionTarget = db.ReferenceProperty(Rating)
     confirmedDelete = db.BooleanProperty(default=False)
- 
+
+    def __iter__(self):
+        d = self.__class__.properties()
+        for x in d: yield (x, getattr(self, x)) 
 
