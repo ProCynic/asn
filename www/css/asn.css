@@ -71,16 +71,14 @@ body {
 
 #footer {
     position:fixed;
-    bottom: 1px;
-    width: 958px;
-  	border : 1px solid #999;
+    bottom : 1px;
+  	center;
+  	border : 3px solid #999;
   	background-color : #CCCCCC;
 }
     #footer adders {
     }
-    	#adders li 
-        {
-            margin: 0px 10px 0px 0px;
+    	#adders li {
     		display:inline;
 		}
 
@@ -150,7 +148,7 @@ body {
     font-weight:bold;
 }
 
-#main fieldset input[type=submit], #main fieldset input[type=file] {
+#main input[type=submit], #main input[type=file], #main select {
     border:0.1em solid #999999;
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -271,30 +269,7 @@ ul#ratings {
     margin-left: 11em;
 }
 
-.studentnav 
-{
-    width: 100%;
-}
 
-.studentnav ul.studentcontrols 
-{
-    margin: 0px 5px;
-    border: 1px solid #999;
-    margin: 0px;
-    padding: 5px;
-}
-
-.studentnav li 
-{
-    display: inline;
-    list-style: none;
-    margin: 0px 5px 0px 0px;
-}
-
-.studentnav li.userdata 
-{
-    float: right;
-}
 
 /* >> The Magnificent CLEARFIX << */
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
