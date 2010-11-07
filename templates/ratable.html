@@ -5,15 +5,14 @@
 {% block main %}
 
     <div class='ratingtitle'>
-    <h2>
-        {{ ratable.name }}        
-    </h2>
-    <a class='add' href='/student/new/{{ratable.dbkey}}'>Add Rating</a>
+        <span class='title'>
+            {{ ratable.name }}
+        <a class='add' href='/student/addrating/{{ratable.dbkey}}'>Add Rating</a>
+        </span>
     </div>
+
+    <br/>
     
-
-
-
     {% if ratings %}
     <ul id="ratings">
         {% for rating in ratings %}

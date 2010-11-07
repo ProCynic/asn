@@ -170,6 +170,19 @@ body {
     margin-bottom:1em;
 }
 
+
+.ratingtitle .title
+{
+    font-size: x-large;
+    font-weight: bold;
+}
+.ratingtitle a.add 
+{
+    font-size: medium;
+    font-weight: normal;
+    float: right;
+}
+
 ul#ratings {
     margin: 1em 0px;
     padding: 0px;
