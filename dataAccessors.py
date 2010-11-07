@@ -31,12 +31,12 @@ def addRatedTypename(query) :
 class DataAccessor :
     def __init__(self, func=None) :
         if func: self._errHandler = func
-        self.dependencies = {User : Rating,
-                             Ratable : Rating,
-                             Rating : Comment,
-                             User : Grade,
-                             User : Session,
-                             Course : Grade}
+        self.dependencies = [(User, Rating),
+                             (Ratable, Rating),
+                             (Rating, Comment),
+                             (User, Grade),
+                             (User, Session),
+                             (Course, Grade)]
 
     def _errHandler(self, err) :
         raise Usage("Duplicate entry: " + str(err))
@@ -202,9 +202,9 @@ class DataAccessor :
 
     def delete(self, obj):
         assert issubclass(type(obj),db.Model)
-        for x in self.dependencies:
-            if type(obj) is x or issubclass(type(obj), x):
-                for item in self.dependencies[x].all():
+        for x, y in self.dependencies:
+            if issubclass(type(obj), x):
+                for item in y.all():
                     for prop in item:
                         if prop[1] == obj: self.delete(item)
         obj.delete()
