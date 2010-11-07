@@ -158,6 +158,7 @@ def main():
     ('/logout/?', Logout),
     ('/createUser/?', CreateUser),
     ('/student/?', StudentPage),
+    ('/student/addrating/(.*)', StudentAddRating),
     ('/student/save/?', StudentSaveRating),
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentEditRating),
