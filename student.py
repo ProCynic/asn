@@ -131,13 +131,13 @@ class StudentEditRating(BaseRequestHandler) :
         if typename == 'Book':
             isbn = self.request.get('isbn')
             title = self.request.get('title')
-            #author = self.request.get('author')
-            DA.update( rated, isbn=isbn, title=title )#, author=author )
+            author = self.request.get('author')
+            DA.update( rated, isbn=isbn, title=title, author=author )
         elif typename == 'Paper':
             paperType = self.request.get('paperType').upper()
             title = self.request.get('title')
-            #author = self.request.get('author')
-            DA.update( rated, paperType=paperType, title=title )#, author=author )
+            author = self.request.get('author')
+            DA.update( rated, paperType=paperType, title=title, author=author )
         elif typename == 'Course':
             unique = self.request.get('unique')
             courseNum = self.request.get('courseNum')
@@ -145,7 +145,7 @@ class StudentEditRating(BaseRequestHandler) :
             semester = self.request.get('semester').upper()
             instructor = self.request.get('instructor')
             year = self.request.get('year')
-            DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year ) # instructor=instructor
+            DA.update( rated, unique=unique, courseNum=courseNum, name=name, semester=semester, year=year, instructor=instructor )
         elif typename == 'Game':
             platform = self.request.get('platform').upper()
             title = self.request.get('title')

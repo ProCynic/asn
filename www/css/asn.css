@@ -148,7 +148,7 @@ body {
     font-weight:bold;
 }
 
-#main input[type=submit], #main input[type=file], #main select {
+#main input[type=text], #main textarea, #main input[type=password], #main input[type=submit], #main input[type=file], #main select {
     border:0.1em solid #999999;
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -160,43 +160,43 @@ body {
     font-weight:bold;
 }
 
-#main form.newRating {
-    width:60%;
-    margin:0 auto 20% auto;
+#main form.custom {
+    width:40em;
+    margin:0 auto 15em auto;
     text-align:left;
-    padding-right:30%;
+    padding-right:23em;
 }
-    #main form.newRating label {
+    #main form.custom label {
         display:block;
         text-align:right;
         clear:both;
         line-height:1.80em;
         margin-bottom:10px;
     }
-        #main form.newRating input[type=submit] {
-            float:right;
-            margin-right:70%;
+        #main form.custom input[type=submit] {
+            margin-left:23em;
             clear:both;
             margin-top:20px;
         }
-        #main form.newRating label input, #main form.newRating label textarea {
+        #main form.custom a.delete {
+            margin-left:2em;
+        }
+        #main form.custom label input, #main form.custom label textarea, #main form.custom label select {
             width:50%;
             float:right;
             margin-left:10px;
             line-height:1.5em;
-            border:0.1em solid #999999;
-            -moz-border-radius: 0.2em;
-            border-radius: 0.2em;
-            color:#444444;
-            background-color:#EEEEEE;
         }
-        #main form.newRating label input {
+        #main form.custom label select {
+            width:51%;
+        }
+        #main form.custom label input {
             padding:0.25em;
         }
-        #main form.newRating label textarea {
+        #main form.custom label textarea {
             margin-top:2px;
-            padding:0;
-            width:51%;
+            padding:0.25em;
+            width:50%;
             height:50px;
         }
 
