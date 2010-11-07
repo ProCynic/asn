@@ -164,10 +164,10 @@ body {
 }
 
 #main form.custom {
-    width:40em;
-    margin:0 auto 15em auto;
+    width:33em;
+    margin:0 auto 4em auto;
     text-align:left;
-    padding-right:23em;
+    padding-left:0;
 }
     #main form.custom label {
         display:block;
@@ -177,17 +177,18 @@ body {
         margin-bottom:10px;
     }
         #main form.custom input[type=submit] {
-            margin-left:23em;
+            margin-left:11.5em;
             clear:both;
-            margin-top:20px;
+            margin-top:2em;
         }
         #main form.custom a.delete {
             margin-left:2em;
         }
         #main form.custom label input, #main form.custom label textarea, #main form.custom label select {
-            width:50%;
+            width:20em;
             float:right;
-            margin-left:10px;
+            margin-left:1em;
+            margin-right:7em;
             line-height:1.5em;
         }
         #main form.custom label select {
