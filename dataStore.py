@@ -261,6 +261,8 @@ class Session(db.Model) :
     message = db.StringProperty()
     generated = db.BooleanProperty(required=True)
     expiration = db.DateTimeProperty(required=True)
+    
     deletionTarget = db.ReferenceProperty(Rating)
+    confirmedDelete = db.BooleanProperty(default=False)
  
 
