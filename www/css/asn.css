@@ -71,9 +71,11 @@ body {
 
 #footer {
     position:fixed;
-    bottom: 1px;
+    bottom: 0;
     width: 958px;
-  	border : 1px solid #999;
+  	border-width: 1px 1px 0;
+  	border-style: solid;
+  	border-color: #999;
   	background-color : #CCCCCC;
 }
     #footer adders {
@@ -200,6 +202,20 @@ body {
             width:50%;
             height:50px;
         }
+
+#main .studentcontrols {
+    margin:0;
+    padding:0;
+}
+    #main .studentcontrols li {
+        display:inline;
+        margin-right:0.25em;
+    }
+    #main .studentcontrols li.userdata {
+        float:right;
+        margin-right:0;
+        margin-left: 0.75em;
+    }
 
 #export input[type=submit], #import input[type=submit], #import input {
     margin-left:1em;
