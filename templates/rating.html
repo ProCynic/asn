@@ -14,7 +14,11 @@
  {% endif %}
  
 {% if isStudentPage %}
-    <a href='/student/update/{{rating.dbkey}}'>(Edit)</a>
+    {% ifequal rating.ratingCount 1 %}
+         <a href='/student/update/{{rating.dbkey}}'>(Edit)</a>
+    {% else %}
+         <a href='/student/addrating/{{rating.dbkey}}'>(Edit)</a>
+    {% endifequal %}
 {% endif %}
         </span>
     </p>

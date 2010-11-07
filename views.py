@@ -141,6 +141,15 @@ def prepareRatingsForTemplate(query, user) :
 
     return temp
 
+def validRating(string) :
+    try :
+        rating = int(string)
+        if (rating >= 0 and rating <= 100) :
+            return True
+        return False 
+    except ValueError:
+        return False
+
 #Transforms any Ratable object into a standard interface.
 #This consists of only data directly from the data store.
 #For calculated data, such as average rating, average grade, and the dbkey

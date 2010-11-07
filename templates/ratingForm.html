@@ -1,4 +1,4 @@
-<form method="post" action="/student/update/{{ rating.key }}">
+<form method="post" class='newRating' action="/student/update/{{ rating.key }}">
 	{% ifequal typename "Book" %}
 		<label>ISBN: <input type="text" name="isbn" value="{{rating.isbn}}" /></label>
 		<label>Title: <input type="text" name="title" value="{{rating.title}}" /></label>
@@ -76,6 +76,4 @@
 	{% endifequal %}
 	<label>Rating: <input type="text" name="rating" value="{{rating.rating}}" /></label>
 	<label>Comment: <textarea name="comment">{{rating.comment}}</textarea></label>
-	<input type="submit" value="Update/Save" /> <a onclick='r = confirm("Are you sure you want to delete this entry?")
-    if (!r) { return false }' href='/student/delete'>Delete Rating</a> 
-</form>
+	<input type="submit" value="Update/Save" /> </form>

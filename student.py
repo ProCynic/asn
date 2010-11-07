@@ -6,7 +6,7 @@ from ourExceptions import *
 from importer import Importer 
 import dataStore as DS
 from dataAccessors import DataAccessor, addRatedTypename
-from views import prepareRatingsForTemplate, unify, getUserRating
+from views import prepareRatingsForTemplate, unify, getUserRating, validRating
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -36,6 +36,7 @@ class StudentNewRating(BaseRequestHandler) :
         })
 
 class StudentAddRating(BaseRequestHandler) :
+    @user
     def get(self, key = None) :
         session = getSessionByRequest(self)
 
@@ -49,12 +50,32 @@ class StudentAddRating(BaseRequestHandler) :
 
         rating = getUserRating(user, target)
 
+        session.deletionTarget = rating;
+        session.put()
 
         self.generate('studentAdd.html', {
             'surpressFooter': True,
             'ratable': unify(target),
             'rating' : rating
         })
+
+    @user
+    def post(self, unused) :
+        session = getSessionByRequest(self)
+    
+        print("!")
+        key = self.request.get('key')
+        rating = self.request.get('rating')
+        if (not validRating(rating)) :
+            setSessionMessage(session, "Invalid rating.")
+            self.redirect("/student/addrating/%s" % key)
+            return
+
+        print("!")
+            
+        comment = self.request.get('comment')
+
+
 
 class StudentSaveRating(BaseRequestHandler) :
     @user
@@ -104,10 +125,13 @@ class StudentSaveRating(BaseRequestHandler) :
             
         if ratable :
             rating = self.request.get('rating')
+            if (not validRating(rating)) :
+                setSessionMessage("Invalid rating, defaulting to 50")
+                rating = '50'
+            
             comment = self.request.get('comment')
             DA.addRating(ratable, user, rating, comment=comment)
         
-        setSessionMessage(session, 'Successfully added new rating!')
         self.redirect('/student')
 
 class StudentEditRating(BaseRequestHandler) :
