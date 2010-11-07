@@ -110,6 +110,9 @@ class UserDel(BaseRequestHandler) :
         self.redirect('/admin/manageUsers')
 
 class AdminPassword(BaseRequestHandler) :
+    def get(self):
+        self.redirect('/admin')
+    
     @admin
     def post(self):
         DA = DataAccessor()

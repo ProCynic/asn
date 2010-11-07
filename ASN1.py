@@ -32,8 +32,10 @@ _DEBUG = True
 
 #default admin login
 DA = DataAccessor()
-DA.addAdmin('admin','000000')
-
+try:
+    DA.addAdmin('admin','000000')
+except Usage:
+    pass
 
 class Login(BaseRequestHandler):
     def get(self):
