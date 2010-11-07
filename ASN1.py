@@ -166,6 +166,7 @@ def main():
     ('/student/password/?', StudentPasswordPage),
     ('/student/deleteaccount/?', StudentDeleteAccount),
     ('/student/delete/?', StudentDeleteRating),
+    ('/student/addgrade/?', StudentAddGrade),
     ('/admin/?', AdminPage),
     ('/admin/export/?', AdminExport),
     ('/admin/import/?', AdminImport),

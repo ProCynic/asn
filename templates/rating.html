@@ -33,7 +33,11 @@
 {% endif %}
 
 {% if rating.studentGrade %}
-    <span class='summary'>Your Grade: {{rating.studentGrade}}</span><br/>
+    <span class='summary'>Your Grade: {{rating.studentGrade}}</span>
+    {% if isStudentPage %}
+        <a href='/ratable/{{rating.dbkey}}'>Edit</a>
+    {% endif %}
+    <br/>
 {% endif %}
 
 {% for detail in rating.details %}
