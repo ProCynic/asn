@@ -19,7 +19,7 @@ class StudentPage(BaseRequestHandler) :
         user = getSessionUser(session)
         ratings = DA.getRatingsByUser(user)
         
-        ratings = prepareRatingsForTemplate(ratings)
+        ratings = prepareRatingsForTemplate(ratings, user)
         self.generate('student.html', {
             'ratings': ratings,
             'isStudentPage': True,

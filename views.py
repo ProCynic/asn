@@ -26,6 +26,21 @@ def getRatingClass(rating) :
 
     return 'bad'
 
+def getUserGrade(course, user) :
+    if not user :
+        return None
+
+    query = DS.Grade.all()
+    query.filter('student =', user)
+    query.filter('course =', course)
+
+    if (query.count() == 1) :
+        grade = query.get()
+        return grade.grade
+    else :
+        return None
+
+
 def getAverageGrade(item) :
     query = DS.Grade.all()
     query.filter('course =', item)
@@ -73,7 +88,7 @@ def getAverageGrade(item) :
             
     return valuemap[grade];
 
-def prepareItem(x) :
+def prepareItem(x, user = None) :
     u = unify(x)
 
     u.rating, u.ratingCount = getAverageRating(x)
@@ -82,6 +97,12 @@ def prepareItem(x) :
 
     if (isinstance(x, DS.Course)) :
         u.avgGrade = getAverageGrade(x)
+        
+        userGrade = getUserGrade(user)
+        if userGrade:
+            u.studentGrade = userGrade
+        else :
+            u.studentGrade = None
     else :
        u.avgGrade = None
 
@@ -96,10 +117,10 @@ def prepareDataForTemplate(query) :
         temp.append(u)
     return temp
 
-def prepareRatingsForTemplate(query) :
+def prepareRatingsForTemplate(query, user) :
     temp = []
     for x in query :
-        u = prepareItem(x.rated)
+        u = prepareItem(x.rated, user)
         u.studentRating = x.rating
 
         if (x.comment) :
@@ -134,6 +155,7 @@ class UnifiedRatable :
         #This is set if we were flattened from the ratings 
         self.studentRating = None
         self.studentComment = None
+        self.studentGrade = None
     
     def addDetail(self, prefix, data) :
         d = DetailEntry()

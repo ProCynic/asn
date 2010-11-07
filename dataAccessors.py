@@ -28,7 +28,6 @@ def addRatedTypename(query) :
     return temp
 
 
-
 class DataAccessor :
     def __init__(self, func=None) :
         if func: self._errHandler = func

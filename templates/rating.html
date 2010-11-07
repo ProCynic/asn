@@ -25,6 +25,10 @@
     <span class='summary'>Average Grade: {{rating.avgGrade}}</span> <br/>
 {% endif %}
 
+{% if rating.studentGrade %}
+    <span class='summary'>Your Grade: {{rating.studentGrade}}</span><br/>
+{% endif %}
+
 {% for detail in rating.details %}
     <span class='detail'>{% if not forloop.first %}| {% endif %}{{detail.prefix}} {{detail.data}}</span>
 {% endfor %}
