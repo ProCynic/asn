@@ -110,6 +110,9 @@ class UserDel(BaseRequestHandler) :
         self.redirect('/admin/manageUsers')
 
 class AdminPassword(BaseRequestHandler) :
+    def get(self):
+        self.redirect('/admin')
+    
     @admin
     def post(self):
         DA = DataAccessor()
@@ -135,4 +138,26 @@ class AdminPassword(BaseRequestHandler) :
             #Reset the session.
             session.generated = False
             session.put()
+        self.redirect('/admin')
+
+class CreateAdmin(BaseRequestHandler):
+    def get(self):
+        self.redirect('/admin')
+
+    @admin
+    def post(self):
+        DA = DataAccessor()
+
+        session = getSessionByRequest(self)
+
+        uid = self.request.get('uid')
+        pw = self.request.get('pw')
+        pw2 = self.request.get('pw2')
+
+        if pw != pw2:
+            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+            self.redirect('/admin')
+
+        DA.addAdmin(uid, pw)
+        setSessionMessage(session, "Admin: " + uid + " successfully added.")
         self.redirect('/admin')

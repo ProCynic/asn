@@ -32,8 +32,10 @@ _DEBUG = True
 
 #default admin login
 DA = DataAccessor()
-DA.addAdmin('admin','000000')
-
+try:
+    DA.addAdmin('admin','000000')
+except Usage:
+    pass
 
 class Login(BaseRequestHandler):
     def get(self):
@@ -170,7 +172,8 @@ def main():
     ('/admin/clear/?', AdminClear),
     ('/admin/manageUsers/?', ManageUsersPage),
     ('/admin/userdel/(.*)', UserDel),
-    ('/admin/password/?', AdminPassword)
+    ('/admin/password/?', AdminPassword),
+    ('/admin/newadmin/?', CreateAdmin)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 
