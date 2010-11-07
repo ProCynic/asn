@@ -232,11 +232,12 @@ body {
     font-size: x-large;
     font-weight: bold;
 }
-.ratingtitle a.add 
+.ratingtitle .add 
 {
     font-size: medium;
     font-weight: normal;
     float: right;
+    margin-left: 10px;
 }
 
 ul#ratings {

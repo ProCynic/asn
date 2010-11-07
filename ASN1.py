@@ -32,8 +32,10 @@ _DEBUG = True
 
 #default admin login
 DA = DataAccessor()
-DA.addAdmin('admin','000000')
-
+try:
+    DA.addAdmin('admin','000000')
+except Usage:
+    pass
 
 class Login(BaseRequestHandler):
     def get(self):
@@ -115,11 +117,10 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        unified = unify(ratable)
-        
         ratings = DA.getAllRatings().filter('rated =',ratable)
        
         user = getSessionUser(getSessionByRequest(self))
+        unified = prepareItem(ratable, user)
 
         self.generate('ratable.html', {
             'ratable' : unified,
@@ -171,7 +172,8 @@ def main():
     ('/admin/clear/?', AdminClear),
     ('/admin/manageUsers/?', ManageUsersPage),
     ('/admin/userdel/(.*)', UserDel),
-    ('/admin/password/?', AdminPassword)
+    ('/admin/password/?', AdminPassword),
+    ('/admin/newadmin/?', CreateAdmin)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 

@@ -37,21 +37,41 @@
 
 <fieldset>
 	<legend>Change Password</legend>
-	    <form method='POST' class="custom" action=/admin/password/>
-        <label>Old Password
-            <input type='password' name='old'/>
-        </label>
+    <form method='POST' class="custom" action=/admin/password/>
+	    <label>Old Password
+	        <input type='password' name='old'/>
+	    </label>
 
-        <label>New Password
-            <input type='password' name='new'/>
-        </label>
+	    <label>New Password
+	        <input type='password' name='new'/>
+	    </label>
 
-        <label>Retype Password
-            <input type='password' name='new2'/>
-        </label>
+	    <label>Retype Password
+	        <input type='password' name='new2'/>
+	    </label>
 
-        <input type='submit' value="Change Password"/>
-    </form>
+	    <input type='submit' value="Change Password"/>
+	</form>
+</fieldset>
+
+<fieldset>
+	<legend>Create New Admin</legend>
+	<form method='POST' class="custom" action=/admin/newadmin/>
+		<label>User ID
+			<input type="text" name="uid"/>
+		</label>
+	
+		<label>Password
+			<input type="password" name="pw"/>
+		</label>
+		
+		<label>Retype Password
+			<input type="password" name="pw2"/>
+		</label>
+	
+		<input type='submit' value="Create">
+	</form>
+</fieldset>
 
 {% endblock %}
 

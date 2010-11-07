@@ -7,6 +7,24 @@
     <div class='ratingtitle'>
         <span class='title'>
             {{ ratable.name }}
+        {% ifequal ratable.type "Course" %}
+        <form class='add'>
+            <label>My Grade: </label>
+            <select name='grade'>
+                <option></option>
+                <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+    <option value='A-' {% ifequal ratable.studentGrade "A-" %} selected='true' {% endifequal %}>A-</option>
+    <option value='B+' {% ifequal ratable.studentGrade "B+" %} selected='true' {% endifequal %}>B+</option>
+    <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+    <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+    <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+    <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+    <option value='A' {% ifequal ratable.studentGrade "A" %} selected='true' {% endifequal %}>A</option>
+
+            
+            </select>
+        </form>
+        {% endifequal %}
         <a class='add' href='/student/addrating/{{ratable.dbkey}}'>Add Rating</a>
         </span>
     </div>

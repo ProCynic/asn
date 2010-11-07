@@ -147,12 +147,14 @@ class StudentEditRating(BaseRequestHandler) :
         session.deletionTarget = getUserRating(user, ratable);
         session.put()
 
+        rating = getUserRating(user, ratable)
 
         typename = str(ratable.__class__.__name__)
         self.generate('studentEdit.html', {
             'typename': typename,
             'rating': ratable,
             'surpressFooter': True,
+            'score': rating
         })
 
     @user
