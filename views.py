@@ -73,57 +73,75 @@ def getAverageGrade(item) :
             
     return valuemap[grade];
 
+def prepareItem(x) :
+    u = unify(x)
+
+    u.rating, u.ratingCount = getAverageRating(x)
+    u.ratingClass = getRatingClass(u.rating)
+    u.dbkey = str(x.key())
+
+    if (isinstance(x, DS.Course)) :
+        u.avgGrade = getAverageGrade(x)
+    else :
+       u.avgGrade = None
+
+    return u
+
+
 def prepareDataForTemplate(query) :
-    query = addTypename(query)
     temp = []
     for x in query :
-
-        u = unify(x)
-
-        u.rating, u.ratingCount = getAverageRating(x)
-        u.ratingClass = getRatingClass(u.rating)
-        u.dbkey = str(x.key())
-
-        if (isinstance(x, DS.Course)) :
-            u.avgGrade = getAverageGrade(x)
-        else :
-            u.avgGrade = None
+        u = prepareItem(x)
 
         temp.append(u)
     return temp
 
+def prepareRatingsForTemplate(query) :
+    temp = []
+    for x in query :
+        u = prepareItem(x.rated)
+        u.studentRating = x.rating
+
+        if (x.comment) :
+            u.studentComment = x.comment.text
+        else :
+            u.studentComment = "No Comment"
+        
+        temp.append(u)
+
+    return temp
 
 #Transforms any Ratable object into a standard interface.
 #This consists of only data directly from the data store.
 #For calculated data, such as average rating, average grade, and the dbkey
 # invoke prepareDataForTemplate on a collection of ratables instead.
-class UnifiedRatable : 
+
+class DetailEntry :
+    prefix = None
+    data = None
+
+
+class UnifiedRatable :
+    def __init__(self) :
+        #A user-displayable type for the ratable object.
+        self.type = None
+
+        #A generic name for the ratable.
+        #For example, for books, this will be their title.
+        self.name = None
+        self.details = []
+
+        #This is set if we were flattened from the ratings 
+        self.studentRating = None
+        self.studentComment = None
     
-    #A user-displayable type for the ratable object.
-    type = None
+    def addDetail(self, prefix, data) :
+        d = DetailEntry()
+        d.prefix = prefix
+        d.data = data
+        self.details.append(d)
 
-    #A generic name for the ratable.
-    #As an example, for books, this will be their title.
-    name = None
-
-    #A number of optional parameters follow.
-
-    #The semester and year that the ratable applies to. 
-    #Does not exist for books, papers anid games.
-    semester = None
-
-    #The instructor's name. Exists only for courses.
-    instructor = None
-
-    #The author of a book / paper.
-    author = None
-
-    #The ISBN of a book
-    isbn = None
-
-    #The platform for a game.
-    platform = None
-
+        self.i = len(self.details)
 
 def unify(i) :
     result = UnifiedRatable()
@@ -131,19 +149,22 @@ def unify(i) :
     if isinstance(i, DS.Course) :
         result.type = "Course"
         result.name = "%s : %s (%s)" % (i.courseNum, i.name, i.unique)
-        result.semester = "%s, %s" % (i.semester.capitalize(), i.year)
-        result.instructor = str(i.instructor)
+
+        result.addDetail("Instructor:", str(i.instructor))
+        result.addDetail("Semester:", "%s, %s" % (i.semester.capitalize(), i.year))
     
     elif isinstance(i, DS.Book) :
         result.type = "Book"
         result.name = "%s" % (i.title)
-        result.author = str(i.author)
-        result.isbn = i.isbn
+        
+        result.addDetail("Author:", i.author)
+        result.addDetail("ISBN:", i.isbn)
 
     elif isinstance(i, DS.Paper) :
         result.type = i.paperType.capitalize()
         result.name = "%s" % (i.title)
-        result.author = str(i.author)
+
+        result.addDetail("Author:", str(i.author))
 
     elif isinstance(i, DS.Place) :
         placeTypeMapping = {
@@ -156,11 +177,12 @@ def unify(i) :
 
         result.type = placeTypeMapping[getUndecoratedTypename(i)]
         result.name = i.name
-        result.semester = "%s, %s" % (i.semester.capitalize(), i.year)
-        result.location = str(i.location)
+    
+        result.addDetail("At", str(i.location))
+        result.addDetail("Semester:", "%s, %s" % (i.semester.capitalize(), i.year))
 
     elif isinstance(i, DS.Game) :
         result.name = i.title 
-        result.platform = i.platform
+        result.addDetail("Platform:", i.platform)
 
     return result

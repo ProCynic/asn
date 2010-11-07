@@ -5,7 +5,7 @@ from exporter import export
 from ourExceptions import *
 from importer import Importer 
 from dataAccessors import DataAccessor, addRatedTypename
-from views import prepareDataForTemplate
+from views import prepareRatingsForTemplate
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -18,10 +18,12 @@ class StudentPage(BaseRequestHandler) :
         session = getSessionByRequest(self)
         user = getSessionUser(session)
         ratings = DA.getRatingsByUser(user)
-        ratings = addRatedTypename(ratings)
-        #ratings = prepareDataForTemplate(ratings)
+        
+        ratings = prepareRatingsForTemplate(ratings)
         self.generate('student.html', {
-            'ratings': ratings
+            'ratings': ratings,
+            'isStudentPage': True,
+
         })
 
 class StudentNewRating(BaseRequestHandler) :

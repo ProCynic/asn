@@ -1,12 +1,18 @@
 
 <li class='rating'>
-    <p class='name'>{{rating.name}} 
+    <p class='name'>{{rating.type}} 
         <span class='avg'>
-            {% ifequal rating.ratingCount 0 %} 
-                No ratings
-            {% else %}
-                {{rating.rating}}% with {{rating.ratingCount}} rating{{rating.ratingCount|pluralize}}
-            {% endifequal %}
+
+{% if isStudentPage %} 
+    Your Rating: {{rating.studentRating}}
+{% else %}
+    {% ifequal rating.ratingCount 0 %} 
+        No ratings
+    {% else %}
+        {{rating.rating}}% with {{rating.ratingCount}} rating{{rating.ratingCount|pluralize}}
+    {% endifequal %}
+ {% endif %}
+ 
         </span>
     </p>
     
@@ -16,32 +22,12 @@
     <br/>
 
 {% if rating.avgGrade %}
-    <span class='summary'>Average Grade: {{rating.avgGrade}}</span>
+    <span class='summary'>Average Grade: {{rating.avgGrade}}</span> <br/>
 {% endif %}
 
-{% if rating.author %}
-    <span class='detail'>by {{rating.author}}</span>
-{% endif %}
-
-{% if rating.instructor %} 
-    <span class='detail'>Instructor: {{rating.instructor}}</span>
-{% endif %}
-
-{% if rating.location %}
-    <span class='detail'>At: {{rating.location}}</span>
-{% endif %}
-
-{% if rating.platform %}
-    <span class='detail'>Platform: {{rating.platform}}</span>
-{% endif %}
-
-{% if rating.isbn %} 
-    <span class='detail'>| ISBN: {{rating.isbn}}</span>
-{% endif %}
-
-{% if rating.semester %} 
-    <span class='detail'>| Semester: {{rating.semester}}</span>
-{% endif %}
+{% for detail in rating.details %}
+    <span class='detail'>{% if not forloop.first %}| {% endif %}{{detail.prefix}} {{detail.data}}</span>
+{% endfor %}
 
     <div class='ratingbar {{rating.ratingClass}}' style="width: {{rating.rating}}%"></div>
 </li>
