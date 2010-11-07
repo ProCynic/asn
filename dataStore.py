@@ -257,12 +257,15 @@ class Game (Ratable):
 
 class Session(db.Model) :
     sessionID = db.StringProperty(required=True)
-    user = db.ReferenceProperty(User)
+    user = db.ReferenceProperty(User, required=True)
     message = db.StringProperty()
     generated = db.BooleanProperty(required=True)
     expiration = db.DateTimeProperty(required=True)
     
     deletionTarget = db.ReferenceProperty(Rating)
     confirmedDelete = db.BooleanProperty(default=False)
- 
+
+    def __iter__(self):
+        d = self.__class__.properties()
+        for x in d: yield (x, getattr(self, x)) 
 
