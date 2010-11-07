@@ -45,6 +45,7 @@ class Person(db.Model):
             yield (x,getattr(self,x))
 
     def __eq__(self, other):
+        if not issubclass(type(other), Person): return False
         for x,y in zip(self, other):
             if x != y: 
                 return False
@@ -68,10 +69,11 @@ class User(db.Model):
         for x in d: yield (x,getattr(self,x))
             
     def __eq__(self, other):
+        if not issubclass(type(other), User): return False
         for x,y in zip(self, other):
             if x != y: return False
         return True
-
+    
 class Ratable(polymodel.PolyModel):
     """
         Ratable is the base class for ratable objects, and has 
@@ -257,7 +259,7 @@ class Game (Ratable):
 
 class Session(db.Model) :
     sessionID = db.StringProperty(required=True)
-    user = db.ReferenceProperty(User, required=True)
+    user = db.ReferenceProperty(User)
     message = db.StringProperty()
     generated = db.BooleanProperty(required=True)
     expiration = db.DateTimeProperty(required=True)
