@@ -167,8 +167,8 @@ class StudentDeleteRating(BaseRequestHandler) :
     @user 
     def get(self) :
         session = getSessionByRequest(self)
+
         if session.deletionTarget :
-            
             da = DataAccessor()
             da.delete(session.deletionTarget)
 
@@ -182,7 +182,15 @@ class StudentDeleteRating(BaseRequestHandler) :
 
         self.redirect('/student/')
 
-
+class StudentDeleteAccount(BaseRequestHandler) :
+    @user 
+    def get(self) :
+        session = getSessionByRequest(self) 
+        user = getSessionUser(session)
+        da = DataAccessor()
+        da.delete(user)
+        expireSession(session)
+        
 
 class StudentPasswordPage(BaseRequestHandler):
     @user

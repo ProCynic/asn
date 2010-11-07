@@ -76,5 +76,6 @@
 	{% endifequal %}
 	<label>Rating: <input type="text" name="rating" value="{{rating.rating}}" /></label>
 	<label>Comment: <textarea name="comment">{{rating.comment}}</textarea></label>
-	<input type="submit" value="Update/Save" /> <a href='/student/delete/'>Delete Rating</a> 
+	<input type="submit" value="Update/Save" /> <a onclick='r = confirm("Are you sure you want to delete this entry?")
+    if (!r) { return false }' href='/student/delete'>Delete Rating</a> 
 </form>
