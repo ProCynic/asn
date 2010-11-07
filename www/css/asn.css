@@ -164,7 +164,7 @@ body {
 }
 
 #main form.custom {
-    width:35em;
+    width:40em;
     margin:0 auto;
     text-align:left;
     padding-left:0;
@@ -177,7 +177,7 @@ body {
         margin-bottom:10px;
     }
         #main form.custom input[type=submit] {
-            margin-left:13.75em;
+            margin-left:17.75em;
             clear:both;
             margin-top:2em;
         }
@@ -188,7 +188,7 @@ body {
             width:20em;
             float:right;
             margin-left:1em;
-            margin-right:7em;
+            margin-right:9em;
             line-height:1.5em;
         }
         #main form.custom label select {
