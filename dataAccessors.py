@@ -171,6 +171,7 @@ class DataAccessor :
         assert type(old) is type(new)
         for x in type(old).properties():
             setattr(old, x, getattr(new, x))
+        old.put()
         return old
 
 
