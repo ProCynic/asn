@@ -115,13 +115,7 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        if hasattr(ratable,'name'):
-            title = ratable.name
-        elif hasattr(ratable,'title'):
-            title = ratable.title
-       
-        ratable.name = title
-        ratableType = getUndecoratedTypename(ratable)  
+        unified = unify(ratable)
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
        
