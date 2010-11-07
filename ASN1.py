@@ -115,11 +115,10 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        unified = prepareItem(ratable)
-        
         ratings = DA.getAllRatings().filter('rated =',ratable)
        
         user = getSessionUser(getSessionByRequest(self))
+        unified = prepareItem(ratable, user)
 
         self.generate('ratable.html', {
             'ratable' : unified,
