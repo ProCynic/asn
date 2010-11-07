@@ -150,6 +150,14 @@ body {
 #main fieldset input {
     font-weight:bold;
 }
+#main .userlist {
+    list-style:none;
+    padding:0;
+}
+    #main .userlist .userdel {
+        width:10em;
+        text-align:right;
+    }
 
 #main input[type=text], #main textarea, #main input[type=password], #main input[type=submit], #main input[type=file], #main select {
     border:0.1em solid #999999;
