@@ -1,5 +1,5 @@
 import dataStore as DS
-from dataAccessors import addTypename
+from dataAccessors import * 
 
 def getAverageRating(item) :
     query = DS.Rating.all()
@@ -77,12 +77,90 @@ def prepareDataForTemplate(query) :
     query = addTypename(query)
     temp = []
     for x in query :
-        x.rating, x.ratingCount = getAverageRating(x)
-        x.ratingClass = getRatingClass(x.rating)
-        x.dbkey = str(x.key())
+
+        u = unify(x)
+
+        u.rating, u.ratingCount = getAverageRating(x)
+        u.ratingClass = getRatingClass(u.rating)
+        u.dbkey = str(x.key())
 
         if (isinstance(x, DS.Course)) :
-            x.avgGrade = getAverageGrade(x)
+            u.avgGrade = getAverageGrade(x)
+        else :
+            u.avgGrade = None
 
-        temp.append(x)
+        temp.append(u)
     return temp
+
+
+#Transforms any Ratable object into a standard interface.
+#This consists of only data directly from the data store.
+#For calculated data, such as average rating, average grade, and the dbkey
+# invoke prepareDataForTemplate on a collection of ratables instead.
+class UnifiedRatable : 
+    
+    #A user-displayable type for the ratable object.
+    type = None
+
+    #A generic name for the ratable.
+    #As an example, for books, this will be their title.
+    name = None
+
+    #A number of optional parameters follow.
+
+    #The semester and year that the ratable applies to. 
+    #Does not exist for books, papers anid games.
+    semester = None
+
+    #The instructor's name. Exists only for courses.
+    instructor = None
+
+    #The author of a book / paper.
+    author = None
+
+    #The ISBN of a book
+    isbn = None
+
+    #The platform for a game.
+    platform = None
+
+
+def unify(i) :
+    result = UnifiedRatable()
+
+    if isinstance(i, DS.Course) :
+        result.type = "Course"
+        result.name = "%s : %s (%s)" % (i.courseNum, i.name, i.unique)
+        result.semester = "%s, %s" % (i.semester.capitalize(), i.year)
+        result.instructor = str(i.instructor)
+    
+    elif isinstance(i, DS.Book) :
+        result.type = "Book"
+        result.name = "%s" % (i.title)
+        result.author = str(i.author)
+        result.isbn = i.isbn
+
+    elif isinstance(i, DS.Paper) :
+        result.type = i.paperType.capitalize()
+        result.name = "%s" % (i.title)
+        result.author = str(i.author)
+
+    elif isinstance(i, DS.Place) :
+        placeTypeMapping = {
+            "Internship" : "Internship",
+            "PlaceLive" : "Living Place", 
+            "PlaceEat" : "Eating Place",
+            "PlaceFun" : "Fun Place",
+            "PlaceStudy" : "Studing Place",
+        }
+
+        result.type = placeTypeMapping[getUndecoratedTypename(i)]
+        result.name = i.name
+        result.semester = "%s, %s" % (i.semester.capitalize(), i.year)
+        result.location = str(i.location)
+
+    elif isinstance(i, DS.Game) :
+        result.name = i.title 
+        result.platform = i.platform
+
+    return result

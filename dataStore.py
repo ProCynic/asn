@@ -34,17 +34,20 @@ class Person(db.Model):
     def __str__(self):
         s  = ""
         s += self.fname
-        if self.mname: s += ' ' + self.mname
+        if self.mname: 
+            s += ' i' + self.mname
         s += ' ' + self.lname
         return s
 
     def __iter__(self):
         d = self.__class__.properties()
-        for x in d: yield (x,getattr(self,x))
+        for x in d: 
+            yield (x,getattr(self,x))
 
     def __eq__(self, other):
         for x,y in zip(self, other):
-            if x != y: return False
+            if x != y: 
+                return False
         return True
 
 

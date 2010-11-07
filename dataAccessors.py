@@ -9,10 +9,14 @@ from ourExceptions import *
     Utility functions for views.
 
 """
+
+def getUndecoratedTypename(item) :
+    return item.__class__.__name__
+
 def addTypename(query) :
     temp = []
     for x in query :
-        x.typename = x.__class__.__name__
+        x.typename = getUndecoratedTypename(x) 
         temp.append(x)
     return temp
 

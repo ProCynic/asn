@@ -21,7 +21,10 @@ def sweepSessions() :
 def __invalidateSession(query) :
     for x in query :
         x.delete()
-    
+
+def setSessionMessageByRequest(self, message) :
+    setSessionMessage(getSessionByRequest(self), message)
+
 
 def getSessionByRequest(self) :
     session = getSession(self.request.cookies.get('sid', ''))
@@ -29,7 +32,7 @@ def getSessionByRequest(self) :
     session.put()
     self.response.headers.add_header(
         'Set-Cookie',
-        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % str(session.sessionID))
+        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % str(session.sessionID))
     return session
 
 def getSessionMessage(session) :

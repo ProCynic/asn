@@ -38,23 +38,21 @@ class StudentSaveRating(BaseRequestHandler) :
         DA = DataAccessor()
         session = getSessionByRequest(self)
         user = getSessionUser(session)
+        typename = self.request.get("typename")
+        ratable = None
         
         if typename == 'Book':
             isbn = self.request.get('isbn')
             title = self.request.get('title')
             author = self.request.get('author')
-            b = DA.addBook( title, isbn, author )
-            rating = self.request.get('rating')
-            comment = self.request.get('comment')
-            DA.addRating( b, user, rating, comment=comment)
+            ratable = DA.addBook( title, isbn, author )
+            
         elif typename == 'Paper':
             paperType = self.request.get('paperType').upper()
             title = self.request.get('title')
             author = self.request.get('author')
-            p = DA.addPaper( paperType, title, author )
-            rating = self.request.get('rating')
-            comment = self.request.get('comment')
-            DA.addRating( p, user, rating, comment=comment)
+            ratable = DA.addPaper( paperType, title, author )
+            
         elif typename == 'Course':
             unique = self.request.get('unique')
             courseNum = self.request.get('courseNum')
@@ -62,26 +60,27 @@ class StudentSaveRating(BaseRequestHandler) :
             semester = self.request.get('semester').upper()
             year = self.request.get('year')
             instructor = self.request.get('instructor')
-            c = DA.addCourse( unique, courseNum, name, semester, year, instructor )
-            rating = self.request.get('rating')
-            comment = self.request.get('comment')
-            DA.addRating( c, user, rating, comment=comment)
+            ratable = DA.addCourse( unique, courseNum, name, semester, year, instructor )
+            
         elif typename == 'Game':
             platform = self.request.get('platform')
             title = self.request.get('title')
-            g = DA.addGame( platform, title )
-            rating = self.request.get('rating')
-            comment = self.request.get('comment')
-            DA.addRating( g, user, rating, comment=comment)
-        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceLive' or typename == 'PlaceStudy':
+            ratable = DA.addGame( platform, title )
+            
+        elif typename in ['Internship', 'PlaceLive', 'PlaceEat', 'PlaceFun', 'PlaceLive', 'PlaceStudy'] :
             name = self.request.get('platform')
             location = self.request.get('title')
             semester = self.request.get('title')
             year = self.request.get('title')
-            p = DA.addPlace( name, location, semester, year, typename )
+            ratable = DA.addPlace( name, location, semester, year, typename )
+        else :
+            setSessionMessage(session, "Invalid rating type.")
+            self.redirect('/student')
+            
+        if ratable :
             rating = self.request.get('rating')
             comment = self.request.get('comment')
-            DA.addRating( p, user, rating, comment=comment)
+            DA.addRating(ratable, user, rating, comment=comment)
         
         setSessionMessage(session, 'Successfully added new rating!')
         self.redirect('/student')
@@ -127,14 +126,14 @@ class StudentUpdateRating(BaseRequestHandler) :
             platform = self.request.get('platform').upper()
             title = self.request.get('title')
             DA.update( rated, platform=platform, title=title )
-        elif typename == 'Internship' or typename == 'PlaceLive' or typename == 'PlaceEat' or typename == 'PlaceFun' or typename == 'PlaceStudy':
+        elif typename in ['Internship', 'PlaceLive', 'PlaceEat', 'PlaceFun', 'PlaceLive', 'PlaceStudy'] :
             name = self.request.get('platform')
             location = self.request.get('title')
-            semester = self.request.get('title')
-            year = self.request.get('title')
+            semester = self.request.get('semester').upper()
+            year = self.request.get('year')
             DA.update( rated, name=name, location=location, semester=semester, year=year )
         
-        DA.update( rating, rating=int(self.request.get('rating')) )
+        DA.update(rating, rating=int(self.request.get('rating')))
         
         session = getSessionByRequest(self)
         setSessionMessage(session, 'Successfully updated rating!')

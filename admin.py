@@ -23,7 +23,10 @@ class AdminClear(BaseRequestHandler):
     def get(self) :
         DA = DataAccessor()
         DA.clear()
-        self.redirect('/admin?m=DataStore%20Cleared')
+
+        setSessionMessageByRequest(self, "The datastore has been cleared.")
+        self.redirect('/admin')
+
 
 class AdminExport(BaseRequestHandler) :
     @admin 
@@ -46,7 +49,8 @@ class AdminImport(BaseRequestHandler) :
 
     @admin
     def get(self) :
-        self.redirect('/admin?m=Invalid%20Request')
+        setSessionMessageByRequest(self, "Invalid Request")
+        self.redirect('/admin')
     
     @admin
     def post(self) :
@@ -72,5 +76,6 @@ class AdminImport(BaseRequestHandler) :
 
         if len(self.msg) > 512 : 
                 self.msg = self.msg[0:512] + "..."
-
-        self.redirect('/admin?m='+self.msg)
+        
+        setSessionMessageByRequest(self, self.msg)
+        self.redirect('/admin')

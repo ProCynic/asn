@@ -38,57 +38,48 @@ DA.addAdmin('admin','000000')
 class Login(BaseRequestHandler):
     def get(self):
         """
-        u = loggedIn()
-        if u is not None:
-            if u.userType == 'STUDENT':
-                self.redirect('/student')
-                return
-            elif u.userType == 'ADMIN':
-                self.redirect('/admin')
-                return
         """
         message = getSessionMessage(getSessionByRequest(self)) 
         self.generate('login.html', {
             'msg': message,
             'title': 'Login'
         })
+
     def post(self):
         uid = self.request.get('id')
         pw = self.request.get('pw')
+
         if not uid or not pw:
+            setSessionMessageByRequest(self, "Please provide a User ID and Password to login.")
             self.redirect('/login')
-            return
         else:
             DA = DataAccessor()
             u = DA.getUser(uid, pw)
             if u is None:
-                self.redirect('/login?m=User%20ID%2FPassword%20combination%20incorrect.')
-                return
+                setSessionMessageByRequest(self, "The User ID and Password Combination you have provided was incorrect.")
+                self.redirect('/login')
             else:
                 sweepSessions()                
                 session = generateSession(u.key())
 
                 self.response.headers.add_header(
                     'Set-Cookie',
-                    'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' % str(session.sessionID))
-
+                    'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % str(session.sessionID))
+                
                 if u.userType == 'STUDENT':
                     self.redirect('/student')
-                    return
                 elif u.userType == 'ADMIN':
                     self.redirect('/admin')
-                    return
-        #assert "Somebody screwed the datastore" and False
-        
-        print u
-        self.redirect('/login')
+                else :
+                    setSessionMessageByRequest(self, "Invalid user")
+                    self.redirect('/login')
 
 class Logout(BaseRequestHandler):
     def get(self):     
         self.response.headers.add_header(
-                                        'Set-Cookie', 
-                                        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
-                                          % '')
+            'Set-Cookie', 
+            'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % '')
+
         self.redirect('/browse')
 
 class CreateUser(BaseRequestHandler):
@@ -101,10 +92,13 @@ class CreateUser(BaseRequestHandler):
         session = generateSession(user)
        
         self.response.headers.add_header(
-                                        'Set-Cookie', 
-                                        'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT' \
-                                          % session.sessionID)
-        setSessionMessage(session, str(DS.User.get(user)).replace('\n','<br />'))
+            'Set-Cookie', 
+            'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % session.sessionID)
+
+        user = DS.User.get(user)
+        setSessionMessage(session,
+            "Your account has been created. Please store the following information in a secure location.<br/><span class='credential'>UserID: %s</span><br/><span class='credential'>Password: %s</span>" % (user.uid, user.password))
+
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
@@ -117,12 +111,12 @@ class Ratable(BaseRequestHandler):
             title = ratable.name
         elif hasattr(ratable,'title'):
             title = ratable.title
-        else:
-            assert False
-        
+       
         ratable.name = title
-        ratableType = str(type(ratable))[18:-2]
+        ratableType = getUndecoratedTypename(ratable)  
+        
         ratings = DA.getAllRatings().filter('rated =',ratable)
+        
         self.generate('ratable.html', {
             'ratable' : ratable,
             'type' : ratableType,
@@ -133,17 +127,6 @@ class Sweep(BaseRequestHandler) :
     def get(self) :
         sweepSessions()
         self.redirect('/')
-
-class Session(BaseRequestHandler) :
-    @admin
-    def get(self) :
-        sessions = DS.Session.all()
-        for s in sessions : 
-            if (s.user) :
-                print(s.sessionID + " " + str(s.user))
-            else :
-                print(s.sessionID)
-        print("!") 
 
 class DatastoreXML(BaseRequestHandler):
     @admin
@@ -167,7 +150,6 @@ class ManageUsersPage(BaseRequestHandler) :
 def main():
   application = webapp.WSGIApplication([
     ('/', Browser),
-    ('/session', Session),
     ('/sweep', Sweep),
     ('/browse/?', Browser),
     ('/browse/([a-zA-Z]+)/?', Browser),
