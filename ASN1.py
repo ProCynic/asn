@@ -117,7 +117,7 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        unified = unify(ratable)
+        unified = prepareItem(ratable)
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
        
