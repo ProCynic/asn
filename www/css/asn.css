@@ -164,7 +164,7 @@ body {
 }
 
 #main form.custom {
-    width:33em;
+    width:35em;
     margin:0 auto;
     text-align:left;
     padding-left:0;
@@ -177,7 +177,7 @@ body {
         margin-bottom:10px;
     }
         #main form.custom input[type=submit] {
-            margin-left:11.5em;
+            margin-left:6.5em;
             clear:both;
             margin-top:2em;
         }
