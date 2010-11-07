@@ -35,6 +35,25 @@ class StudentNewRating(BaseRequestHandler) :
             'surpressFooter': True
         })
 
+class StudentAddGrade(BaseRequestHandler) :
+    @user
+    def post(self) :
+        key = self.request.get('key')
+        course = db.get(db.Key(key))
+        
+        session = getSessionByRequest(self)
+
+        if (not self.request.get('grade')) :
+            setSessionMessage(session, "Invalid grade selection")
+            self.redirect('/ratable/%s' % key)
+            return
+
+        da = DataAccessor()
+        da.addGrade(course, getSessionUser(session), self.request.get('grade'))
+        
+        setSessionMessage(session, "Added your grade.")
+        self.redirect('/ratable/%s' % key)
+
 class StudentAddRating(BaseRequestHandler) :
     @user
     def get(self, key = None) :
