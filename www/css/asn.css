@@ -102,6 +102,12 @@ body {
     border-bottom-left-radius: 0.2em 0.2em;
     border-bottom-right-radius: 0.2em 0.2em;
 }
+    #message.good {
+        background-color: #99EE99;
+    }
+    #message.bad {
+        background-color: #EE9999;
+    }
 
 #login_form {
     padding: 1em 0 0 0;
