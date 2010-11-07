@@ -271,7 +271,7 @@ class StudentPasswordPage(BaseRequestHandler):
         if (new != new2) :
             setSessionMessage(session, "Your new passwords did not match. Please try again.")
         else :
-            setSessionMessage(session, "You have successfully changd your password.")
+            setSessionMessage(session, "You have successfully changed your password.")
                
             #Reset the password
             user.password = new;

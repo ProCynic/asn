@@ -115,7 +115,13 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
-        unified = prepareItem(ratable) 
+        if hasattr(ratable,'name'):
+            title = ratable.name
+        elif hasattr(ratable,'title'):
+            title = ratable.title
+       
+        ratable.name = title
+        ratableType = getUndecoratedTypename(ratable)  
         
         ratings = DA.getAllRatings().filter('rated =',ratable)
        
@@ -125,7 +131,6 @@ class Ratable(BaseRequestHandler):
             'ratable' : unified,
             'ratings': ratings,
             'user': user
-
         })
 
 class Sweep(BaseRequestHandler) :
@@ -160,7 +165,6 @@ def main():
     ('/createUser/?', CreateUser),
     ('/student/?', StudentPage),
     ('/student/save/?', StudentSaveRating),
-    ('/student/addrating/(.*)', StudentAddRating),
     ('/student/new/(.*)', StudentNewRating),
     ('/student/update/(.*)', StudentEditRating),
     ('/student/password/?', StudentPasswordPage),
@@ -171,7 +175,8 @@ def main():
     ('/admin/import/?', AdminImport),
     ('/admin/clear/?', AdminClear),
     ('/admin/manageUsers/?', ManageUsersPage),
-    ('/admin/userdel/(.*)', UserDel)
+    ('/admin/userdel/(.*)', UserDel),
+    ('/admin/password/?', AdminPassword)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 

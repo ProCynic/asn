@@ -35,6 +35,24 @@
 	</form>
 </fieldset>
 
+<fieldset>
+	<legend>Change Password</legend>
+	    <form method='POST' class="custom" action=/admin/password/>
+        <label>Old Password
+            <input type='password' name='old'/>
+        </label>
+
+        <label>New Password
+            <input type='password' name='new'/>
+        </label>
+
+        <label>Retype Password
+            <input type='password' name='new2'/>
+        </label>
+
+        <input type='submit' value="Change Password"/>
+    </form>
+
 {% endblock %}
 
 {% block footer %}
