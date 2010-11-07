@@ -30,6 +30,16 @@
         {% endifequal %}
         <a class='add' href='/student/addrating/{{ratable.dbkey}}'>Add Rating</a>
         </span>
+    <br/>
+{% if ratable.avgGrade %}
+    <span class='summary'>Average Grade: {{ratable.avgGrade}}</span> <br/>
+{% endif %}
+
+{% for detail in ratable.details %}
+    <span class='detail'>{% if not forloop.first %}| {% endif %}{{detail.prefix}} {{detail.data}}</span>
+{% endfor %}
+
+
     </div>
 
     <br/>

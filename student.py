@@ -42,13 +42,27 @@ class StudentAddGrade(BaseRequestHandler) :
         course = db.get(db.Key(key))
         
         session = getSessionByRequest(self)
+        user = getSessionUser(session)
+        
+        da = DataAccessor()
 
         if (not self.request.get('grade')) :
-            setSessionMessage(session, "Invalid grade selection")
+            query = DS.Grade.all().filter('course =', course)
+            query.filter('student =', user)
+            
+            grade = query.get()
+            da.delete(grade)
+            
+
+
+
+
+
+
+            setSessionMessage(session, "Removed your grade")
             self.redirect('/ratable/%s' % key)
             return
 
-        da = DataAccessor()
         da.addGrade(course, getSessionUser(session), self.request.get('grade'))
         
         setSessionMessage(session, "Added your grade.")
