@@ -54,6 +54,9 @@ class Person(db.Model):
 
 
 class User(db.Model):
+    """
+    A User.  Can be a student or admin.
+    """
     uid = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
     userType = db.StringProperty(required=True, choices=['STUDENT','ADMIN'])
@@ -258,6 +261,10 @@ class Game (Ratable):
     title = db.StringProperty(required=True)
 
 class Session(db.Model) :
+    """
+    The model for a session.
+    Used to keep track of who is logged in.
+    """
     sessionID = db.StringProperty(required=True)
     user = db.ReferenceProperty(User)
     message = db.StringProperty()
