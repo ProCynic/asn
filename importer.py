@@ -11,6 +11,9 @@ class Importer:
         self.DA = da
 
     def parse(self, filename):
+        """
+            Parses the XML file in filename.
+        """
         root = ElementTree.parse(filename)
         for student in root.getiterator('student'):
             si = StudentImporter(self.DA)
@@ -46,6 +49,9 @@ class StudentImporter:
                       'comment'         : lambda x, d: operator.setitem(d, 'comment', x)}
         
     def parse(self, root):
+        """
+            Recursively parses the data.
+        """
         assert isinstance(root, ElementTree._Element)
         assert root.tag == 'student'
         assert len(root.findall('id')) == 1
@@ -63,6 +69,9 @@ class StudentImporter:
             pass
 
     def parseItem(self, node):
+        """
+            Parses a single node in a tree.
+        """
         assert node.tag in self.tags
         adder = self.tags[node.tag]
         args = self._getArgs(node)
