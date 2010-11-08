@@ -254,6 +254,11 @@ body {
     margin-left: 10px;
 }
 
+
+.editrating {
+	float: right;
+}
+
 ul#ratings {
     margin: 1em 0px;
     padding: 0px;

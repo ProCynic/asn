@@ -204,7 +204,7 @@ def main():
     ('/admin/manageUsers/?', ManageUsersPage),
     ('/admin/userdel/(.*)', UserDel),
     ('/admin/password/?', AdminPassword),
-    ('/admin/newadmin/?', CreateAdmin)
+    ('/admin/newadmin/?', CreateAdmin),
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 

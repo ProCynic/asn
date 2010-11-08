@@ -48,7 +48,9 @@
     <ul id="ratings">
         {% for rating in ratings %}
         <li class="rating">
-			<span class="score">{{ rating.rating }} / 100</span>
+        	<form action="/student/update/{{rating.key}}" method="get">
+				<div class="score">{{ rating.rating }} / 100 {% ifequal user.key rating.rater.key %}<input class="editrating" type="submit" value="edit"> {% endifequal %}</div>
+			</form>
             <p> {{rating.comment}} </p>
             <div class='ratingbar {{rating.ratingclass}}' style='width: {{rating.rating}}%'></div>
         </li>
