@@ -112,7 +112,7 @@ class CreateUser(BaseRequestHandler):
             'Set-Cookie', 
             'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % session.sessionID)
 
-        user = DS.User.get(user)
+##        user = DS.User.get(user)
 
         message  = "Your account has been created. Please store the following information in a secure location.<br/>"
         message += "<span class='credential'>UserID: %s</span><br/>" % user.uid
