@@ -30,6 +30,9 @@ class StudentPage(BaseRequestHandler) :
 class StudentNewRating(BaseRequestHandler) :
     @user
     def get(self, typename=''):
+        """
+            Shows the add rating page.
+        """
         self.generate('studentNew.html', {
             'typename': typename,
             'surpressFooter': True
@@ -38,6 +41,9 @@ class StudentNewRating(BaseRequestHandler) :
 class StudentAddGrade(BaseRequestHandler) :
     @user
     def post(self) :
+        """
+            Handles adding grades to a course.
+        """
         key = self.request.get('key')
         course = db.get(db.Key(key))
         
@@ -65,6 +71,9 @@ class StudentAddGrade(BaseRequestHandler) :
 class StudentAddRating(BaseRequestHandler) :
     @user
     def get(self, key = None) :
+        """
+            Will display the add rating page.
+        """
         session = getSessionByRequest(self)
 
         if not key :
@@ -88,6 +97,9 @@ class StudentAddRating(BaseRequestHandler) :
 
     @user
     def post(self, unused) :
+        """
+            Adds a rating to the given object.
+        """
         session = getSessionByRequest(self)
     
         key = self.request.get('key')
@@ -111,6 +123,9 @@ class StudentAddRating(BaseRequestHandler) :
 class StudentSaveRating(BaseRequestHandler) :
     @user
     def post(self):
+        """
+            Saves a new rating into the datastore.
+        """
         
         DA = DataAccessor()
         session = getSessionByRequest(self)
@@ -171,6 +186,9 @@ class StudentEditRating(BaseRequestHandler) :
 
     @user
     def get(self, key=0):
+        """
+            Displays the edit rating page.
+        """
         session = getSessionByRequest(self)
         user = getSessionUser(session)
 
@@ -191,6 +209,9 @@ class StudentEditRating(BaseRequestHandler) :
 
     @user
     def post(self, key=0):
+        """
+            Edits the given rating.
+        """
         DA = DataAccessor()
         
         rated = db.get(db.Key(key))
@@ -243,6 +264,9 @@ class StudentEditRating(BaseRequestHandler) :
 class StudentDeleteRating(BaseRequestHandler) :
     @user 
     def get(self) :
+        """
+            Deletes the object that has been stored in the session.
+        """
         session = getSessionByRequest(self)
 
         if session.deletionTarget :
@@ -262,6 +286,9 @@ class StudentDeleteRating(BaseRequestHandler) :
 class StudentDeleteAccount(BaseRequestHandler) :
     @user 
     def get(self) :
+        """
+            Deletes the current user.
+        """
         session = getSessionByRequest(self) 
         user = getSessionUser(session)
         da = DataAccessor()
@@ -285,7 +312,10 @@ class StudentPasswordPage(BaseRequestHandler):
 
     @user
     def post(self):
-
+        """
+            Changes the password of the current user.
+            Will display error messages on failure through the session message system.
+        """
         session = getSessionByRequest(self)
         user = getSessionUser(session)
         
