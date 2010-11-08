@@ -3,9 +3,15 @@ from acls import *
 import random
 
 def nullErrorHandler(x) :
+    """
+        An error handler that does nothing.
+    """
 	print(x)	
 
 def main():
+    """
+        Call all the data adding functions.
+    """
 	DA = DataAccessor(nullErrorHandler)
 	gparker(DA)
 	aywang(DA)
@@ -15,6 +21,9 @@ def main():
 
 
 def gparker(DA):
+    """
+        Add data for gparker
+    """
 	uid = userIDGen()
 	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
@@ -39,6 +48,9 @@ def gparker(DA):
 	DA.addGrade(c, me, 'A')
 
 def aywang(DA):
+    """
+        Add data for aywang
+    """
 	uid = userIDGen()
 	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
@@ -69,6 +81,9 @@ def aywang(DA):
 	DA.addRating(b, me, '86', "No taylor basement, but its still filled with intelligent people to help.")
 
 def ttb265(DA):
+    """
+        Add data for ttb256
+    """
 	uid = userIDGen()
 	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
@@ -103,6 +118,9 @@ def ttb265(DA):
 	DA.addRating(p, me, '90', 'A great game to loosen you up after a long day of classes.')
 
 def matt(DA):
+    """
+        Add data for matt
+    """
 	uid = userIDGen()
 	pwd = passwordGen()
 	me = DA.addStudent(uid,pwd)
