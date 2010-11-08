@@ -14,7 +14,7 @@ class BaseRequestHandler(webapp.RequestHandler) :
         """
 
         session = getSessionByRequest(self)
-        message = getSessionMessage(session)
+        message, status = getSessionMessage(session)
         user = getSessionUser(session)
 
 
@@ -23,7 +23,8 @@ class BaseRequestHandler(webapp.RequestHandler) :
           'debug': self.request.get('deb'),
           'application_name': 'Anonymous Social Network, Phase 2',
           'user': user,
-          'msg' : message
+          'msg' : message,
+          'msgstatus' : status
         }
         
         values.update(template_values)

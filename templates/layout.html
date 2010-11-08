@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			{% if msg %}
-				<div id="message">
+				<div id="message" class="{% if msgstatus %}good{% else %}bad{% endif %}">
 				    {{ msg }}
 				</div>
 			{% endif %}

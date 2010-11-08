@@ -261,6 +261,7 @@ class Session(db.Model) :
     sessionID = db.StringProperty(required=True)
     user = db.ReferenceProperty(User)
     message = db.StringProperty()
+    msgstatus = db.BooleanProperty(default=False)
     generated = db.BooleanProperty(required=True)
     expiration = db.DateTimeProperty(required=True)
     

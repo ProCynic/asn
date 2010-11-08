@@ -20,8 +20,8 @@ class TestSession(unittest.TestCase) :
 
     def test_message(self) :
         setSessionMessage(self.session, "Test")
-        self.assertEqual(getSessionMessage(self.session), "Test")
-        self.assertEqual(getSessionMessage(self.session), None)
+        self.assertEqual(getSessionMessage(self.session), ("Test", False))
+        self.assertEqual(getSessionMessage(self.session), (None, False))
 
     def test_expire(self) :
         sid = self.session2.sessionID
