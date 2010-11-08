@@ -218,7 +218,14 @@ class CreateAdmin(BaseRequestHandler):
         if pw != pw2:
             setSessionMessage(session, "Your new passwords did not match. Please try again.", True)
             self.redirect('/admin')
+            return
 
-        DA.addAdmin(uid, pw)
+        try:
+            DA.addAdmin(uid, pw)
+        except Usage:
+            setSessionMessage(session, "A user with that uid exists already", True)
+            self.redirect('/admin')
+            return
+        
         setSessionMessage(session, "Admin: " + uid + " successfully added.", False)
         self.redirect('/admin')
