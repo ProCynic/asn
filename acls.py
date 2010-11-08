@@ -40,7 +40,7 @@ def admin(func) :
         redirected to the login page if they are not an admin.
     """
     def redirectlogin(session, self) :
-        setSessionMessage(session, "Admin Login Required.", False)
+        setSessionMessage(session, "Admin Login Required.", True)
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
@@ -66,7 +66,7 @@ def user(func) :
       redirected to the login page if they are not an student.
    """
    def redirectlogin(session, self) :
-        setSessionMessage(session, "Student Login required", False)
+        setSessionMessage(session, "Student Login required", True)
         return self.redirect('/login')
 
    def checkauth(*args, **kwargs) : 

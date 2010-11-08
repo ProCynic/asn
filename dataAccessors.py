@@ -29,8 +29,17 @@ def addRatedTypename(query) :
 
 
 class DataAccessor :
+    """
+    A DataAccessor class.
+    To modify the dataStore, create an object of this class and call the methods.
+    """
     def __init__(self, func=None) :
+        """
+        The creator of the object can specify a custom error handler function.
+        """
         if func: self._errHandler = func
+
+        #used in delete for chain deletion
         self.dependencies = [(User, Rating),
                              (Ratable, Rating),
                              (Rating, Comment),
@@ -39,10 +48,17 @@ class DataAccessor :
                              (Course, Grade)]
 
     def _errHandler(self, err) :
+        """
+        The default error handler function.  Simply raises a usage exception.
+        """
         raise Usage("Duplicate entry: " + str(err))
 
 
     def _addPerson(self, name) :
+        """
+        Add a person to the datastore.
+        Takes a simple string.
+        """
         name = name.strip().split()
         mname = None
         if len(name) == 2: fname,lname = name
@@ -57,6 +73,9 @@ class DataAccessor :
             
 
     def addUser(self, uid, password, userType):
+        """
+        Add a user to the dataStore.
+        """
         pkey = ['uid']
         return self._addItem(User, pkey,
                                  uid=uid,
@@ -64,12 +83,23 @@ class DataAccessor :
                                  userType=userType)
     
     def addStudent(self, uid, password) :
+        """
+        Add a student to the dataStore.
+        Uses addUser.
+        """
         return self.addUser(uid, password, 'STUDENT')
 
     def addAdmin(self, uid, password):
+        """
+        Add an admin to the dataStore.
+        Uses addUser.
+        """
         return self.addUser(uid, password, 'ADMIN')
 
     def addPaper(self, ptype, title, author) :
+        """
+        Add a Paper to the dataStore.
+        """
         author = self._addPerson(author)
         pkey = ['paperType', 'title', 'author']
         return self._addItem(Paper, pkey,
@@ -78,6 +108,10 @@ class DataAccessor :
                              author=author)
 
     def addGrade(self, course, student, grade ) :
+        """
+        Add a grade to the dataStore.
+        A grade is a relation between a student and a course.
+        """
         pkey = ['course', 'student']
         return self._addItem(Grade, pkey,
                              course=course,
@@ -86,6 +120,11 @@ class DataAccessor :
                              overwrite=True)
     
     def addCourse(self, unique, num, name, semester, year, instructor) :
+        """
+        Add a course to the datastore.
+        Instructor is taken as a string.
+        If a person by that name is already in the datastore, they become the instructor
+        """
         i = self._addPerson(instructor)
         pkey = ['unique']
         return self._addItem(Course, pkey,
@@ -97,6 +136,12 @@ class DataAccessor :
                                 year=year)
 
     def addBook(self, title, isbn, author) :
+        """
+        Add a book to the datastore.
+        author is taken as a string.
+        If a person by that name is already in the datastore, they become the instructor
+        ISBN is taken as a string and must be a valid ISBN number
+        """
         author = self._addPerson(author)
         isbn = isbn.strip().replace('-','')
         pkey = ['isbn']
@@ -106,12 +151,19 @@ class DataAccessor :
                              author=author)
 
     def addGame(self, platform, title):
+        """
+        Add a game to the datastore
+        """
         pkey = ['platform', 'title']
         return self._addItem(Game, pkey,
                              platform=platform,
                              title=title)
 
     def _addPlace(self, name, location, semester, year, ptype) :
+        """
+        Add a place to the datastore.
+        This private method is called by the adders for all the subclasses of place.
+        """
         assert issubclass(ptype, Place)
         pkey = ['name', 'location', 'semester', 'year']
         return self._addItem(ptype, pkey,
@@ -121,21 +173,46 @@ class DataAccessor :
                              year=year)
 
     def addPlaceLive(self, name, location, semester, year) :
+        """
+        Add a PlaceLive to the dataStore.
+        Uses _addPlace
+        """
         return self._addPlace(name, location, semester, year, PlaceLive)
 
     def addPlaceEat(self, name, location, semester, year) :
+        """
+        Add a PlaceEat to the dataStore.
+        Uses _addPlace
+        """
         return self._addPlace(name, location, semester, year, PlaceEat)
      
     def addPlaceFun(self, name, location, semester, year) :
+        """
+        Add a PlaceFun to the dataStore.
+        Uses _addPlace
+        """
         return self._addPlace(name, location, semester, year, PlaceFun)
     
     def addPlaceStudy(self, name, location, semester, year) :
+        """
+        Add a PlaceStudy to the dataStore.
+        Uses _addPlace
+        """
         return self._addPlace(name, location, semester, year, PlaceStudy)
 
     def addInternship(self, name, location, semester, year) :
+        """
+        Add an Internship to the dataStore.
+        Uses _addPlace
+        """
         return self._addPlace(name, location, semester, year, Internship)
 
     def addRating(self, ratable, student, rating, comment=None) :
+        """
+        Adds a rating to the datastore.
+        A rating is a realtionship between a student and a ratable.
+        Comments are optional.
+        """
         if comment: comment = self.addComment(comment)
         rating = int(rating)
         pkey = ['rated', 'rater']
@@ -147,12 +224,21 @@ class DataAccessor :
                              overwrite=True)
     
     def addComment(self, text, replyto=None):
+        """
+        Adds a comment to the dataStore.
+        """
         c = Comment(text=text,
                     replyto=replyto)
         c.put()
         return c.key()
 
     def _addItem(self, objtype, pkey, overwrite=False, **assocs):
+        """
+        Adds an item to the dataStore.
+        All adders use this private method.
+        If overwrite is True and there is already an object in the datastore with the same pkey, the old object will be overwritten.
+        Otherwise the existing item is passed to the error handler fuction.
+        """
         r = objtype(**assocs)
         try:
             self._pkeyCheck(pkey, r)
@@ -176,6 +262,10 @@ class DataAccessor :
 
 
     def update(self, obj, **kwargs):
+        """
+        Update the given object to have the specified properties"
+        property names passed in kwargs must match property names of dataStore classes.
+        """
         assert obj.is_saved()
         assert issubclass(type(obj), db.Model)
         for x in kwargs:
@@ -189,6 +279,10 @@ class DataAccessor :
         return obj
 
     def getUser(self, uid, pw):
+        """
+        Return the user with the specified uid and password.
+        If not present, returns None.
+        """
         pkey = ['uid', 'password']
         u = User(uid=uid, password=pw, userType='STUDENT') # userType is ignored.  This is a hack to let us use _pkeyCheck.
         try:
@@ -198,20 +292,36 @@ class DataAccessor :
             return err.entity
     
     def getAllRatings(self):
+        """
+        Return a query object containing all the ratings in the datastore.
+        """
         return Rating.all()
 
     def getStudents(self):
+        """
+        Return a query object containing all the Students in the datastore.
+        """
         return User.all().filter('userType =', 'STUDENT')
 
     def getAdmins(self):
+        """
+        Return a query object containing all the Admins in the datastore.
+        """
         return User.all().filter('userType =', 'ADMIN')
     
     def getRatingsByUser(self, user):
+        """
+        Return a query object containing all the ratings made by the given user.
+        """
         ratings = Rating.all()
         ratings.filter('rater =', user.key())
         return ratings
 
     def delete(self, obj):
+        """
+        Delete the given object.
+        Chain deletes all the objects that reference this object in the dependencies table.
+        """
         assert issubclass(type(obj),db.Model)
         for x, y in self.dependencies:
             if issubclass(type(obj), x):
@@ -221,6 +331,9 @@ class DataAccessor :
         obj.delete()
 
     def clear(self, students=False):
+        """
+        Clear all Ratables, Ratings, and Grades from the datastore.
+        """
         for x in Ratable.all(): self.delete(x)
         if students:
             for x in User.all():
@@ -228,6 +341,10 @@ class DataAccessor :
     
 
     def _pkeyCheck(self, pkey, obj):
+        """
+        Checks to see if there are any objects in the dataStore with the same primary key as the given object.
+        If there are, raise a DataStoreClash with the existing object.
+        """
         objType = obj.__class__
         query = objType.all()
         for x in pkey:
