@@ -7,6 +7,7 @@ from importer import Importer
 import dataStore as DS
 from dataAccessors import DataAccessor, addRatedTypename
 from views import prepareRatingsForTemplate, unify, getUserRating, validRating, prepareItem
+from google.appengine.ext.db import BadValueError
 
 class StudentPage(BaseRequestHandler) :
     @user
@@ -127,7 +128,10 @@ class StudentSaveRating(BaseRequestHandler) :
             Saves a new rating into the datastore.
         """
         
-        DA = DataAccessor()
+        def errhandler(obj):
+            raise DataStoreClash(obj)
+        
+        DA = DataAccessor(errhandler)
         session = getSessionByRequest(self)
         user = getSessionUser(session)
         typename = self.request.get("typename")
@@ -137,13 +141,39 @@ class StudentSaveRating(BaseRequestHandler) :
             isbn = self.request.get('isbn')
             title = self.request.get('title')
             author = self.request.get('author')
-            ratable = DA.addBook( title, isbn, author )
+            try:
+                ratable = DA.addBook( title, isbn, author )
+            except BadValueError:
+                setSessionMessage(session, "Enter all values.", True)
+                self.redirect('/student/new/Book')
+                return
+            except ValueError:
+                setSessionMessage(session, "Bad input syntax.", True)
+                self.redirect('/student/new/Book')
+                return
+            except DataStoreClash, err:
+                setSessionMessage(session, "Book already exists.", True)
+                self.redirect('/ratable/'+str(err.entity.key()))
+                return
             
         elif typename == 'Paper':
             paperType = self.request.get('paperType').upper()
             title = self.request.get('title')
             author = self.request.get('author')
-            ratable = DA.addPaper( paperType, title, author )
+            try:
+                ratable = DA.addPaper( paperType, title, author )
+            except BadValueError:
+                setSessionMessage(session, "Enter all values.", True)
+                self.redirect('/student/new/Paper')
+                return
+            except ValueError:
+                setSessionMessage(session, "Bad input syntax.", True)
+                self.redirect('/student/new/Paper')
+                return
+            except DataStoreClash, err:
+                setSessionMessage(session, "Paper already exists.", True)
+                self.redirect('/ratable/'+str(err.entity.key()))
+                return
             
         elif typename == 'Course':
             unique = self.request.get('unique')
@@ -152,22 +182,62 @@ class StudentSaveRating(BaseRequestHandler) :
             semester = self.request.get('semester').upper()
             year = self.request.get('year')
             instructor = self.request.get('instructor')
-            ratable = DA.addCourse( unique, courseNum, name, semester, year, instructor )
+            try:
+                ratable = DA.addCourse( unique, courseNum, name, semester, year, instructor )
+            except BadValueError:
+                setSessionMessage(session, "Enter all values.", True)
+                self.redirect('/student/new/Course')
+                return
+            except ValueError:
+                setSessionMessage(session, "Bad input syntax.", True)
+                self.redirect('/student/new/Course')
+                return
+            except DataStoreClash, err:
+                setSessionMessage(session, "Course already exists.", True)
+                self.redirect('/ratable/'+str(err.entity.key()))
+                return
             
         elif typename == 'Game':
             platform = self.request.get('platform')
             title = self.request.get('title')
-            ratable = DA.addGame( platform, title )
+            try:
+                ratable = DA.addGame( platform, title )
+            except BadValueError:
+                setSessionMessage(session, "Enter all values.", True)
+                self.redirect('/student/new/Game')
+                return
+            except ValueError:
+                setSessionMessage(session, "Bad input syntax.", True)
+                self.redirect('/student/new/Game')
+                return
+            except DataStoreClash, err:
+                setSessionMessage(session, "Game already exists.", True)
+                self.redirect('/ratable/'+str(err.entity.key()))
+                return
             
         elif typename in ['Internship', 'PlaceLive', 'PlaceEat', 'PlaceFun', 'PlaceLive', 'PlaceStudy'] :
-            name = self.request.get('platform')
-            location = self.request.get('title')
-            semester = self.request.get('title')
-            year = self.request.get('title')
-            ratable = DA.addPlace( name, location, semester, year, typename )
+            name = self.request.get('name')
+            location = self.request.get('location')
+            semester = self.request.get('semester')
+            year = self.request.get('year')
+            try:
+                ratable = DA._addPlace( name, location, semester, year, getattr(DS, typename) )
+            except BadValueError:
+                setSessionMessage(session, "Enter all values.", True)
+                self.redirect('/student/new/'+typename)
+                return
+            except ValueError:
+                setSessionMessage(session, "Bad input syntax.", True)
+                self.redirect('/student/new/'+typename)
+                return
+            except DataStoreClash, err:
+                setSessionMessage(session, typename+" already exists.", True)
+                self.redirect('/ratable/'+str(err.entity.key()))
+                return
         else :
             setSessionMessage(session, "Invalid rating type.", True)
             self.redirect('/student')
+            return
             
         if ratable :
             rating = self.request.get('rating')
@@ -321,6 +391,11 @@ class StudentPasswordPage(BaseRequestHandler):
         
         new = self.request.get('new')
         new2 = self.request.get('new2')
+        
+        if not new or not new2:
+            setSessionMessage(session, "Enter password twice.", True)
+            self.redirect('/student/password')
+            return
 
         if not session.generated :
             old = self.request.get('old')
