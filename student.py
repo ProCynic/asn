@@ -221,7 +221,7 @@ class StudentSaveRating(BaseRequestHandler) :
             semester = self.request.get('semester')
             year = self.request.get('year')
             try:
-                ratable = DA._addPlace( name, location, semester, year, getattr(DS, typename) )
+                ratable = DA._addPlace(name, location, semester, year, getattr(DS, typename) )
             except BadValueError:
                 setSessionMessage(session, "Enter all values.", True)
                 self.redirect('/student/new/'+typename)
@@ -316,8 +316,8 @@ class StudentEditRating(BaseRequestHandler) :
             title = self.request.get('title')
             DA.update( rated, platform=platform, title=title )
         elif typename in ['Internship', 'PlaceLive', 'PlaceEat', 'PlaceFun', 'PlaceLive', 'PlaceStudy'] :
-            name = self.request.get('platform')
-            location = self.request.get('title')
+            name = self.request.get('name')
+            location = self.request.get('location')
             semester = self.request.get('semester').upper()
             year = self.request.get('year')
             DA.update( rated, name=name, location=location, semester=semester, year=year )
