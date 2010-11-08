@@ -230,7 +230,7 @@ class DataAccessor :
         c = Comment(text=text,
                     replyto=replyto)
         c.put()
-        return c.key()
+        return c
 
     def _addItem(self, objtype, pkey, overwrite=False, **assocs):
         """
@@ -243,9 +243,9 @@ class DataAccessor :
         try:
             self._pkeyCheck(pkey, r)
             r.put()
-            return r.key()
+            return r
         except DataStoreClash, data:
-            if data.entity == r: return data.entity.key()
+            if data.entity == r: return data.entity
             if overwrite: return self._updateItem(data.entity, r)
             self._errHandler(data.entity)
 
