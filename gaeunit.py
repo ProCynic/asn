@@ -65,6 +65,7 @@ import time
 import logging
 import cgi
 import django.utils.simplejson
+from acls import admin
 
 from google.appengine.ext import webapp
 from google.appengine.api import apiproxy_stub_map  
@@ -87,6 +88,7 @@ _WEB_TEST_DIR = '/test'   # how you want to refer to tests on your web server
 
 
 class MainTestPageHandler(webapp.RequestHandler):
+    @admin
     def get(self):
         unknown_args = [arg for arg in self.request.arguments()
                         if arg not in ("format", "package", "name")]
