@@ -24,8 +24,8 @@ def __invalidateSession(query) :
     for x in query :
         x.delete()
 
-def setSessionMessageByRequest(self, message) :
-    setSessionMessage(getSessionByRequest(self), message)
+def setSessionMessageByRequest(self, message, urgent = False) :
+    setSessionMessage(getSessionByRequest(self), message, urgent)
 
 
 def getSessionByRequest(self) :
@@ -41,7 +41,7 @@ def getSessionMessage(session) :
     message = session.message;
     session.message = None;
     session.put()
-    return message
+    return message, session.msgstatus
 
 def getSession(sessionID) :
     query = DS.Session.all()
@@ -60,8 +60,9 @@ def getSession(sessionID) :
     session = query.get()
     return query.get()
 
-def setSessionMessage(session, msg) :
+def setSessionMessage(session, msg, urgent = False) :
     session.message = msg;
+    session.msgstatus = urgent;
     session.put()
 
 def generateSession(userkey) : 

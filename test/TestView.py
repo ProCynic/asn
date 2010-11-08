@@ -52,7 +52,7 @@ class TestView(unittest.TestCase) :
         self.assertEqual(len(out), 1)
 
         item = out[0]
-        self.assertEqual(item.typename, 'Course')
+        self.assertEqual(item.type, 'Course')
 
     def test_prepare_template2(self) :
         out = prepareDataForTemplate(Course.all().filter('unique =', '12345'))

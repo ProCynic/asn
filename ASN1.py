@@ -11,6 +11,7 @@ from admin import *
 from student import *
 from browser import *
 from session import *
+from views import getRatingClass
 
 import datetime
 import os
@@ -117,14 +118,19 @@ class Ratable(BaseRequestHandler):
         """
         """
         ratable = db.get(db.Key(key))
+
+        temp = []
         ratings = DA.getAllRatings().filter('rated =',ratable)
+        for x in ratings :
+            x.ratingclass = getRatingClass(x.rating) 
+            temp.append(x)
        
         user = getSessionUser(getSessionByRequest(self))
         unified = prepareItem(ratable, user)
 
         self.generate('ratable.html', {
             'ratable' : unified,
-            'ratings': ratings,
+            'ratings': temp,
             'user': user
         })
 
