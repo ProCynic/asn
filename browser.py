@@ -48,7 +48,7 @@ class Browser(BaseRequestHandler) :
                 query = sorted(query, key= lambda x : x.rating, reverse = True)
 
         if arg and not arg in possiblemap :
-            setSessionMessage(getSessionByRequest(self), "That was an invalid query; showing all results instead.")
+            setSessionMessage(getSessionByRequest(self), "That was an invalid query; showing all results instead.", True)
 
         
         self.generate('browser.html', {

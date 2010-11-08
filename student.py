@@ -53,19 +53,13 @@ class StudentAddGrade(BaseRequestHandler) :
             grade = query.get()
             da.delete(grade)
             
-
-
-
-
-
-
-            setSessionMessage(session, "Removed your grade")
+            setSessionMessage(session, "Removed your grade", False)
             self.redirect('/ratable/%s' % key)
             return
 
         da.addGrade(course, getSessionUser(session), self.request.get('grade'))
         
-        setSessionMessage(session, "Added your grade.")
+        setSessionMessage(session, "Added your grade.", False)
         self.redirect('/ratable/%s' % key)
 
 class StudentAddRating(BaseRequestHandler) :
@@ -99,15 +93,18 @@ class StudentAddRating(BaseRequestHandler) :
         key = self.request.get('key')
         rating = self.request.get('rating')
         if (not validRating(rating)) :
-            setSessionMessage(session, "Invalid rating.")
+            setSessionMessage(session, "Invalid rating.", False)
             self.redirect("/student/addrating/%s" % key)
             return
 
         target = db.get(db.Key(key))
         comment = self.request.get('comment')
+        if not comment :
+            comment = None
+
         da = DataAccessor()
         da.addRating(target, getSessionUser(session), rating, comment = comment)
-        setSessionMessage(session, "Added Rating.")
+        setSessionMessage(session, "Added Rating.", False)
         self.redirect("/student/")
 
 
@@ -154,16 +151,18 @@ class StudentSaveRating(BaseRequestHandler) :
             year = self.request.get('title')
             ratable = DA.addPlace( name, location, semester, year, typename )
         else :
-            setSessionMessage(session, "Invalid rating type.")
+            setSessionMessage(session, "Invalid rating type.", True)
             self.redirect('/student')
             
         if ratable :
             rating = self.request.get('rating')
             if (not validRating(rating)) :
-                setSessionMessage(session, "Invalid rating, defaulting to 50")
+                setSessionMessage(session, "Invalid rating, defaulting to 50", True)
                 rating = '50'
             
             comment = self.request.get('comment')
+            if not comment :
+                comment = None
             DA.addRating(ratable, user, rating, comment=comment)
         
         self.redirect('/student')
@@ -236,7 +235,7 @@ class StudentEditRating(BaseRequestHandler) :
             DA.update(rating, rating=int(self.request.get('rating')))
             setSessionMessageByRequest(self, "Successfully updated rating.")
         else :
-            setSessionMessageByRequest(self, "Invalid rating input. Keeping original")
+            setSessionMessageByRequest(self, "Invalid rating input. Keeping original", True)
 
        
         self.redirect('/student')
@@ -256,7 +255,7 @@ class StudentDeleteRating(BaseRequestHandler) :
             session.put()
 
         else :
-            setSessionMessage(session, "Invalid request.")
+            setSessionMessage(session, "Invalid request.", True)
 
         self.redirect('/student/')
 
@@ -296,7 +295,7 @@ class StudentPasswordPage(BaseRequestHandler):
         if not session.generated :
             old = self.request.get('old')
             if (old != user.password) :
-                setSessionMessage(session, "Your password was invalid.")
+                setSessionMessage(session, "Your password was invalid.", True)
                 self.redirect('/student/password/')
                 return
     
@@ -304,9 +303,9 @@ class StudentPasswordPage(BaseRequestHandler):
         #Either we were generated, and get a change for free
         #or we've validated our password above.
         if (new != new2) :
-            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+            setSessionMessage(session, "Your new passwords did not match. Please try again.", True)
         else :
-            setSessionMessage(session, "You have successfully changed your password.")
+            setSessionMessage(session, "You have successfully changed your password.", False)
                
             #Reset the password
             user.password = new;

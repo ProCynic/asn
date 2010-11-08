@@ -26,7 +26,7 @@ class AdminClear(BaseRequestHandler):
         DA = DataAccessor()
         DA.clear()
 
-        setSessionMessageByRequest(self, "The datastore has been cleared.")
+        setSessionMessageByRequest(self, "The datastore has been cleared.", False)
         self.redirect('/admin')
 
 
@@ -51,7 +51,7 @@ class AdminImport(BaseRequestHandler) :
 
     @admin
     def get(self) :
-        setSessionMessageByRequest(self, "Invalid Request")
+        setSessionMessageByRequest(self, "Invalid Request", True)
         self.redirect('/admin')
     
     @admin
@@ -128,9 +128,9 @@ class AdminPassword(BaseRequestHandler) :
             self.redirect('/admin')
 
         if (new != new2) :
-            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+            setSessionMessage(session, "Your new passwords did not match. Please try again.", True)
         else:
-            setSessionMessage(session, "You have successfully changed your password.")
+            setSessionMessage(session, "You have successfully changed your password.", False)
                
             #Reset the password
             DA.update(user, password=new)
@@ -155,9 +155,9 @@ class CreateAdmin(BaseRequestHandler):
         pw2 = self.request.get('pw2')
 
         if pw != pw2:
-            setSessionMessage(session, "Your new passwords did not match. Please try again.")
+            setSessionMessage(session, "Your new passwords did not match. Please try again.", True)
             self.redirect('/admin')
 
         DA.addAdmin(uid, pw)
-        setSessionMessage(session, "Admin: " + uid + " successfully added.")
+        setSessionMessage(session, "Admin: " + uid + " successfully added.", False)
         self.redirect('/admin')

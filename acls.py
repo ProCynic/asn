@@ -29,7 +29,7 @@ def passwordGen() :
 
 def admin(func) : 
     def redirectlogin(session, self) :
-        setSessionMessage(session, "Admin Login Required.")
+        setSessionMessage(session, "Admin Login Required.", False)
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
@@ -50,7 +50,7 @@ def admin(func) :
 
 def user(func) : 
     def redirectlogin(session, self) :
-        setSessionMessage(session, "Student Login required")
+        setSessionMessage(session, "Student Login required", False)
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 

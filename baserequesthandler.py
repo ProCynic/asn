@@ -17,7 +17,6 @@ class BaseRequestHandler(webapp.RequestHandler) :
         message, status = getSessionMessage(session)
         user = getSessionUser(session)
 
-
         values = {
           'request': self.request,
           'debug': self.request.get('deb'),

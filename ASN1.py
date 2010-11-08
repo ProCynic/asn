@@ -42,9 +42,7 @@ class Login(BaseRequestHandler):
     def get(self):
         """
         """
-        message = getSessionMessage(getSessionByRequest(self)) 
         self.generate('login.html', {
-            'msg': message,
             'title': 'Login'
         })
 
@@ -53,13 +51,13 @@ class Login(BaseRequestHandler):
         pw = self.request.get('pw')
 
         if not uid or not pw:
-            setSessionMessageByRequest(self, "Please provide a User ID and Password to login.")
+            setSessionMessageByRequest(self, "Please provide a User ID and Password to login.", True)
             self.redirect('/login')
         else:
             DA = DataAccessor()
             u = DA.getUser(uid, pw)
             if u is None:
-                setSessionMessageByRequest(self, "The User ID and Password Combination you have provided was incorrect.")
+                setSessionMessageByRequest(self, "The User ID and Password Combination you have provided was incorrect.", True)
                 self.redirect('/login')
             else:
                 sweepSessions()                
@@ -74,7 +72,7 @@ class Login(BaseRequestHandler):
                 elif u.userType == 'ADMIN':
                     self.redirect('/admin')
                 else :
-                    setSessionMessageByRequest(self, "Invalid user")
+                    setSessionMessageByRequest(self, "Invalid user", True)
                     self.redirect('/login')
 
 class Logout(BaseRequestHandler):
@@ -108,7 +106,7 @@ class CreateUser(BaseRequestHandler):
         message += "Change your password: <a href='/student/password'>Manage Account</a>"
 
 
-        setSessionMessage(session, message)
+        setSessionMessage(session, message, False)
 
         self.redirect('/student')
 
