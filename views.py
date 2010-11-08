@@ -2,6 +2,10 @@ import dataStore as DS
 from dataAccessors import * 
 
 def getAverageRating(item) :
+    """
+        Calculates the average rating of an item.
+        Returns (average, item count)
+    """
     query = DS.Rating.all()
     query.filter('rated =', item)
 
@@ -18,6 +22,12 @@ def getAverageRating(item) :
 
 
 def getRatingClass(rating) :
+    """
+        Returns the rating class of a rating.
+        Anything above 70 is 'good'
+        Between 40 and 70 is 'average'
+        Anything else is 'bad'
+    """
     if rating > 70 :
         return 'good' 
     
@@ -27,6 +37,10 @@ def getRatingClass(rating) :
     return 'bad'
 
 def getUserGrade(course, user) :
+    """
+        Gets the user's grade for the course.
+        If no user for that course exists, returns None instead.
+    """
     if not user :
         return None
 
@@ -41,6 +55,10 @@ def getUserGrade(course, user) :
         return None
 
 def getUserRating(u, o) :
+    """
+        Gets the rating that the user (u) assigned to the object (o)
+        If no rating has been assigned, returns None.
+    """
     rating = DS.Rating.all()
     rating.filter('rated =', o)
     rating.filter('rater =', u)
@@ -51,6 +69,9 @@ def getUserRating(u, o) :
         return None
 
 def getAverageGrade(item) :
+    """
+        Returns the average grade of a course.
+    """
     query = DS.Grade.all()
     query.filter('course =', item)
 
@@ -98,6 +119,9 @@ def getAverageGrade(item) :
     return valuemap[grade];
 
 def prepareItem(x, user = None) :
+    """
+        Prepares an item for display in the ratable page by setting specific attributes.
+    """
     u = unify(x)
 
     u.rating, u.ratingCount = getAverageRating(x)
@@ -119,6 +143,9 @@ def prepareItem(x, user = None) :
 
 
 def prepareDataForTemplate(query) :
+    """
+        Given a query, prepares each item in the query.
+    """
     temp = []
     for x in query :
         u = prepareItem(x)
@@ -127,6 +154,9 @@ def prepareDataForTemplate(query) :
     return temp
 
 def prepareRatingsForTemplate(query, user) :
+    """
+        Given a query of ratings, prepares each item in the query.
+    """
     temp = []
     for x in query :
         u = prepareItem(x.rated, user)
@@ -142,6 +172,10 @@ def prepareRatingsForTemplate(query, user) :
     return temp
 
 def validRating(string) :
+    """
+        Returns true if the string represents a valid
+        rating code, false otherwise.
+    """
     try :
         rating = int(string)
         if (rating >= 0 and rating <= 100) :
@@ -159,6 +193,7 @@ class DetailEntry :
     prefix = None
     data = None
 
+|-ourExceptions.py
 
 class UnifiedRatable :
     def __init__(self) :
@@ -176,6 +211,11 @@ class UnifiedRatable :
         self.studentGrade = None
     
     def addDetail(self, prefix, data) :
+        """
+            Adds a detail entry to the UnifiedRatable object.
+            Upon formatting, it will look like
+            "prefix data"
+        """
         d = DetailEntry()
         d.prefix = prefix
         d.data = data
@@ -184,6 +224,12 @@ class UnifiedRatable :
         self.i = len(self.details)
 
 def unify(i) :
+    """
+        Unifies any ratable into a consistent interface.
+        There will be a name attribute, which is the name of the object
+        There will be a type attribute, the undecorated typename of the object.
+        Any other data will be stored in the details array of the return value.
+    """
     result = UnifiedRatable()
 
     if isinstance(i, DS.Course) :

@@ -179,6 +179,25 @@ class TestASN1(unittest.TestCase):
         self.assertTrue( db_g.student.uid == db_s.uid == uid)
         self.assertTrue( db_g.student.password == db_s.password == pwd)
         self.assertTrue( db_g.grade == 'B')
+        
+    def test_deleteRatable(self):
+    	da = DataAccessor()
+        da = DataAccessor()
+        uid = uidgen()
+        pwd = passgen()
+        s = da.addStudent(uid,pwd)
+        p = da.addPaper("CONFERENCE", "Test Paper", "Chris Brown")
+        r = da.addRating(p, s, '100', "Great paper that explains how Valve used the GPU to render text clearly.")
+        
+        self.assertTrue(db.get(p))
+        self.assertTrue(db.get(r))
+        
+        db_p = db.get(p)
+        
+        da.delete(db_p)
+        
+        self.assertFalse(db.get(p))
+        self.assertFalse(db.get(r))
 
 if __name__ == '__main__' :
 	unittest.main()

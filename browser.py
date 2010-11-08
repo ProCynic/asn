@@ -59,6 +59,9 @@ class Browser(BaseRequestHandler) :
         })
 
     def post(self, unused = None, unused2 = None) :
+        """
+            Used to filter results when requested through the browser page.
+        """
         filter = self.request.get('filter')
         if not filter :
             filter = 'all'

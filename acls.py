@@ -22,14 +22,25 @@ def __randomString(length) :
 
 
 def userIDGen() : 
+    """
+        Returns a randomly generated UserID.
+    """
     return __randomString(8)
 
 def passwordGen() : 
+    """
+        Returns a randomly generated password.
+    """
     return __randomString(12)
 
 def admin(func) : 
+    """
+        This function is used as a decorator on the pages.
+        Any user attempting to access admin protected pages will be 
+        redirected to the login page if they are not an admin.
+    """
     def redirectlogin(session, self) :
-        setSessionMessage(session, "Admin Login Required.", False)
+        setSessionMessage(session, "Admin Login Required.", True)
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 
@@ -49,8 +60,13 @@ def admin(func) :
     return checkauth
 
 def user(func) : 
-    def redirectlogin(session, self) :
-        setSessionMessage(session, "Student Login required", False)
+     """
+        This function is used as a decorator on the pages.
+        Any user attempting to access student protected pages will be 
+        redirected to the login page if they are not an student.
+     """
+   def redirectlogin(session, self) :
+        setSessionMessage(session, "Student Login required", True)
         return self.redirect('/login')
 
     def checkauth(*args, **kwargs) : 

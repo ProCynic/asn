@@ -10,19 +10,36 @@ from session import *
 from google.appengine.ext import db
 
 class AdminPage(BaseRequestHandler) :
+    """
+        The base admin page. This is the main
+        interface for administrative tasks.
+    """
     @admin
     def get(self) :
+        """
+            Generate the interface.
+        """
         self.generate('admin.html', {
             'title' : 'Admin'
         })
 
     @admin
     def post(self) : 
+        """
+            This method should not be accessed.
+            Any attempt to do so will be redirected to the GET page.
+        """
         self.redirect('/admin')
 
 class AdminClear(BaseRequestHandler):
+    """
+        Controller for the Clear command.
+    """
     @admin
     def get(self) :
+        """
+            Clears the datastore on access.
+        """
         DA = DataAccessor()
         DA.clear()
 
@@ -31,14 +48,23 @@ class AdminClear(BaseRequestHandler):
 
 
 class AdminExport(BaseRequestHandler) :
+    """
+        Controller for the export command.
+    """
     @admin 
     def get(self) : 
+        """
+            Generate a page with XML in a textarea for copy paste.
+        """
         self.generate('export.html', {
             'xml' : export(),
             'title' : "Admin Export"})
 
 
 class AdminImport(BaseRequestHandler) :
+    """
+        Controller for Importing things.
+    """
     def addErrorMessage(self, obj) :
         """
             Callback to show messages
@@ -51,6 +77,10 @@ class AdminImport(BaseRequestHandler) :
 
     @admin
     def get(self) :
+        """
+            Should not be accessed. Any attempt will be redirected
+            to the base admin page.
+        """
         setSessionMessageByRequest(self, "Invalid Request", True)
         self.redirect('/admin')
     
@@ -83,9 +113,13 @@ class AdminImport(BaseRequestHandler) :
         self.redirect('/admin')
 
 class ManageUsersPage(BaseRequestHandler) :
+    """
+        Controller for managing users.
+    """
     @admin
     def get(self):
         """
+            Will generate the user management page.
         """
         DA = DataAccessor()
         students = DA.getStudents()
@@ -96,9 +130,13 @@ class ManageUsersPage(BaseRequestHandler) :
         })
 
 class UserDel(BaseRequestHandler) :
+    """
+        Controller for deleting users.
+    """
     @admin
     def get(self, key=None):
         """
+            Deletes the user in question.
         """
         DA = DataAccessor()
         if key == 'all':
@@ -110,11 +148,22 @@ class UserDel(BaseRequestHandler) :
         self.redirect('/admin/manageUsers')
 
 class AdminPassword(BaseRequestHandler) :
+    """
+        Controller for changing the admin password.
+    """
+    @admin
     def get(self):
+        """
+            Should not be accessed. Any attempt to 
+            will be redirected to the base admin page.
+        """
         self.redirect('/admin')
     
     @admin
     def post(self):
+        """
+            Changes the admin password.
+        """
         DA = DataAccessor()
         session = getSessionByRequest(self)
         user = getSessionUser(session)
@@ -141,11 +190,23 @@ class AdminPassword(BaseRequestHandler) :
         self.redirect('/admin')
 
 class CreateAdmin(BaseRequestHandler):
+    """
+        Controller for creating an admin"
+    """
     def get(self):
+        """
+            Does nothing but redirect to the root admin page.
+        """
         self.redirect('/admin')
 
     @admin
     def post(self):
+        """
+            Creates a new admin. Required post request parameters are
+                uid - the new user id
+                pw - the new password
+                pw2 - retyping the new password.
+        """
         DA = DataAccessor()
 
         session = getSessionByRequest(self)

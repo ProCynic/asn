@@ -41,12 +41,19 @@ except Usage:
 class Login(BaseRequestHandler):
     def get(self):
         """
+            Generates the login page.
         """
         self.generate('login.html', {
             'title': 'Login'
         })
 
     def post(self):
+        """
+            Attempts to log in a user.
+            If the attempt fails, a message is shown.
+            Otherwise, they are logged in and redirected to the 
+            appropriate tools page.
+        """
         uid = self.request.get('id')
         pw = self.request.get('pw')
 
@@ -77,6 +84,9 @@ class Login(BaseRequestHandler):
 
 class Logout(BaseRequestHandler):
     def get(self):     
+        """
+            Logs out the user by setting the cookie.
+        """
         self.response.headers.add_header(
             'Set-Cookie', 
             'sid=%s; expires=Fri, 31-Dec-2020 23:59:59 GMT; path=/' % '')
@@ -85,6 +95,10 @@ class Logout(BaseRequestHandler):
 
 class CreateUser(BaseRequestHandler):
     def post(self):
+        """
+            Creates a user, and will log him in.
+            Will also show the user id, and prompt to change the password.
+        """
         DA = DataAccessor()
         uid = userIDGen()
         pw = passwordGen()
@@ -111,9 +125,14 @@ class CreateUser(BaseRequestHandler):
         self.redirect('/student')
 
 class Ratable(BaseRequestHandler):
+    """
+        Controller for showing the ratable page.
+    """
     @user
     def get(self,key=0):
         """
+            Shows the ratable page. This shows details about the ratable object, 
+            along with all the ratings and their associated comments.
         """
         ratable = db.get(db.Key(key))
 
@@ -134,6 +153,10 @@ class Ratable(BaseRequestHandler):
 
 class Sweep(BaseRequestHandler) :
     def get(self) :
+        """
+            Sweeps the sessions. Any session over 20 minutes long
+            will be invalidated.
+        """
         sweepSessions()
         self.redirect('/')
 
@@ -151,6 +174,9 @@ class DatastoreXML(BaseRequestHandler):
 
 
 def main():
+  """
+    Setup the forwarding addresses.
+  """
   application = webapp.WSGIApplication([
     ('/', Browser),
     ('/sweep/?', Sweep),
