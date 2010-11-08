@@ -60,26 +60,26 @@ def admin(func) :
     return checkauth
 
 def user(func) : 
-     """
-        This function is used as a decorator on the pages.
-        Any user attempting to access student protected pages will be 
-        redirected to the login page if they are not an student.
-     """
+   """
+      This function is used as a decorator on the pages.
+      Any user attempting to access student protected pages will be 
+      redirected to the login page if they are not an student.
+   """
    def redirectlogin(session, self) :
         setSessionMessage(session, "Student Login required", False)
         return self.redirect('/login')
 
-    def checkauth(*args, **kwargs) : 
-        self = args[0]
-        session = getSessionByRequest(self)
-        user = getSessionUser(session)
+   def checkauth(*args, **kwargs) : 
+      self = args[0]
+      session = getSessionByRequest(self)
+      user = getSessionUser(session)
 
-        if not user :
-            return redirectlogin(session, self)
+      if not user :
+          return redirectlogin(session, self)
 
-        if user.userType == 'STUDENT' : 
-            return func(*args, **kwargs)
+      if user.userType == 'STUDENT' : 
+          return func(*args, **kwargs)
 
-        return redirectlogin(session, self)
-    return checkauth
+      return redirectlogin(session, self)
+   return checkauth
 

@@ -193,7 +193,6 @@ class DetailEntry :
     prefix = None
     data = None
 
-|-ourExceptions.py
 
 class UnifiedRatable :
     def __init__(self) :

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module views</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>views</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ayw69/Documents/Homework/CS373Group/ASN/AppEngine/views.py">/v/filer4b/v38q001/ayw69/Documents/Homework/CS373Group/ASN/AppEngine/views.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="dataStore.html">dataStore</a><br>
+</td><td width="25%" valign=top><a href="google.appengine.ext.db.html">google.appengine.ext.db</a><br>
+</td><td width="25%" valign=top><a href="google.appengine.ext.db.polymodel.html">google.appengine.ext.db.polymodel</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="views.html#DetailEntry">DetailEntry</a>
+</font></dt><dt><font face="helvetica, arial"><a href="views.html#UnifiedRatable">UnifiedRatable</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DetailEntry">class <strong>DetailEntry</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data and other attributes defined here:<br>
+<dl><dt><strong>data</strong> = None</dl>
+
+<dl><dt><strong>prefix</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UnifiedRatable">class <strong>UnifiedRatable</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="UnifiedRatable-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="UnifiedRatable-addDetail"><strong>addDetail</strong></a>(self, prefix, data)</dt><dd><tt>Adds&nbsp;a&nbsp;detail&nbsp;entry&nbsp;to&nbsp;the&nbsp;<a href="#UnifiedRatable">UnifiedRatable</a>&nbsp;object.<br>
+Upon&nbsp;formatting,&nbsp;it&nbsp;will&nbsp;look&nbsp;like<br>
+"prefix&nbsp;data"</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-getAverageGrade"><strong>getAverageGrade</strong></a>(item)</dt><dd><tt>Returns&nbsp;the&nbsp;average&nbsp;grade&nbsp;of&nbsp;a&nbsp;course.</tt></dd></dl>
+ <dl><dt><a name="-getAverageRating"><strong>getAverageRating</strong></a>(item)</dt><dd><tt>Calculates&nbsp;the&nbsp;average&nbsp;rating&nbsp;of&nbsp;an&nbsp;item.<br>
+Returns&nbsp;(average,&nbsp;item&nbsp;count)</tt></dd></dl>
+ <dl><dt><a name="-getRatingClass"><strong>getRatingClass</strong></a>(rating)</dt><dd><tt>Returns&nbsp;the&nbsp;rating&nbsp;class&nbsp;of&nbsp;a&nbsp;rating.<br>
+Anything&nbsp;above&nbsp;70&nbsp;is&nbsp;'good'<br>
+Between&nbsp;40&nbsp;and&nbsp;70&nbsp;is&nbsp;'average'<br>
+Anything&nbsp;else&nbsp;is&nbsp;'bad'</tt></dd></dl>
+ <dl><dt><a name="-getUserGrade"><strong>getUserGrade</strong></a>(course, user)</dt><dd><tt>Gets&nbsp;the&nbsp;user's&nbsp;grade&nbsp;for&nbsp;the&nbsp;course.<br>
+If&nbsp;no&nbsp;user&nbsp;for&nbsp;that&nbsp;course&nbsp;exists,&nbsp;returns&nbsp;None&nbsp;instead.</tt></dd></dl>
+ <dl><dt><a name="-getUserRating"><strong>getUserRating</strong></a>(u, o)</dt><dd><tt>Gets&nbsp;the&nbsp;rating&nbsp;that&nbsp;the&nbsp;user&nbsp;(u)&nbsp;assigned&nbsp;to&nbsp;the&nbsp;object&nbsp;(o)<br>
+If&nbsp;no&nbsp;rating&nbsp;has&nbsp;been&nbsp;assigned,&nbsp;returns&nbsp;None.</tt></dd></dl>
+ <dl><dt><a name="-prepareDataForTemplate"><strong>prepareDataForTemplate</strong></a>(query)</dt><dd><tt>Given&nbsp;a&nbsp;query,&nbsp;prepares&nbsp;each&nbsp;item&nbsp;in&nbsp;the&nbsp;query.</tt></dd></dl>
+ <dl><dt><a name="-prepareItem"><strong>prepareItem</strong></a>(x, user<font color="#909090">=None</font>)</dt><dd><tt>Prepares&nbsp;an&nbsp;item&nbsp;for&nbsp;display&nbsp;in&nbsp;the&nbsp;ratable&nbsp;page&nbsp;by&nbsp;setting&nbsp;specific&nbsp;attributes.</tt></dd></dl>
+ <dl><dt><a name="-prepareRatingsForTemplate"><strong>prepareRatingsForTemplate</strong></a>(query, user)</dt><dd><tt>Given&nbsp;a&nbsp;query&nbsp;of&nbsp;ratings,&nbsp;prepares&nbsp;each&nbsp;item&nbsp;in&nbsp;the&nbsp;query.</tt></dd></dl>
+ <dl><dt><a name="-unify"><strong>unify</strong></a>(i)</dt><dd><tt>Unifies&nbsp;any&nbsp;ratable&nbsp;into&nbsp;a&nbsp;consistent&nbsp;interface.<br>
+There&nbsp;will&nbsp;be&nbsp;a&nbsp;name&nbsp;attribute,&nbsp;which&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;object<br>
+There&nbsp;will&nbsp;be&nbsp;a&nbsp;type&nbsp;attribute,&nbsp;the&nbsp;undecorated&nbsp;typename&nbsp;of&nbsp;the&nbsp;object.<br>
+Any&nbsp;other&nbsp;data&nbsp;will&nbsp;be&nbsp;stored&nbsp;in&nbsp;the&nbsp;details&nbsp;array&nbsp;of&nbsp;the&nbsp;return&nbsp;value.</tt></dd></dl>
+ <dl><dt><a name="-validRating"><strong>validRating</strong></a>(string)</dt><dd><tt>Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;string&nbsp;represents&nbsp;a&nbsp;valid<br>
+rating&nbsp;code,&nbsp;false&nbsp;otherwise.</tt></dd></dl>
+</td></tr></table>
+</body></html>

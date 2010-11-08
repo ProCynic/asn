@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module exporter</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>exporter</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/ayw69/Documents/Homework/CS373Group/ASN/AppEngine/exporter.py">/v/filer4b/v38q001/ayw69/Documents/Homework/CS373Group/ASN/AppEngine/exporter.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="dataAccessors.html">dataAccessors</a><br>
+<a href="dataStore.html">dataStore</a><br>
+</td><td width="25%" valign=top><a href="xml.etree.ElementTree.html">xml.etree.ElementTree</a><br>
+<a href="xml.dom.minidom.html">xml.dom.minidom</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-addNode"><strong>addNode</strong></a>(node, name)</dt><dd><tt>Adds&nbsp;a&nbsp;node&nbsp;to&nbsp;the&nbsp;input&nbsp;node,&nbsp;with&nbsp;the&nbsp;given&nbsp;name.</tt></dd></dl>
+ <dl><dt><a name="-addRating"><strong>addRating</strong></a>(node, r)</dt><dd><tt>Adds&nbsp;a&nbsp;pair&nbsp;of&nbsp;rating&nbsp;text&nbsp;nodes&nbsp;to&nbsp;the&nbsp;input&nbsp;element.</tt></dd></dl>
+ <dl><dt><a name="-addText"><strong>addText</strong></a>(node, name, text)</dt><dd><tt>Adds&nbsp;a&nbsp;text&nbsp;node&nbsp;to&nbsp;the&nbsp;input&nbsp;node&nbsp;element,&nbsp;with&nbsp;<br>
+the&nbsp;name&nbsp;and&nbsp;text&nbsp;given.</tt></dd></dl>
+ <dl><dt><a name="-export"><strong>export</strong></a>()</dt><dd><tt>Exports&nbsp;all&nbsp;the&nbsp;s&nbsp;in&nbsp;the&nbsp;datastore&nbsp;out&nbsp;to&nbsp;an&nbsp;XML&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-exportBook"><strong>exportBook</strong></a>(p, rating, book)</dt><dd><tt>Exports&nbsp;a&nbsp;book&nbsp;instance&nbsp;into&nbsp;XML</tt></dd></dl>
+ <dl><dt><a name="-exportCourse"><strong>exportCourse</strong></a>(p, rating, course, grade)</dt><dd><tt>Exports&nbsp;a&nbsp;course&nbsp;instance&nbsp;to&nbsp;XML</tt></dd></dl>
+ <dl><dt><a name="-exportGame"><strong>exportGame</strong></a>(p, rating, game)</dt><dd><tt>Exports&nbsp;a&nbsp;game&nbsp;to&nbsp;XML</tt></dd></dl>
+ <dl><dt><a name="-exportPaper"><strong>exportPaper</strong></a>(p, rating, paper)</dt><dd><tt>Exports&nbsp;a&nbsp;paper&nbsp;to&nbsp;XML</tt></dd></dl>
+ <dl><dt><a name="-exportPlace"><strong>exportPlace</strong></a>(p, rating, place)</dt><dd><tt>Exports&nbsp;a&nbsp;place&nbsp;to&nbsp;XML.&nbsp;This&nbsp;encompases&nbsp;all&nbsp;places.</tt></dd></dl>
+ <dl><dt><a name="-personStr"><strong>personStr</strong></a>(r)</dt><dd><tt>Combines&nbsp;the&nbsp;first,&nbsp;middle&nbsp;and&nbsp;last&nbsp;name&nbsp;of&nbsp;the&nbsp;person&nbsp;<br>
+into&nbsp;a&nbsp;single&nbsp;person&nbsp;name.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>nodetypes</strong> = {&lt;class 'dataStore.Internship'&gt;: 'internship', &lt;class 'dataStore.PlaceLive'&gt;: 'live_place', &lt;class 'dataStore.PlaceEat'&gt;: 'eat_place', &lt;class 'dataStore.PlaceFun'&gt;: 'fun_place', &lt;class 'dataStore.PlaceStudy'&gt;: 'study_place'}</td></tr></table>
+</body></html>
