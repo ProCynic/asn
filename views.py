@@ -257,7 +257,7 @@ def unify(i) :
             "PlaceLive" : "Living Place", 
             "PlaceEat" : "Eating Place",
             "PlaceFun" : "Fun Place",
-            "PlaceStudy" : "Studing Place",
+            "PlaceStudy" : "Study Place",
         }
 
         result.type = placeTypeMapping[getUndecoratedTypename(i)]

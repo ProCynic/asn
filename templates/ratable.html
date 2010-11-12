@@ -28,7 +28,17 @@
             <input name='key' type='hidden' value='{{ratable.dbkey}}'/>
         </form>
         {% endifequal %}
-        <a class='add' href='/student/addrating/{{ratable.dbkey}}'>Add/Edit Rating</a>
+        {% if canEdit %}
+            <a class='add' href='/student/update/{{ratable.dbkey}}'>Edit Item</a>
+        {% else %}
+            <a class='add' href='/student/addrating/{{ratable.dbkey}}'>
+                {% if userRatingExists %} 
+                    Edit Rating
+                {% else %}
+                    Add Rating
+                {% endif %}
+            </a>
+        {% endif %}
         </span>
     <br/>
 {% if ratable.avgGrade %}
@@ -48,7 +58,11 @@
     <ul id="ratings">
         {% for rating in ratings %}
         <li class="rating">
-        	<form action="/student/addrating/{{ratable.dbkey}}" method="get">
+            {% if not canEdit %}
+            	<form action="/student/addrating/{{ratable.dbkey}}" method="get">
+            {% else %}
+                <form action="/student/update/{{ratable.dbkey}}" method='get'>
+            {% endif %}
 				<div class="score">{{ rating.rating }} / 100 {% ifequal user.key rating.rater.key %}<input class="editrating" type="submit" value="edit"> {% endifequal %}</div>
 			</form>
             <p> {{rating.comment}} </p>

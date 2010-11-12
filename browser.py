@@ -41,21 +41,27 @@ class Browser(BaseRequestHandler) :
         else :
             query = prepareDataForTemplate(DS.Ratable.all())
 
-        if sort and sort in ['asc', 'desc'] :
-            if sort == 'asc' :
-                query = sorted(query, key= lambda x : x.rating)
-            elif sort == 'desc' :
+        if sort and sort in ['rating', 'name'] :
+            if sort == 'name' :
+                query = sorted(query, key= lambda x : x.name)
+            elif sort == 'rating' :
                 query = sorted(query, key= lambda x : x.rating, reverse = True)
 
         if arg and not arg in possiblemap :
             setSessionMessage(getSessionByRequest(self), "That was an invalid query; showing all results instead.", True)
 
+        user = getSessionUser(getSessionByRequest(self))
+        studentPage = False
+        if user and user.userType == 'STUDENT' :
+            studentPage = True
         
         self.generate('browser.html', {
             'title' : "Home",
             'ratings' : query,
             'arg' : arg,
-            'sort' : sort
+            'sort' : sort,
+            'studentPage' : studentPage,
+            'surpressFooter' : True
         })
 
     def post(self, unused = None, unused2 = None) :

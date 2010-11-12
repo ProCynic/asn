@@ -4,7 +4,12 @@
 
 {% block main %}
 
+{% if studentPage %} 
+    {% include "studentnav.html" %}
+{% endif %}
+
 {% if ratings %}
+<div class='filters'>
 <form style='float: right' method='POST' >
    <label>Filter by:</label>
     <select name='filter' onchange='this.form.submit()'>
@@ -23,16 +28,15 @@
     <label>Sort By</label>
     <select name='sort' onchange='this.form.submit()'>
         <option value=''></option>
-        <option value='asc' {% ifequal sort "asc" %} selected='true' {% endifequal %}>Ascending</option>
-        <option value='desc' {% ifequal sort "desc" %} selected='true' {% endifequal %}> Descending</option>
+        <option value='name' {% ifequal sort "name" %} selected='true' {% endifequal %}>Name</option>
+        <option value='rating' {% ifequal sort "rating" %} selected='true' {% endifequal %}>Rating</option>
     </select>
 </form>
-<br/>
-<ul id="ratings">
-    {% for rating in ratings %}
-        {% include "rating.html" %}
-    {% endfor %}
-</ul>
+</div>
+
+{% for rating in ratings %}
+    {% include "rating.html" %}
+{% endfor %}
 {% else %}
     <p> No ratings! </p>
 {% endif %}

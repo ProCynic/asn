@@ -1,50 +1,36 @@
 
-<li class='rating'>
-    <p class='name'>{{rating.type}}
-        <span class='avg'>
+<div class="box">
+    <div class='gauge {{rating.ratingClass}}'>
+        <div style='height:{{rating.rating|add:"-100"|cut:"-"}}%;' class='level'></div>
+        <div class='percentage'>{{rating.rating}}%</div>
+        <div class='votes'>x{{rating.ratingCount}}</div>
+    </div>
 
-{% if isStudentPage %} 
-    Your Rating: {{rating.studentRating}}
-{% else %}
-    {% ifequal rating.ratingCount 0 %} 
-        No ratings
-    {% else %}
-        {{rating.rating}}% with {{rating.ratingCount}} rating{{rating.ratingCount|pluralize}}
-    {% endifequal %}
- {% endif %}
- 
-{% if isStudentPage %}
-    {% ifequal rating.ratingCount 1 %}
-         <a href='/student/update/{{rating.dbkey}}'>(Edit)</a>
-    {% else %}
-         <a href='/student/addrating/{{rating.dbkey}}'>(Edit)</a>
-    {% endifequal %}
-{% endif %}
-        </span>
-    </p>
-    
-    <span class='title'>
-        <a class='rated' href='/ratable/{{rating.dbkey}}'>{{rating.name}}</a>
-    </span>
-    <br/>
+    <div class='info'>
+        <div class='title'>
+        
+        <a href='/ratable/{{rating.dbkey}}'>{{rating.name}}</a>
+        
+        
+        </div>
+        {% for detail in rating.details %} 
+            {%if not forloop.first %} 
+                <div class='location'>
+            {% else %}
+                <div class='semester'>
+            {% endif %}
+                    {{detail.prefix}} {{detail.data}}
+                </div>
+        {% endfor %}
+        {% if rating.avgGrade %} 
+            <div class='semester'>Average Grade: {{rating.avgGrade}}</div>
+        {% endif %}
+    </div>
 
-{% if rating.avgGrade %}
-    <span class='summary'>Average Grade: {{rating.avgGrade}}</span> <br/>
-{% endif %}
+    <div class='type'>
+        <div>{{rating.type}}</div>
+    </div>
+</div>
 
-{% if rating.studentGrade %}
-    <span class='summary'>Your Grade: {{rating.studentGrade}}</span>
-    {% if isStudentPage %}
-        <a href='/ratable/{{rating.dbkey}}'>Edit</a>
-    {% endif %}
-    <br/>
-{% endif %}
-
-{% for detail in rating.details %}
-    <span class='detail'>{% if not forloop.first %}| {% endif %}{{detail.prefix}} {{detail.data}}</span>
-{% endfor %}
-
-    <div class='ratingbar {{rating.ratingClass}}' style="width: {{rating.rating}}%"></div>
-</li>
 
 

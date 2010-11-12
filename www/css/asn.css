@@ -76,7 +76,7 @@ body {
   	border-width: 1px 1px 0;
   	border-style: solid;
   	border-color: #999;
-  	background-color : #CCCCCC;
+  	background-color : #F0F0F0;
 }
     #footer adders {
     }
@@ -240,6 +240,10 @@ body {
     margin-bottom:1em;
 }
 
+.filters 
+{
+    height: 2em;
+}
 
 .ratingtitle .title
 {
@@ -362,6 +366,7 @@ ul#ratings {
 .studentnav 
 {
     width: 100%;
+    margin: -10px 0px;
 }
 
 .studentnav ul.studentcontrols 
@@ -387,6 +392,7 @@ ul#ratings {
 .studentnav 
 {
     width: 100%;
+    background: #F0F0F0;
 }
 
 .studentnav ul.studentcontrols 
@@ -408,6 +414,119 @@ ul#ratings {
 {
     float: right;
 }
+
+.box {
+    color:#444444;
+    font-family:Myriad Pro,Helvetica, Arial Black;
+    font-size:11px;
+    margin:10px 10px 0px;
+    padding: 0px;
+    float:left;
+    width: 450px;
+}
+.gauge {
+    border-width:1px 0 2px 1px;
+    border-style:solid;
+    border-color:#999999;
+    float:left;
+    height:100px;
+    width: 30px;
+    position:relative;
+    text-align:center;
+    color:#000000;
+}
+.gauge.good {
+    background-color:#00C000;
+}
+.gauge.meh {
+    background-color:#FF9900;
+}
+.gauge.bad {
+    background-color:#FF0000;
+}
+    .gauge .level {
+        position:absolute;
+        top:0;
+        background-color:#FFFFFF;
+        width: 30px;
+        left: 0px;
+    }
+    .gauge .percentage, .gauge .votes {
+        position:absolute;
+        text-align:center;
+        height:10px;
+        width: 30px;
+        left: 0px
+    }
+
+    .gauge .percentage {
+        font-size: x-small;
+    }
+    .gauge .votes {
+        font-size: x-small;
+    }
+
+    .gauge.good .percentage, .gauge.meh .percentage {
+        bottom:17px;
+    }
+    .gauge.bad .percentage {
+        top:5px;
+    }
+    .gauge.good .votes, .gauge.meh .votes {
+        bottom:5px;
+    }
+    .gauge.bad .votes {
+        top:17px;
+    }
+.info {
+    float:left;
+    height:100px;
+    width: 370px;
+    background-color:#F6F6F6;
+    border-width:1px 0 2px 1px;
+    border-style:solid;
+    border-color:#999999;
+}
+    .info .title {
+        padding:5px;
+        font-size: 1.1em;
+        font-weight:bold;
+    }
+    .info .location {
+        padding:0 5px;
+        height:13px;
+        font-size:13px;
+    }
+    .info .semester {
+        padding:0 5px 5px;
+        bottom:0;
+        height:13px;
+        font-size:13px;
+    }
+
+.type {
+    float:left;
+    height:100px;
+    width: 20px;
+    border-width: 1px 2px 2px 1px;
+    border-style: solid;
+    border-color: #999999;
+    position:relative;
+    background-color:#F0F0F0;
+
+}
+    .type div {
+        -moz-transform:rotate(90deg); 
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        writing-mode: tb-rl;
+        height: 65px;
+        position: absolute;
+        right: 4px;
+        top: 5px;
+        width: 65px;
+    }
+
 
 /* >> The Magnificent CLEARFIX << */
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }

@@ -291,6 +291,12 @@ class StudentEditRating(BaseRequestHandler) :
         rating = getUserRating(user, rated)
 
 
+        q = DA.getAllRatings().filter("rated =", rated)
+        if q.count() != 1 :
+            setSessionMessage(session, "This item is no longer editable.", True);
+            self.redirect("/student/")
+            return
+
         typename = rated.__class__.__name__
         
         if typename == 'Book':

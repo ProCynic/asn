@@ -135,20 +135,28 @@ class Ratable(BaseRequestHandler):
             along with all the ratings and their associated comments.
         """
         ratable = db.get(db.Key(key))
-
+        user = getSessionUser(getSessionByRequest(self))
+ 
         temp = []
         ratings = DA.getAllRatings().filter('rated =',ratable)
+        userRating = False
+
         for x in ratings :
             x.ratingclass = getRatingClass(x.rating) 
+            if x.rater.key() == user.key() :
+                userRating = True
             temp.append(x)
        
-        user = getSessionUser(getSessionByRequest(self))
         unified = prepareItem(ratable, user)
+
+        canEdit = len(temp) == 1 and userRating 
 
         self.generate('ratable.html', {
             'ratable' : unified,
             'ratings': temp,
-            'user': user
+            'user': user,
+            'canEdit' : canEdit,
+            'userRatingExists' : userRating,
         })
 
 class Sweep(BaseRequestHandler) :
