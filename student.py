@@ -34,7 +34,14 @@ class StudentNewRating(BaseRequestHandler) :
         """
             Shows the add rating page.
         """
+
+        
+        displaytypename = string.replace(typename, '-', ' ')
+        typename = string.replace(typename, '-', '')
+
+
         self.generate('studentNew.html', {
+            'display' : displaytypename,
             'typename': typename,
             'surpressFooter': True
         })
@@ -82,7 +89,14 @@ class StudentAddRating(BaseRequestHandler) :
             self.redirect('/student/')
             return
 
-        target = db.get(db.Key(key))
+        try :
+            target = db.get(db.Key(key))
+        except db.BadKeyError :
+            setSessionMessageByRequest(self, "Invalid URL", True)
+            self.redirect("/student/")
+            return
+
+
         user = getSessionUser(session)
 
         rating = getUserRating(user, target)
@@ -262,7 +276,12 @@ class StudentEditRating(BaseRequestHandler) :
         session = getSessionByRequest(self)
         user = getSessionUser(session)
 
-        ratable = db.get(db.Key(key))
+        try :
+            ratable = db.get(db.Key(key))
+        except db.BadKeyError :
+            setSessionMessageByRequest(self, "Invalid URL", True)
+            self.redirect("/student/")
+            return
         
         session.deletionTarget = getUserRating(user, ratable);
         session.put()
@@ -290,6 +309,11 @@ class StudentEditRating(BaseRequestHandler) :
         user = getSessionUser(session)
         rating = getUserRating(user, rated)
 
+
+        if (not rating) :
+            setSessionMessage(session, "You cannot edit something you have not rated.", True)
+            self.redirect('/student')
+            return
 
         q = DA.getAllRatings().filter("rated =", rated)
         if q.count() != 1 :
@@ -370,7 +394,7 @@ class StudentDeleteAccount(BaseRequestHandler) :
         da = DataAccessor()
         da.delete(user)
         expireSession(session)
-        self.redirect('/') 
+        self.redirect('/browse/') 
 
 class StudentPasswordPage(BaseRequestHandler):
     @user

@@ -207,6 +207,7 @@ body {
         }
         #main form.custom label select {
             width:20.5em;
+            padding: 0.25em;
         }
         #main form.custom label input {
             padding:0.25em;
@@ -438,7 +439,7 @@ ul#ratings {
 .gauge.good {
     background-color:#00C000;
 }
-.gauge.meh {
+.gauge.average {
     background-color:#FF9900;
 }
 .gauge.bad {
@@ -466,13 +467,13 @@ ul#ratings {
         font-size: x-small;
     }
 
-    .gauge.good .percentage, .gauge.meh .percentage {
+    .gauge.good .percentage, .gauge.average .percentage {
         bottom:17px;
     }
     .gauge.bad .percentage {
         top:5px;
     }
-    .gauge.good .votes, .gauge.meh .votes {
+    .gauge.good .votes, .gauge.average .votes {
         bottom:5px;
     }
     .gauge.bad .votes {

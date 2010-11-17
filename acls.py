@@ -11,7 +11,6 @@ def __randomString(length) :
 	characters =  "abcdefghijklmnopqrstuvwxyz"
 	characters += "ABCDEFGHIJKLMNOPQRSTUVWXZY"
 	characters += "0123456789"
-	characters += "~!@#$%^&*()_+-=:;/?"
 
 	generator = random.Random()
 	

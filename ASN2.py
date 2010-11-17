@@ -27,7 +27,6 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import login_required
 
-
 # Set to true if we want to have our webapp print stack traces, etc
 _DEBUG = True
 
@@ -43,6 +42,12 @@ class Login(BaseRequestHandler):
         """
             Generates the login page.
         """
+
+        session = getSessionByRequest(self)
+        if (getSessionUser(session)) :
+            self.redirect("/browse/")
+            return
+
         self.generate('login.html', {
             'title': 'Login'
         })
@@ -134,7 +139,13 @@ class Ratable(BaseRequestHandler):
             Shows the ratable page. This shows details about the ratable object, 
             along with all the ratings and their associated comments.
         """
-        ratable = db.get(db.Key(key))
+        try :
+            ratable = db.get(db.Key(key))
+        except db.BadKeyError :
+            setSessionMessageByRequest(self, "Invalid URL", True)
+            self.redirect("/browse/")
+            return
+
         user = getSessionUser(getSessionByRequest(self))
  
         temp = []
@@ -166,7 +177,7 @@ class Sweep(BaseRequestHandler) :
             will be invalidated.
         """
         sweepSessions()
-        self.redirect('/')
+        self.redirect('/browse')
 
 class DatastoreXML(BaseRequestHandler):
     @admin
@@ -179,14 +190,16 @@ class DatastoreXML(BaseRequestHandler):
         self.response.headers['Content-Type'] = "application/xml"
         self.response.out.write(export())
 
-
+class PageNotFound(BaseRequestHandler) :
+    def get(self) :
+        self.redirect("/browse/")
 
 def main():
   """
     Setup the forwarding addresses.
   """
   application = webapp.WSGIApplication([
-    ('/', Browser),
+    ('/', Login),
     ('/sweep/?', Sweep),
     ('/browse/?', Browser),
     ('/browse/([a-zA-Z]+)/?', Browser),
@@ -213,6 +226,7 @@ def main():
     ('/admin/userdel/(.*)', UserDel),
     ('/admin/password/?', AdminPassword),
     ('/admin/newadmin/?', CreateAdmin),
+    ('/.*', PageNotFound)
   ], debug=_DEBUG)
   wsgiref.handlers.CGIHandler().run(application)
 
