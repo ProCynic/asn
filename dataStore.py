@@ -168,7 +168,7 @@ class Book(Ratable):
         A book must have an isbn, a title and author.
         The author must be a person.
     """
-    isbn = db.StringProperty(validator=isbnValidator)
+    isbn = db.StringProperty(required=True,validator=isbnValidator)
     title = db.StringProperty(required=True)
     author = db.ReferenceProperty(Person,required=True)
 
