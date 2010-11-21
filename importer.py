@@ -94,6 +94,9 @@ class StudentImporter:
                 self.DA.addGrade(x, self.student, grade)
         except DataStoreClash:
             pass
+        except ValueError:
+            #bad value
+            pass
 
 
 
