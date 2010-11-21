@@ -61,7 +61,7 @@ class Browser(BaseRequestHandler) :
             'arg' : arg,
             'sort' : sort,
             'studentPage' : studentPage,
-            'surpressFooter' : True
+            'surpressFooter' : False
         })
 
     def post(self, unused = None, unused2 = None) :

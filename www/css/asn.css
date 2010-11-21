@@ -248,7 +248,7 @@ body {
 
 .ratingtitle .title
 {
-    font-size: x-large;
+    font-size:1.4em;
     font-weight: bold;
 }
 .ratingtitle .add 
@@ -323,7 +323,7 @@ ul#ratings {
 #ratings .title 
 {
     padding-left: 5px;
-    font-size: large;
+    font-size: 1.3em;
 }
 
 #ratings .detail
@@ -490,7 +490,7 @@ ul#ratings {
 }
     .info .title {
         padding:5px;
-        font-size: 1.1em;
+        font-size: 1.3em;
         font-weight:bold;
     }
     .info .location {
