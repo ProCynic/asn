@@ -1,0 +1,6557 @@
+<?xml version="1.0" ?>
+<students>
+	<student>
+		<id>
+			wsZfbiGv
+		</id>
+		<password>
+			xEoIRfhssb5z
+		</password>
+	</student>
+	<student>
+		<id>
+			kheck123
+		</id>
+		<password>
+			qued0365
+		</password>
+		<fun_place>
+			<place_name>
+				Emo's Austin
+			</place_name>
+			<location>
+				Red River
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Excellent venue
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Veggie Heaven
+			</place_name>
+			<location>
+				UT
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Veggie protein bowl, every time!
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				Salado Apt's
+			</place_name>
+			<location>
+				Salado St.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<book>
+			<isbn>
+				0465030785
+			</isbn>
+			<title>
+				I am a Strange Loop
+			</title>
+			<author>
+				Douglas R. Hofstadter
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Excellent, but verbose.
+			</comment>
+		</book>
+		<book>
+			<isbn>
+				0814758371
+			</isbn>
+			<title>
+				Godel's Proof
+			</title>
+			<author>
+				Ernest Nagel
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Mind expanding
+			</comment>
+		</book>
+		<internship>
+			<place_name>
+				IBM Austin
+			</place_name>
+			<location>
+				Austin
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Tech support blows.
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Team Fortress 2
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Best online fps.
+			</comment>
+		</game>
+		<game>
+			<title>
+				Super Smash Bros. Brawl
+			</title>
+			<os>
+				Wii
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Addictive.
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Bennu Coffee
+			</place_name>
+			<location>
+				East Side
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Excellent place to study, if you can find a spot!
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			Id123891
+		</id>
+		<password>
+			ralston-pass
+		</password>
+		<class>
+			<unique>
+				87499
+			</unique>
+			<course_num>
+				CS 378
+			</course_num>
+			<course_name>
+				Autonomous Driving in Traffic
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Dr Professor
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				iejfijeaijff
+			</comment>
+		</class>
+		<game>
+			<title>
+				Eternal Sonata
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Bizarre. Japan is a weird place.
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				Qualcomm
+			</place_name>
+			<location>
+				La Jolla, CA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				QES
+			</comment>
+		</internship>
+		<fun_place>
+			<place_name>
+				Kappa Sigma
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2008
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Pretty frat
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Halo Reach
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				ROFL LOL
+			</comment>
+		</game>
+		<class>
+			<unique>
+				14699
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Glenn Downing
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				bflajeiljfwaf
+			</comment>
+		</class>
+		<internship>
+			<place_name>
+				Schlumberger
+			</place_name>
+			<location>
+				Houston, TX
+			</location>
+			<semester>
+				Summer 2008
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Information Management
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				TRIO
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Delicious. Inside the Four Seasons
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				Roys
+			</place_name>
+			<location>
+				Austin, UT
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<class>
+			<unique>
+				47399
+			</unique>
+			<course_num>
+				CS 178
+			</course_num>
+			<course_name>
+				Intro to CS Research
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Calvin Lin
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				iejfijeaijff
+			</comment>
+		</class>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Rapidly Exploring Random Trees
+			</title>
+			<author>
+				Aziz Ansari
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Useful for planning in unstructured space
+			</comment>
+		</paper>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Taco Bell unveils totally new way of using same five ingredients
+			</title>
+			<author>
+				The Onion
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<internship>
+			<place_name>
+				Schlumberger
+			</place_name>
+			<location>
+				Houston, TX
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Osprey Connect
+			</comment>
+		</internship>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				The Travesty
+			</title>
+			<author>
+				Texas Travesty Staff
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Hilarious
+			</comment>
+		</paper>
+		<game>
+			<title>
+				Fable 3
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Comes out in two days
+			</comment>
+		</game>
+		<fun_place>
+			<place_name>
+				Spiderhouse
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2013
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				The Texan West
+			</place_name>
+			<location>
+				2616 Salado St
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				20
+			</rating>
+			<comment>
+				Terrible. Really loud.
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			Id123456
+		</id>
+		<password>
+			Pass1
+		</password>
+		<book>
+			<isbn>
+				0545139708
+			</isbn>
+			<title>
+				Harry Potter and the Deathly Hallows
+			</title>
+			<author>
+				J.K. Rowling
+			</author>
+			<rating>
+				85
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<fun_place>
+			<place_name>
+				IM Fields
+			</place_name>
+			<location>
+				IM Fields
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				ENS
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Advice to Computer Science College Students
+			</title>
+			<author>
+				Joel Spolsky
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<internship>
+			<place_name>
+				Gemalto
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Halo: Combat Evolved
+			</title>
+			<os>
+				Xbox
+			</os>
+			<rating>
+				5
+			</rating>
+			<comment>
+				Perfect Game
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				Cisco
+			</place_name>
+			<location>
+				San Jose, CA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Love the city, the company didn't really give me real work as an intern
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				Chipotle
+			</place_name>
+			<location>
+				Chipotle
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+	</student>
+	<student>
+		<id>
+			shanky00
+		</id>
+		<password>
+			shanky
+		</password>
+		<game>
+			<title>
+				Super Smash Brothers
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				AMAZING!!
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				Epic
+			</place_name>
+			<location>
+				Madison
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				68
+			</rating>
+			<comment>
+				Too cold in Wisconsin
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				FAC
+			</place_name>
+			<location>
+				Somewhere on campus
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				75
+			</rating>
+			<comment>
+				A good place to sleep
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Las Vegas
+			</place_name>
+			<location>
+				Nevada
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Events everywhere
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Kerbey Lane
+			</place_name>
+			<location>
+				Guadalupe
+			</location>
+			<semester>
+				Fall 2006
+			</semester>
+			<rating>
+				87
+			</rating>
+			<comment>
+				3 AM Drunkfest
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				University Village
+			</place_name>
+			<location>
+				Crossing Place
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				20
+			</rating>
+			<comment>
+				I had no car
+			</comment>
+		</live_place>
+		<fun_place>
+			<place_name>
+				ACL
+			</place_name>
+			<location>
+				Zilker Park
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				97
+			</rating>
+			<comment>
+				Great Music
+			</comment>
+		</fun_place>
+		<book>
+			<isbn>
+				0674011171
+			</isbn>
+			<title>
+				Facing East from Indian Country
+			</title>
+			<author>
+				Daniel Richter
+			</author>
+			<rating>
+				60
+			</rating>
+			<comment>
+				For History class
+			</comment>
+		</book>
+		<game>
+			<title>
+				Grand Theft Auto
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Steal cars and make money
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Rec Center
+			</place_name>
+			<location>
+				San Jacinto and 20th
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Very quiet since no one knows about it.
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				The Truth About Stacey
+			</title>
+			<author>
+				Ann M. Martin
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Tells the truth about Stacey.
+			</comment>
+		</paper>
+		<fun_place>
+			<place_name>
+				Union Underground
+			</place_name>
+			<location>
+				Student Union
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Bowling
+			</comment>
+		</fun_place>
+		<book>
+			<isbn>
+				9780300152142
+			</isbn>
+			<title>
+				The Hanging of Thomas Jeremiah
+			</title>
+			<author>
+				J. William Harris
+			</author>
+			<rating>
+				87
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<live_place>
+			<place_name>
+				Blackstone Apts
+			</place_name>
+			<location>
+				2910 Medical Arts St.
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Peace and quiet
+			</comment>
+		</live_place>
+		<internship>
+			<place_name>
+				Facebook
+			</place_name>
+			<location>
+				Mountain View
+			</location>
+			<semester>
+				Summer 2008
+			</semester>
+			<rating>
+				25
+			</rating>
+			<comment>
+				Beautiful City
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				ENS
+			</place_name>
+			<location>
+				24th and Speedway
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				No cell phone reception
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Logical Methods in Computer Science
+			</title>
+			<author>
+				Dana Scott
+			</author>
+			<rating>
+				75
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<eat_place>
+			<place_name>
+				Carinos
+			</place_name>
+			<location>
+				Brodie Lane
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Free Dessert
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				Madam Mam's
+			</place_name>
+			<location>
+				Guadalupe
+			</location>
+			<semester>
+				Spring 2007
+			</semester>
+			<rating>
+				83
+			</rating>
+			<comment>
+				Thai Food
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				World of Warcraft
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Too many mouse clicks
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				uFollowit
+			</place_name>
+			<location>
+				Austin
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				89
+			</rating>
+			<comment>
+				It was good
+			</comment>
+		</internship>
+		<live_place>
+			<place_name>
+				Landry Place Apts
+			</place_name>
+			<location>
+				2239 Cromwell Cir.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				On Riverside
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			Id987666
+		</id>
+		<password>
+			drewpass
+		</password>
+		<game>
+			<title>
+				Uncharted 2
+			</title>
+			<os>
+				PS3
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Perfect Game
+			</comment>
+		</game>
+		<fun_place>
+			<place_name>
+				Alamo Drafthouse
+			</place_name>
+			<location>
+				South Lamar
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				98
+			</rating>
+			<comment>
+				Best movie theater ever.
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				ENS Basement Labs
+			</place_name>
+			<location>
+				ENS
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Computer lab.
+			</comment>
+		</study_place>
+		<study_place>
+			<place_name>
+				Painter lab
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Somewhat annoying computer lab.
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Red Shed Tavern
+			</place_name>
+			<location>
+				South Austin
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				88
+			</rating>
+			<comment>
+				Great jukebox, but only bottled beer so it loses a point.
+			</comment>
+		</fun_place>
+		<book>
+			<isbn>
+				0743277708
+			</isbn>
+			<title>
+				Watership Down
+			</title>
+			<author>
+				Richard Adams
+			</author>
+			<rating>
+				95
+			</rating>
+			<comment>
+				I love this book.
+			</comment>
+		</book>
+		<eat_place>
+			<place_name>
+				Thundercloud Subs
+			</place_name>
+			<location>
+				South Austin
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				I love a good sammich.
+			</comment>
+		</eat_place>
+	</student>
+	<student>
+		<id>
+			Ba7hAJ2W
+		</id>
+		<password>
+			kWnZeuBdeIdH
+		</password>
+		<game>
+			<title>
+				hey yo
+			</title>
+			<os>
+				Playstation
+			</os>
+			<rating>
+				10
+			</rating>
+			<comment>
+				test
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			r:$@ZW*)
+		</id>
+		<password>
+			Kd74K7DF$164
+		</password>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+				Used to be quiet until more CS people came here; lots of help around though.
+			
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Angry Birds
+			</title>
+			<os>
+				iPhone
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Awesome physics game.
+			
+			</comment>
+		</game>
+		<class>
+			<unique>
+				39105
+			</unique>
+			<course_num>
+				HIS 315L
+			</course_num>
+			<course_name>
+				United States Since 1865
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				H. W. Brands
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				Cool course; lecturing is really great but he gets off topic.
+			
+			</comment>
+		</class>
+	</student>
+	<student>
+		<id>
+			Suy#@$59
+		</id>
+		<password>
+			!@#G34Yrw34$#%Ysdfbss
+		</password>
+		<internship>
+			<place_name>
+				NVIDIA
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Cool Stuff.
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				Pizza Hut
+			</place_name>
+			<location>
+				123 W. Str
+			</location>
+			<semester>
+				Spring 1234
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<study_place>
+			<place_name>
+				Pizza Hut
+			</place_name>
+			<location>
+				123 W. St
+			</location>
+			<semester>
+				Spring 1234
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				It's ok
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			addi5678
+		</id>
+		<password>
+			ai82g1
+		</password>
+		<internship>
+			<place_name>
+				IBM
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<book>
+			<isbn>
+				0545139708
+			</isbn>
+			<title>
+				Harry Potter and the Deathly Hallows
+			</title>
+			<author>
+				J.K. Rowling
+			</author>
+			<rating>
+				77
+			</rating>
+			<comment>
+				Harry Potter is awesome
+			</comment>
+		</book>
+		<game>
+			<title>
+				halo reach
+			</title>
+			<os>
+				xbox 360
+			</os>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			;AG86s9=
+		</id>
+		<password>
+			pA~#w;Phdgs2
+		</password>
+		<eat_place>
+			<place_name>
+				The Ironworks
+			</place_name>
+			<location>
+				100 Red River St.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				I love eating here, the beef ribs are delicious.
+			
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				Duval Villas
+			</place_name>
+			<location>
+				4305 Duval St.
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				
+				A bit expensive for what you get.
+			
+			</comment>
+		</live_place>
+		<book>
+			<isbn>
+				0441013597
+			</isbn>
+			<title>
+				Dune, 40th Anniversary Edition (Dune Chronicles, Book 1)
+			</title>
+			<author>
+				Frank Herbert
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				Great book, but the sequels are kinda poor.
+			
+			</comment>
+		</book>
+		<game>
+			<title>
+				Blazblue: Continumn Shift
+			</title>
+			<os>
+				Xbox360
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+				Great fighter game, sometimes lags online.
+			
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				ENS Labs
+			</place_name>
+			<location>
+				ENS Basement
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				86
+			</rating>
+			<comment>
+				
+				No taylor basement, but its still filled with intelligent people to help.
+			
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Arcade UFO
+			</place_name>
+			<location>
+				3101 Speedway
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+				Great arcade place in Austin, one of the few left.
+			
+			</comment>
+		</fun_place>
+		<paper>
+			<paper_category>
+				CONFERENCE
+			</paper_category>
+			<title>
+				Improved Alpha-Tested Magnification for Vector Textures and Special Effects
+			</title>
+			<author>
+				Chris Green
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Great paper that explains how Valve used the GPU to render text clearly.
+			
+			</comment>
+		</paper>
+	</student>
+	<student>
+		<id>
+			ben00000
+		</id>
+		<password>
+			ben
+		</password>
+		<game>
+			<title>
+				Call of Duty: Modern Warfare
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				It's a crime to be this good
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Painter
+			</place_name>
+			<location>
+				Inner Campus Drive
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				A lot of stairs to walk up
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				The Block
+			</place_name>
+			<location>
+				23rd Street
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				Twas OK
+			</comment>
+		</live_place>
+		<live_place>
+			<place_name>
+				Jefferson 26
+			</place_name>
+			<location>
+				26th Street
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Awesome Pool
+			</comment>
+		</live_place>
+		<internship>
+			<place_name>
+				Deloitte
+			</place_name>
+			<location>
+				Houston
+			</location>
+			<semester>
+				Summer 2008
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Not my major
+			</comment>
+		</internship>
+		<book>
+			<isbn>
+				0679736646
+			</isbn>
+			<title>
+				Test
+			</title>
+			<author>
+				Ben Kornfuehrer
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<internship>
+			<place_name>
+				Microsoft
+			</place_name>
+			<location>
+				Seattle
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				asdklfj
+			</comment>
+		</internship>
+		<internship>
+			<place_name>
+				Valero
+			</place_name>
+			<location>
+				San Antonio
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				25
+			</rating>
+			<comment>
+				It Sucked!
+			</comment>
+		</internship>
+		<fun_place>
+			<place_name>
+				Downtown
+			</place_name>
+			<location>
+				downtown
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				All the bars in one street
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Dave and Busters
+			</place_name>
+			<location>
+				183
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Eat and Play combo
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Main Event
+			</place_name>
+			<location>
+				Anderson Mill
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Glow in the dark golf
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				What-A-Burger
+			</place_name>
+			<location>
+				Guadalupe
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Drunken Food
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				Pluckers
+			</place_name>
+			<location>
+				rio grande
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				WINGS
+			</comment>
+		</eat_place>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				Speedway and 21st
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				Bleh
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Enfield Townhomes
+			</place_name>
+			<location>
+				2605 Enfield Rd
+			</location>
+			<semester>
+				Spring 2008
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Peace and quiet
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				Taco C
+			</place_name>
+			<location>
+				MLK
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				3 AM Drunkfest
+			</comment>
+		</eat_place>
+		<study_place>
+			<place_name>
+				Architecture Library
+			</place_name>
+			<location>
+				21st Street
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				FIFA 2011
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				The players look so real
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			randdude
+		</id>
+		<password>
+			awesomesauce
+		</password>
+		<class>
+			<unique>
+				54805
+			</unique>
+			<course_num>
+				CS 352
+			</course_num>
+			<course_name>
+				Computer Systems Architecture
+			</course_name>
+			<semester>
+				Fall 2009
+			</semester>
+			<instructor>
+				Warren Hunt
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				70
+			</rating>
+			<comment>
+				None
+			</comment>
+		</class>
+		<book>
+			<isbn>
+				1843174154
+			</isbn>
+			<title>
+				Tiny Acts of Rebellion
+			</title>
+			<author>
+				Rich Fulcher
+			</author>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Absolutely hilarious
+			</comment>
+		</book>
+		<fun_place>
+			<place_name>
+				Alamo Drafthouse
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				98
+			</rating>
+			<comment>
+				Great movie theater.
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Metal Gear Solid 3: Snake Eater
+			</title>
+			<os>
+				PS2
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				ENS Computer Labs
+			</place_name>
+			<location>
+				ENS, UT
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Nice place to work. Very quiet.
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Dead Rising
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				Salt Lick
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				Wendy's
+			</place_name>
+			<location>
+				Jester Dorms, UT
+			</location>
+			<semester>
+				Spring 2013
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<book>
+			<isbn>
+				0833509454
+			</isbn>
+			<title>
+				It
+			</title>
+			<author>
+				Stephen King
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Crazy book. Really really good.
+			</comment>
+		</book>
+		<game>
+			<title>
+				Left 4 Dead
+			</title>
+			<os>
+				PC
+			</os>
+			<rating>
+				97
+			</rating>
+			<comment>
+				Zombies!
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Taylor Basement
+			</place_name>
+			<location>
+				ACES, UT
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				60
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<internship>
+			<place_name>
+				National Instruments
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				5
+			</rating>
+			<comment>
+				Nice place to work.
+			</comment>
+		</internship>
+		<class>
+			<unique>
+				54520
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Glenn Downing
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Awesome class
+			</comment>
+		</class>
+		<class>
+			<unique>
+				55435
+			</unique>
+			<course_num>
+				CS 307
+			</course_num>
+			<course_name>
+				Foundations of Computer Science
+			</course_name>
+			<semester>
+				Spring 2008
+			</semester>
+			<instructor>
+				Mike Scott
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Really good intro class
+			</comment>
+		</class>
+	</student>
+	<student>
+		<id>
+			d3Uxacya
+		</id>
+		<password>
+			M9Bw8kat5ECb
+		</password>
+	</student>
+	<student>
+		<id>
+			PeterKim
+		</id>
+		<password>
+			abc123
+		</password>
+		<internship>
+			<place_name>
+				Apple
+			</place_name>
+			<location>
+				Somewhere
+			</location>
+			<semester>
+				Summer 1999
+			</semester>
+			<rating>
+				45
+			</rating>
+			<comment>
+				Steve Jobs is a jerk!
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				Painter
+			</place_name>
+			<location>
+				UT
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Nice and Quiet!
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			id000001
+		</id>
+		<password>
+			kingsquest
+		</password>
+		<eat_place>
+			<place_name>
+				Thai Kitchen
+			</place_name>
+			<location>
+				3009 Guadalupe St, Austin, TX  78705
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				They deliver until 2:00 AM.
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				PMCL
+			</place_name>
+			<location>
+				RLM 7.306
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				12
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Loom
+			</title>
+			<os>
+				DOS
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Awesome old-school adventure game where you play melodies with a stick.
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				9780451191144
+			</isbn>
+			<title>
+				Atlas Shrugged
+			</title>
+			<author>
+				Ayn Rand
+			</author>
+			<rating>
+				99
+			</rating>
+			<comment>
+				A modern epic.  Besides being a beautiful story, this is a great introduction to Objectivism for the aphilosopical type.
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				PMCL
+			</place_name>
+			<location>
+				RLM 7.306
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				45
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			7t8dm91j
+		</id>
+		<password>
+			Pass2
+		</password>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Title2
+			</title>
+			<author>
+				Some Other Guy
+			</author>
+			<rating>
+				0
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<internship>
+			<place_name>
+				Microsoft
+			</place_name>
+			<location>
+				Redmond, WA
+			</location>
+			<semester>
+				Summer 1999
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				TAYBAY
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2099
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			nicu0123
+		</id>
+		<password>
+			stiurca
+		</password>
+		<internship>
+			<place_name>
+				TRACLabs
+			</place_name>
+			<location>
+				Houston, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Robots are awesome!
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Starcraft II: Wings of Liberty
+			</title>
+			<os>
+				Linux/Wine
+			</os>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Graphics not as good/smooth as when running natively on Windows.
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			AxMf7C55
+		</id>
+		<password>
+			ynnqEHZS68yf
+		</password>
+		<game>
+			<title>
+				well/...
+			</title>
+			<os>
+				Gameboy
+			</os>
+			<rating>
+				0
+			</rating>
+			<comment>
+				what
+if
+i
+have
+another
+platform?
+			</comment>
+		</game>
+		<fun_place>
+			<place_name>
+				Place
+			</place_name>
+			<location>
+				To
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				ok
+			</comment>
+		</fun_place>
+	</student>
+	<student>
+		<id>
+			mch00000
+		</id>
+		<password>
+			myPassword
+		</password>
+	</student>
+	<student>
+		<id>
+			Stud1234
+		</id>
+		<password>
+			kackylacky
+		</password>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Steroids in Pro Sports
+			</title>
+			<author>
+				Jose Canseco
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<study_place>
+			<place_name>
+				Home
+			</place_name>
+			<location>
+				My House
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<internship>
+			<place_name>
+				Twitter
+			</place_name>
+			<location>
+				Los Angeles CA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+	</student>
+	<student>
+		<id>
+			J#-2OZQk
+		</id>
+		<password>
+			@H05a!5e3Ct!
+		</password>
+		<eat_place>
+			<place_name>
+				EZ's
+			</place_name>
+			<location>
+				3918 N Lamar Blvd Austin, TX 78756-4017
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				
+				Decent food.  They've got a student discount: $2 off on $7 or more
+			
+			</comment>
+		</eat_place>
+		<book>
+			<isbn>
+				9780765358547
+			</isbn>
+			<title>
+				The Good Fairies of New York
+			</title>
+			<author>
+				Martin Millar
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Excellent British humor by a lesser know author
+			
+			</comment>
+		</book>
+		<book>
+			<isbn>
+				9780451456755
+			</isbn>
+			<title>
+				Island in the Sea of Time
+			</title>
+			<author>
+				S.M. Stirling
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				None
+			
+			</comment>
+		</book>
+		<game>
+			<title>
+				Minecraft
+			</title>
+			<os>
+				PC
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Excellent Robinson Crusoe simulator.  Start with nothing and build whatever you want.
+			
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			W9Swzb2x
+		</id>
+		<password>
+			PBXxz12wZjvj
+		</password>
+	</student>
+	<student>
+		<id>
+			Id019314
+		</id>
+		<password>
+			vlm487
+		</password>
+		<game>
+			<title>
+				Borderlands
+			</title>
+			<os>
+				XBox 360
+			</os>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Great game!
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				RW3
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Very results-oriented.
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				Union
+			</place_name>
+			<location>
+				Corner of 24th and Guadalupe
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			id000002
+		</id>
+		<password>
+			pass123#
+		</password>
+		<eat_place>
+			<place_name>
+				Sno-Beach
+			</place_name>
+			<location>
+				801 Barton Springs Rd, Austin, TX 78704
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Peter Pan Golf
+			</place_name>
+			<location>
+				1207 Barton Springs Rd, Austin, TX 78704
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				It's BYOB.'
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Tecmo Bowl
+			</title>
+			<os>
+				Nintendo Entertainment System
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				9780201708424
+			</isbn>
+			<title>
+				Extreme Programming Installed
+			</title>
+			<author>
+				Ron Jeffries
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<eat_place>
+			<place_name>
+				P. Terry's
+			</place_name>
+			<location>
+				404 South Lamar Boulevard, Austin, Texas 78704
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<study_place>
+			<place_name>
+				PMCL
+			</place_name>
+			<location>
+				RLM 7.306
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			sup3rpr0
+		</id>
+		<password>
+			qwertyasdf
+		</password>
+		<game>
+			<title>
+				Mah Jong
+			</title>
+			<os>
+				Board
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				The awesomeness of this game cannot be contained in earthly words
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				9780195187151
+			</isbn>
+			<title>
+				A Brief History of the Romans
+			</title>
+			<author>
+				Mary T. Boatwright
+			</author>
+			<rating>
+				0
+			</rating>
+			<comment>
+				Everything I needed to know was on the HBO show
+			</comment>
+		</book>
+		<book>
+			<isbn>
+				9780201708424
+			</isbn>
+			<title>
+				Extreme Programming Installed
+			</title>
+			<author>
+				Ron Jeffries
+			</author>
+			<rating>
+				99
+			</rating>
+			<comment>
+				SECOND MOST INTERESTING BOOK EVER
+			</comment>
+		</book>
+		<fun_place>
+			<place_name>
+				Andrews 113: House of Decadence
+			</place_name>
+			<location>
+				Honors Quad
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Has a TV, but not as good for SC2
+			</comment>
+		</fun_place>
+		<book>
+			<isbn>
+				0321322134
+			</isbn>
+			<title>
+				Data Structures And Problem Solving Using Java
+			</title>
+			<author>
+				Mark Allen Weiss
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Most interesting book of all time
+			</comment>
+		</book>
+		<fun_place>
+			<place_name>
+				Carothers 101: The Nexus
+			</place_name>
+			<location>
+				Honors Quad
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Always hang out in this room, it is awesome
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				StarCraft II
+			</title>
+			<os>
+				Windows/Mac
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				I wish I was Korean so I could make money playing this game
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			1337haxz
+		</id>
+		<password>
+			password
+		</password>
+		<internship>
+			<place_name>
+				St. Davids Georgetown Hospital
+			</place_name>
+			<location>
+				Georgetown, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				My dad is a great boss
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Modern Warfare 2
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				94
+			</rating>
+			<comment>
+				Incredible multiplayer, fun but short campaign
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Carothers Lobby
+			</place_name>
+			<location>
+				Carothers
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Sometimes people play the piano
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Jester
+			</place_name>
+			<location>
+				UT Campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				5
+			</rating>
+			<comment>
+				It's like living in a prison
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			flores05
+		</id>
+		<password>
+			mighty
+		</password>
+		<study_place>
+			<place_name>
+				Gregory Cafe
+			</place_name>
+			<location>
+				Gregory Gym
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Advice for Computer Science College Students
+			</title>
+			<author>
+				Joel Spolsky
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				What Should We Teach?
+			</title>
+			<author>
+				Bjarne Stroustrup
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<book>
+			<isbn>
+				9781587266096
+			</isbn>
+			<title>
+				The Adventures of Tom Sawyer
+			</title>
+			<author>
+				Mark Twain
+			</author>
+			<rating>
+				70
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<eat_place>
+			<place_name>
+				Bombay Bistro
+			</place_name>
+			<location>
+				Highway 183
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Met my one in a million
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				Texan Tower
+			</place_name>
+			<location>
+				West Campus
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<book>
+			<isbn>
+				0785342708424
+			</isbn>
+			<title>
+				Extreme Programming Installed
+			</title>
+			<author>
+				Ron Jefferies
+			</author>
+			<rating>
+				75
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				Mozarts
+			</place_name>
+			<location>
+				Lake Austin
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Texan
+			</place_name>
+			<location>
+				West Campus
+			</location>
+			<semester>
+				Fall 2006
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				Kyoto
+			</place_name>
+			<location>
+				South Congress
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Best Sushi Happy Hour
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				The Envoy
+			</place_name>
+			<location>
+				San Gabriel
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<internship>
+			<place_name>
+				Freescale
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<fun_place>
+			<place_name>
+				Alam Drafthouse
+			</place_name>
+			<location>
+				Anderson Lane
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Gingerman
+			</place_name>
+			<location>
+				4th street
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<book>
+			<isbn>
+				9780743273565
+			</isbn>
+			<title>
+				The Great Gatsby
+			</title>
+			<author>
+				F. Scott Fitzgerald
+			</author>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				Computer Lab
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				P Terry's
+			</place_name>
+			<location>
+				Lamar
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<internship>
+			<place_name>
+				University of Texas Computer Science
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Rock Band
+			</title>
+			<os>
+				playstation
+			</os>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			HxdXu69B
+		</id>
+		<password>
+			K0hDoFQWREio
+		</password>
+	</student>
+	<student>
+		<id>
+			7t8dm9ej
+		</id>
+		<password>
+			Pass2
+		</password>
+		<study_place>
+			<place_name>
+				TAYBAY
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2099
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Title2
+			</title>
+			<author>
+				Some Other Guy
+			</author>
+			<rating>
+				0
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<internship>
+			<place_name>
+				Microsoft
+			</place_name>
+			<location>
+				Redmond, WA
+			</location>
+			<semester>
+				Summer 1999
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+	</student>
+	<student>
+		<id>
+			vandura7
+		</id>
+		<password>
+			gmc1974
+		</password>
+		<study_place>
+			<place_name>
+				Third Floor
+			</place_name>
+			<location>
+				Texas Union
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<study_place>
+			<place_name>
+				FAC Lobby
+			</place_name>
+			<location>
+				FAC
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				87
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				Wendy's
+			</place_name>
+			<location>
+				Jester
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				93
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Movie Theater
+			</place_name>
+			<location>
+				Dobie Mall
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				77
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Schlotzsky's Deli
+			</place_name>
+			<location>
+				Guadalupe Street
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Purdy Healthy
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Gamestop
+			</place_name>
+			<location>
+				Highland Mall
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				78
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Chick-Fil-A
+			</place_name>
+			<location>
+				Texas Union
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				92
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Austin City Limits
+			</place_name>
+			<location>
+				Zilker Park
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Five Guys
+			</place_name>
+			<location>
+				Guadalupe Street
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				94
+			</rating>
+			<comment>
+				Purdy bad but really delicious!
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Pokemon HeartGold
+			</title>
+			<os>
+				Nintendo DS
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Micro Lab Taylor
+			</place_name>
+			<location>
+				Taylor Basement
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				Subway
+			</place_name>
+			<location>
+				24th
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				97
+			</rating>
+			<comment>
+				Healthy
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Bowling Alley
+			</place_name>
+			<location>
+				Union Underground
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Maty Gil and I went bowling together to celebrate one school semester's completion!
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				Micro Lab Painter
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Urbina Residence
+			</place_name>
+			<location>
+				San Antonio Texas
+			</location>
+			<semester>
+				Spring 2007
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<fun_place>
+			<place_name>
+				Apple Store
+			</place_name>
+			<location>
+				Barton Creek Square Mall
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				Starbucks Coffee
+			</place_name>
+			<location>
+				Texas Union
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				Fran's Hamburgers
+			</place_name>
+			<location>
+				Congress Street
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				98
+			</rating>
+			<comment>
+				Purdy bad but delicious!
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Best Buy
+			</place_name>
+			<location>
+				51st
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Subway
+			</place_name>
+			<location>
+				Royal Stadium
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				97
+			</rating>
+			<comment>
+				Healthy
+			</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>
+				Subway
+			</place_name>
+			<location>
+				Oltorf Street
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				97
+			</rating>
+			<comment>
+				Healthy
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Blanton Museum of Art
+			</place_name>
+			<location>
+				University of Texas at Austin
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				Micro Lab ENS
+			</place_name>
+			<location>
+				ENS
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Longhorn Landing
+			</place_name>
+			<location>
+				Riverside
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				79
+			</rating>
+			<comment>
+				None
+			</comment>
+		</live_place>
+		<study_place>
+			<place_name>
+				Perry-Castaneda Library
+			</place_name>
+			<location>
+				PCL
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Slick Willies
+			</place_name>
+			<location>
+				Ingram Park Mall
+			</location>
+			<semester>
+				Fall 2006
+			</semester>
+			<rating>
+				91
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Regal Westgate
+			</place_name>
+			<location>
+				Westgate Blvd.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				71
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+		<internship>
+			<place_name>
+				Google
+			</place_name>
+			<location>
+				Mountain View, CA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Instant Search!
+			</comment>
+		</internship>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Solving Problems using a^n + b^n
+			</title>
+			<author>
+				Brian Urbina
+			</author>
+			<rating>
+				17
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+	</student>
+	<student>
+		<id>
+			MF123456
+		</id>
+		<password>
+			asswordpay
+		</password>
+		<game>
+			<title>
+				Minecraft
+			</title>
+			<os>
+				Java
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+            
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Life Sciences Library
+			</place_name>
+			<location>
+				Main Tower
+			</location>
+			<semester>
+				Spring 2008
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+            
+			</comment>
+		</study_place>
+		<internship>
+			<place_name>
+				Google
+			</place_name>
+			<location>
+				Mountain View, CA
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				4
+			</rating>
+			<comment>
+				
+            
+			</comment>
+		</internship>
+	</student>
+	<student>
+		<id>
+			chris012
+		</id>
+		<password>
+			martin
+		</password>
+		<internship>
+			<place_name>
+				Bloomberg
+			</place_name>
+			<location>
+				New York, NY
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Free snacks
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				Kins
+			</place_name>
+			<location>
+				Kinsolving Dorm
+			</location>
+			<semester>
+				Spring 2008
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				BUFFET!!!
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Discovery Zone
+			</place_name>
+			<location>
+				Central and Park
+			</location>
+			<semester>
+				Spring 1998
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Why don't they have these anymore
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				ENS
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				60
+			</rating>
+			<comment>
+				Too many people since there is no more Taylor
+			</comment>
+		</study_place>
+		<class>
+			<unique>
+				11895
+			</unique>
+			<course_num>
+				PED 102G
+			</course_num>
+			<course_name>
+				Not Available
+			</course_name>
+			<semester>
+				Fall 2009
+			</semester>
+			<instructor>
+				Peter Oliver
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Best Class
+			</comment>
+		</class>
+		<game>
+			<title>
+				Fable2
+			</title>
+			<os>
+				XBox360
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Ending sucks
+			</comment>
+		</game>
+		<live_place>
+			<place_name>
+				Blanton
+			</place_name>
+			<location>
+				Basement
+			</location>
+			<semester>
+				Spring 2007
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Tons of extra space
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			face1255
+		</id>
+		<password>
+			pW2468
+		</password>
+		<eat_place>
+			<place_name>
+				Chilantro's
+			</place_name>
+			<location>
+				Follow their Twitter for locations
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Korean tacos.
+			</comment>
+		</eat_place>
+		<internship>
+			<place_name>
+				Qualcomm
+			</place_name>
+			<location>
+				San Diego, CA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Great perks, laid-back yet extremely motivated culture.
+			</comment>
+		</internship>
+		<live_place>
+			<place_name>
+				Centennial Condominiums
+			</place_name>
+			<location>
+				501 W. 26th St., Austin, TX 78705
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Just wished they allowed pets, had a jacuzzi and a gym.
+			</comment>
+		</live_place>
+		<live_place>
+			<place_name>
+				Jester Dormitories
+			</place_name>
+			<location>
+				21st and Speedway
+			</location>
+			<semester>
+				Fall 2006
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				Great place to meet friends your first year in college.
+			</comment>
+		</live_place>
+		<study_place>
+			<place_name>
+				Taylor Basement
+			</place_name>
+			<location>
+				24th and Speedway
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Great, except I wish it had windows and more caffeine vending machines.
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				What Should We Teach New Software Developers? Why?
+			</title>
+			<author>
+				Bjarne Stroustrup
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Insightful review of common teaching methodologies in computer science and the disparities across them.
+			</comment>
+		</paper>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Advice for Computer Science College Students
+			</title>
+			<author>
+				Joel Spolsky
+			</author>
+			<rating>
+				85
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<fun_place>
+			<place_name>
+				Cheers
+			</place_name>
+			<location>
+				Sixth St.
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Tell Vince the bartender that Jackson sent you.
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Pokemon
+			</title>
+			<os>
+				Game Boy
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Don't judge me.
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				21st and Speedway
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				This place puts me to sleep.
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Austin's Park
+			</place_name>
+			<location>
+				16231 IH 35 North, Pflugerville, TX 78660
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Would be awesome if there weren't 2 billion kids and they mommas runnin around.
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Double Dragon
+			</title>
+			<os>
+				Super Ninendo
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				La Mexicana
+			</place_name>
+			<location>
+				S. First St.
+			</location>
+			<semester>
+				Spring 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Great tacos for a great price. You can also buy insurance here.
+			</comment>
+		</eat_place>
+		<class>
+			<unique>
+				52540
+			</unique>
+			<course_num>
+				CS 373
+			</course_num>
+			<course_name>
+				Software Engineering
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Glenn Downing
+			</instructor>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Great class that provides real-world experience.
+			</comment>
+		</class>
+	</student>
+	<student>
+		<id>
+			55378008
+		</id>
+		<password>
+			pass1234
+		</password>
+		<book>
+			<isbn>
+				0345455363
+			</isbn>
+			<title>
+				Prospero's Daughter
+			</title>
+			<author>
+				Elizabeth Nunez
+			</author>
+			<rating>
+				87
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				6th Floor
+			</place_name>
+			<location>
+				PCL
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				1
+			</rating>
+			<comment>
+				You're not supposed have one of those on campus.
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Resident Evil 4
+			</title>
+			<os>
+				Gamecube
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				"Well, I see that the President has equipped his daughter with ballistics too!"
+			</comment>
+		</game>
+		<game>
+			<title>
+				Super Mario World
+			</title>
+			<os>
+				Super Nintendo
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Why does Mario have to punch Yoshi?
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				0345347951
+			</isbn>
+			<title>
+				Childhood's End
+			</title>
+			<author>
+				Arthur C. Clarke
+			</author>
+			<rating>
+				98
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<eat_place>
+			<place_name>
+				Juan in a Million
+			</place_name>
+			<location>
+				2300 E Cesar Chavez St
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Pokemon Blue
+			</title>
+			<os>
+				Gameboy
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Ok yuh.
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				0500251215
+			</isbn>
+			<title>
+				The Complete World of Greek Mythology
+			</title>
+			<author>
+				Richard Buxton
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</book>
+		<fun_place>
+			<place_name>
+				6th Street
+			</place_name>
+			<location>
+				Downtown Austin
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</fun_place>
+	</student>
+	<student>
+		<id>
+			1A2b3C4h
+		</id>
+		<password>
+			LOLZROFL
+		</password>
+		<game>
+			<title>
+				Vanquish
+			</title>
+			<os>
+				Xbox360
+			</os>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Awesome Sauce!!!
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Library
+			</place_name>
+			<location>
+				PCL
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				89
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			VFJM274N
+		</id>
+		<password>
+			pterbomb
+		</password>
+		<live_place>
+			<place_name>
+				Home
+			</place_name>
+			<location>
+				Missouri City, Texas
+			</location>
+			<semester>
+				Spring 1989
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+            
+			</comment>
+		</live_place>
+		<live_place>
+			<place_name>
+				Longhorn Landing
+			</place_name>
+			<location>
+				1515 Wickersham Lane
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				0
+			</rating>
+			<comment>
+				Worst place to live ever.
+			</comment>
+		</live_place>
+		<live_place>
+			<place_name>
+				Texan Shoal Creek
+			</place_name>
+			<location>
+				2502 Leon Street
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+            
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				Chik-fil-A
+			</place_name>
+			<location>
+				500 E Ben White Blvd
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Would be 100, but it's so hard to get to by bus.
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Rock Band 3
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				5 points off for having to spend 700 dollars to get the full experience.
+			</comment>
+		</game>
+		<live_place>
+			<place_name>
+				Quarters
+			</place_name>
+			<location>
+				314 W 22nd Street
+			</location>
+			<semester>
+				Fall 2008
+			</semester>
+			<rating>
+				25
+			</rating>
+			<comment>
+				Really expensive and I got conned into living there. Also, the people who run it are terrible.
+			</comment>
+		</live_place>
+		<game>
+			<title>
+				Civilization V
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				90
+			</rating>
+			<comment>
+				It doesn't run so well on most people's computers.
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			kW99O9WU
+		</id>
+		<password>
+			4739
+		</password>
+		<study_place>
+			<place_name>
+				Painter Computer Lab
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Bioshock 2
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				91
+			</rating>
+			<comment>
+				Good game, very good spiritual successor to System Shock 2
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			brian000
+		</id>
+		<password>
+			brian
+		</password>
+		<game>
+			<title>
+				Ultima I
+			</title>
+			<os>
+				Apple II
+			</os>
+			<rating>
+				90
+			</rating>
+			<comment>
+				I loved this game as a kid.
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				Architecture Library
+			</place_name>
+			<location>
+				campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				93
+			</rating>
+			<comment>
+				It's good when it's not too crowded
+			</comment>
+		</study_place>
+		<book>
+			<isbn>
+				0679734465
+			</isbn>
+			<title>
+				Valis
+			</title>
+			<author>
+				Philip K. Dick
+			</author>
+			<rating>
+				95
+			</rating>
+			<comment>
+				mind-bending
+			</comment>
+		</book>
+		<live_place>
+			<place_name>
+				3203 Helms
+			</place_name>
+			<location>
+				north campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				ceiling is too thin and squeaky
+			</comment>
+		</live_place>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				40
+			</rating>
+			<comment>
+				Fluorescent lighting, orange carpet, vinyl seats. Bleh.
+			</comment>
+		</study_place>
+		<study_place>
+			<place_name>
+				Painter Lab
+			</place_name>
+			<location>
+				campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Man, these freshmen are loud
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				Madras Pavilion
+			</place_name>
+			<location>
+				9025 Research Blvd
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Good Indian lunch buffet
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Zork II
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				90
+			</rating>
+			<comment>
+				The best in the Zork series.
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				Dirty Martin's
+			</place_name>
+			<location>
+				guadalupe
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Awesome burgers and fries and shakes
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Bob Wentz Park
+			</place_name>
+			<location>
+				Lake Travis
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				It's almost like a beach. Almost.
+			</comment>
+		</fun_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				The 1980 ACM Turing Award Lecture
+			</title>
+			<author>
+				C.A.R. (Tony) Hoare
+			</author>
+			<rating>
+				92
+			</rating>
+			<comment>
+				Interesting talk about his experience designing languages
+			</comment>
+		</paper>
+	</student>
+	<student>
+		<id>
+			nk2uOeaB
+		</id>
+		<password>
+			ZekpRu57ZhP4
+		</password>
+	</student>
+	<student>
+		<id>
+			YT3JU5Ux
+		</id>
+		<password>
+			asdf
+		</password>
+	</student>
+	<student>
+		<id>
+			Au4Fc1eW
+		</id>
+		<password>
+			nuI8gBrAKW1x
+		</password>
+	</student>
+	<student>
+		<id>
+			SCoyle11
+		</id>
+		<password>
+			abc123
+		</password>
+		<internship>
+			<place_name>
+				Blizzard Entertainment
+			</place_name>
+			<location>
+				Irvine, CA
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Played Wow all day!
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				Go Pho It!
+			</place_name>
+			<location>
+				Go Pho It!
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Best Pho in town!
+			</comment>
+		</eat_place>
+	</student>
+	<student>
+		<id>
+			QYb7P03e
+		</id>
+		<password>
+			ciWausxlhmZs
+		</password>
+	</student>
+	<student>
+		<id>
+			AWES1234
+		</id>
+		<password>
+			GrilledCheezus
+		</password>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				UT campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Renting rooms is awesome.
+			</comment>
+		</study_place>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Using Git Like a Nub
+			</title>
+			<author>
+				Oren Fisk
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				This paper is hillarious and informative.  The author's a genius.
+			</comment>
+		</paper>
+		<game>
+			<title>
+				Halo: Reach
+			</title>
+			<os>
+				Xbox 360
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Great game - armor lock FTW
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			splinter
+		</id>
+		<password>
+			phobe
+		</password>
+		<study_place>
+			<place_name>
+				room 2110
+			</place_name>
+			<location>
+				Duren
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				No place like home...
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Team Fortress 2
+			</title>
+			<os>
+				Windows/Mac
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				It gets updated monthly... for free!
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				HomeAway
+			</place_name>
+			<location>
+				Austin, TX
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Good Pay, Nice Environment, Friendly People, PING PONG TABLE
+			</comment>
+		</internship>
+	</student>
+	<student>
+		<id>
+			raj78778
+		</id>
+		<password>
+			bigPass
+		</password>
+		<eat_place>
+			<place_name>
+				Torchys
+			</place_name>
+			<location>
+				Guad
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+	</student>
+	<student>
+		<id>
+			jonathan
+		</id>
+		<password>
+			jonathan
+		</password>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				Inner Campus Drive
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<fun_place>
+			<place_name>
+				Home Slice Pizza
+			</place_name>
+			<location>
+				South Congress Dr
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Best pizza in Austin
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Abel's at the Lake
+			</place_name>
+			<location>
+				Lake Austin Dr
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				99
+			</rating>
+			<comment>
+				Great burgers, great place to watch a game. Gotta try the Texas Teas
+			</comment>
+		</eat_place>
+		<live_place>
+			<place_name>
+				Oak Hollow Apartements
+			</place_name>
+			<location>
+				Far West Dr
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				A little old
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				What-A-Burger
+			</place_name>
+			<location>
+				Anderson Ln
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Great drunk food
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				NCAA Football 2010
+			</title>
+			<os>
+				XBox 360
+			</os>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Would be better, if the linebackers weren't all superfreaks
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			OldKKKHX
+		</id>
+		<password>
+			SzdnFrHSjRno
+		</password>
+	</student>
+	<student>
+		<id>
+			JFree123
+		</id>
+		<password>
+			abc123
+		</password>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Why I Never Want to Give You Up!
+			</title>
+			<author>
+				Rick Astley
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Get Rick Rolled!
+			</comment>
+		</paper>
+		<live_place>
+			<place_name>
+				Dobie
+			</place_name>
+			<location>
+				By UT
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				My roommate was a vampire
+			</comment>
+		</live_place>
+		<internship>
+			<place_name>
+				Google Inc.
+			</place_name>
+			<location>
+				California
+			</location>
+			<semester>
+				Summer 1999
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				google is awesome
+			</comment>
+		</internship>
+		<paper>
+			<paper_category>
+				CONFERENCE
+			</paper_category>
+			<title>
+				The Mating Habits of Moths
+			</title>
+			<author>
+				Buzz Killington
+			</author>
+			<rating>
+				60
+			</rating>
+			<comment>
+				More info than you would ever need
+			</comment>
+		</paper>
+	</student>
+	<student>
+		<id>
+			Ld01TDIv
+		</id>
+		<password>
+			juhe1818
+		</password>
+		<eat_place>
+			<place_name>
+				Dart Bowl
+			</place_name>
+			<location>
+				5700 Grover Avenue, Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Ask for the enchiladas, they are great and cheap.
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Hideout Pub
+			</place_name>
+			<location>
+				12164 North Mo-Pac Expressway Austin, TX 78758
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				A great pub to stop at for a burger and beer if you are in north Austin.
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				The Draught House Pub and Brewery
+			</place_name>
+			<location>
+				4112 Medical Pkwy #100 Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				A great selection of beers on tap.
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Jackalope Night Club
+			</place_name>
+			<location>
+				404 East 6th Street, Austin, TX
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				A great punk bar with a good beer selection.
+			</comment>
+		</fun_place>
+		<live_place>
+			<place_name>
+				Falls On Bull Creek
+			</place_name>
+			<location>
+				8527 North Capital of Texas Hwy Austin, TX 78759
+			</location>
+			<semester>
+				Summer 2009
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Only $699 for a 2/2 apartment... plus it has a great view of Bull Creek.
+			</comment>
+		</live_place>
+		<game>
+			<title>
+				The Legend of Zelda: Link to the Past
+			</title>
+			<os>
+				Super Nintendo
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				It's a Zelda game, that's all that needs to be said.
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			eyedee85
+		</id>
+		<password>
+			str0ngp@ssw0rd
+		</password>
+		<eat_place>
+			<place_name>
+				Kismet Cafe
+			</place_name>
+			<location>
+				24th and Drag
+			</location>
+			<semester>
+				Spring 1999
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</eat_place>
+		<internship>
+			<place_name>
+				Microsoft
+			</place_name>
+			<location>
+				Redmond, WA
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Yea!
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				Mozart's
+			</place_name>
+			<location>
+				by the Lake
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				92
+			</rating>
+			<comment>
+				Scenic.
+			</comment>
+		</study_place>
+	</student>
+	<student>
+		<id>
+			6TK4XdfO
+		</id>
+		<password>
+			ep3WjcVReNRu
+		</password>
+	</student>
+	<student>
+		<id>
+			jojo1232
+		</id>
+		<password>
+			idonthaveone
+		</password>
+		<study_place>
+			<place_name>
+				home
+			</place_name>
+			<location>
+				Riverside
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				4
+			</rating>
+			<comment>
+				my best study place is my home :
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				bar
+			</title>
+			<os>
+				foo
+			</os>
+			<rating>
+				5
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<live_place>
+			<place_name>
+				longhorn landing
+			</place_name>
+			<location>
+				Riverside
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				4
+			</rating>
+			<comment>
+				Longhorn landing is my apartment
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			ESlater1
+		</id>
+		<password>
+			abc123
+		</password>
+		<eat_place>
+			<place_name>
+				Veggie Heaven
+			</place_name>
+			<location>
+				West Campus
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				I eat there every day
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Gregory Gym
+			</place_name>
+			<location>
+				UT
+			</location>
+			<semester>
+				Fall 2007
+			</semester>
+			<rating>
+				60
+			</rating>
+			<comment>
+				Basketball!
+			</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>
+				Texan Tower
+			</place_name>
+			<location>
+				UT
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Wasnt so fun 30 years ago!
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				Solitaire
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Loads of fun
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			@-miYwAk
+		</id>
+		<password>
+			@zJ;^rRaYSI~
+		</password>
+		<internship>
+			<place_name>
+				Center for Teaching and Learning
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Great if you're preparing yourself for a career in web development
+			
+			</comment>
+		</internship>
+		<eat_place>
+			<place_name>
+				Big Bite
+			</place_name>
+			<location>
+				Guadalupe
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				
+				ZOMG!
+			
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Rain
+			</place_name>
+			<location>
+				4th Street
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				
+				Bring yo dolla bills
+			
+			</comment>
+		</fun_place>
+		<class>
+			<unique>
+				55480
+			</unique>
+			<course_num>
+				M 346
+			</course_num>
+			<course_name>
+				Applied Linear Algebra
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Rodriguez Villegas
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				80
+			</rating>
+			<comment>
+				
+				Tough class to get a hang of. It really helps if you remember your M 340L material
+			
+			</comment>
+		</class>
+		<class>
+			<unique>
+				52435
+			</unique>
+			<course_num>
+				CS 336
+			</course_num>
+			<course_name>
+				Analysis of Programs
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Margaret Myers
+			</instructor>
+			<grade>
+				B
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				Lecturer is a bit crazy
+			
+			</comment>
+		</class>
+		<book>
+			<isbn>
+				9780451188465
+			</isbn>
+			<title>
+				Desperation
+			</title>
+			<author>
+				Stephen King
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Definitely a rainy night page turner
+			
+			</comment>
+		</book>
+		<class>
+			<unique>
+				52550
+			</unique>
+			<course_num>
+				CS 378
+			</course_num>
+			<course_name>
+				Computational Intelligence in Game Design II
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Risto Miikkulainen
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				Interesting research class
+			
+			</comment>
+		</class>
+		<study_place>
+			<place_name>
+				ENS Basement
+			</place_name>
+			<location>
+				Univ. of Texas
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				
+				Quiet... Full of geeks!
+			
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Ballpark Apartments
+			</place_name>
+			<location>
+				Riverside
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				
+				Great if you've got great roommates
+			
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			aaaa7654
+		</id>
+		<password>
+			3a7a3
+		</password>
+		<game>
+			<title>
+				Bayonetta
+			</title>
+			<os>
+				PS3
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				The best game ever? Yes.
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			qwer1234
+		</id>
+		<password>
+			Pass1
+		</password>
+		<game>
+			<title>
+				bar
+			</title>
+			<os>
+				foo
+			</os>
+			<rating>
+				5
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			aps12345
+		</id>
+		<password>
+			a1b2c3
+		</password>
+		<internship>
+			<place_name>
+				Cisco
+			</place_name>
+			<location>
+				Austin, Tx
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				5
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				PCL
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				5
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Halo Reach
+			</title>
+			<os>
+				Xbox360
+			</os>
+			<rating>
+				5
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+	</student>
+	<student>
+		<id>
+			josh0000
+		</id>
+		<password>
+			josh
+		</password>
+		<eat_place>
+			<place_name>
+				Torchy's Tacos
+			</place_name>
+			<location>
+				Spicewood Springs
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Awesome tacos, and cream soda
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Sherlock Holmes vs Aresene Lupin
+			</title>
+			<os>
+				PC
+			</os>
+			<rating>
+				98
+			</rating>
+			<comment>
+				Good story plot and puzzles. Great game for Sherlock Holmes fans.
+			</comment>
+		</game>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Evolution of Database Designs
+			</title>
+			<author>
+				Foo B. Ar
+			</author>
+			<rating>
+				65
+			</rating>
+			<comment>
+				Made up journal.
+			</comment>
+		</paper>
+		<book>
+			<isbn>
+				0553573527
+			</isbn>
+			<title>
+				Empire of the Ants
+			</title>
+			<author>
+				Bernard Werber
+			</author>
+			<rating>
+				70
+			</rating>
+			<comment>
+				Pretty long book, story is little bit out there but makes you think about stuff a lot
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				The Mozart's
+			</place_name>
+			<location>
+				Lake Austin Blvd
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				89
+			</rating>
+			<comment>
+				Free Wi-fi and live quiet music at nights. Foo and coffee not so good.
+			</comment>
+		</study_place>
+		<internship>
+			<place_name>
+				Doosan IT
+			</place_name>
+			<location>
+				Seoul Korea
+			</location>
+			<semester>
+				Summer 2010
+			</semester>
+			<rating>
+				94
+			</rating>
+			<comment>
+				Participated in redesigning company wide HR database, had fun, lots of new experiences.
+			</comment>
+		</internship>
+		<live_place>
+			<place_name>
+				Greystone Parke
+			</place_name>
+			<location>
+				3543 Greystone Dr
+			</location>
+			<semester>
+				Fall 2006
+			</semester>
+			<rating>
+				21
+			</rating>
+			<comment>
+				30 year old buildings, bad management.
+			</comment>
+		</live_place>
+		<live_place>
+			<place_name>
+				Jester
+			</place_name>
+			<location>
+				21th Street and Speedway
+			</location>
+			<semester>
+				Fall 2005
+			</semester>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Not bad as a dorm, but living in a supplemental room with three roomates is not so great
+			</comment>
+		</live_place>
+		<study_place>
+			<place_name>
+				Home
+			</place_name>
+			<location>
+				Far West
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				100
+			</rating>
+			<comment>
+				Fridge and coffee maker are right next to the desk.
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				Prince of Persia and the Sands of Time
+			</title>
+			<os>
+				Any
+			</os>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Tad bit old game but fun.
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				Speedway and 21st
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				50
+			</rating>
+			<comment>
+				Don't hang around the 6th floor.
+			</comment>
+		</study_place>
+		<class>
+			<unique>
+				52465
+			</unique>
+			<course_num>
+				CS 341
+			</course_num>
+			<course_name>
+				Automata Theory
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Elaine Rich
+			</instructor>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Not bad. Straight forward materials
+			</comment>
+		</class>
+		<live_place>
+			<place_name>
+				Westdale Pointe
+			</place_name>
+			<location>
+				7117 Wood Hollow Dr
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Good neighborhood, UT shuttle right infront
+			</comment>
+		</live_place>
+		<eat_place>
+			<place_name>
+				Pluckers
+			</place_name>
+			<location>
+				Burnet
+			</location>
+			<semester>
+				Fall 2005
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				Not as big as one near campus, but great wings!
+			</comment>
+		</eat_place>
+		<fun_place>
+			<place_name>
+				Dave and Busters
+			</place_name>
+			<location>
+				183
+			</location>
+			<semester>
+				Spring 2006
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				Nice pool tables. Good for family parties too.
+			</comment>
+		</fun_place>
+		<game>
+			<title>
+				World of Warcraft
+			</title>
+			<os>
+				PC
+			</os>
+			<rating>
+				56
+			</rating>
+			<comment>
+				Fun but very time consuming plus money. Also makes you feel like you have no life.
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				Madam Mam's
+			</place_name>
+			<location>
+				Anderson Lane
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Thai food. Service is much nicer than one on campus, and is very clean and nicely decorated
+			</comment>
+		</eat_place>
+		<class>
+			<unique>
+				52535
+			</unique>
+			<course_num>
+				CS 372
+			</course_num>
+			<course_name>
+				Intro to Operating Systems
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Mike Dahlin
+			</instructor>
+			<rating>
+				75
+			</rating>
+			<comment>
+				Segment Fault
+			</comment>
+		</class>
+	</student>
+	<student>
+		<id>
+			poiu1357
+		</id>
+		<password>
+			iamastabbyrobot
+		</password>
+		<book>
+			<isbn>
+				0786814519
+			</isbn>
+			<title>
+				Thunder Cave
+			</title>
+			<author>
+				Roland Smith
+			</author>
+			<rating>
+				100
+			</rating>
+			<comment>
+				My favorite childhood book
+			</comment>
+		</book>
+		<game>
+			<title>
+				Oregon Trail
+			</title>
+			<os>
+				Apple II
+			</os>
+			<rating>
+				50
+			</rating>
+			<comment>
+				You have died from typhoid fever
+			</comment>
+		</game>
+		<book>
+			<isbn>
+				9780316018432
+			</isbn>
+			<title>
+				Our Dumb World
+			</title>
+			<author>
+				Inc. The Onion
+			</author>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Less depressing than real news
+			</comment>
+		</book>
+		<game>
+			<title>
+				Commander Keen in Invasion of the Vorticons
+			</title>
+			<os>
+				MS DOS
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				I've beaten this game 9001 times
+			</comment>
+		</game>
+		<study_place>
+			<place_name>
+				PCL
+			</place_name>
+			<location>
+				South Campus
+			</location>
+			<semester>
+				Fall 2009
+			</semester>
+			<rating>
+				85
+			</rating>
+			<comment>
+				Place with the most comfy desk chairs
+			</comment>
+		</study_place>
+		<class>
+			<unique>
+				12469
+			</unique>
+			<course_num>
+				PRB 101
+			</course_num>
+			<course_name>
+				Problem Management
+			</course_name>
+			<semester>
+				Fall 2010
+			</semester>
+			<instructor>
+				Jay Z
+			</instructor>
+			<grade>
+				A
+			</grade>
+			<rating>
+				99
+			</rating>
+			<comment>
+				This course aint one
+			</comment>
+		</class>
+		<game>
+			<title>
+				Sunset Riders
+			</title>
+			<os>
+				Super Nintendo
+			</os>
+			<rating>
+				100
+			</rating>
+			<comment>
+				I have yet to beat the final boss after all these years
+			</comment>
+		</game>
+		<game>
+			<title>
+				Halo
+			</title>
+			<os>
+				XBox
+			</os>
+			<rating>
+				2
+			</rating>
+			<comment>
+				I am terrible at first person shooters
+			</comment>
+		</game>
+		<internship>
+			<place_name>
+				Dunder Mifflin Inc
+			</place_name>
+			<location>
+				Scranton, PA
+			</location>
+			<semester>
+				Summer 2006
+			</semester>
+			<rating>
+				75
+			</rating>
+			<comment>
+				The boss was a bit too eccentric
+			</comment>
+		</internship>
+		<game>
+			<title>
+				Crash Bandicoot
+			</title>
+			<os>
+				Playstation
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Best adventure game series for the Playstation
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				Zen
+			</place_name>
+			<location>
+				3423 Guadalupe
+			</location>
+			<semester>
+				Spring 2008
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Chicken, Buddha Mix, Teriyaki, White Rice
+			</comment>
+		</eat_place>
+	</student>
+	<student>
+		<id>
+			nspi3284
+		</id>
+		<password>
+			29fdms932
+		</password>
+		<game>
+			<title>
+				God of War 3
+			</title>
+			<os>
+				PS3
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<eat_place>
+			<place_name>
+				My Apartment
+			</place_name>
+			<location>
+				My Apartment
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Home cooking at its finest.
+			</comment>
+		</eat_place>
+		<book>
+			<isbn>
+				0321295358
+			</isbn>
+			<title>
+				Algorithm Design
+			</title>
+			<author>
+				Kleinberg and Tardos
+			</author>
+			<rating>
+				90
+			</rating>
+			<comment>
+				This is a pretty good algorithms book. The explanations are clear but the problems are a little verbose.
+			</comment>
+		</book>
+		<study_place>
+			<place_name>
+				Micro Lab
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				It can get really crowded sometimes but it's usually a pretty good place to work.
+			</comment>
+		</study_place>
+		<game>
+			<title>
+				World of Warcraft
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Broke my addiction about a year ago and I have so much more time now!
+			</comment>
+		</game>
+		<fun_place>
+			<place_name>
+				OCH
+			</place_name>
+			<location>
+				4th St.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Need to go here more often to meet people.
+			</comment>
+		</fun_place>
+		<study_place>
+			<place_name>
+				Micro Lab
+			</place_name>
+			<location>
+				ENS
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				70
+			</rating>
+			<comment>
+				ENS is far away from most of my classes and it's in the basement.
+			</comment>
+		</study_place>
+		<eat_place>
+			<place_name>
+				Wendy's
+			</place_name>
+			<location>
+				Texas Union
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Cheap and near Painter!
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Dragon Age: Origins
+			</title>
+			<os>
+				Windows
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				None
+			</comment>
+		</game>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				A Multiagent Approach to Autonomous Intersection Management
+			</title>
+			<author>
+				Dresner and Stone
+			</author>
+			<rating>
+				95
+			</rating>
+			<comment>
+				An interesting look at the possible future of autonomous vehicles and how they could negotiate intersections efficiently and safely.
+			</comment>
+		</paper>
+		<study_place>
+			<place_name>
+				Micro Lab
+			</place_name>
+			<location>
+				Taylor Basement
+			</location>
+			<semester>
+				Spring 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				This was a great place to study. Too bad it's being demolished this semester.
+			</comment>
+		</study_place>
+		<live_place>
+			<place_name>
+				Acacia Cliffs
+			</place_name>
+			<location>
+				near Far West Blvd.
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				A pretty nice apartment but thin walls.
+			</comment>
+		</live_place>
+		<fun_place>
+			<place_name>
+				Micro Lab
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				90
+			</rating>
+			<comment>
+				Nerdy fun for all!
+			</comment>
+		</fun_place>
+		<eat_place>
+			<place_name>
+				Subway
+			</place_name>
+			<location>
+				24th
+			</location>
+			<semester>
+				Fall 2010
+			</semester>
+			<rating>
+				95
+			</rating>
+			<comment>
+				$5 for a whole footlong!
+			</comment>
+		</eat_place>
+		<game>
+			<title>
+				Little Big Planet
+			</title>
+			<os>
+				PS3
+			</os>
+			<rating>
+				95
+			</rating>
+			<comment>
+				Awesome game, can't wait for LBP2.
+			</comment>
+		</game>
+		<live_place>
+			<place_name>
+				Condo
+			</place_name>
+			<location>
+				Oltof
+			</location>
+			<semester>
+				Spring 2005
+			</semester>
+			<rating>
+				75
+			</rating>
+			<comment>
+				The actual complex was pretty nice but south Austin wasn't.
+			</comment>
+		</live_place>
+	</student>
+	<student>
+		<id>
+			cal74312
+		</id>
+		<password>
+			tryagain
+		</password>
+	</student>
+	<student>
+		<id>
+			7t8dm91a
+		</id>
+		<password>
+			Pass2
+		</password>
+		<internship>
+			<place_name>
+				Microsoft
+			</place_name>
+			<location>
+				Redmond, WA
+			</location>
+			<semester>
+				Summer 1999
+			</semester>
+			<rating>
+				30
+			</rating>
+			<comment>
+				None
+			</comment>
+		</internship>
+		<paper>
+			<paper_category>
+				JOURNAL
+			</paper_category>
+			<title>
+				Title2
+			</title>
+			<author>
+				Some Other Guy
+			</author>
+			<rating>
+				0
+			</rating>
+			<comment>
+				None
+			</comment>
+		</paper>
+		<study_place>
+			<place_name>
+				TAYBAY
+			</place_name>
+			<location>
+				Painter
+			</location>
+			<semester>
+				Fall 2099
+			</semester>
+			<rating>
+				80
+			</rating>
+			<comment>
+				None
+			</comment>
+		</study_place>
+	</student>
+</students>
