@@ -20,7 +20,7 @@ class BaseRequestHandler(webapp.RequestHandler) :
         values = {
           'request': self.request,
           'debug': self.request.get('deb'),
-          'application_name': 'Anonymous Social Network, Phase 2',
+          'application_name': 'Anonymous Social Network',
           'user': user,
           'msg' : message,
           'msgstatus' : status
