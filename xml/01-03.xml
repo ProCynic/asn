@@ -1,0 +1,1160 @@
+<students>
+    <student>
+        <id>flores05</id>
+        <password>mighty</password>
+        <class>
+            <unique>12345</unique>
+            <course_num>C S 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>90</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>52440</unique>
+            <course_num>C S 337</course_num>
+            <course_name>Theory In Programming Practice</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Misra</instructor>
+            <rating>70</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52470</unique>
+            <course_num>C S 345</course_num>
+            <course_name>Programming Languages</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Cannata</instructor>
+            <rating>80</rating>
+            <comment></comment>
+            <grade>B+</grade>
+        </class>
+        <class>
+            <unique>52485</unique>
+            <course_num>C S 352</course_num>
+            <course_name>Computer System Architecture</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Hunt</instructor>
+            <rating>30</rating>
+            <comment></comment>
+            <grade>C</grade>
+        </class>
+        <class>
+            <unique>52495</unique>
+            <course_num>C S 354</course_num>
+            <course_name>Computer Graphics</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Bajaj</instructor>
+            <rating>70</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52435</unique>
+            <course_num>C S 336</course_num>
+            <course_name>Analysis Of Programs</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Myers</instructor>
+            <rating>95</rating>
+            <comment></comment>
+            <grade>B+</grade>
+        </class>
+        <class>
+            <unique>52510</unique>
+            <course_num>C S f361</course_num>
+            <course_name>Intro To Computer Security</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Young</instructor>
+            <rating>95</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52275</unique>
+            <course_num>C S 307</course_num>
+            <course_name>Foundation Of Computer Science</course_name>
+            <semester>Fall 2007</semester>
+            <instructor>Scott</instructor>
+            <rating>100</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>55440</unique>
+            <course_num>M 340L</course_num>
+            <course_name>Matrices and Matrix Calculatns</course_name>
+            <semester>Spring 2008</semester>
+            <instructor>Schurpec</instructor>
+            <rating>85</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>12190</unique>
+            <course_num>PED 106C</course_num>
+            <course_name>Weight Training</course_name>
+            <semester>Spring 2009</semester>
+            <instructor>Beckwith</instructor>
+            <rating>95</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <book>
+            <isbn>0785342708424</isbn>
+            <title>Extreme Programming Installed</title>
+            <author>Ron Jefferies</author>
+            <rating>75</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>9780743273565</isbn>
+            <title>The Great Gatsby</title>
+            <author>F. Scott Fitzgerald</author>
+            <rating>80</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>9781587266096</isbn>
+            <title>The Adventures of Tom Sawyer</title>
+            <author>Mark Twain</author>
+            <rating>70</rating>
+            <comment></comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>Advice for Computer Science College Students</title>
+            <author>Joel Spolsky</author>
+            <rating>90</rating>
+            <comment></comment>
+        </paper>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>What Should We Teach?</title>
+            <author>Bjarne Stroustrup</author>
+            <rating>80</rating>
+            <comment></comment>
+        </paper>
+        <internship>
+            <place_name>Freescale</place_name>
+            <location>Austin, TX</location>
+            <semester>Summer 2009</semester>
+            <rating>90</rating>
+            <comment></comment>
+        </internship>
+        <internship>
+            <place_name>University of Texas Computer Science</place_name>
+            <location>Austin, TX</location>
+            <semester>Summer 2010</semester>
+            <rating>95</rating>
+            <comment></comment>
+        </internship>
+        <study_place>
+            <place_name>Mozarts</place_name>
+            <location>Lake Austin</location>
+            <semester>Fall 2008</semester>
+            <rating>95</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Computer Lab</place_name>
+            <location>Painter</location>
+            <semester>Fall 2010</semester>
+            <rating>50</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Gregory Cafe</place_name>
+            <location>Gregory Gym</location>
+            <semester>Fall 2007</semester>
+            <rating>80</rating>
+            <comment></comment>
+        </study_place>
+        <live_place>
+            <place_name>The Envoy</place_name>
+            <location>San Gabriel</location>
+            <semester>Fall 2010</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </live_place>
+        <live_place>
+            <place_name>Texan Tower</place_name>
+            <location>West Campus</location>
+            <semester>Fall 2009</semester>
+            <rating>90</rating>
+            <comment></comment>
+        </live_place>
+        <live_place>
+            <place_name>Texan</place_name>
+            <location>West Campus</location>
+            <semester>Fall 2006</semester>
+            <rating>80</rating>
+            <comment></comment>
+        </live_place>
+        <eat_place>
+            <place_name>P Terry's</place_name>
+            <location>Lamar</location>
+            <semester>Fall 2010</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Bombay Bistro</place_name>
+            <location>Highway 183</location>
+            <semester>Spring 2009</semester>
+            <rating>100</rating>
+            <comment>Met my one in a million</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Kyoto</place_name>
+            <location>South Congress</location>
+            <semester>Fall 2007</semester>
+            <rating>90</rating>
+            <comment>Best Sushi Happy Hour</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Alam Drafthouse</place_name>
+            <location>Anderson Lane</location>
+            <semester>Fall 2009</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Gingerman</place_name>
+            <location>4th street</location>
+            <semester>Fall 2009</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </fun_place>
+        <game>
+            <os>playstation</os>
+            <title>Rock Band</title>
+            <rating>90</rating>
+            <comment></comment>
+        </game>
+    </student>
+    <student>
+        <id>vandura7</id>
+        <password>gmc1974</password>
+        <class>
+            <unique>90262</unique>
+            <course_num>CH s302</course_num>
+            <course_name>Principles of Chemistry II</course_name>
+            <semester>Summer 2009</semester>
+            <instructor>McCord</instructor>
+            <rating>90</rating>
+            <comment>Cristina Eliz Martinez.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>53220</unique>
+            <course_num>CH 204</course_num>
+            <course_name>Introduction to Chemical Practice</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Anderson</instructor>
+            <rating>99</rating>
+            <comment>Cristina Eliz Martinez.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>54825</unique>
+            <course_num>C S 357</course_num>
+            <course_name>Algorithms</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Plaxton</instructor>
+            <rating>87</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>54820</unique>
+            <course_num>C S 356</course_num>
+            <course_name>Computer Networks</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Lam</instructor>
+            <rating>75</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>57905</unique>
+            <course_num>M 361K</course_num>
+            <course_name>Probability</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Wu</instructor>
+            <rating>69</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>57160</unique>
+            <course_num>M 375T</course_num>
+            <course_name>Functions and Modeling</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Daniels</instructor>
+            <rating>98</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>54310</unique>
+            <course_num>C S 375</course_num>
+            <course_name>Compilers</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Pingali</instructor>
+            <rating>60</rating>
+            <comment>Syllabus change was the key factor!</comment>
+            <grade>C</grade>
+        </class>
+        <class>
+            <unique>54255</unique>
+            <course_num>C S 354</course_num>
+            <course_name>Computer Graphics</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Bajaj</instructor>
+            <rating>100</rating>
+            <comment>RayTracing!</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>54250</unique>
+            <course_num>C S 353</course_num>
+            <course_name>Theory of Computation</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Zuckerman</instructor>
+            <rating>56</rating>
+            <comment></comment>
+            <grade>C</grade>
+        </class>
+        <class>
+            <unique>57030</unique>
+            <course_num>M 361K</course_num>
+            <course_name>Introduction to Real Analysis</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Bjorland</instructor>
+            <rating>91</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>83985</unique>
+            <course_num>ITL f506</course_num>
+            <course_name>First Year Italian I</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Demos</instructor>
+            <rating>100</rating>
+            <comment>She was an excellent teacher. Would take again!</comment>
+            <grade>B+</grade>
+        </class>
+        <class>
+            <unique>52545</unique>
+            <course_num>C S 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>100</rating>
+            <comment>Glenn Downing rocks!</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>52475</unique>
+            <course_num>C S 346</course_num>
+            <course_name>Cryptography</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Gal</instructor>
+            <rating>90</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>55550</unique>
+            <course_num>M 362M</course_num>
+            <course_name>Intro to Stochastic Processes</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Sirbu</instructor>
+            <rating>80</rating>
+            <comment>I made a friend in this class named Jamie. I think she's pretty. But aside from a friend, I think this class was a worthwhile experience!</comment>
+            <grade>B+</grade>
+        </class>
+        <class>
+            <unique>52535</unique>
+            <course_num>C S 372</course_num>
+            <course_name>Introduction to Operating Systems</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Dahlin</instructor>
+            <rating>84</rating>
+            <comment>This professor looks like Christian Bale. Seriously.</comment>
+            <grade>B</grade>
+        </class>
+        <book>
+            <isbn>9780131862395</isbn>
+            <title>Introduction to Cryptography with Coding Theory</title>
+            <author>Trappe</author>
+            <rating>80</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>9780201485677</isbn>
+            <title>Refactoring</title>
+            <author>Fowler</author>
+            <rating>91</rating>
+            <comment>Software Engineering.</comment>
+        </book>
+        <book>
+            <isbn>9780201708424</isbn>
+            <title>Extreme Programming Installed</title>
+            <author>Jeffries</author>
+            <rating>80</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>9780136006633</isbn>
+            <title>Modern Operating Systems</title>
+            <author>Tanenbaum</author>
+            <rating>96</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>9780471321484</isbn>
+            <title>Introduction to Real Analysis</title>
+            <author>Bartle</author>
+            <rating>85</rating>
+            <comment>The green book.</comment>
+        </book>
+        <book>
+            <isbn>9780534950972</isbn>
+            <title>Introduction to the Theory of Computation</title>
+            <author>Sipster</author>
+            <rating>90</rating>
+            <comment>The grey book.</comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>Solving Problems using a^n + b^n</title>
+            <author>Brian Urbina</author>
+            <rating>17</rating>
+            <comment></comment>
+        </paper>
+        <paper>
+            <paper_category>conference</paper_category>
+            <title>Instant Search</title>
+            <author>Unknown</author>
+            <rating>90</rating>
+            <comment></comment>
+        </paper>
+        <internship>
+            <place_name>Google</place_name>
+            <location>Mountain View, CA</location>
+            <semester>Summer 2010</semester>
+            <rating>100</rating>
+            <comment>Instant Search!</comment>
+        </internship>
+        <study_place>
+            <place_name>Perry-Castaneda Library</place_name>
+            <location>PCL</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Micro Lab ENS</place_name>
+            <location>ENS</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Micro Lab Painter</place_name>
+            <location>Painter</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Micro Lab Taylor</place_name>
+            <location>Taylor Basement</location>
+            <semester>Spring 2010</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Starbucks Coffee</place_name>
+            <location>Texas Union</location>
+            <semester>Spring 2009</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>Third Floor</place_name>
+            <location>Texas Union</location>
+            <semester>Spring 2009</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </study_place>
+        <study_place>
+            <place_name>FAC Lobby</place_name>
+            <location>FAC</location>
+            <semester>Spring 2010</semester>
+            <rating>87</rating>
+            <comment></comment>
+        </study_place>
+        <live_place>
+            <place_name>Longhorn Landing</place_name>
+            <location>Riverside</location>
+            <semester>Fall 2010</semester>
+            <rating>79</rating>
+            <comment></comment>
+        </live_place>
+        <live_place>
+            <place_name>Urbina Residence</place_name>
+            <location>San Antonio Texas</location>
+            <semester>Spring 2007</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </live_place>
+        <eat_place>
+            <place_name>Wendy's</place_name>
+            <location>Jester</location>
+            <semester>Fall 2010</semester>
+            <rating>93</rating>
+            <comment></comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Chick-Fil-A</place_name>
+            <location>Texas Union</location>
+            <semester>Spring 2010</semester>
+            <rating>92</rating>
+            <comment></comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Subway</place_name>
+            <location>Royal Stadium</location>
+            <semester>Fall 2010</semester>
+            <rating>97</rating>
+            <comment>Healthy</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Subway</place_name>
+            <location>24th</location>
+            <semester>Fall 2010</semester>
+            <rating>97</rating>
+            <comment>Healthy</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Subway</place_name>
+            <location>Oltorf Street</location>
+            <semester>Fall 2010</semester>
+            <rating>97</rating>
+            <comment>Healthy</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Schlotzsky's Deli</place_name>
+            <location>Guadalupe Street</location>
+            <semester>Summer 2010</semester>
+            <rating>90</rating>
+            <comment>Purdy Healthy</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Fran's Hamburgers</place_name>
+            <location>Congress Street</location>
+            <semester>Summer 2010</semester>
+            <rating>98</rating>
+            <comment>Purdy bad but delicious!</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Five Guys</place_name>
+            <location>Guadalupe Street</location>
+            <semester>Fall 2010</semester>
+            <rating>94</rating>
+            <comment>Purdy bad but really delicious!</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Slick Willies</place_name>
+            <location>Ingram Park Mall</location>
+            <semester>Fall 2006</semester>
+            <rating>91</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Apple Store</place_name>
+            <location>Barton Creek Square Mall</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Gamestop</place_name>
+            <location>Highland Mall</location>
+            <semester>Fall 2009</semester>
+            <rating>78</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Regal Westgate</place_name>
+            <location>Westgate Blvd.</location>
+            <semester>Fall 2010</semester>
+            <rating>71</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Blanton Museum of Art</place_name>
+            <location>University of Texas at Austin</location>
+            <semester>Spring 2010</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Bowling Alley</place_name>
+            <location>Union Underground</location>
+            <semester>Spring 2010</semester>
+            <rating>99</rating>
+            <comment>Maty Gil and I went bowling together to celebrate one school semester's completion!</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Austin City Limits</place_name>
+            <location>Zilker Park</location>
+            <semester>Fall 2010</semester>
+            <rating>99</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Best Buy</place_name>
+            <location>51st</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment></comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Movie Theater</place_name>
+            <location>Dobie Mall</location>
+            <semester>Spring 2010</semester>
+            <rating>77</rating>
+            <comment></comment>
+        </fun_place>
+        <game>
+            <os>Nintendo DS</os>
+            <title>Pokemon HeartGold</title>
+            <rating>100</rating>
+            <comment></comment>
+        </game>
+    </student>
+    <student>
+        <id>face1255</id>
+        <password>pW2468</password>
+        <class>
+            <unique>52540</unique>
+            <course_num>CS 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Glenn Downing</instructor>
+            <rating>100</rating>
+            <comment>Great class that provides real-world experience.</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>10095</unique>
+            <course_num>EDP363</course_num>
+            <course_name>Human Sexuality</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Nancy Daley</instructor>
+            <rating>100</rating>
+            <comment>Easy A.</comment>
+            <grade>A</grade>
+        </class>
+        <book>
+            <isbn>9780060731335</isbn>
+            <title>Freakonomics</title>
+            <author>Steven D. Levitt and Stephen J. Dubner</author>
+            <rating>80</rating>
+            <comment>Interesting, less dismal side of economics.</comment>
+        </book>
+        <book>
+            <isbn>0071626530</isbn>
+            <title>Numbers Rule Your World</title>
+            <author>Kaiser Fung</author>
+            <rating>100</rating>
+            <comment>Statistical thinking through practical stories.</comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>Advice for Computer Science College Students</title>
+            <author>Joel Spolsky</author>
+            <rating>85</rating>
+            <comment></comment>
+        </paper>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>What Should We Teach New Software Developers? Why?</title>
+            <author>Bjarne Stroustrup</author>
+            <rating>90</rating>
+            <comment>Insightful review of common teaching methodologies in computer science and the disparities across them.</comment>
+        </paper>
+        <internship>
+            <place_name>Qualcomm</place_name>
+            <location>San Diego, CA</location>
+            <semester>Summer 2010</semester>
+            <rating>95</rating>
+            <comment>Great perks, laid-back yet extremely motivated culture.</comment>
+        </internship>
+        <study_place>
+            <place_name>PCL</place_name>
+            <location>21st and Speedway</location>
+            <semester>Fall 2010</semester>
+            <rating>70</rating>
+            <comment>This place puts me to sleep.</comment>
+        </study_place>
+        <study_place>
+            <place_name>Taylor Basement</place_name>
+            <location>24th and Speedway</location>
+            <semester>Spring 2010</semester>
+            <rating>90</rating>
+            <comment>Great, except I wish it had windows and more caffeine vending machines.</comment>
+        </study_place>
+        <live_place>
+            <place_name>Centennial Condominiums</place_name>
+            <location>501 W. 26th St., Austin, TX 78705</location>
+            <semester>Spring 2010</semester>
+            <rating>90</rating>
+            <comment>Just wished they allowed pets, had a jacuzzi and a gym.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Jester Dormitories</place_name>
+            <location>21st and Speedway</location>
+            <semester>Fall 2006</semester>
+            <rating>70</rating>
+            <comment>Great place to meet friends your first year in college.</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Chilantro's</place_name>
+            <location>Follow their Twitter for locations</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>Korean tacos.</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>La Mexicana</place_name>
+            <location>S. First St.</location>
+            <semester>Spring 2009</semester>
+            <rating>80</rating>
+            <comment>Great tacos for a great price. You can also buy insurance here.</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Cheers</place_name>
+            <location>Sixth St.</location>
+            <semester>Fall 2009</semester>
+            <rating>90</rating>
+            <comment>Tell Vince the bartender that Jackson sent you.</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Austin's Park</place_name>
+            <location>16231 IH 35 North, Pflugerville, TX 78660</location>
+            <semester>Fall 2008</semester>
+            <rating>80</rating>
+            <comment>Would be awesome if there weren't 2 billion kids and they mommas runnin around.</comment>
+        </fun_place>
+        <game>
+            <os>Super Ninendo</os>
+            <title>Double Dragon</title>
+            <rating>100</rating>
+            <comment></comment>
+        </game>
+        <game>
+            <os>Game Boy</os>
+            <title>Pokemon</title>
+            <rating>100</rating>
+            <comment>Don't judge me.</comment>
+        </game>     
+    </student>
+    <student>
+        <id>nspi3284</id>
+        <password>29fdms932</password>
+        <class>
+            <unique>33325</unique>
+            <course_num>ECO 304K</course_num>
+            <course_name>Introduction to Microeconomics</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Sibley</instructor>
+            <rating>85</rating>
+            <comment>Pretty interesting class but the professor sometimes doesn't explain things very well.</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>52505</unique>
+            <course_num>CS 357</course_num>
+            <course_name>Algorithms</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Plaxton</instructor>
+            <rating>85</rating>
+            <comment>I'm doing pretty well in this class so far although there's only been 1 exam in the class.</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>52468</unique>
+            <course_num>CS 344M</course_num>
+            <course_name>Autonomous Multiagent Systems-W</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Stone</instructor>
+            <rating>95</rating>
+            <comment>An interesting class that discusses multiagent systems. The programming projects are intense and we're working on a research project that will be due at the end of the semester.</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>92150</unique>
+            <course_num>M s362K</course_num>
+            <course_name>Probability I</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Maxwell</instructor>
+            <rating>95</rating>
+            <comment>This professor is really funny and the questions in the textbook (which he wrote) contain a lot of jokes. It made doing homework interesting since you never knew what politically incorrect thing the next question would have.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>71465</unique>
+            <course_num>FIN s320F</course_num>
+            <course_name>Foundations of Finance</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Tanner</instructor>
+            <rating>85</rating>
+            <comment>This class teaches you a lot about real-world finance and economics. I learned a lot about how to handle my money, once I get it!</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>90685</unique>
+            <course_num>CS f361</course_num>
+            <course_name>Intro to Computer Security</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Young</instructor>
+            <rating>80</rating>
+            <comment>A little boring but the class has some interesting info sometimes.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>90680</unique>
+            <course_num>CS 356</course_num>
+            <course_name>Computer Networks</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Lam</instructor>
+            <rating>95</rating>
+            <comment>Awesome professor but the class went by really fast since it was over the summer.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>56720</unique>
+            <course_num>M 316</course_num>
+            <course_name>Elementary Statistical Methods</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Schultz</instructor>
+            <rating>75</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>52765</unique>
+            <course_num>CH 204</course_num>
+            <course_name>Intro to Chemical Practice</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Lyon</instructor>
+            <rating>80</rating>
+            <comment>The labs took a while but I had fun doing them.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>52445</unique>
+            <course_num>CH 302</course_num>
+            <course_name>Principles of Chemistry II</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>McCord</instructor>
+            <rating>80</rating>
+            <comment></comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>50435</unique>
+            <course_num>BIO 325</course_num>
+            <course_name>Genetics</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Sung</instructor>
+            <rating>95</rating>
+            <comment>This class goes through a lot of info and you really need to dedicate a lot of time to it</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>52545</unique>
+            <course_num>CS 373</course_num>
+            <course_name>Software Engineering-W</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>90</rating>
+            <comment>The class is teaching me Python and it also compares it with Java and Haskell. This is a really good learning experience</comment>
+            <grade></grade>
+        </class>
+        <book>
+            <isbn>0321295358</isbn>
+            <title>Algorithm Design</title>
+            <author>Kleinberg and Tardos</author>
+            <rating>90</rating>
+            <comment>This is a pretty good algorithms book. The explanations are clear but the problems are a little verbose.</comment>
+        </book>
+        <book>
+            <isbn>9780201485677</isbn>
+            <title>Refactoring</title>
+            <author>Fowler</author>
+            <rating>91</rating>
+            <comment>Software Engineering.</comment>
+        </book>
+        <book>
+            <isbn>9780201708424</isbn>
+            <title>Extreme Programming Installed</title>
+            <author>Jeffries</author>
+            <rating>60</rating>
+            <comment>I didn't like this book. The style of writing was not very clear.</comment>
+        </book>
+        <book>
+            <isbn>0136055486</isbn>
+            <title>Principles of Economics (9th)</title>
+            <author>Case, Fair, and Oster</author>
+            <rating>90</rating>
+            <comment></comment>
+        </book>
+        <book>
+            <isbn>0470519460</isbn>
+            <title>An Introduction to MultiAgent Systems</title>
+            <author>Wooldridge</author>
+            <rating>80</rating>
+            <comment>We haven't read much from this book this semester but the parts that we did read contained a lot of examples and good explantions of the concepts.</comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>Coordinating Hundreds of Cooperative, Autonomous Vehicles in Warehouses</title>
+            <author>Wurman, D'Andrea, and Mountz</author>
+            <rating>90</rating>
+            <comment></comment>
+        </paper>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>A Multiagent Approach to Autonomous Intersection Management</title>
+            <author>Dresner and Stone</author>
+            <rating>95</rating>
+            <comment>An interesting look at the possible future of autonomous vehicles and how they could negotiate intersections efficiently and safely.</comment>
+        </paper>
+        <study_place>
+            <place_name>Micro Lab</place_name>
+            <location>ENS</location>
+            <semester>Fall 2010</semester>
+            <rating>70</rating>
+            <comment>ENS is far away from most of my classes and it's in the basement.</comment>
+        </study_place>
+        <study_place>
+            <place_name>Micro Lab</place_name>
+            <location>Painter</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment>It can get really crowded sometimes but it's usually a pretty good place to work.</comment>
+        </study_place>
+        <study_place>
+            <place_name>Micro Lab</place_name>
+            <location>Taylor Basement</location>
+            <semester>Spring 2010</semester>
+            <rating>95</rating>
+            <comment>This was a great place to study. Too bad it's being demolished this semester.</comment>
+        </study_place>
+        <live_place>
+            <place_name>Acacia Cliffs</place_name>
+            <location>near Far West Blvd.</location>
+            <semester>Fall 2010</semester>
+            <rating>80</rating>
+            <comment>A pretty nice apartment but thin walls.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Condo</place_name>
+            <location>Oltof</location>
+            <semester>Spring 2005</semester>
+            <rating>75</rating>
+            <comment>The actual complex was pretty nice but south Austin wasn't.</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Wendy's</place_name>
+            <location>Texas Union</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment>Cheap and near Painter!</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Subway</place_name>
+            <location>24th</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment>$5 for a whole footlong!</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>My Apartment</place_name>
+            <location>My Apartment</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment>Home cooking at its finest.</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Micro Lab</place_name>
+            <location>Painter</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>Nerdy fun for all!</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>OCH</place_name>
+            <location>4th St.</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>Need to go here more often to meet people.</comment>
+        </fun_place>
+        <game>
+            <os>Windows</os>
+            <title>Dragon Age: Origins</title>
+            <rating>95</rating>
+            <comment></comment>
+        </game>
+        <game>
+            <os>Windows</os>
+            <title>World of Warcraft</title>
+            <rating>90</rating>
+            <comment>Broke my addiction about a year ago and I have so much more time now!</comment>
+        </game>
+        <game>
+            <os>PS3</os>
+            <title>Little Big Planet</title>
+            <rating>95</rating>
+            <comment>Awesome game, can't wait for LBP2.</comment>
+        </game>
+        <game>
+            <os>PS3</os>
+            <title>God of War 3</title>
+            <rating>95</rating>
+            <comment></comment>
+        </game>
+    </student>
+    <student>
+      <id>Ld01TDIv</id>
+      <password>juhe1818</password>
+        <class>
+            <unique>85420</unique>
+            <course_num>LAS f319</course_num>
+            <course_name>Geography of Latin America</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Gregory W Knapp</instructor>
+            <rating>80</rating>
+            <comment>He gives great lectures but he doesn't curve so all it takes is one bad test grade to prevent you from getting an A.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>90540</unique>
+            <course_num>CH s302</course_num>
+            <course_name>Principles of Chemistry II</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Stephen P McCord</instructor>
+            <rating>80</rating>
+            <comment>McCord is a fair chemistry professor but his tests are really hard.  All exams are multiple choice but he likes to figure out every possible way you could screw up a calculation and put those answers as possible choices.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>90680</unique>
+            <course_num>C S f356</course_num>
+            <course_name>Computer Networks</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Simon S Lam</instructor>
+            <rating>100</rating>
+            <comment>Lam was an awesome professor and had great stories of when he was at Berkley when they were building the internet.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>90705</unique>
+            <course_num>C S w378</course_num>
+            <course_name>Generic Programming and The STL</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Glenn P Downing</instructor>
+            <rating>100</rating>
+            <comment>The projects are hard and the tests are hard but you learn so much that it's worth the pain you suffer being in the lab everyday over your entire summer.</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>92150</unique>
+            <course_num>M s362K</course_num>
+            <course_name>Probability I</course_name>
+            <semester>Summer 2010</semester>
+            <instructor>Mark M Maxwell</instructor>
+            <rating>90</rating>
+            <comment>Maxwell was great at teaching probability from a practical standpoint instead of like most other math professors that teach strictly theory. </comment>
+            <grade>C+</grade>
+        </class>
+        <book>
+            <isbn>0131103628</isbn>
+            <title>The C Programming Language: ANSI C Version</title>
+            <author>Brian W. Kernighan Dennis M. Ritchie</author>
+            <rating>100</rating>
+            <comment>A great book to use to learn C and then use as a reference.</comment>
+        </book>
+        <book>
+            <isbn>0136108040</isbn>
+            <title>Computer Systems: A Programmer's Perspective</title>
+            <author>David R. O'Hallaron, Randal E. Bryant</author>
+            <rating>100</rating>
+            <comment>This book is work the money.  I not only used it for my computer architecture but also my network course and operating systems course.</comment>
+        </book>
+        <book>
+            <isbn>0201379260</isbn>
+            <title>The C++ Standard Library: A Tutorial and Reference</title>
+            <author>Nicolai M. Josuttis</author>
+            <rating>100</rating>
+            <comment>The book is a little hard to read at first but is a great way to learn the STL.</comment>
+        </book>
+        <book>
+            <isbn>0470128720</isbn>
+            <title>Operating System Concepts</title>
+            <author>Abraham Silberschatz, Greg Gagne, Peter Baer Galvin</author>
+            <rating>20</rating>
+            <comment>The entire book is written way too high level to actual use for any particle use.  Do not buy if you need a book that really takes an in-depth look at operating systems.</comment>
+        </book>
+        <live_place>
+            <place_name>Falls On Bull Creek</place_name>
+            <location>8527 North Capital of Texas Hwy Austin, TX 78759</location>
+            <semester>Summer 2009</semester>
+            <rating>80</rating>
+            <comment>Only $699 for a 2/2 apartment... plus it has a great view of Bull Creek.</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Dart Bowl</place_name>
+            <location>5700 Grover Avenue, Austin, TX</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment>Ask for the enchiladas, they are great and cheap.</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Hideout Pub</place_name>
+            <location>12164 North Mo-Pac Expressway Austin, TX 78758</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>A great pub to stop at for a burger and beer if you are in north Austin.</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Jackalope Night Club</place_name>
+            <location>404 East 6th Street, Austin, TX</location>
+            <semester>Fall 2010</semester>
+            <rating>80</rating>
+            <comment>A great punk bar with a good beer selection.</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>The Draught House Pub and Brewery</place_name>
+            <location>4112 Medical Pkwy #100 Austin, TX</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment>A great selection of beers on tap.</comment>
+        </fun_place>
+        <game>
+            <os>Super Nintendo</os>
+            <title>The Legend of Zelda: Link to the Past</title>
+            <rating>100</rating>
+            <comment>It's a Zelda game, that's all that needs to be said.</comment>
+        </game>
+  </student>
+</students>

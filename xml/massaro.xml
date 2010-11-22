@@ -1,0 +1,65 @@
+<students>
+      <student>
+          <id>Stud1234</id>
+          <password>kackylacky</password>
+          <class>
+                  <unique>76542</unique>
+                  <course_num>AS302</course_num>
+                  <course_name>Intro to ASE</course_name>
+                  <semester>Fall 2005</semester>
+                  <instructor>Homer</instructor>
+                  <rating>70</rating>
+                  <comment></comment>
+                  <grade>C-</grade>
+          </class>
+          <class>
+                  <unique>78702</unique>
+                  <course_num>SP523</course_num>
+                  <course_name>Spanish III</course_name>
+                  <semester>Spring 2007</semester>
+                  <instructor>Cortez</instructor>
+                  <rating>20</rating>
+                  <comment></comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>30356</unique>
+                  <course_num>MS123</course_num>
+                  <course_name>History of Opera</course_name>
+                  <semester>Summer 2008</semester>
+	          <instructor>Bach</instructor>
+	          <rating>100</rating>
+	          <comment></comment>
+	          <grade>X</grade>
+
+	  </class>
+	  <book>
+		  <isbn>1323299482</isbn>
+		  <title>One Fish Two Fish Red Fish Blue Fish</title>
+		  <author>Dr Seuss</author>
+		  <rating>90</rating>
+		  <comment></comment>
+	  </book>
+	  <paper>
+		  <paper_category>journal</paper_category>
+		  <title>Steroids in Pro Sports</title>
+		  <author>Jose Canseco</author>
+		  <rating>90</rating>
+		  <comment></comment>
+	  </paper>
+	  <internship>
+	          <place_name>Twitter</place_name>
+	          <location>Los Angeles CA</location>
+	          <semester>Summer 2010</semester>
+	          <rating>30</rating>
+	          <comment></comment>
+	  </internship>
+	  <study_place>
+          	  <place_name>Home</place_name>
+		  <location>My House</location>
+		  <semester>Fall 2009</semester>
+		  <rating>100</rating>
+		  <comment></comment>
+	  </study_place>
+      </student>
+</students>

@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+
+<students>
+
+    <!-- Mike -->
+    <student>
+        <id>id000001</id>
+        <password>kingsquest</password>
+        
+        <class>
+            <unique>52540</unique>
+            <course_num>CS373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Glenn P. Downing</instructor>
+            <rating>92</rating>
+            <comment />
+            <grade>A</grade>
+        </class>
+        
+        <book>
+            <isbn>9780451191144</isbn>
+            <title>Atlas Shrugged</title>
+            <author>Ayn Rand</author>
+            <rating>99</rating>
+            <comment>A modern epic.  Besides being a beautiful story, this is a great introduction to Objectivism for the aphilosopical type.</comment>
+        </book>
+        
+        <book>
+            <isbn>9998887770111</isbn>
+            <title>In Cold Blood</title>
+            <author>Truman Capote</author>
+            <rating>85</rating>
+            <comment>Pretty good.</comment>
+        </book>
+        
+        <study_place>
+            <place_name>PMCL</place_name>
+            <location>RLM 7.306</location>
+            <semester>Fall 2010</semester>
+            <rating>45</rating>
+            <comment />
+        </study_place>
+        
+        
+        <!--
+            A user can rate the same place multiple times
+            since each place can have a different role in
+            the user's life (eat,study,...) on different semesters.
+        -->
+        <eat_place>
+            <place_name>PMCL</place_name>
+            <location>RLM 7.306</location>
+            <semester>Fall 2010</semester>
+            <rating>12</rating>
+            <comment />
+        </eat_place>
+        
+        <eat_place>
+            <place_name>Thai Kitchen</place_name>
+            <location>3009 Guadalupe St, Austin, TX  78705</location>
+            <semester>Fall 2010</semester>
+            <rating>85</rating>
+            <comment>They deliver until 2:00 AM.</comment>
+        </eat_place>
+        
+        <game>
+            <os>DOS</os>
+            <title>Loom</title>
+            <rating>100</rating>
+            <comment>Awesome old-school adventure game where you play melodies with a stick.</comment>
+        </game>
+    </student>
+    
+    <!-- Jeff -->
+    <student>
+        <id>id000002</id>
+        <password>pass123#</password>
+        
+        <class>
+            <unique>52540</unique>
+            <course_num>CS373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Glenn P. Downing</instructor>
+            <rating>80</rating>
+            <comment />
+            <grade />
+        </class>
+        
+        <book>
+            <isbn>9780201708424</isbn>
+            <title>Extreme Programming Installed</title>
+            <author>Ron Jeffries</author>
+            <rating>80</rating>
+            <comment />
+        </book>
+        
+        <study_place>
+            <place_name>PMCL</place_name>
+            <location>RLM 7.306</location>
+            <semester>Fall 2010</semester>
+            <rating>80</rating>
+            <comment />
+        </study_place>
+        
+        <eat_place>
+            <place_name>P. Terry's</place_name>
+            <location>404 South Lamar Boulevard, Austin, Texas 78704</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment />
+        </eat_place>
+        
+        <eat_place>
+            <place_name>Sno-Beach</place_name>
+            <location>801 Barton Springs Rd, Austin, TX 78704</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment />
+        </eat_place>
+        
+        <fun_place>
+            <place_name>Peter Pan Golf</place_name>
+            <location>1207 Barton Springs Rd, Austin, TX 78704</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment>It's BYOB.'</comment>
+        </fun_place>
+        
+        <game>
+            <os>Nintendo Entertainment System</os>
+            <title>Tecmo Bowl</title>
+            <rating>100</rating>
+            <comment />
+        </game>
+    </student>
+
+    <!-- Alon -->
+    <student>
+        <id>Suy#@$59</id>
+        <password>!@#G34Yrw34$#%Ysdfbss</password>
+        
+        <class>
+            <unique>12345</unique>
+            <course_num>ABC f123A</course_num>
+            <course_name>Learning the ABC's</course_name>
+            <semester>Fall 3026</semester>
+            <instructor>Superman</instructor>
+            <rating>100</rating>
+            <comment>This class is so @!#%ing amazing!!!</comment>
+            <grade>A</grade>
+        </class>
+        
+        <book>
+            <isbn>1234567890</isbn>
+            <title>The Cow</title>
+            <author>Mr. Cow</author>
+            <rating>0</rating>
+            <comment>Stupid Book.</comment>
+        </book>
+
+	<internship>
+            <place_name>NVIDIA</place_name>
+            <location>Austin, TX</location>
+            <semester>Summer 2010</semester>
+            <rating>80</rating>
+            <comment>Cool Stuff.</comment>
+        </internship>
+        
+        <study_place>
+            <place_name>Pizza Hut</place_name>
+            <location>123 W. St</location>
+            <semester>Spring 1234</semester>
+            <rating>50</rating>
+            <comment>It's ok</comment>
+        </study_place>
+        
+        <eat_place>
+            <place_name>Pizza Hut</place_name>
+            <location>123 W. Str</location>
+            <semester>Spring 1234</semester>
+            <rating>90</rating>
+            <comment/>
+        </eat_place>
+        
+    </student>
+
+    <!-- Anar -->
+    <student>
+        <id>eyedee85</id>
+        <password>str0ngp@ssw0rd</password>
+        
+        <class>
+            <unique>31415</unique>
+            <course_num>GER 604</course_num>
+            <course_name>Accelerated First-Year German</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Gueneli</instructor>
+            <rating>95</rating>
+            <comment>Danke schon.</comment>
+            <grade>A</grade>
+        </class>
+        
+        <book>
+            <isbn>4442225550333</isbn>
+            <title>In Cold Blood</title>
+            <author>Truman Capote</author>
+            <rating>88</rating>
+            <comment>Fascinating read.</comment>
+        </book>
+
+        <internship>
+            <place_name>Microsoft</place_name>
+            <location>Redmond, WA</location>
+            <semester>Summer 2010</semester>
+            <rating>95</rating>
+            <comment>Yea!</comment>
+        </internship>
+        
+        <study_place>
+            <place_name>Mozart's</place_name>
+            <location>by the Lake</location>
+            <semester>Spring 2010</semester>
+            <rating>92</rating>
+            <comment>Scenic.</comment>
+        </study_place>
+        
+        <eat_place>
+            <place_name>Kismet Cafe</place_name>
+            <location>24th and Drag</location>
+            <semester>Spring 1999</semester>
+            <rating>80</rating>
+            <comment/>
+        </eat_place>
+        
+    </student>
+
+    <!-- Cesar -->
+      <student>
+    <id>cal74312</id>
+    <password>tryagain</password>
+    
+    <class>
+      <unique>12345</unique>
+      <course_num>CS997</course_num>
+      <course_name>Second To Last</course_name>
+      <semester>Fall 9999</semester>
+      <instructor>Glenn P. Downing</instructor>
+      <rating>99</rating>
+      <comment>IT'S A DOUBLE RAINBOW</comment>
+      <grade>B-</grade>
+    </class>
+    <class>
+      <unique>23451</unique>
+      <course_num>CS998</course_num>
+      <course_name>Next To Last</course_name>
+      <semester>Fall 9999</semester>
+      <instructor>Glenn P. Downing</instructor>
+      <rating>99</rating>
+      <comment>IT'S A TRIPPLE RAINBOW</comment>
+      <grade>F</grade>
+    </class>
+    <class>
+      <unique>34512</unique>
+      <course_num>CS999</course_num>
+      <course_name>The Last</course_name>
+      <semester>Spring 9999</semester>
+      <instructor>Glenn P. Downing</instructor>
+      <rating>99</rating>
+      <comment>SO MANY BLASPHEMIN LAYERS OF BLOODY PURPLE AND GREEN AND WHATNOT RAINBOWS</comment>
+      <grade>A-</grade>
+    </class>
+    
+    <book>
+      <isbn>1234123412340</isbn>
+      <title>Brackets ALIVE!!!</title>
+      <author>Curly Brace</author>
+      <rating>91</rating>
+      <comment>Death-defying sqareness!</comment>
+    </book>
+    <book>
+      <isbn>0000000000001</isbn>
+      <title>THE BEGINNING</title>
+      <author>unknown</author>
+      <rating>99</rating>
+      <comment>ALL</comment>
+    </book>
+  </student>
+</students>

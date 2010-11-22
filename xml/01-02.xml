@@ -1,0 +1,821 @@
+<students>
+
+	<student>
+		<id>ben00000</id>
+		<password>ben</password>
+		<class>
+			<unique>52540</unique>
+			<course_num>CS 373</course_num>
+			<course_name>Software Engineering</course_name>
+			<semester>Fall 2010</semester>
+			<instructor>Downing</instructor>
+			<rating>95</rating>
+			<comment>There were many new concepts</comment>
+			<grade></grade>
+		</class>
+		<class>
+			<unique>52568</unique>
+			<course_num>M340</course_num>
+			<course_name>Linear Algebra</course_name>
+			<semester>Fall 2010</semester>
+			<instructor>Lam</instructor>
+			<rating>55</rating>
+			<comment></comment>
+			<grade></grade>
+		</class>
+		<class>
+			<unique>52485</unique>
+			<course_num>CS 341</course_num>
+			<course_name>Automata Theory</course_name>
+			<semester>Fall 2010</semester>
+			<instructor>Rich</instructor>
+			<rating>80</rating>
+			<comment>Not fun</comment>
+			<grade></grade>
+		</class>
+		<class>
+			<unique>99999</unique>
+			<course_num>CS 345</course_num>
+			<course_name>Programming Languages</course_name>
+			<semester>Spring 2010</semester>
+			<instructor>Cannata</instructor>
+			<rating>90</rating>
+			<comment></comment>
+			<grade>A</grade>
+		</class>
+		<book>
+			<isbn>4356745290</isbn>
+			<title>Automata, Complexity, and Computability</title>
+			<author>Elaine Rich</author>
+			<rating>97</rating>
+			<comment>Long</comment>
+		</book>
+		<book>
+			<isbn>0679736646</isbn>
+			<title>Test</title>
+			<author>Ben Kornfuehrer</author>
+			<rating>90</rating>
+			<comment></comment>
+		</book>
+		<book>
+			<isbn>2398476354098</isbn>
+			<title>The Big Bang Theory</title>
+			<author>Albert Einstein</author>
+			<rating>95</rating>
+			<comment></comment>
+		</book>
+		<internship>
+			<place_name>Microsoft</place_name>
+			<location>Seattle</location>
+			<semester>Summer 2009</semester>
+			<rating>90</rating>
+			<comment>asdklfj</comment>
+		</internship>
+		<internship>
+			<place_name>Valero</place_name>
+			<location>San Antonio</location>
+			<semester>Summer 2010</semester>
+			<rating>25</rating>
+			<comment>It Sucked!</comment>
+		</internship>
+		<internship>
+			<place_name>Deloitte</place_name>
+			<location>Houston</location>
+			<semester>Summer 2008</semester>
+			<rating>80</rating>
+			<comment>Not my major</comment>
+		</internship>
+		<study_place>
+			<place_name>Painter</place_name>
+			<location>Inner Campus Drive</location>
+			<semester>Fall 2010</semester>
+			<rating>80</rating>
+			<comment>A lot of stairs to walk up</comment>
+		</study_place>
+		<study_place>
+			<place_name>Architecture Library</place_name>
+			<location>21st Street</location>
+			<semester>Fall 2010</semester>
+			<rating>50</rating>
+			<comment></comment>
+		</study_place>
+		<study_place>
+			<place_name>PCL</place_name>
+			<location>Speedway and 21st</location>
+			<semester>Fall 2010</semester>
+			<rating>30</rating>
+			<comment>Bleh</comment>
+		</study_place>
+		<live_place>
+			<place_name>The Block</place_name>
+			<location>23rd Street</location>
+			<semester>Fall 2009</semester>
+			<rating>50</rating>
+			<comment>Twas OK</comment>
+		</live_place>
+		<live_place>
+			<place_name>Enfield Townhomes</place_name>
+			<location>2605 Enfield Rd</location>
+			<semester>Spring 2008</semester>
+			<rating>80</rating>
+			<comment>Peace and quiet</comment>
+		</live_place>
+		<live_place>
+			<place_name>Jefferson 26</place_name>
+			<location>26th Street</location>
+			<semester>Spring 2009</semester>
+			<rating>90</rating>
+			<comment>Awesome Pool</comment>
+		</live_place>
+		<eat_place>
+			<place_name>Pluckers</place_name>
+			<location>rio grande</location>
+			<semester>Spring 2009</semester>
+			<rating>90</rating>
+			<comment>WINGS</comment>
+		</eat_place>
+		<eat_place>
+			<place_name>What-A-Burger</place_name>
+			<location>Guadalupe</location>
+			<semester>Spring 2010</semester>
+			<rating>90</rating>
+			<comment>Drunken Food</comment>
+		</eat_place>    
+		<eat_place>
+			<place_name>Taco C</place_name>
+			<location>MLK</location>
+			<semester>Fall 2007</semester>
+			<rating>90</rating>
+			<comment>3 AM Drunkfest</comment>
+		</eat_place>    
+		<fun_place>
+			<place_name>Dave and Busters</place_name>
+			<location>183</location>
+			<semester>Spring 2009</semester>
+			<rating>90</rating>
+			<comment>Eat and Play combo</comment>
+		</fun_place>            
+		<fun_place>
+			<place_name>Main Event</place_name>
+			<location>Anderson Mill</location>
+			<semester>Fall 2009</semester>
+			<rating>90</rating>
+			<comment>Glow in the dark golf</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>Downtown</place_name>
+			<location>downtown</location>
+			<semester>Spring 2010</semester>
+			<rating>90</rating>
+			<comment>All the bars in one street</comment>
+		</fun_place>
+		<game>
+			<os>Any</os>
+			<title>FIFA 2011</title>
+			<rating>95</rating>
+			<comment>The players look so real</comment>
+		</game>
+		<game>
+			<os>Any</os>
+			<title>Call of Duty: Modern Warfare</title>
+			<rating>100</rating>
+			<comment>It's a crime to be this good</comment>
+		</game>
+   </student>
+
+   
+
+   <student>
+	<id>brian000</id>
+	<password>brian</password>
+	<class>
+		<unique>52540</unique>
+		<course_num>CS 373</course_num>
+		<course_name>Software Engineering</course_name>
+		<semester>Fall 2010</semester>
+		<instructor>Downing</instructor>
+		<rating>95</rating>
+		<comment></comment>
+		<grade></grade>
+	</class>
+	<class>
+		<unique>52467</unique>
+		<course_num>CS 343</course_num>
+		<course_name>Artificial Intelligence</course_name>
+		<semester>Fall 2010</semester>
+		<instructor>Mooney</instructor>
+		<rating>92</rating>
+		<comment></comment>
+		<grade></grade>
+	</class>
+	<class>
+		<unique>52485</unique>
+		<course_num>CS 352</course_num>
+		<course_name>Computer Systems Architecture</course_name>
+		<semester>Fall 2010</semester>
+		<instructor>Hunt</instructor>
+		<rating>80</rating>
+		<comment>seems like a duplication of cs310</comment>
+		<grade></grade>
+	</class>
+	<class>
+		<unique>99999</unique>
+		<course_num>CS 345</course_num>
+		<course_name>Programming Languages</course_name>
+		<semester>Spring 2010</semester>
+		<instructor>Cannata</instructor>
+		<rating>95</rating>
+		<comment>This class was great</comment>
+		<grade>A</grade>
+	</class>
+	<class>
+		<unique>99999</unique>
+		<course_num>CS 105</course_num>
+		<course_name>Computer Programming: Common Lisp</course_name>
+		<semester>Spring 2009</semester>
+		<instructor>Schrum</instructor>
+		<rating>95</rating>
+		<comment></comment>
+		<grade>A</grade>
+	</class>
+	<book>
+		<isbn>0679734465</isbn>
+		<title>Valis</title>
+		<author>Philip K. Dick</author>
+		<rating>95</rating>
+		<comment>mind-bending</comment>
+	</book>
+	<book>
+		<isbn>0679736646</isbn>
+		<title>Ubik</title>
+		<author>Philip K. Dick</author>
+		<rating>90</rating>
+		<comment></comment>
+	</book>
+	<book>
+		<isbn>0136042597</isbn>
+		<title>Artificial Intelligence: A Modern Approach</title>
+		<author>Stuart Russell and Peter Norvig</author>
+		<rating>95</rating>
+		<comment>[review stolen from amazon]
+    I didn't think that the first edition of this book was as bad as some of the reviewers said, but the second edition is definitely a vast improvement. It's not just some obligatory 2nd edition that some authors release to say that they are staying actively published. The first edition was somewhat confusing in its explanations and the exercises were really blurry on what was being asked. All of that has now been resolved.
+    
+The book is a comprehensive and insightful introduction to artificial intelligence with an academic tone. It provides a unified view of the field organized around the rational decision making paradigm, which focuses on the selection of the "best" solution to a problem. The book's overall theme is that the purpose of AI is to solve problems via intelligent agents, and then goes about specifying the features such an agent or agents should have. Pseudocode is provided for all of the major AI algorithms. Being about the broadest book in terms of coverage of AI, you should therefore not expect it to be the deepest in coverage. </comment>
+	</book>
+	<paper>
+		<paper_category>journal</paper_category>
+		<title>Cognitive Architectures: Research Issues and Challenges</title>
+		<author>Pat Langley, John E. Laird, and Seth Rogers</author>
+		<rating>90</rating>
+		<comment>2009. Gives a detailed overview of cognitive architectures.</comment>
+	</paper>
+	<paper>
+		<paper_category>journal</paper_category>
+		<title>The 1980 ACM Turing Award Lecture</title>
+		<author>C.A.R. (Tony) Hoare</author>
+		<rating>92</rating>
+		<comment>Interesting talk about his experience designing languages</comment>
+	</paper>
+	<paper>
+		<paper_category>journal</paper_category>
+		<title>The Evolution of Lisp</title>
+		<author>Guy L. Steele, Jr. and Richard P. Gabriel</author>
+		<rating>90</rating>
+		<comment>ACM 1993</comment>
+	</paper>
+	<study_place>
+		<place_name>Painter Lab</place_name>
+		<location>campus</location>
+		<semester>Fall 2010</semester>
+		<rating>90</rating>
+		<comment>Man, these freshmen are loud</comment>
+	</study_place>
+	<study_place>
+		<place_name>Architecture Library</place_name>
+		<location>campus</location>
+		<semester>Fall 2010</semester>
+		<rating>93</rating>
+		<comment>It's good when it's not too crowded</comment>
+	</study_place>
+	<study_place>
+		<place_name>PCL</place_name>
+		<location>campus</location>
+		<semester>Fall 2010</semester>
+		<rating>40</rating>
+		<comment>Fluorescent lighting, orange carpet, vinyl seats. Bleh.</comment>
+	</study_place>
+	<live_place>
+		<place_name>3203 Helms</place_name>
+		<location>north campus</location>
+		<semester>Fall 2010</semester>
+		<rating>30</rating>
+		<comment>ceiling is too thin and squeaky</comment>
+	</live_place>
+	<eat_place>
+		<place_name>Dirty Martin's</place_name>
+		<location>guadalupe</location>
+		<semester>Fall 2010</semester>
+		<rating>90</rating>
+		<comment>Awesome burgers and fries and shakes</comment>
+	</eat_place>
+	<eat_place>
+		<place_name>Madras Pavilion</place_name>
+		<location>9025 Research Blvd</location>
+		<semester>Fall 2010</semester>
+		<rating>90</rating>
+		<comment>Good Indian lunch buffet</comment>
+	</eat_place>
+	<fun_place>
+		<place_name>Bob Wentz Park</place_name>
+		<location>Lake Travis</location>
+		<semester>Fall 2010</semester>
+		<rating>90</rating>
+		<comment>It's almost like a beach. Almost.</comment>
+	</fun_place>
+	<game>
+		<os>Any</os>
+		<title>Zork II</title>
+		<rating>90</rating>
+		<comment>The best in the Zork series.</comment>
+	</game>
+	<game>
+		<os>Apple II</os>
+		<title>Ultima I</title>
+		<rating>90</rating>
+		<comment>I loved this game as a kid.</comment>
+	</game>
+    </student>
+
+
+
+    <student>
+        <id>jonathan</id>
+        <password>jonathan</password>
+        <class>
+            <unique>52540</unique>
+            <course_num>CS 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>90</rating>
+            <comment>Enjoyable so far</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52467</unique>
+            <course_num>CS 343</course_num>
+            <course_name>Artificial Intelligence</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Mooney</instructor>
+            <rating>85</rating>
+            <comment></comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>87987</unique>
+            <course_num>CS 378</course_num>
+            <course_name>Software Design</course_name>
+            <semester>Spring 2010</semester>
+            <instructor>Batory</instructor>
+            <rating>80</rating>
+            <comment>A little too abstract for my tastes. Code examples could be better</comment>
+            <grade>B</grade>
+        </class>
+        <book>
+            <isbn>0136042597</isbn>
+            <title>Artificial Intelligence: A Modern Approach</title>
+            <author>Norvig</author>
+            <rating>76</rating>
+            <comment></comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>The New Product Development Game</title>
+            <author>Hirotaka Takeuchi and Ikujiro Nanaka</author>
+            <rating>83</rating>
+            <comment></comment>
+        </paper>
+        <study_place>
+            <place_name>PCL</place_name>
+            <location>Inner Campus Drive</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment></comment>
+        </study_place>
+        <live_place>
+            <place_name>Oak Hollow Apartements</place_name>
+            <location>Far West Dr</location>
+            <semester>Fall 2010</semester>
+            <rating>70</rating>
+            <comment>A little old</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Abel's at the Lake</place_name>
+            <location>Lake Austin Dr</location>
+            <semester>Fall 2010</semester>
+            <rating>99</rating>
+            <comment>Great burgers, great place to watch a game. Gotta try the Texas Teas</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>What-A-Burger</place_name>
+            <location>Anderson Ln</location>
+            <semester>Spring 2010</semester>
+            <rating>90</rating>
+            <comment>Great drunk food</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Home Slice Pizza</place_name>
+            <location>South Congress Dr</location>
+            <semester>Fall 2010</semester>
+            <rating>95</rating>
+            <comment>Best pizza in Austin</comment>
+        </fun_place>
+        <game>
+            <os>XBox 360</os>
+            <title>NCAA Football 2010</title>
+            <rating>85</rating>
+            <comment>Would be better, if the linebackers weren't all superfreaks</comment>
+        </game>
+    </student>
+
+
+
+    <student>
+	    <id>shanky00</id>
+	    <password>shanky</password>
+	    <class>
+		    <unique>32165</unique>
+		    <course_num>EDP 363</course_num>
+		    <course_name>Human Sexuality</course_name>
+		    <semester>Fall 2009</semester>
+		    <instructor>Daley</instructor>
+		    <rating>80</rating>
+		    <comment></comment>
+		    <grade></grade>
+	    </class>
+	    <class>
+		    <unique>45254</unique>
+		    <course_num>CS 372</course_num>
+		    <course_name>Operating Systems</course_name>
+		    <semester>Spring 2010</semester>
+		    <instructor>Dahlin</instructor>
+		    <rating>50</rating>
+		    <comment>Many hours in the lab</comment>
+		    <grade></grade>
+	    </class>
+	    <class>
+		    <unique>53243</unique>
+		    <course_num>CS 343</course_num>
+		    <course_name>Artificial Intelligence</course_name>
+		    <semester>Spring 2010</semester>
+		    <instructor>Stone</instructor>
+		    <rating>75</rating>
+		    <comment></comment>
+		    <grade></grade>
+	    </class>
+	    <class>
+		    <unique>53245</unique>
+		    <course_num>CH 302</course_num>
+		    <course_name>Chemistry</course_name>
+		    <semester>Spring 2008</semester>
+		    <instructor>Fakherdine</instructor>
+		    <rating>90</rating>
+		    <comment>Got a hundred on the final</comment>
+		    <grade>A</grade>
+	    </class>
+	    <book>
+		    <isbn>1870968365</isbn>
+		    <title>The Cat in the Hat</title>
+		    <author>Dr. Seuss</author>
+		    <rating>99</rating>
+		    <comment>Fun for kids and adults</comment>
+	    </book>
+	    <book>
+		    <isbn>0674011171</isbn>
+		    <title>Facing East from Indian Country</title>
+		    <author>Daniel Richter</author>
+		    <rating>60</rating>
+		    <comment>For History class</comment>
+	    </book>
+	    <book>
+		    <isbn>9780300152142</isbn>
+		    <title>The Hanging of Thomas Jeremiah</title>
+		    <author>J. William Harris</author>
+		    <rating>87</rating>
+		    <comment></comment>
+	    </book>
+	    <paper>
+		    <paper_category>journal</paper_category>
+		    <title>The Truth About Stacey</title>
+		    <author>Ann M. Martin</author>
+		    <rating>80</rating>
+		    <comment>Tells the truth about Stacey.</comment>
+	    </paper>
+	    <paper>
+		    <paper_category>journal</paper_category>
+		    <title>Logical Methods in Computer Science</title>
+		    <author>Dana Scott</author>
+		    <rating>75</rating>
+		    <comment></comment>
+	    </paper>
+	    <paper>
+		    <paper_category>conference</paper_category>
+		    <title>Operating Systems Design and Implementation</title>
+		    <author>Advanced Computing Technical Association</author>
+		    <rating>90</rating>
+		    <comment></comment>
+	    </paper>
+	    <internship>
+		    <place_name>Facebook</place_name>
+		    <location>Mountain View</location>
+		    <semester>Summer 2008</semester>
+		    <rating>25</rating>
+		    <comment>Beautiful City</comment>
+	    </internship>
+	    <internship>
+		    <place_name>uFollowit</place_name>
+		    <location>Austin</location>
+		    <semester>Summer 2009</semester>
+		    <rating>89</rating>
+		    <comment>It was good</comment>
+	    </internship>
+	    <internship>
+		    <place_name>Epic</place_name>
+		    <location>Madison</location>
+		    <semester>Summer 2010</semester>
+		    <rating>68</rating>
+		    <comment>Too cold in Wisconsin</comment>
+	    </internship>
+	    <study_place>
+		    <place_name>ENS</place_name>
+		    <location>24th and Speedway</location>
+		    <semester>Spring 2010</semester>
+		    <rating>80</rating>
+		    <comment>No cell phone reception</comment>
+	    </study_place>
+	    <study_place>
+		    <place_name>FAC</place_name>
+		    <location>Somewhere on campus</location>
+		    <semester>Fall 2008</semester>
+		    <rating>75</rating>
+		    <comment>A good place to sleep</comment>
+	    </study_place>
+	    <study_place>
+		    <place_name>Rec Center</place_name>
+		    <location>San Jacinto and 20th</location>
+		    <semester>Spring 2009</semester>
+		    <rating>85</rating>
+		    <comment>Very quiet since no one knows about it.</comment>
+	    </study_place>
+	    <live_place>
+		    <place_name>University Village</place_name>
+		    <location>Crossing Place</location>
+		    <semester>Fall 2007</semester>
+		    <rating>20</rating>
+		    <comment>I had no car</comment>
+	    </live_place>
+	    <live_place>
+		    <place_name>Blackstone Apts</place_name>
+		    <location>2910 Medical Arts St.</location>
+		    <semester>Spring 2010</semester>
+		    <rating>85</rating>
+		    <comment>Peace and quiet</comment>
+	    </live_place>
+	    <live_place>
+		    <place_name>Landry Place Apts</place_name>
+		    <location>2239 Cromwell Cir.</location>
+		    <semester>Fall 2010</semester>
+		    <rating>90</rating>
+		    <comment>On Riverside</comment>
+	    </live_place>
+	    <eat_place>
+		    <place_name>Carinos</place_name>
+		    <location>Brodie Lane</location>
+		    <semester>Fall 2009</semester>
+		    <rating>95</rating>
+		    <comment>Free Dessert</comment>
+	    </eat_place>
+	    <eat_place>
+		    <place_name>Madam Mam's</place_name>
+		    <location>Guadalupe</location>
+		    <semester>Spring 2007</semester>
+		    <rating>83</rating>
+		    <comment>Thai Food</comment>
+	    </eat_place>    
+	    <eat_place>
+		    <place_name>Kerbey Lane</place_name>
+		    <location>Guadalupe</location>
+		    <semester>Fall 2006</semester>
+		    <rating>87</rating>
+		    <comment>3 AM Drunkfest</comment>
+	    </eat_place>
+	    <fun_place>
+		    <place_name>Las Vegas</place_name>
+		    <location>Nevada</location>
+		    <semester>Fall 2008</semester>
+		    <rating>99</rating>
+		    <comment>Events everywhere</comment>
+	    </fun_place>
+	    <fun_place>
+		    <place_name>Union Underground</place_name>
+		    <location>Student Union</location>
+		    <semester>Summer 2009</semester>
+		    <rating>80</rating>
+		    <comment>Bowling</comment>
+	    </fun_place>
+	    <fun_place>
+		    <place_name>ACL</place_name>
+		    <location>Zilker Park</location>
+		    <semester>Fall 2010</semester>
+		    <rating>97</rating>
+		    <comment>Great Music</comment>
+	    </fun_place>
+	    <game>
+		    <os>Any</os>
+		    <title>Grand Theft Auto</title>
+		    <rating>95</rating>
+		    <comment>Steal cars and make money</comment>
+	    </game>
+	    <game>
+		    <os>Any</os>
+		    <title>World of Warcraft</title>
+		    <rating>80</rating>
+		    <comment>Too many mouse clicks</comment>
+	    </game>
+	    <game>
+		    <os>Any</os>
+		    <title>Super Smash Brothers</title>
+		    <rating>100</rating>
+		    <comment>AMAZING!!</comment>
+	    </game>
+    </student>
+
+
+    <student>
+        <id>josh0000</id>
+        <password>josh</password>
+        <class>
+            <unique>52540</unique>
+            <course_num>CS 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>98</rating>
+            <comment></comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>52535</unique>
+            <course_num>CS 372</course_num>
+            <course_name>Intro to Operating Systems</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Mike Dahlin</instructor>
+            <rating>75</rating>
+            <comment>Segment Fault</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>52467</unique>
+            <course_num>CS 343</course_num>
+            <course_name>Artificial Intelligence</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Mooney</instructor>
+            <rating>90</rating>
+            <comment>Fun class. Very enthusiastic instructor.</comment>
+            <grade></grade>
+        </class>
+        <class>
+            <unique>52465</unique>
+            <course_num>CS 341</course_num>
+            <course_name>Automata Theory</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Elaine Rich</instructor>
+            <rating>75</rating>
+            <comment>Not bad. Straight forward materials</comment>
+            <grade></grade>
+        </class>
+        <book>
+            <isbn>0787988383</isbn>
+            <title>The Time Seller</title>
+            <author>Fernando Trias De Bes</author>
+            <rating>100</rating>
+            <comment>Awesome book! A MUST read book for modern day young people who are planning their future</comment>
+        </book>
+        <book>
+            <isbn>0553573527</isbn>
+            <title>Empire of the Ants</title>
+            <author>Bernard Werber</author>
+            <rating>70</rating>
+            <comment>Pretty long book, story is little bit out there but makes you think about stuff a lot</comment>
+        </book>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>The New Product Development Game</title>
+            <author>Hirotaka Takeuchi and Ikujiro Nanaka</author>
+            <rating>90</rating>
+            <comment></comment>
+        </paper>
+        <paper>
+            <paper_category>journal</paper_category>
+            <title>Evolution of Database Designs</title>
+            <author>Foo B. Ar</author>
+            <rating>65</rating>
+            <comment>Made up journal.</comment>
+        </paper>
+        <internship>
+            <place_name>Doosan IT</place_name>
+            <location>Seoul Korea</location>
+            <semester>Summer 2010</semester>
+            <rating>94</rating>
+            <comment>Participated in redesigning company wide HR database, had fun, lots of new experiences.</comment>
+        </internship>
+        <study_place>
+            <place_name>PCL</place_name>
+            <location>Speedway and 21st</location>
+            <semester>Fall 2010</semester>
+            <rating>50</rating>
+            <comment>Don't hang around the 6th floor.</comment>
+        </study_place>
+        <study_place>
+            <place_name>The Mozart's</place_name>
+            <location>Lake Austin Blvd</location>
+            <semester>Spring 2010</semester>
+            <rating>89</rating>
+            <comment>Free Wi-fi and live quiet music at nights. Foo and coffee not so good.</comment>
+        </study_place>
+        <study_place>
+            <place_name>Home</place_name>
+            <location>Far West</location>
+            <semester>Fall 2010</semester>
+            <rating>100</rating>
+            <comment>Fridge and coffee maker are right next to the desk.</comment>
+        </study_place>
+        <live_place>
+            <place_name>Westdale Pointe</place_name>
+            <location>7117 Wood Hollow Dr</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>Good neighborhood, UT shuttle right infront</comment>
+        </live_place>
+        <live_place>
+            <place_name>Greystone Parke</place_name>
+            <location>3543 Greystone Dr</location>
+            <semester>Fall 2006</semester>
+            <rating>21</rating>
+            <comment>30 year old buildings, bad management.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Jester</place_name>
+            <location>21th Street and Speedway</location>
+            <semester>Fall 2005</semester>
+            <rating>75</rating>
+            <comment>Not bad as a dorm, but living in a supplemental room with three roomates is not so great</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Pluckers</place_name>
+            <location>Burnet</location>
+            <semester>Fall 2005</semester>
+            <rating>80</rating>
+            <comment>Not as big as one near campus, but great wings!</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Madam Mam's</place_name>
+            <location>Anderson Lane</location>
+            <semester>Spring 2010</semester>
+            <rating>90</rating>
+            <comment>Thai food. Service is much nicer than one on campus, and is very clean and nicely decorated</comment>
+        </eat_place>    
+        <eat_place>
+            <place_name>Torchy's Tacos</place_name>
+            <location>Spicewood Springs</location>
+            <semester>Fall 2010</semester>
+            <rating>90</rating>
+            <comment>Awesome tacos, and cream soda</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Dave and Busters</place_name>
+            <location>183</location>
+            <semester>Spring 2006</semester>
+            <rating>70</rating>
+            <comment>Nice pool tables. Good for family parties too.</comment>
+        </fun_place>
+        <game>
+            <os>PC</os>
+            <title>Sherlock Holmes vs Aresene Lupin</title>
+            <rating>98</rating>
+            <comment>Good story plot and puzzles. Great game for Sherlock Holmes fans.</comment>
+        </game>
+        <game>
+            <os>Any</os>
+            <title>Prince of Persia and the Sands of Time</title>
+            <rating>80</rating>
+            <comment>Tad bit old game but fun.</comment>
+        </game>
+        <game>
+            <os>PC</os>
+            <title>World of Warcraft</title>
+            <rating>56</rating>
+            <comment>Fun but very time consuming plus money. Also makes you feel like you have no life.</comment>
+        </game>
+  </student>
+</students>

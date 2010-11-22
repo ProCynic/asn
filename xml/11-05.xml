@@ -1,0 +1,415 @@
+<students>
+	<student>
+		<id>qwer1234</id>
+		<password>Pass1</password>
+		<game>
+			<os>foo</os>
+			<title>bar</title>
+			<rating>5</rating>
+			<comment/>
+		</game>
+	</student>
+	<student>
+		<id>7t8dm91j</id>
+		<password>Pass2</password>
+		<class>
+			<unique>12345</unique>
+			<course_num>C S 373</course_num>
+			<course_name>Software Engineering</course_name>
+			<semester>Spring 2010</semester>
+			<instructor>Downing</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>A</grade>
+		</class>
+		<class>
+			<unique>67890</unique>
+			<course_num>C S 344M</course_num>
+			<course_name>Autonomous Multiagent Systems</course_name>
+			<semester>Spring 2008</semester>
+			<instructor>Stone</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>B+</grade>
+		</class>
+		<book>
+			<isbn>1234567890</isbn>
+			<title>Title1</title>
+			<author>Some Guy</author>
+			<rating>60</rating>
+			<comment/>
+		</book>
+		<paper>
+			<paper_category>journal</paper_category>
+			<title>Title2</title>
+			<author>Some Other Guy</author>
+			<rating>0</rating>
+			<comment/>
+		</paper>
+		<paper>
+			<paper_category>conference</paper_category>
+			<title>Title3</title>
+			<author>Stewie</author>
+			<rating>50</rating>
+			<comment/>
+		</paper>
+		<internship>
+			<place_name>Microsoft</place_name>
+			<location>Redmond, WA</location>
+			<semester>Summer 1999</semester>
+			<rating>30</rating>
+			<comment/>
+		</internship>
+		<study_place>
+			<place_name>TAYBAY</place_name>
+			<location>Painter</location>
+			<semester>Fall 2099</semester>
+			<rating>80</rating>
+			<comment/>
+		</study_place>
+	</student>
+	<student>
+		<id>7t8dm9ej</id>
+		<password>Pass2</password>
+		<class>
+			<unique>12345</unique>
+			<course_num>C S 373</course_num>
+			<course_name>Software Engineering</course_name>
+			<semester>Spring 2010</semester>
+			<instructor>Downing</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>A</grade>
+		</class>
+		<class>
+			<unique>67890</unique>
+			<course_num>C S 344M</course_num>
+			<course_name>Autonomous Multiagent Systems</course_name>
+			<semester>Spring 2008</semester>
+			<instructor>Stone</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>B+</grade>
+		</class>
+		<book>
+			<isbn>1234567890</isbn>
+			<title>Title1</title>
+			<author>Some Guy</author>
+			<rating>60</rating>
+			<comment/>
+		</book>
+		<paper>
+			<paper_category>journal</paper_category>
+			<title>Title2</title>
+			<author>Some Other Guy</author>
+			<rating>0</rating>
+			<comment/>
+		</paper>
+		<paper>
+			<paper_category>conference</paper_category>
+			<title>Title3</title>
+			<author>Stewie</author>
+			<rating>50</rating>
+			<comment/>
+		</paper>
+		<internship>
+			<place_name>Microsoft</place_name>
+			<location>Redmond, WA</location>
+			<semester>Summer 1999</semester>
+			<rating>30</rating>
+			<comment/>
+		</internship>
+		<study_place>
+			<place_name>TAYBAY</place_name>
+			<location>Painter</location>
+			<semester>Fall 2099</semester>
+			<rating>80</rating>
+			<comment/>
+		</study_place>
+	</student>
+	<student>
+		<id>7t8dm91a</id>
+		<password>Pass2</password>
+		<class>
+			<unique>12345</unique>
+			<course_num>C S 373</course_num>
+			<course_name>Software Engineering</course_name>
+			<semester>Spring 2010</semester>
+			<instructor>Downing</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>A</grade>
+		</class>
+		<class>
+			<unique>67890</unique>
+			<course_num>C S 344M</course_num>
+			<course_name>Autonomous Multiagent Systems</course_name>
+			<semester>Spring 2008</semester>
+			<instructor>Stone</instructor>
+			<rating>100</rating>
+			<comment/>
+			<grade>B+</grade>
+		</class>
+		<book>
+			<isbn>1234567890</isbn>
+			<title>Title1</title>
+			<author>Some Guy</author>
+			<rating>60</rating>
+			<comment/>
+		</book>
+		<paper>
+			<paper_category>journal</paper_category>
+			<title>Title2</title>
+			<author>Some Other Guy</author>
+			<rating>0</rating>
+			<comment/>
+		</paper>
+		<paper>
+			<paper_category>conference</paper_category>
+			<title>Title3</title>
+			<author>Stewie</author>
+			<rating>50</rating>
+			<comment/>
+		</paper>
+		<internship>
+			<place_name>Microsoft</place_name>
+			<location>Redmond, WA</location>
+			<semester>Summer 1999</semester>
+			<rating>30</rating>
+			<comment/>
+		</internship>
+		<study_place>
+			<place_name>TAYBAY</place_name>
+			<location>Painter</location>
+			<semester>Fall 2099</semester>
+			<rating>80</rating>
+			<comment/>
+		</study_place>
+	</student>
+	<student>
+		<id>poiu1357</id>
+		<password>iamastabbyrobot</password>
+		<class>
+			<unique>12469</unique>
+			<course_num>PRB 101</course_num>
+			<course_name>Problem Management</course_name>
+			<semester>Fall 2010</semester>
+			<instructor>Jay Z</instructor>
+			<rating>99</rating>
+			<comment>This course aint one</comment>
+			<grade>A</grade>
+		</class>
+		<book>
+			<isbn>1234567890</isbn>
+			<title>Title1</title>
+			<author>Some Guy</author>
+			<rating>90</rating>
+			<comment/>
+		</book>
+		<book>
+			<isbn>9780316018432</isbn>
+			<title>Our Dumb World</title>
+			<author>Inc. The Onion</author>
+			<rating>85</rating>
+			<comment>Less depressing than real news</comment>
+		</book>
+		<book>
+			<isbn>0786814519</isbn>
+			<title>Thunder Cave</title>
+			<author>Roland Smith</author>
+			<rating>100</rating>
+			<comment>My favorite childhood book</comment>
+		</book>
+		<internship>
+			<place_name>Dunder Mifflin Inc</place_name>
+			<location>Scranton, PA</location>
+			<semester>Summer 2006</semester>
+			<rating>75</rating>
+			<comment>The boss was a bit too eccentric</comment>
+		</internship>
+		<study_place>
+			<place_name>PCL</place_name>
+			<location>South Campus</location>
+			<semester>Fall 2009</semester>
+			<rating>85</rating>
+			<comment>Place with the most comfy desk chairs</comment>
+		</study_place>
+		<eat_place>
+			<place_name>Zen</place_name>
+			<location>3423 Guadalupe</location>
+			<semester>Spring 2008</semester>
+			<rating>95</rating>
+			<comment>Chicken, Buddha Mix, Teriyaki, White Rice</comment>
+		</eat_place>
+		<game>
+			<os>MS DOS</os>
+			<title>Commander Keen in Invasion of the Vorticons</title>
+			<rating>100</rating>
+			<comment>I've beaten this game 9001 times</comment>
+		</game>
+		<game>
+			<os>Super Nintendo</os>
+			<title>Sunset Riders</title>
+			<rating>100</rating>
+			<comment>I have yet to beat the final boss after all these years</comment>
+		</game>
+		<game>
+			<os>Playstation</os>
+			<title>Crash Bandicoot</title>
+			<rating>95</rating>
+			<comment>Best adventure game series for the Playstation</comment>
+		</game>
+		<game>
+			<os>XBox</os>
+			<title>Halo</title>
+			<rating>2</rating>
+			<comment>I am terrible at first person shooters</comment>
+		</game>
+		<game>
+			<os>Apple II</os>
+			<title>Oregon Trail</title>
+			<rating>50</rating>
+			<comment>You have died from typhoid fever</comment>
+		</game>
+	</student>
+	<student>
+		<id>1337haxz</id>
+		<password>password</password>
+		<class>
+			<unique>74011</unique>
+			<course_num>C S 352H</course_num>
+			<course_name>Computer Systems Architecture Honors</course_name>
+			<semester>Fall 2010</semester>
+			<instructor>Witchel</instructor>
+			<rating>70</rating>
+			<comment>Ok class, bad lectures</comment>
+			<grade>B</grade>
+		</class>
+		<book>
+			<isbn>3141592635</isbn>
+			<title>Gears of War: Anvil Gate</title>
+			<author>Karen Traviss</author>
+			<rating>85</rating>
+			<comment>Good story, but takes a while to get exciting</comment>
+		</book>
+		<internship>
+			<place_name>St. Davids Georgetown Hospital</place_name>
+			<location>Georgetown, TX</location>
+			<semester>Summer 2010</semester>
+			<rating>95</rating>
+			<comment>My dad is a great boss</comment>
+		</internship>
+		<study_place>
+			<place_name>Carothers Lobby</place_name>
+			<location>Carothers</location>
+			<semester>Fall 2010</semester>
+			<rating>85</rating>
+			<comment>Sometimes people play the piano</comment>
+		</study_place>
+		<live_place>
+			<place_name>Jester</place_name>
+			<location>UT Campus</location>
+			<semester>Fall 2010</semester>
+			<rating>5</rating>
+			<comment>It's like living in a prison</comment>
+		</live_place>
+		<game>
+			<os>Xbox 360</os>
+			<title>Modern Warfare 2</title>
+			<rating>94</rating>
+			<comment>Incredible multiplayer, fun but short campaign</comment>
+		</game>
+	</student>
+	<student>
+		<id>sup3rpr0</id>
+		<password>qwertyasdf</password>
+		<book>
+			<isbn>0321322134</isbn>
+			<title>Data Structures And Problem Solving Using Java</title>
+			<author>Mark Allen Weiss</author>
+			<rating>100</rating>
+			<comment>Most interesting book of all time</comment>
+		</book>
+		<book>
+			<isbn>9780195187151</isbn>
+			<title>A Brief History of the Romans</title>
+			<author>Mary T. Boatwright</author>
+			<rating>0</rating>
+			<comment>Everything I needed to know was on the HBO show</comment>
+		</book>
+		<book>
+			<isbn>9780201708424</isbn>
+			<title>Extreme Programming Installed</title>
+			<author>Ron Jeffries</author>
+			<rating>99</rating>
+			<comment>SECOND MOST INTERESTING BOOK EVER</comment>
+		</book>
+		<fun_place>
+			<place_name>Carothers 101: The Nexus</place_name>
+			<location>Honors Quad</location>
+			<semester>Fall 2010</semester>
+			<rating>100</rating>
+			<comment>Always hang out in this room, it is awesome</comment>
+		</fun_place>
+		<fun_place>
+			<place_name>Andrews 113: House of Decadence</place_name>
+			<location>Honors Quad</location>
+			<semester>Fall 2010</semester>
+			<rating>99</rating>
+			<comment>Has a TV, but not as good for SC2</comment>
+		</fun_place>
+		<game>
+			<os>Windows/Mac</os>
+			<title>StarCraft II</title>
+			<rating>100</rating>
+			<comment>I wish I was Korean so I could make money playing this game</comment>
+		</game>
+		<game>
+			<os>Board</os>
+			<title>Mah Jong</title>
+			<rating>100</rating>
+			<comment>The awesomeness of this game cannot be contained in earthly words</comment>
+		</game>
+	</student>
+	<student>
+		<id>splinter</id>
+		<password>phobe</password>
+		<class>
+			<unique>54080</unique>
+			<course_num>CS 378</course_num>
+			<course_name>Always All Answers Hyper Honors</course_name>
+			<semester>Fall 1337</semester>
+			<instructor>God</instructor>
+			<rating>100</rating>
+			<comment>It's Alpha to the power of Omega</comment>
+			<grade>A</grade>
+		</class>
+		<book>
+			<isbn>1234567891</isbn>
+			<title>Urban Dictionary</title>
+			<author>The Internet</author>
+			<rating>0</rating>
+			<comment>Some things you don't wanna know</comment>
+		</book>
+		<internship>
+			<place_name>HomeAway</place_name>
+			<location>Austin, TX</location>
+			<semester>Summer 2010</semester>
+			<rating>100</rating>
+			<comment>Good Pay, Nice Environment, Friendly People, PING PONG TABLE</comment>
+		</internship>
+		<study_place>
+			<place_name>room 2110</place_name>
+			<location>Duren</location>
+			<semester>Fall 2010</semester>
+			<rating>100</rating>
+			<comment>No place like home...</comment>
+		</study_place>
+		<game>
+			<os>Windows/Mac</os>
+			<title>Team Fortress 2</title>
+			<rating>100</rating>
+			<comment>It gets updated monthly... for free!</comment>
+		</game>
+	</student>
+</students>

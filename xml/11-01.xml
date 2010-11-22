@@ -1,0 +1,261 @@
+<students>
+          <student>
+                  <id>aaaa7654</id>
+                  <password>3a7a3</password>
+                  <class>
+                              <unique>22345</unique>
+                              <course_num>CH 204</course_num>
+                              <course_name>Intro to Chemistry Lab</course_name>
+                              <semester>Summer 2010</semester>
+                              <instructor>Lyon</instructor>
+                              <rating>75</rating>
+                              <comment>Not bad I suppose. I am not really into chemistry. It was time consuming but still interesting.</comment>
+                              <grade>B</grade>
+                  </class>
+                  <class>
+                              <unique>53550</unique>
+                              <course_num>C S 352</course_num>
+                              <course_name>Computer Architecture</course_name>
+                              <semester>Fall 2010</semester>
+                              <instructor>Hunt</instructor>
+                              <rating>85</rating>
+                              <comment>This class is tough, and you will work a lot, but you will learn a lot.</comment>
+                              <grade>B</grade>
+                  </class>
+                  <class>
+                              <unique>23560</unique>
+                              <course_num>E 316K</course_num>
+                              <course_name>Masterworks in English Literature</course_name>
+                              <semester>Fall 2008</semester>
+                              <instructor>Schiek</instructor>
+                              <rating>80</rating>
+                              <comment>Not a bad class.</comment>
+                              <grade>B</grade>
+                  </class>
+                   <book>
+                              <isbn>1234567890</isbn>
+                              <title>Extreme Programming</title>
+                              <author>Ron Jeffries</author>
+                              <rating>70</rating>
+                              <comment>This ended up being extremely useful. Extreme? Extremely? See what I did there? Hmmm. I apologize.</comment>
+                  </book>
+                  <game>
+                              <os>PS3</os>
+                              <title>Bayonetta</title>
+                              <rating>100</rating>
+                              <comment>The best game ever? Yes.</comment>
+                  </game>
+          </student>
+          <student>
+                  <id>addi5678</id>
+                  <password>ai82g1</password>
+                  <class>
+                              <unique>54230</unique>
+                              <course_num>C S 341</course_num>
+                              <course_name>Automata Theory</course_name>
+                              <semester>Fall 2010</semester>
+                              <instructor>Elaine Rich</instructor>
+                              <rating>80</rating>
+                              <comment></comment>
+                              <grade>A</grade>
+                  </class>
+                  <class>
+                              <unique>54110</unique>
+                              <course_num>C S 345</course_num>
+                              <course_name>Programming Languages</course_name>
+                              <semester>Spring 2010</semester>
+                              <instructor>Cannata</instructor>
+                              <rating>60</rating>
+                              <comment></comment>
+                              <grade>A</grade>
+                  </class>
+                  <book>
+                              <isbn>0545139708</isbn>
+                              <title>Harry Potter and the Deathly Hallows</title>
+                              <author>J.K. Rowling</author>
+                              <rating>77</rating>
+                              <comment>Harry Potter is awesome</comment>
+                  </book>
+                  <internship>
+                              <place_name>IBM</place_name>
+                              <location>Austin, TX</location>
+                              <semester>Summer 2009</semester>
+                              <rating>70</rating>
+                              <comment></comment>
+                </internship>
+                  <game>
+                              <os>xbox 360</os>
+                              <title>halo reach</title>
+                              <rating>99</rating>
+                              <comment></comment>
+                  </game>
+          </student>
+          <student>
+                  <id>jojo1232</id>
+                  <password>idonthaveone</password>
+                  <class>
+                              <unique>78787</unique>
+                              <course_num>C S 345</course_num>
+                              <course_name>Programming languages</course_name>
+                              <semester>Spring 2010</semester>
+                              <instructor>Cannata</instructor>
+                              <rating>5</rating>
+                              <comment></comment>
+                              <grade>B</grade>
+                  </class>
+                  <class>
+                              <unique>67676</unique>
+                              <course_num>C S 378</course_num>
+                              <course_name>Debugging and Verifying Program</course_name>
+                              <semester>Spring 2010</semester>
+                              <instructor>Emerson</instructor>
+                              <rating>5</rating>
+                              <comment></comment>
+                              <grade>A</grade>
+                  </class>
+                  <book>
+                              <isbn>1234567890</isbn>
+			      <title>Introduction to Probability</title>
+			      <author>Jojo</author>
+			      <rating>3</rating>
+			      <comment></comment>
+		  </book>
+                  <paper>
+                              <paper_category>journal</paper_category>
+			      <title>journey to the west</title>
+			      <author>noAuthor</author>
+			      <rating>3</rating>
+			      <comment></comment>
+		  </paper>
+		  <study_place>
+			      <place_name>home</place_name>
+			      <location>Riverside</location>
+			      <semester>Fall 2010</semester>
+			      <rating>4</rating>
+			      <comment>my best study place is my home :</comment>
+		  </study_place>
+		  <live_place>
+			      <place_name>longhorn landing</place_name>
+			      <location>Riverside</location>
+			      <semester>Fall 2010</semester>
+			      <rating>4</rating>
+			      <comment>Longhorn landing is my apartment</comment>
+		  </live_place>
+		  <game>
+                              <os>foo</os>
+                              <title>bar</title>
+                              <rating>5</rating>
+                              <comment></comment>
+                  </game>
+          </student>
+          <student>
+          <id>1A2b3C4h</id>
+          <password>LOLZROFL</password>
+              <class>
+                      <unique>16452</unique>
+                      <course_num>C S 373</course_num>
+                      <course_name>Software Engineering</course_name>
+                      <semester>Spring 2010</semester>
+                      <instructor>Downing</instructor>
+                      <rating>100</rating>
+                      <comment></comment>
+                      <grade>A</grade>
+              </class>
+              <class>
+                      <unique>46853</unique>
+                      <course_num>C S 378</course_num>
+                      <course_name>Verifying and Debugging Programs</course_name>
+                      <semester>Spring 2010</semester>
+                      <instructor>Emerson</instructor>
+                      <rating>45</rating>
+                      <comment></comment>
+                      <grade>A</grade>
+              </class>
+              <class>
+                      <unique>10012</unique>
+                      <course_num>M 358K</course_num>
+                      <course_name>Applied Statistics</course_name>
+                      <semester>Fall 2010</semester>
+                      <instructor>Swensom</instructor>
+                      <rating>0</rating>
+                      <comment></comment>
+                      <grade>B</grade>
+              </class>
+              <paper>
+                  <paper_category>journal</paper_category>
+                  <title>Title82</title>
+                  <author>You Don't Want to Know</author>
+                  <rating>42</rating>
+                  <comment></comment>
+              </paper>
+              <study_place>
+                  <place_name>Library</place_name>
+                  <location>PCL</location>
+                  <semester>Fall 2009</semester>
+                  <rating>89</rating>
+                  <comment></comment>
+              </study_place>
+              <game>
+                  <os>Xbox360</os>
+                  <title>Vanquish</title>
+                  <rating>99</rating>
+                  <comment>Awesome Sauce!!!</comment>
+
+              </game>
+              
+        </student>
+        <student>
+          <id>AWES1234</id>
+          <password>GrilledCheezus</password>
+              <class>
+                      <unique>52480</unique>
+                      <course_num>CS347</course_num>
+                      <course_name>Data Management</course_name>
+                      <semester>Fall 2010</semester>
+                      <instructor>Miranker</instructor>
+                      <rating>80</rating>
+                      <comment>Handouts kinda make sticking around for class pointless.</comment>
+                      <grade>A</grade>
+              </class>
+              <class>
+                      <unique>52540</unique>
+                      <course_num>CS373</course_num>
+                      <course_name>Software Engineering</course_name>
+                      <semester>Fall 2010</semester>
+                      <instructor>Downing</instructor>
+                      <rating>98</rating>
+                      <comment>Best class ev-ar!!!!!</comment>
+                      <grade>B</grade>
+              </class>
+              <class>
+                      <unique>55495</unique>
+                      <course_num>M358K</course_num>
+                      <course_name>Applied Statistics</course_name>
+                      <semester>Fall 2010</semester>
+                      <instructor>Swenson</instructor>
+                      <rating>55</rating>
+                      <comment>ZOMG - Do not take...</comment>
+                      <grade>B</grade>
+              </class>
+              <paper>
+                  <paper_category>journal</paper_category>
+                  <title>Using Git Like a Nub</title>
+                  <author>Oren Fisk</author>
+                  <rating>100</rating>
+                  <comment>This paper is hillarious and informative.  The author's a genius.</comment>
+              </paper>
+              <study_place>
+                  <place_name>PCL</place_name>
+                  <location>UT campus</location>
+                  <semester>Fall 2010</semester>
+                  <rating>99</rating>
+                  <comment>Renting rooms is awesome.</comment>
+              </study_place>
+              <game>
+                  <os>Xbox 360</os>
+                  <title>Halo: Reach</title>
+                  <rating>100</rating>
+                  <comment>Great game - armor lock FTW</comment>
+              </game>
+        </student>
+</students>

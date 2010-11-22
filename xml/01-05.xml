@@ -1,0 +1,608 @@
+<students>
+      <student>
+          <id>Id123891</id>
+          <password>ralston-pass</password>
+          <class>
+                  <unique>14699</unique>
+                  <course_num>CS 373</course_num>
+                  <course_name>Software Engineering</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Glenn Downing</instructor>
+                  <rating>100</rating>
+                  <comment>bflajeiljfwaf</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>87499</unique>
+                  <course_num>CS 378</course_num>
+                  <course_name>Autonomous Driving in Traffic</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Dr Professor</instructor>
+                  <rating>100</rating>
+                  <comment>iejfijeaijff</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>47399</unique>
+                  <course_num>CS 178</course_num>
+                  <course_name>Intro to CS Research</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Calvin Lin</instructor>
+                  <rating>100</rating>
+                  <comment>iejfijeaijff</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>11199</unique>
+                  <course_num>C S 304</course_num>
+                  <course_name>Fourth CS Class</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Instructor 1</instructor>
+                  <rating>80</rating>
+                  <comment>iejfijeaijff</comment>
+                  <grade>A</grade>
+          </class>
+          <book>
+              <isbn>1324657999</isbn>
+          	  <title>Atlas Shrugged</title>
+          	  <author>Ayn Rand</author>
+          	  <rating>100</rating>
+          	  <comment>Who is John Galt</comment>
+      	  </book>
+          <book>
+              <isbn>9876543299</isbn>
+          	  <title>The Fountainhead</title>
+          	  <author>Ayn Rand</author>
+          	  <rating>80</rating>
+          	  <comment>Build this as a testament to that spirit which is yours and could have been mine</comment>
+      	  </book>
+          <paper>
+              <paper_category>journal</paper_category>
+          	  <title>Rapidly Exploring Random Trees</title>
+          	  <author>Aziz Ansari</author>
+          	  <rating>80</rating>
+          	  <comment>Useful for planning in unstructured space</comment>
+      	  </paper>
+          <paper>
+              <paper_category>journal</paper_category>
+          	  <title>Taco Bell unveils totally new way of using same five ingredients</title>
+          	  <author>The Onion</author>
+          	  <rating>100</rating>
+          	  <comment></comment>
+      	  </paper>
+          <paper>
+              <paper_category>journal</paper_category>
+          	  <title>The Travesty</title>
+          	  <author>Texas Travesty Staff</author>
+          	  <rating>100</rating>
+          	  <comment>Hilarious</comment>
+      	  </paper>
+          <internship>
+          	  <place_name>Schlumberger</place_name>
+          	  <location>Houston, TX</location>
+          	  <semester>Summer 2008</semester>
+          	  <rating>100</rating>
+          	  <comment>Information Management</comment>
+      	  </internship>
+          <internship>
+          	  <place_name>Schlumberger</place_name>
+          	  <location>Houston, TX</location>
+          	  <semester>Summer 2009</semester>
+          	  <rating>100</rating>
+          	  <comment>Osprey Connect</comment>
+      	  </internship>
+          <internship>
+          	  <place_name>Qualcomm</place_name>
+          	  <location>La Jolla, CA</location>
+          	  <semester>Summer 2010</semester>
+          	  <rating>100</rating>
+          	  <comment>QES</comment>
+      	  </internship>          
+      	  <study_place>
+          	  <place_name>The Texan West</place_name>
+          	  <location>2616 Salado St</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>20</rating>
+          	  <comment>Terrible. Really loud.</comment>
+      	  </study_place>
+      	  <eat_place>
+          	  <place_name>TRIO</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>100</rating>
+          	  <comment>Delicious. Inside the Four Seasons</comment>
+      	  </eat_place>
+      	  <eat_place>
+          	  <place_name>Roys</place_name>
+          	  <location>Austin, UT</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>100</rating>
+          	  <comment></comment>
+      	  </eat_place>
+      	  <fun_place>
+          	  <place_name>Kappa Sigma</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Summer 2008</semester>
+          	  <rating>100</rating>
+          	  <comment>Pretty frat</comment>
+      	  </fun_place>
+      	  <fun_place>
+          	  <place_name>Spiderhouse</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Summer 2013</semester>
+          	  <rating>100</rating>
+          	  <comment></comment>
+      	  </fun_place>
+          <game>
+                  <os>Xbox 360</os>
+                  <title>Halo Reach</title>
+                  <rating>100</rating>
+                  <comment>ROFL LOL</comment>
+          </game>
+          <game>
+                  <os>Xbox 360</os>
+                  <title>Fable 3</title>
+                  <rating>100</rating>
+                  <comment>Comes out in two days</comment>
+          </game>
+          <game>
+                  <os>Xbox 360</os>
+                  <title>Eternal Sonata</title>
+                  <rating>100</rating>
+                  <comment>Bizarre. Japan is a weird place.</comment>
+          </game>
+      </student>
+      <student>
+          <id>Id987666</id>
+          <password>drewpass</password>
+          <class>
+                  <unique>52460</unique>
+                  <course_num>C S 373</course_num>
+                  <course_name>Software Engineering</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Glen Downing</instructor>
+                  <rating>100</rating>
+                  <comment>Cool</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>52460</unique>
+                  <course_num>C S 337</course_num>
+                  <course_name>Theory In Programming Practice</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Jayadev Misra</instructor>
+                  <rating>85</rating>
+                  <comment>Interesting material, frustrating tests and projects.</comment>
+                  <grade>B</grade>
+          </class>
+          <class>
+                  <unique>52485</unique>
+                  <course_num>C S 352</course_num>
+                  <course_name>Computer Systems Architecture</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Warren Hunt</instructor>
+                  <rating>80</rating>
+                  <comment>Some interesting material and some tedious material</comment>
+                  <grade>B</grade>
+          </class>
+          <book>
+                  <isbn>0743277708</isbn>
+                  <title>Watership Down</title>
+                  <author>Richard Adams</author>
+                  <rating>95</rating>
+                  <comment>I love this book.</comment>
+          </book>
+          <study_place>
+                  <place_name>ENS Basement Labs</place_name>
+                  <location>ENS</location>
+                  <semester>Fall 2010</semester>
+                  <rating>90</rating>
+                  <comment>Computer lab.</comment>
+          </study_place>
+          <study_place>
+                  <place_name>Painter lab</place_name>
+                  <location>Painter</location>
+                  <semester>Fall 2010</semester>
+                  <rating>75</rating>
+                  <comment>Somewhat annoying computer lab.</comment>
+          </study_place>
+          <eat_place>
+                  <place_name>Thundercloud Subs</place_name>
+                  <location>South Austin</location>
+                  <semester>Fall 2010</semester>
+                  <rating>100</rating>
+                  <comment>I love a good sammich.</comment>
+          </eat_place>
+          <fun_place>
+                  <place_name>Red Shed Tavern</place_name>
+                  <location>South Austin</location>
+                  <semester>Fall 2010</semester>
+                  <rating>88</rating>
+                  <comment>Great jukebox, but only bottled beer so it loses a point.</comment>
+          </fun_place>
+          <fun_place>
+                  <place_name>Alamo Drafthouse</place_name>
+                  <location>South Lamar</location>
+                  <semester>Fall 2010</semester>
+                  <rating>98</rating>
+                  <comment>Best movie theater ever.</comment>
+          </fun_place>
+          <game>
+                  <os>PS3</os>
+                  <title>Uncharted 2</title>
+                  <rating>95</rating>
+                  <comment>Perfect Game</comment>
+          </game>
+      </student>
+      <student>
+                <id>55378008</id>
+                <password>pass1234</password>
+                <class>
+                  <unique>55245</unique>
+                  <course_num>CS 373</course_num>
+                  <course_name>Software Engineering</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Downing</instructor>
+                  <rating>90</rating>
+                  <comment>Too much arm twisting.</comment>
+                  <grade>B+</grade>
+                </class>
+                <class>
+                  <unique>32620</unique>
+                  <course_num>C C 303</course_num>
+                  <course_name>Introduction to Classical Mythology</course_name>
+                  <semester>Fall 2009</semester>
+                  <instructor>Kim</instructor>
+                  <rating>90</rating>
+                  <comment>A</comment>
+                  <grade>B+</grade>
+                </class>
+                <class>
+                  <unique>27725</unique>
+                  <course_num>INF 322T</course_num>
+                  <course_name>Children's Literature</course_name>
+                  <semester>Spring 2010</semester>
+                  <instructor>Williams</instructor>
+                  <rating>80</rating>
+                  <comment>Too long.</comment>
+                  <grade>A</grade>
+                  </class>
+                <class>
+                  <unique>52465</unique>
+                  <course_num>C S 341</course_num>
+                  <course_name>Automata Theory</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Rich</instructor>
+                  <rating>70</rating>
+                  <comment></comment>
+                  <grade></grade>
+                </class>
+                <class>
+                  <unique>52535</unique>
+                  <course_num>C S 372</course_num>
+                  <course_name>Introduction to Operating Systems</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Dahlin</instructor>
+                  <rating>41</rating>
+                  <comment></comment>
+                  <grade>A</grade>
+                </class>
+                <book>
+                  <isbn>0345347951</isbn>
+                  <title>Childhood's End</title>
+                  <author>Arthur C. Clarke</author>
+                  <rating>98</rating>
+                  <comment></comment>
+                </book>
+                <book>
+                  <isbn>0345455363</isbn>
+                  <title>Prospero's Daughter</title>
+                  <author>Elizabeth Nunez</author>
+                  <rating>87</rating>
+                  <comment></comment>
+                </book>
+                <book>
+                  <isbn>0500251215</isbn>
+                  <title>The Complete World of Greek Mythology</title>
+                  <author>Richard Buxton</author>
+                  <rating>90</rating>
+                  <comment></comment>
+                </book>
+                <study_place>
+                  <place_name>6th Floor</place_name>
+                  <location>PCL</location>
+                  <semester>Fall 2010</semester>
+                  <rating>1</rating>
+                  <comment>You're not supposed have one of those on campus.</comment>
+                </study_place>
+                <eat_place>
+                  <place_name>Juan in a Million</place_name>
+                  <location>2300 E Cesar Chavez St</location>
+                  <semester>Fall 2009</semester>
+                  <rating>90</rating>
+                  <comment></comment>
+                </eat_place>
+                <fun_place>
+                  <place_name>6th Street</place_name>
+                  <location>Downtown Austin</location>
+                  <semester>Fall 2009</semester>
+                  <rating>90</rating>
+                  <comment></comment>
+                </fun_place>
+                <game>
+                  <os>Gamecube</os>
+                  <title>Resident Evil 4</title>
+                  <rating>100</rating>
+                  <comment>"Well, I see that the President has equipped his daughter with ballistics too!"</comment>
+                </game>
+                <game>
+                  <os>Super Nintendo</os>
+                  <title>Super Mario World</title>
+                  <rating>100</rating>
+                  <comment>Why does Mario have to punch Yoshi?</comment>
+                </game>
+                <game>
+                  <os>Gameboy</os>
+                  <title>Pokemon Blue</title>
+                  <rating>100</rating>
+                  <comment>Ok yuh.</comment>
+                </game>
+        </student>
+        <student>
+          <id>randdude</id>
+          <password>awesomesauce</password>
+          <class>
+                  <unique>54520</unique>
+                  <course_num>CS 373</course_num>
+                  <course_name>Software Engineering</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Glenn Downing</instructor>
+                  <rating>100</rating>
+                  <comment>Awesome class</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>55435</unique>
+                  <course_num>CS 307</course_num>
+                  <course_name>Foundations of Computer Science</course_name>
+                  <semester>Spring 2008</semester>
+                  <instructor>Mike Scott</instructor>
+                  <rating>95</rating>
+                  <comment>Really good intro class</comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>54805</unique>
+                  <course_num>CS 352</course_num>
+                  <course_name>Computer Systems Architecture</course_name>
+                  <semester>Fall 2009</semester>
+                  <instructor>Warren Hunt</instructor>
+                  <rating>70</rating>
+                  <comment></comment>
+                  <grade>B</grade>
+          </class>
+          <book>
+             <isbn>0833509454</isbn>
+          	  <title>It</title>
+          	  <author>Stephen King</author>
+          	  <rating>100</rating>
+          	  <comment>Crazy book. Really really good.</comment>
+      	  </book>
+          <book>
+             <isbn>1843174154</isbn>
+          	  <title>Tiny Acts of Rebellion</title>
+          	  <author>Rich Fulcher</author>
+          	  <rating>95</rating>
+		      <comment>Absolutely hilarious</comment>
+          </book>
+          <internship>
+          	  <place_name>National Instruments</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Summer 2010</semester>
+          	  <rating>5</rating>
+          	  <comment>Nice place to work.</comment>
+      	</internship>
+      	<study_place>
+          	  <place_name>ENS Computer Labs</place_name>
+          	  <location>ENS, UT</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>90</rating>
+          	  <comment>Nice place to work. Very quiet.</comment>
+      	</study_place>
+      	<study_place>
+          	  <place_name>Taylor Basement</place_name>
+          	  <location>ACES, UT</location>
+          	  <semester>Fall 2009</semester>
+          	  <rating>60</rating>
+          	  <comment></comment>
+      	</study_place>
+      	<eat_place>
+          	  <place_name>Salt Lick</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>95</rating>
+          	  <comment></comment>
+      	</eat_place>
+      	<eat_place>
+          	  <place_name>Wendy's</place_name>
+          	  <location>Jester Dorms, UT</location>
+          	  <semester>Spring 2013</semester>
+          	  <rating>30</rating>
+          	  <comment></comment>
+      	</eat_place>
+      	<fun_place>
+          	  <place_name>Alamo Drafthouse</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>98</rating>
+          	  <comment>Great movie theater.</comment>
+      	</fun_place>
+           <game>
+                  <os>PC</os>
+                  <title>Left 4 Dead</title>
+                  <rating>97</rating>
+                  <comment>Zombies!</comment>
+           </game>
+           <game>
+                  <os>PS2</os>
+                  <title>Metal Gear Solid 3: Snake Eater</title>
+                  <rating>100</rating>
+                  <comment></comment>
+           </game>
+           <game>
+                  <os>Xbox 360</os>
+                  <title>Dead Rising</title>
+			  <rating>99</rating>
+			  <comment></comment>
+           </game>
+      </student>
+      <student>
+          <id>Id123456</id>
+          <password>Pass1</password>
+          <class>
+                  <unique>55500</unique>
+                  <course_num>M 358K</course_num>
+                  <course_name>Applied Statistics</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Swenson</instructor>
+                  <rating>80</rating>
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>52545</unique>
+                  <course_num>C S 373</course_num>
+                  <course_name>Software Engineering - W</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Downing</instructor>
+                  <rating>90</rating>
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>55475</unique>
+                  <course_num>M 343L</course_num>
+                  <course_name>Applied Number Theory</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Smith</instructor>
+                  <rating>80</rating>
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>39055</unique>
+                  <course_num>HIS 315K</course_num>
+                  <course_name>United States, 1492-1865</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Tribbe</instructor>
+                  <rating>85</rating>
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>34120</unique>
+                  <course_num>E 316K</course_num>
+                  <course_name>Masterworks of Lit: American</course_name>
+                  <semester>Fall 2010</semester>
+                  <instructor>Lesser</instructor>
+                  <rating>95</rating>
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>54295</unique>
+                  <course_num>C S 372H</course_num>
+                  <course_name>Intro to Operating Sys: Honors</course_name>
+                  <semester>Spring 2010</semester>
+                  <instructor>Walfish</instructor>
+                  <rating>95</rating>     
+                  <comment></comment>
+                  <grade>A-</grade>
+          </class>
+          <class>
+                  <unique>56990</unique>
+                  <course_num>M 343K</course_num>
+                  <course_name>Intro to Algebraic  Structures</course_name>
+                  <semester>Spring 2010</semester>
+                  <instructor>Heitmann</instructor>
+                  <rating>70</rating>
+                  <comment></comment>
+                  <grade>A</grade>
+          </class>
+          <class>
+                  <unique>57075</unique>
+                  <course_num>M 365C</course_num>
+                  <course_name>Real Analysis I</course_name>
+                  <semester>Spring 2010</semester>
+                  <instructor>Vishik</instructor>
+                  <rating>83</rating>
+                  <comment></comment>
+                  <grade>A</grade>                  
+          </class>
+          <class>
+                  <unique>42795</unique>
+                  <course_num>PHL 303</course_num>
+                  <course_name>Human Nature</course_name>
+                  <semester>Spring 2010</semester>
+                  <instructor>Bjurman-Pautz</instructor>
+                  <rating>50</rating>     
+                  <comment></comment>
+                  <grade>A</grade>
+          </class>
+          <book>
+                  <isbn>0545139708</isbn>
+          	  <title>Harry Potter and the Deathly Hallows</title>
+          	  <author>J.K. Rowling</author>
+          	  <rating>85</rating>
+          	  <comment></comment>
+          </book>
+          <paper>
+                  <paper_category>journal</paper_category>
+          	  <title>Advice to Computer Science College Students</title>
+          	  <author>Joel Spolsky</author>
+          	  <rating>80</rating>
+          	  <comment></comment>
+          </paper>
+          <internship>
+          	  <place_name>Cisco</place_name>
+          	  <location>San Jose, CA</location>
+          	  <semester>Summer 2010</semester>
+          	  <rating>85</rating>
+          	  <comment>Love the city, the company didn't really give me real work as an intern</comment>
+      	  </internship>
+          <internship>
+          	  <place_name>Gemalto</place_name>
+          	  <location>Austin, TX</location>
+          	  <semester>Summer 2009</semester>
+          	  <rating>90</rating>
+          	  <comment></comment>
+          </internship>
+          <study_place>
+          	  <place_name>ENS Basement</place_name>
+          	  <location>ENS</location>
+          	  <semester>Fall 2009</semester>
+          	  <rating>85</rating>
+          	  <comment></comment>
+      	</study_place>
+      	<eat_place>
+          	  <place_name>Chipotle</place_name>
+          	  <location>Chipotle</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>99</rating>
+          	  <comment></comment>
+         </eat_place>
+      	<fun_place>
+          	  <place_name>IM Fields</place_name>
+          	  <location>IM Fields</location>
+          	  <semester>Fall 2010</semester>
+          	  <rating>90</rating>
+          	  <comment></comment>
+          	</fun_place>
+      	<game>
+                  <os>Xbox</os>
+                  <title>Halo: Combat Evolved</title>
+                  <rating>5</rating>
+                  <comment>Perfect Game</comment>
+          </game>
+      </student>
+</students>

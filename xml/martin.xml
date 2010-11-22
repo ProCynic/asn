@@ -1,0 +1,532 @@
+<students>
+    <student>
+        <id>MF123456</id>
+        <password>asswordpay</password>
+        <class>
+            <unique>43250</unique>
+            <course_num>LIN 350</course_num>
+            <course_name>Natural Language Processing</course_name>
+            <semester>Fall 2008</semester>
+            <instructor>Baldridge</instructor>
+            <rating>100</rating>
+            <comment>Favorite class at UT</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>43250</unique>
+            <course_num>LIN 350</course_num>
+            <course_name>Natural Language Processing</course_name>
+            <semester>Fall 2008</semester>
+            <instructor>Baldridge</instructor>
+            <rating>100</rating>
+            <comment>Favorite class at UT</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>43250</unique>
+            <course_num>LIN 350</course_num>
+            <course_name>Natural Language Processing</course_name>
+            <semester>Fall 2008</semester>
+            <instructor>Baldridge</instructor>
+            <rating>100</rating>
+            <comment>Favorite class at UT</comment>
+            <grade>A</grade>
+        </class>
+        <book>
+            <isbn>9781430219484</isbn>
+            <title>Coders at Work</title>
+            <author>Seibel</author>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </book>
+        <book>
+            <isbn>9781430219484</isbn>
+            <title>Coders at Work</title>
+            <author>Seibel</author>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </book>
+        <book>
+            <isbn>9781430219484</isbn>
+            <title>Coders at Work</title>
+            <author>Seibel</author>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </book>
+        <internship>
+            <place_name>Google</place_name>
+            <location>Mountain View, CA</location>
+            <semester>Summer 2009</semester>
+            <rating>4</rating>
+            <comment>
+            </comment>
+        </internship>
+        <internship>
+            <place_name>Google</place_name>
+            <location>Mountain View, CA</location>
+            <semester>Summer 2009</semester>
+            <rating>4</rating>
+            <comment>
+            </comment>
+        </internship>
+        <internship>
+            <place_name>Google</place_name>
+            <location>Mountain View, CA</location>
+            <semester>Summer 2009</semester>
+            <rating>4</rating>
+            <comment>
+            </comment>
+        </internship>
+        <study_place>
+            <place_name>Life Sciences Library</place_name>
+            <location>Main Tower</location>
+            <semester>Spring 2008</semester>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </study_place>
+        <study_place>
+            <place_name>Life Sciences Library</place_name>
+            <location>Main Tower</location>
+            <semester>Spring 2008</semester>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </study_place>
+        <study_place>
+            <place_name>Life Sciences Library</place_name>
+            <location>Main Tower</location>
+            <semester>Spring 2008</semester>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </study_place>
+        <game>
+            <os>Java</os>
+            <title>Minecraft</title>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </game>
+        <game>
+            <os>Java</os>
+            <title>Minecraft</title>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </game>
+        <game>
+            <os>Java</os>
+            <title>Minecraft</title>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </game>
+    </student>
+    <student>
+        <id>chris012</id>
+        <password>martin</password>
+        <class>
+            <unique>11895</unique>
+            <course_num>PED 102G</course_num>
+            <course_name>Not Available</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Peter Oliver</instructor>
+            <rating>100</rating>
+            <comment>Best Class</comment>
+            <grade>A</grade>
+        </class>
+        <class>
+            <unique>11895</unique>
+            <course_num>PED 102G</course_num>
+            <course_name>Not Available</course_name>
+            <semester>Fall 2009</semester>
+            <instructor>Peter Oliver</instructor>
+            <rating>100</rating>
+            <comment>Best Class</comment>
+            <grade>A</grade>
+        </class>
+        <book>
+            <isbn>9780920668375</isbn>
+            <title>Love You Forever</title>
+            <author>Munsch</author>
+            <rating>100</rating>
+            <comment>
+            </comment>
+        </book>
+        <book>
+            <isbn>9780920668375</isbn>
+            <title>Love You Forever</title>
+            <author>Munsch</author>
+            <rating>100</rating>
+            <comment>
+            </comment>
+        </book>
+        <internship>
+            <place_name>Bloomberg</place_name>
+            <location>New York, NY</location>
+            <semester>Summer 2010</semester>
+            <rating>100</rating>
+            <comment>Free snacks</comment>
+        </internship>
+        <internship>
+            <place_name>Bloomberg</place_name>
+            <location>New York, NY</location>
+            <semester>Summer 2010</semester>
+            <rating>100</rating>
+            <comment>Free snacks</comment>
+        </internship>
+        <study_place>
+            <place_name>ENS Basement</place_name>
+            <location>ENS</location>
+            <semester>Fall 2010</semester>
+            <rating>60</rating>
+            <comment>Too many people since there is no more Taylor</comment>
+        </study_place>
+        <study_place>
+            <place_name>ENS Basement</place_name>
+            <location>ENS</location>
+            <semester>Fall 2010</semester>
+            <rating>60</rating>
+            <comment>Too many people since there is no more Taylor</comment>
+        </study_place>
+        <live_place>
+            <place_name>Blanton</place_name>
+            <location>Basement</location>
+            <semester>Spring 2007</semester>
+            <rating>100</rating>
+            <comment>Tons of extra space</comment>
+        </live_place>
+        <live_place>
+            <place_name>Blanton</place_name>
+            <location>Basement</location>
+            <semester>Spring 2007</semester>
+            <rating>100</rating>
+            <comment>Tons of extra space</comment>
+        </live_place>
+        <eat_place>
+            <place_name>Kins</place_name>
+            <location>Kinsolving Dorm</location>
+            <semester>Spring 2008</semester>
+            <rating>100</rating>
+            <comment>BUFFET!!!</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Kins</place_name>
+            <location>Kinsolving Dorm</location>
+            <semester>Spring 2008</semester>
+            <rating>100</rating>
+            <comment>BUFFET!!!</comment>
+        </eat_place>
+        <fun_place>
+            <place_name>Discovery Zone</place_name>
+            <location>Central and Park</location>
+            <semester>Spring 1998</semester>
+            <rating>100</rating>
+            <comment>Why don't they have these anymore</comment>
+        </fun_place>
+        <fun_place>
+            <place_name>Discovery Zone</place_name>
+            <location>Central and Park</location>
+            <semester>Spring 1998</semester>
+            <rating>100</rating>
+            <comment>Why don't they have these anymore</comment>
+        </fun_place>
+        <game>
+            <os>XBox360</os>
+            <title>Fable2</title>
+            <rating>80</rating>
+            <comment>Ending sucks</comment>
+        </game>
+        <game>
+            <os>XBox360</os>
+            <title>Fable2</title>
+            <rating>80</rating>
+            <comment>Ending sucks</comment>
+        </game>
+    </student>
+    <student>
+        <id>VFJM274N</id>
+        <password>pterbomb</password>
+        <class>
+            <unique>52505</unique>
+            <course_num>C S 357</course_num>
+            <course_name>Algorithms</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Plaxton</instructor>
+            <rating>30</rating>
+            <comment>Class is super boring most of the time.</comment>
+            <grade>C+</grade>
+        </class>
+        <class>
+            <unique>52505</unique>
+            <course_num>C S 357</course_num>
+            <course_name>Algorithms</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Plaxton</instructor>
+            <rating>30</rating>
+            <comment>Class is super boring most of the time.</comment>
+            <grade>C+</grade>
+        </class>
+        <class>
+            <unique>52540</unique>
+            <course_num>C S 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>60</rating>
+            <comment>Class doesn't progress as quickly as I would like. Also, projects what.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>21250</unique>
+            <course_num>MUS 307</course_num>
+            <course_name>History of Rock</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Kateneva</instructor>
+            <rating>80</rating>
+            <comment>Great time to catch some Zs.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52485</unique>
+            <course_num>C S 352</course_num>
+            <course_name>Computer Systems Architecture</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Hunt</instructor>
+            <rating>65</rating>
+            <comment>Subject matter is pretty boring, but the prof seems like an interesting guy.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>26625</unique>
+            <course_num>GEO 405</course_num>
+            <course_name>Life Through Time</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Olori</instructor>
+            <rating>85</rating>
+            <comment>This class is pretty interesting, but the tests are a bit harder than I would like.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52505</unique>
+            <course_num>C S 357</course_num>
+            <course_name>Algorithms</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Plaxton</instructor>
+            <rating>30</rating>
+            <comment>Class is super boring most of the time.</comment>
+            <grade>C+</grade>
+        </class>
+        <class>
+            <unique>52540</unique>
+            <course_num>C S 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>60</rating>
+            <comment>Class doesn't progress as quickly as I would like. Also, projects what.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>21250</unique>
+            <course_num>MUS 307</course_num>
+            <course_name>History of Rock</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Kateneva</instructor>
+            <rating>80</rating>
+            <comment>Great time to catch some Zs.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>52485</unique>
+            <course_num>C S 352</course_num>
+            <course_name>Computer Systems Architecture</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Hunt</instructor>
+            <rating>65</rating>
+            <comment>Subject matter is pretty boring, but the prof seems like an interesting guy.</comment>
+            <grade>B</grade>
+        </class>
+        <class>
+            <unique>26625</unique>
+            <course_num>GEO 405</course_num>
+            <course_name>Life Through Time</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Olori</instructor>
+            <rating>85</rating>
+            <comment>This class is pretty interesting, but the tests are a bit harder than I would like.</comment>
+            <grade>B</grade>
+        </class>
+        <live_place>
+            <place_name>Texan Shoal Creek</place_name>
+            <location>2502 Leon Street</location>
+            <semester>Fall 2009</semester>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </live_place>
+        <live_place>
+            <place_name>Texan Shoal Creek</place_name>
+            <location>2502 Leon Street</location>
+            <semester>Fall 2009</semester>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </live_place>
+        <live_place>
+            <place_name>Quarters</place_name>
+            <location>314 W 22nd Street</location>
+            <semester>Fall 2008</semester>
+            <rating>25</rating>
+            <comment>Really expensive and I got conned into living there. Also, the people who run it are terrible.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Longhorn Landing</place_name>
+            <location>1515 Wickersham Lane</location>
+            <semester>Fall 2007</semester>
+            <rating>0</rating>
+            <comment>Worst place to live ever.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Home</place_name>
+            <location>Missouri City, Texas</location>
+            <semester>Spring 1989</semester>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </live_place>
+        <live_place>
+            <place_name>Texan Shoal Creek</place_name>
+            <location>2502 Leon Street</location>
+            <semester>Fall 2009</semester>
+            <rating>80</rating>
+            <comment>
+            </comment>
+        </live_place>
+        <live_place>
+            <place_name>Quarters</place_name>
+            <location>314 W 22nd Street</location>
+            <semester>Fall 2008</semester>
+            <rating>25</rating>
+            <comment>Really expensive and I got conned into living there. Also, the people who run it are terrible.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Longhorn Landing</place_name>
+            <location>1515 Wickersham Lane</location>
+            <semester>Fall 2007</semester>
+            <rating>0</rating>
+            <comment>Worst place to live ever.</comment>
+        </live_place>
+        <live_place>
+            <place_name>Home</place_name>
+            <location>Missouri City, Texas</location>
+            <semester>Spring 1989</semester>
+            <rating>90</rating>
+            <comment>
+            </comment>
+        </live_place>
+        <eat_place>
+            <place_name>Chik-fil-A</place_name>
+            <location>500 E Ben White Blvd</location>
+            <semester>Fall 2008</semester>
+            <rating>80</rating>
+            <comment>Would be 100, but it's so hard to get to by bus.</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Chik-fil-A</place_name>
+            <location>500 E Ben White Blvd</location>
+            <semester>Fall 2008</semester>
+            <rating>80</rating>
+            <comment>Would be 100, but it's so hard to get to by bus.</comment>
+        </eat_place>
+        <eat_place>
+            <place_name>Chik-fil-A</place_name>
+            <location>500 E Ben White Blvd</location>
+            <semester>Fall 2008</semester>
+            <rating>80</rating>
+            <comment>Would be 100, but it's so hard to get to by bus.</comment>
+        </eat_place>
+        <game>
+            <os>Windows</os>
+            <title>Civilization V</title>
+            <rating>90</rating>
+            <comment>It doesn't run so well on most people's computers.</comment>
+        </game>
+        <game>
+            <os>Windows</os>
+            <title>Civilization V</title>
+            <rating>90</rating>
+            <comment>It doesn't run so well on most people's computers.</comment>
+        </game>
+        <game>
+            <os>Xbox 360</os>
+            <title>Rock Band 3</title>
+            <rating>95</rating>
+            <comment>5 points off for having to spend 700 dollars to get the full experience.</comment>
+        </game>
+        <game>
+            <os>Windows</os>
+            <title>Civilization V</title>
+            <rating>90</rating>
+            <comment>It doesn't run so well on most people's computers.</comment>
+        </game>
+        <game>
+            <os>Xbox 360</os>
+            <title>Rock Band 3</title>
+            <rating>95</rating>
+            <comment>5 points off for having to spend 700 dollars to get the full experience.</comment>
+        </game>
+    </student>
+    <student>
+        <id>nicu0123</id>
+        <password>stiurca</password>
+        <class>
+            <unique>52540</unique>
+            <course_num>C S 373</course_num>
+            <course_name>Software Engineering</course_name>
+            <semester>Fall 2010</semester>
+            <instructor>Downing</instructor>
+            <rating>80</rating>
+            <comment>The projects have too much bulk for the amount of code required.</comment>
+            <grade></grade>
+        </class>
+        <book>
+            <isbn>0201708426</isbn>
+            <title>Extreme Programming Installed</title>
+            <author>Ron Jeffries, Ann Anderson, Chet Hendrickson</author>
+            <rating>65</rating>
+            <comment>Book organization is horrible. The authors are constantily writing to go read other chapters.</comment>
+        </book>
+        <paper>
+            <paper_category>conference</paper_category>
+            <title>Bringing Simulation to Life: A Mixed Reality Autonomous Intersection</title>
+            <author>Michael Quinlan, Tsz-Chiu Au, Jesse Zhu, Nicolae Stiurca, and Peter Stone</author>
+            <rating>100</rating>
+            <comment>Awesomest paper ever!</comment>
+        </paper>
+        <internship>
+            <place_name>TRACLabs</place_name>
+            <location>Houston, TX</location>
+            <semester>Summer 2010</semester>
+            <rating>100</rating>
+            <comment>Robots are awesome!</comment>
+        </internship>
+        <internship>
+            <place_name>TRACLabs</place_name>
+            <location>Houston, TX</location>
+            <semester>Summer 2010</semester>
+            <rating>100</rating>
+            <comment>Robots are awesome!</comment>
+        </internship>
+        <game>
+            <os>Linux/Wine</os>
+            <title>Starcraft II: Wings of Liberty</title>
+            <rating>75</rating>
+            <comment>Graphics not as good/smooth as when running natively on Windows.</comment>
+        </game>
+    </student>
+</students>

@@ -103,14 +103,17 @@ class StudentImporter:
     def _getArgs(self, node):
         args = {}
         for x in node.getchildren():
-            self.ptags[x.tag](x.text, args)
+            try:
+                self.ptags[x.tag](x.text, args)
+            except AttributeError:
+                pass
         return args
 
     def _getRating(self, args):
         try:
             rating = args.pop('rating')
         except KeyError:
-            raise Usage("No rating for class")
+             Usage("No rating for class")
         try:
             comment = args.pop('comment')
         except KeyError:
