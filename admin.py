@@ -8,6 +8,7 @@ from dataAccessors import DataAccessor
 from session import *
 
 from google.appengine.ext import db
+from StringIO import StringIO
 
 class AdminPage(BaseRequestHandler) :
     """
@@ -91,11 +92,12 @@ class AdminImport(BaseRequestHandler) :
         """
 
         self.msg = ""
+        error = True
         importer = Importer(DataAccessor(self.addErrorMessage))
 
         try : 
-            target = self.request.get('newFile')
-            importer.parse(target)
+            target = self.request.POST.get('newFile').file.read()
+            importer.parse(StringIO(target))
 
         except IOError :
             self.msg = "Please select a valid file to import"
@@ -105,11 +107,12 @@ class AdminImport(BaseRequestHandler) :
 
         if not self.msg : 
             self.msg = 'Import was successful'
+            error = False
 
         if len(self.msg) > 512 : 
                 self.msg = self.msg[0:512] + "..."
         
-        setSessionMessageByRequest(self, self.msg)
+        setSessionMessageByRequest(self, self.msg, error)
         self.redirect('/admin')
 
 class ManageUsersPage(BaseRequestHandler) :
