@@ -95,7 +95,7 @@ class AdminImport(BaseRequestHandler) :
         error = True
         importer = Importer(DataAccessor(self.addErrorMessage))
 
-        try : 
+        try :
             target = self.request.POST.get('newFile').file.read()
             importer.parse(StringIO(target))
 
@@ -104,6 +104,9 @@ class AdminImport(BaseRequestHandler) :
 
         except Usage, err : 
             self.msg = err.msg
+
+        except AttributeError:
+            self.msg = "Please select a valid file to import"
 
         if not self.msg : 
             self.msg = 'Import was successful'
