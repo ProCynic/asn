@@ -1,16 +1,21 @@
-import dataStore
+from dataStore import *
 import random
 from dataAccessors import DataAccessor
 from importer import Importer
 
 
-print ''
-print 'Hello World'
+from google.appengine.ext import db
 
-importer = Importer(DataAccessor())
+for x in Comment.all():
+    x.delete()
 
-filename = '/home/gparker/classes/373/asn2/xml/01-02.xml'
+for x in Rating.all():
+    x.delete()
 
-print filename
+for x in Ratable.all():
+    x.delete()
 
-importer.parse(filename)
+for x in Grade.all():
+    x.delete()
+
+    
