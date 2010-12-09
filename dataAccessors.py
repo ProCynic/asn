@@ -3,6 +3,9 @@
 
 from dataStore import *
 from ourExceptions import *
+import threading
+from google.appengine.ext import db
+
 
 
 """
@@ -33,6 +36,9 @@ class DataAccessor :
     A DataAccessor class.
     To modify the dataStore, create an object of this class and call the methods.
     """
+
+    lock = threading.Lock()
+    
     def __init__(self, func=None) :
         """
         The creator of the object can specify a custom error handler function.
@@ -241,13 +247,16 @@ class DataAccessor :
         """
         r = objtype(**assocs)
         try:
+            self.lock.acquire()
             self._pkeyCheck(pkey, r)
             r.put()
             return r
-        except DataStoreClash, data:
+        except DataStoreClash as data:
             if data.entity == r: return data.entity
             if overwrite: return self._updateItem(data.entity, r)
-            self._errHandler(data.entity)
+            self._errHandler(data)
+        finally:
+            self.lock.release()
 
 
     def _updateItem(self, old, new):
@@ -257,7 +266,11 @@ class DataAccessor :
         assert type(old) is type(new)
         for x in type(old).properties():
             setattr(old, x, getattr(new, x))
-        old.put()
+        self.lock.acquire()
+        try:
+            old.put()
+        finally:
+            self.lock.release()
         return old
 
 
@@ -275,7 +288,11 @@ class DataAccessor :
                 setattr(obj, x, p)
             else:
                 setattr(obj, x, kwargs[x])
-        obj.put()
+        try:
+            self.lock.acquire()
+            obj.put()
+        finally:
+            self.lock.release()
         return obj
 
     def getUser(self, uid, pw):
@@ -317,7 +334,7 @@ class DataAccessor :
         ratings.filter('rater =', user.key())
         return ratings
 
-    def delete(self, obj):
+    def _delete(self, obj):
         """
         Delete the given object.
         Chain deletes all the objects that reference this object in the dependencies table.
@@ -328,16 +345,22 @@ class DataAccessor :
                 for item in y.all():
                     for prop in item:
                         if prop[1] == obj: self.delete(item)
-        obj.delete()
+        try:
+            self.lock.acquire()
+            obj.delete()
+        finally:
+            self.lock.release()
+
+    def delete(self, obj):
+        t = Deleter(obj, self)
+        t.start()
 
     def clear(self, students=False):
         """
         Clear all Ratables, Ratings, and Grades from the datastore.
         """
-        for x in Ratable.all(): self.delete(x)
-        if students:
-            for x in User.all():
-                if x.userType == 'STUDENT': self.delete(x)
+        t = Clearer(self, students)
+        t.start()
     
 
     def _pkeyCheck(self, pkey, obj):
@@ -352,3 +375,31 @@ class DataAccessor :
             query.filter(x + ' =', getattr(obj, x))
         assert query.count() <= 1
         if query.count() == 1: raise DataStoreClash(query.get())
+
+
+class Deleter (threading.Thread):
+    def __init__(self, obj, da=DataAccessor()):
+        assert isinstance(da, DataAccessor)
+        self.da = da
+        assert issubclass(type(obj), db.Model)
+        self.obj = obj
+        threading.Thread.__init__(self)
+        
+    def run(self):
+        self.da._delete(self.obj)
+
+class Clearer (threading.Thread):
+    def __init__(self, da=DataAccessor(), students=False):
+        self.da = da
+        self.students = students
+        threading.Thread.__init__(self)
+
+    def run(self):
+        for x in Ratable.all():
+            t = Deleter(x, self.da)
+            t.start()
+        if students:
+            for x in User.all():
+                if x.userType == 'STUDENT':
+                    t = Deleter(x, self.da)
+                    t.start()
