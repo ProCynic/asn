@@ -10,7 +10,6 @@ from google.appengine.ext import db
 
 """
     Utility functions for views.
-
 """
 
 def getUndecoratedTypename(item) :
@@ -38,6 +37,14 @@ class DataAccessor :
     """
 
     lock = threading.Lock()
+
+    #used in delete for chain deletion
+    dependencies = [(User, Rating),
+                    (Ratable, Rating),
+                    (Rating, Comment),
+                    (User, Grade),
+                    (User, Session),
+                    (Course, Grade)]
     
     def __init__(self, func=None) :
         """
@@ -45,13 +52,7 @@ class DataAccessor :
         """
         if func: self._errHandler = func
 
-        #used in delete for chain deletion
-        self.dependencies = [(User, Rating),
-                             (Ratable, Rating),
-                             (Rating, Comment),
-                             (User, Grade),
-                             (User, Session),
-                             (Course, Grade)]
+        
 
     def _errHandler(self, err) :
         """
@@ -340,18 +341,22 @@ class DataAccessor :
         Chain deletes all the objects that reference this object in the dependencies table.
         """
         assert issubclass(type(obj),db.Model)
-        for x, y in self.dependencies:
-            if issubclass(type(obj), x):
-                for item in y.all():
-                    for prop in item:
-                        if prop[1] == obj: self.delete(item)
         try:
             self.lock.acquire()
             obj.delete()
         finally:
             self.lock.release()
 
+        for x, y in self.dependencies:
+            if issubclass(type(obj), x):
+                for item in y.all():
+                    for prop in item:
+                        if prop[1] == obj: self.delete(item)
+
     def delete(self, obj):
+        """
+        Spin off a new deleter thread to remove the object.
+        """
         t = Deleter(obj, self)
         t.start()
 
@@ -384,7 +389,7 @@ class Deleter (threading.Thread):
         assert issubclass(type(obj), db.Model)
         self.obj = obj
         threading.Thread.__init__(self)
-        
+
     def run(self):
         self.da._delete(self.obj)
 
@@ -396,10 +401,7 @@ class Clearer (threading.Thread):
 
     def run(self):
         for x in Ratable.all():
-            t = Deleter(x, self.da)
-            t.start()
+            Deleter(x, self.da).start()
         if students:
-            for x in User.all():
-                if x.userType == 'STUDENT':
-                    t = Deleter(x, self.da)
-                    t.start()
+            for x in User.all().filter('userType =', 'STUDENT'):
+                Deleter(x, self.da).start()
